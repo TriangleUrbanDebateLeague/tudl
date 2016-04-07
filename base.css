@@ -1,0 +1,45 @@
+/*
+ * blue: #0a4883
+ * red: #c5392f
+ */
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.3;
+}
+.logo-image {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 7px; /* completely arbitrary */
+}
+.pure-menu-heading {
+    text-transform: none;
+    margin-top: 3px;
+    font-size: 140%;
+}
+.primary-menu {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 999999; /* yeah lol */
+}
+
+.content {
+    padding-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.call-to-action {
+    background: #c5392f;
+    color: white;
+    padding: 1px 20px;
+}
+
+.call-to-action > .cta-text {
+    width: 70%;
+    margin: auto;
+    text-align: justify;
+}
+
+.main-content {
+    width: 70%;
+}
