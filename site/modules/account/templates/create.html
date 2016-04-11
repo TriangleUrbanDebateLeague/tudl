@@ -1,0 +1,12 @@
+{% from "_formhelpers.html" import form_field %}
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" class="pure-form pure-form-stacked">
+    {{ form_field(form.first_name) }}
+    {{ form_field(form.last_name) }}
+    {{ form_field(form.email) }}
+    {{ form_field(form.state) }}
+    {{ form_field(form.password) }}
+    {{ form_field(form.confirm) }}
+</form>
+{% endblock %}
