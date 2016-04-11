@@ -1,0 +1,117 @@
+/*
+ * built by Fox Wilson
+ * http://fwilson.me/
+ */
+
+/*
+ * colors:
+ *  blue: #0a4883
+ *  red: #c5392f
+ *  white: #ffffff
+ *  isn't this such a brilliant color scheme though
+ */
+
+* {
+    font-family: 'Lora', serif;
+    line-height: 1.5;
+}
+
+body {
+    background-image: url("/static/texture.png");
+    background-repeat: repeat;
+}
+
+p, ul {
+    text-align: justify;
+}
+
+.logo-image {
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 7px; /* completely arbitrary */
+}
+.pure-menu-heading {
+    text-transform: none;
+    margin-top: 3px;
+    font-size: 140%;
+}
+.primary-menu {
+    background: white;
+    z-index: 999999; /* yeah lol */
+    margin-bottom: 0;
+    overflow-x: auto;
+}
+
+#header {
+    margin-bottom: 0;
+}
+
+.pure-menu-link {
+    color: #0a4883;
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.call-to-action {
+    background: #c5392f;
+    color: white;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+}
+
+.cta-header-text {
+    font-size: 250%;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 700px) {
+    .main-content {
+        width: 70%;
+        margin: auto;
+    }
+    .call-to-action > .cta-text {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .main-content {
+        width: 90%;
+        margin: auto;
+    }
+    .call-to-action > .cta-text {
+        width: 70%;
+        margin: auto;
+    }
+
+}
+
+.content-section {
+    background-color: #0a4883;
+    margin-top: 10px;
+    padding: 2px 20px;
+    color: white;
+}
+
+.main-content:last-child {
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    width: 70%;
+    margin: auto;
+}
+
+.footer {
+    margin-top: 20px;
+    padding: 10px 0;
+    padding-bottom: 40px;
+    background: white;
+    box-shadow: 0 -2px rgba(0, 0, 0, 0.1);
+}

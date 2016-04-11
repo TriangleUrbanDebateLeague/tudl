@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Teens for Teens</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="/static/pure.min.css" />
+        <link rel="stylesheet" type="text/css" href="/static/grids-responsive.min.css" />
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="/static/base.css" />
+        <script src="/static/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="primary-menu pure-menu pure-menu-horizontal">
+                <a class="pure-menu-heading" href="/">
+                    <img src="/static/star-transparent.png" class="logo-image" />
+                    <span class="logo-text">Teens for Teens</span>
+                </a>
+
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Donate</a></li>
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                <h2>Get in touch!</h2>
+                Some great footer content could go here.
+            </div>
+        </div>
+
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>
