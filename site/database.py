@@ -10,12 +10,14 @@ class BaseModel(Model):
 class Account(BaseModel):
     first_name = CharField(64)
     last_name = CharField(64)
-    email = CharField(64)
+    state = CharField(2)
+    email = CharField(64, unique=True)
     email_confirm_key = CharField(64, null=True)
     email_confirmed = BooleanField(default=False)
     two_factor_enabled = BooleanField(default=False)
     two_factor_key = CharField(16, null=True)
     password = CharField(60)
+    role = IntegerField(default=0)
 
     @staticmethod
     def hash_password(password):
