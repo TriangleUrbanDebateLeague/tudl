@@ -30,8 +30,9 @@ def create_account():
     password = Account.hash_password(form.password.data)
 
     account = Account.create(first_name=form.first_name.data, last_name=form.last_name.data,
-                             email=form.email.data, email_confirm_key=email_confirm_key,
-                             email_confirmed=email_confirmed, password=password)
+                             state=form.state.data, email=form.email.data,
+                             email_confirm_key=email_confirm_key, email_confirmed=email_confirmed,
+                             password=password)
 
     return redirect(url_for('account.login'))
 
@@ -63,6 +64,7 @@ def login():
         if account.validate_password(form.password.data):
             flash("Login success.", "success")
             session["uid"] = account.id
+            session["logged_in"] = True
             return redirect(url_for('account.info'))
 
     flash("Login failed.", "error")
