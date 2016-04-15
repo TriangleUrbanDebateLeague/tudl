@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>Donation failed :(</h1>
+        Your card wasn't charged. You're more than welcome to <a href="{{ url_for('donations.donate') }}">try again</a>, but please read the failure reason above first.
+    </div>
+</div>
+{% endblock %}

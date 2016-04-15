@@ -1,7 +1,7 @@
-{% macro form_field(field) %}
+{% macro form_field(field, placeholder="") %}
 <div class="form-field">
     {{ field.label() }}
-    {{ field() }}
+    {{ field(placeholder=placeholder) }}
 </div>
 {% endmacro %}
 

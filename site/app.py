@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, redirect
 
 def create_app(environment):
     app = Flask(__name__)
@@ -11,6 +11,11 @@ def create_app(environment):
     app.register_blueprint(donations)
 
     app.register_blueprint(staticpages) # staticpages must be registered last
+
+    @app.route('/test2/')
+    def test2():
+        flash("yes hello", "error")
+        return redirect('/')
 
     return app
 

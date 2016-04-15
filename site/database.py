@@ -31,3 +31,18 @@ class PasswordReset(BaseModel):
     key = CharField(128)
     created_at = DateTimeField()
     used = BooleanField(default=False)
+
+class Donation(BaseModel):
+    amount = IntegerField()
+    first_name = CharField(64)
+    last_name = CharField(64)
+    street_address = CharField(128)
+    city = CharField(64)
+    state = CharField(2)
+    postal_code = CharField(5)
+    email = CharField(64)
+    phone = CharField(20)
+    occupation = CharField(128)
+    employer = CharField(128)
+    stripe_success = BooleanField(default=False)
+    

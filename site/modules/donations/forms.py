@@ -1,10 +1,11 @@
 from flask_wtf import Form
 from wtforms import validators
-from wtforms import StringField, HiddenField, BooleanField
+from wtforms import StringField, HiddenField, BooleanField, RadioField, DecimalField
 from wtforms.fields.html5 import EmailField
 
 class DonateForm(Form):
-    stripe_token = HiddenField(_name='stripeToken')
+    stripe_token = HiddenField(_name='stripe_token')
+    amount = DecimalField('Amount', [validators.Required(), validators.NumberRange(0.01, 250.00)])
 
     first_name = StringField('First name', [validators.Required(), validators.Length(max=64)])
     last_name = StringField('Last name', [validators.Required(), validators.Length(max=64)])
@@ -20,4 +21,4 @@ class DonateForm(Form):
     occupation = StringField('Occupation', [validators.Required(), validators.Length(max=128)])
     employer = StringField('Employer', [validators.Required(), validators.Length(max=128)])
 
-    certification_statement = BooleanField('I understand the statements above')
+    certification_statement = BooleanField('I understand the statements above', [validators.Required()])

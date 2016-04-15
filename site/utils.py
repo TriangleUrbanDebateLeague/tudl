@@ -1,5 +1,6 @@
 from email.mime.text import MIMEText
 from subprocess import Popen, PIPE
+from flask import flash
 
 def flash_errors(form):
     for field, errors in form.errors.items():
