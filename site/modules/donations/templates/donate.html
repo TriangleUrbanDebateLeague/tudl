@@ -1,4 +1,4 @@
-{% from "_formhelpers.html" import form_field %}
+{% from "_formhelpers.html" import form_field, form_checkbox %}
 {% extends "base.html" %}
 {% block content %}
 <div class="main-content">
@@ -43,7 +43,7 @@
                     funds of a corporation, labor organization, or national
                     bank</li>
             </ul>
-            {{ form_field(form.certification_statement) }}
+            {{ form_checkbox(form.certification_statement) }}
         </form>
     </div>
 </div>

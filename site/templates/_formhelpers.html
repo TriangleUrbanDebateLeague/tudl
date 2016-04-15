@@ -1,6 +1,13 @@
-{% macro form_field(field, css_class='form_field') %}
+{% macro form_field(field) %}
 <div class="form-field">
-    <label for="{{ field.id }}">{{ field.label }}</label>
+    {{ field.label() }}
     {{ field() }}
+</div>
+{% endmacro %}
+
+{% macro form_checkbox(field) %}
+<div class="form-field">
+    {{ field() }}
+    {{ field.label(class="inline-label") }}
 </div>
 {% endmacro %}

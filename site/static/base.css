@@ -108,8 +108,12 @@ p, ul {
     border-radius: 2px;
 }
 
-input {
+input:not([type=checkbox]) {
     width: 100%;
+}
+
+label.inline-label {
+    display: inline;
 }
 
 .form-field {
