@@ -12,11 +12,6 @@ def create_app(environment):
 
     app.register_blueprint(staticpages) # staticpages must be registered last
 
-    @app.route('/test2/')
-    def test2():
-        flash("yes hello", "error")
-        return redirect('/')
-
     return app
 
 if __name__ == '__main__':
