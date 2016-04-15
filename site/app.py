@@ -9,7 +9,8 @@ def create_app(environment):
     from modules.donations.blueprint import donations
 
     app.register_blueprint(donations)
-    app.register_blueprint(staticpages)
+
+    app.register_blueprint(staticpages) # staticpages must be registered last
 
     return app
 
