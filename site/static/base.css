@@ -112,6 +112,11 @@ input {
     width: 100%;
 }
 
+.form-field {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 .main-content:last-child {
     margin-bottom: 10px;
 }

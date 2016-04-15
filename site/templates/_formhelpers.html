@@ -1,4 +1,6 @@
 {% macro form_field(field, css_class='form_field') %}
-<label for="{{ field.id }}">{{ field.label }}</label>
-{{ field() }}
+<div class="form-field">
+    <label for="{{ field.id }}">{{ field.label }}</label>
+    {{ field() }}
+</div>
 {% endmacro %}
