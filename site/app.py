@@ -12,8 +12,11 @@ def create_app(environment):
 
     app.register_blueprint(staticpages) # staticpages must be registered last
 
-    return app
+    @app.context_helper
+    def context_helper():
+        return dict(config=app.config)
 
+    return app
 
 if __name__ == '__main__':
     create_app("dev").run(port=5000, debug=True)
