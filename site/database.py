@@ -1,5 +1,5 @@
 from peewee import *
-database = SqliteDatabase("tft.db")
+database = SqliteDatabase(None)
 
 import bcrypt
 

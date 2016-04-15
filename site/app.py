@@ -1,8 +1,11 @@
 from flask import Flask, render_template, flash, redirect
+from database import database
 
 def create_app(environment):
     app = Flask(__name__)
     app.config.from_pyfile("config/{}.py".format(environment))
+
+    database.init(app.config["DB_PATH"])
 
     from modules.account.blueprint import account
     from modules.staticpages.blueprint import staticpages
