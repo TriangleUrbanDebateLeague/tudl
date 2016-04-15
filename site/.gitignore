@@ -1,2 +1,3 @@
 *.py[co]
+*.private
 __pycache__
