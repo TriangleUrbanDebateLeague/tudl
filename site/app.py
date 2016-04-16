@@ -15,6 +15,9 @@ def create_app(environment):
 
     app.register_blueprint(staticpages) # staticpages must be registered last
 
+    @app.route("/teensforteens.info.html")
+    def ssl_validate(): return "WlJtMkpKSlh4dXNoNXRJNDBsZHpsSWtGbjZLaXlzTERLUWpvTVFZMzVDbz0"
+
     return app
 
 if __name__ == '__main__':
