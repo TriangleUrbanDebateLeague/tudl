@@ -9,3 +9,5 @@ STRIPE_KEY_SECRET = os.getenv("STRIPE_KEY_SECRET", "")
 STRIPE_KEY_PUBLIC = os.getenv("STRIPE_KEY_PUBLIC", "")
 
 DB_PATH = "tft.db"
+
+EMAIL_ERRORS = False
