@@ -15,8 +15,8 @@ def create_app(environment):
 
     app.register_blueprint(staticpages) # staticpages must be registered last
 
-    @app.route("/teensforteens.info.html")
-    def ssl_validate(): return "WlJtMkpKSlh4dXNoNXRJNDBsZHpsSWtGbjZLaXlzTERLUWpvTVFZMzVDbz0"
+    @app.route("/favicon.ico")
+    def favicon(): return redirect('/static/favicon.ico')
 
     return app
 
