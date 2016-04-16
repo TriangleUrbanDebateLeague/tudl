@@ -172,6 +172,6 @@ label.inline-label {
     border-radius: 7px;
 }
 
-a, a:visited, a:active {
+p > a, p > a:visited {
     color: #ffffff;
 }
