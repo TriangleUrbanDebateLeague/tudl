@@ -38,6 +38,10 @@ def create_app(environment):
     @app.route("/favicon.ico")
     def favicon(): return redirect('/static/favicon.ico')
 
+    @app.route("/cause_exception/")
+    def cause_exception():
+        raise Exception("bad thing :(")
+
     return app
 
 if __name__ == '__main__':
