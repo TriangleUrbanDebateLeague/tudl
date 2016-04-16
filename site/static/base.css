@@ -171,3 +171,11 @@ label.inline-label {
     margin-right: 5px;
     border-radius: 7px;
 }
+
+a, a:visited {
+    color: #0a4883;
+}
+
+a:active {
+    color: #c5392f;
+}
