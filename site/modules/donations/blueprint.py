@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, current_app, session, redirect, url_for
 
+from database import Donation
 from utils import flash_errors
 from .forms import DonateForm
 
@@ -29,7 +30,13 @@ def donate():
         return redirect(url_for(".donate_failed"))
 
     try:
-        stripe.Charge.create(amount=amount, currency="usd", source=token, description="Teens for Teens Donation")
+        donation = Donation.create(amount=amount, first_name=form.first_name.data, last_name=form.last_name.data,
+                                   street_address=form.street_address.data, city=form.city.data, state=form.state.data,
+                                   postal_code=form.postal_code.data, email=form.email.data, phone=form.phone.data,
+                                   occupation=form.occupation.data, employer=form.employer.data)
+        stripe.Charge.create(amount=amount, currency="usd", source=token, description="Teens for Teens donation id {}".format(donation.id))
+        donation.stripe_success = True
+        donation.save()
         return redirect(url_for(".thanks"))
     except stripe.error.CardError:
         flash("Your card was declined :(", "error")

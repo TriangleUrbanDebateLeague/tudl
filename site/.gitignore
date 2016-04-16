@@ -1,3 +1,4 @@
 *.py[co]
 *.private
 __pycache__
+tft.db

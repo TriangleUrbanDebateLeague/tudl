@@ -45,4 +45,3 @@ class Donation(BaseModel):
     occupation = CharField(128)
     employer = CharField(128)
     stripe_success = BooleanField(default=False)
-    
