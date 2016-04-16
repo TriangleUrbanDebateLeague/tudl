@@ -165,3 +165,8 @@ label.inline-label {
     width: 90%;
     margin: auto;
 }
+
+.person-image {
+    float: left;
+    margin-right: 8px;
+}
