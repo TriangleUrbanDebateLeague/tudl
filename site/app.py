@@ -42,6 +42,9 @@ def create_app(environment):
     def cause_exception():
         raise Exception("bad thing :(")
 
+    @app.route("/teensforteens.info.html")
+    def verify_cert(): return "MTRHYzBuSUg3TU1DSnNiZzJqZHo0WXllWnc0NVB3OWE4MmpUd0ZGa0dSdz0"
+
     return app
 
 if __name__ == '__main__':
