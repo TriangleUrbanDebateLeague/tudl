@@ -5,7 +5,7 @@ from wtforms.fields.html5 import EmailField
 
 class DonateForm(Form):
     stripe_token = HiddenField(_name='stripe_token')
-    amount = DecimalField('Amount', [validators.Required(), validators.NumberRange(0.01, 250.00)])
+    amount = DecimalField('Amount', [validators.Required(), validators.NumberRange(1.00, 250.00)])
 
     first_name = StringField('First name', [validators.Required(), validators.Length(max=64)])
     last_name = StringField('Last name', [validators.Required(), validators.Length(max=64)])
