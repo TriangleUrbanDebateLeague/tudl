@@ -162,6 +162,6 @@ label.inline-label {
 }
 
 .person-card {
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 90%;
+    margin: auto;
 }
