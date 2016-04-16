@@ -160,3 +160,8 @@ label.inline-label {
     color: white;
     background-color: #c5392f;
 }
+
+.person-card {
+    padding-left: 5px;
+    padding-right: 5px;
+}
