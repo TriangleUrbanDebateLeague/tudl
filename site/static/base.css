@@ -169,4 +169,5 @@ label.inline-label {
 .person-image {
     float: left;
     margin-right: 5px;
+    border-radius: 7px;
 }
