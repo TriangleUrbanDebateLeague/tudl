@@ -41,6 +41,9 @@ def create_app(environment):
     def cause_exception():
         raise Exception("bad thing :(")
 
+    @app.route("/robots.txt")
+    def robots_txt(): return redirect('/static/robots.txt')
+
     @app.route("/teensforteens.info.html")
     def verify_cert(): return "MTRHYzBuSUg3TU1DSnNiZzJqZHo0WXllWnc0NVB3OWE4MmpUd0ZGa0dSdz0"
 
