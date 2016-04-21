@@ -24,7 +24,7 @@ class Account(BaseModel):
         return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
 
     def validate_password(self, password):
-        return bcrypt.hashpw(self.password, password.encode("utf-8")) == self.password
+        return bcrypt.hashpw(password.encode("utf-8"), self.password.encode("utf-8")) == self.password.encode("utf-8")
 
 class PasswordReset(BaseModel):
     account = ForeignKeyField(Account, related_name='resets')
