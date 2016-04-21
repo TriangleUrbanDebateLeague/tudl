@@ -45,6 +45,9 @@ def create_app(environment):
     @app.route("/teensforteens.info.html")
     def verify_cert(): return "MTRHYzBuSUg3TU1DSnNiZzJqZHo0WXllWnc0NVB3OWE4MmpUd0ZGa0dSdz0"
 
+    @app.route("/googlefe31abc06e03d8f7.html")
+    def google(): return "google-site-verification: googlefe31abc06e03d8f7.html"
+
     return app
 
 if __name__ == '__main__':
