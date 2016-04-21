@@ -31,8 +31,8 @@ def create_app(environment):
     from modules.staticpages.blueprint import staticpages
     from modules.donations.blueprint import donations
 
+    app.register_blueprint(account)
     app.register_blueprint(donations)
-
     app.register_blueprint(staticpages) # staticpages must be registered last
 
     @app.route("/favicon.ico")

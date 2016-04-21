@@ -8,7 +8,7 @@ class AccountCreateForm(Form):
     last_name = StringField('Last name', [validators.Required(), validators.Length(max=64)])
     email = EmailField('Email', [validators.Required(), validators.Email(), validators.Length(max=64)])
     password = PasswordField('Password', [validators.Required(), validators.Length(min=5, max=92),
-                                          validators.EqualTo('confirm_password', message='Passwords must match!')])
+                                          validators.EqualTo('confirm', message='Passwords must match!')])
     state = StringField('State', [validators.Required(), validators.Length(min=2, max=2)])
     confirm = PasswordField('Confirm password')
 

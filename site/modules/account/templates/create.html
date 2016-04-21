@@ -4,13 +4,21 @@
 <div class="main-content">
     <div class="form-card">
         <h1>Create account</h1>
+        <p>In order to help us conform with FEC regulations, please provide accurate information on this form.</p>
         <form method="POST" class="pure-form pure-form-stacked">
-            {{ form_field(form.first_name) }}
-            {{ form_field(form.last_name) }}
-            {{ form_field(form.email) }}
-            {{ form_field(form.state) }}
-            {{ form_field(form.password) }}
-            {{ form_field(form.confirm) }}
+            {{ form.csrf_token() }}
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.first_name, placeholder="John") }}</div>
+                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.last_name, placeholder="Doe") }}</div>
+            </div>
+            {{ form_field(form.email, placeholder="john@doe.com") }}
+            {{ form_field(form.state, placeholder="NY") }}
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.password, placeholder="********") }}</div>
+                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.confirm, placeholder="********") }}</div>
+            </div>
+            <br />
+            <button type="submit" class="pure-button button-primary">Create account</button>
         </form>
     </div>
 </div>

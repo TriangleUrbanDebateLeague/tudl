@@ -9,9 +9,9 @@ account = Blueprint("account", __name__, template_folder="templates", url_prefix
 @account.route("/create/", methods=["GET", "POST"])
 def create_account():
     form = AccountCreateForm(request.form)
-    flash_errors(form)
 
     if not form.validate_on_submit():
+        flash_errors(form)
         return render_template("create.html", form=form)
 
     matching_accounts = Account.select().where(Account.email == form.email.data)
