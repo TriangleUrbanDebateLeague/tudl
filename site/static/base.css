@@ -161,6 +161,11 @@ label.inline-label {
     background-color: #c5392f;
 }
 
+.message-success {
+    color: white;
+    background-color: #0a4883;
+}
+
 .person-card {
     width: 90%;
     margin: auto;

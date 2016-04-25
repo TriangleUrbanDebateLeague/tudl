@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if not account.email_confirmed %}
+<div class="flashed-message message-error">
+    Your email is unconfirmed. Please check your email and click the link you received.
+</div>
+{% endif %}
+
+<div class="main-content">
+    <div class="form-card">
+        <h1>Your account</h1>
+        Hi, {{ account.first_name }} {{ account.last_name }} from {{ account.state }}!
+    </div>
+</div>
+
+{% endblock %}

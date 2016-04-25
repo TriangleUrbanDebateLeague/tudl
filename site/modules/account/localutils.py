@@ -2,9 +2,9 @@ import random
 import smtplib
 import string
 
-from app import app
+from database import Account
 from email.mime.text import MIMEText
-from flask import url_for
+from flask import current_app, url_for, session
 
 valid_chars = string.ascii_letters + string.digits
 confirm_email_template = """Hi {first_name},
@@ -19,16 +19,16 @@ def generate_confirmation_key():
     return "".join([random.choice(valid_chars) for i in range(64)])
 
 def send_confirm_email(first_name, email):
-    if not app.config['SEND_EMAIL']:
+    if not current_app.config['SEND_EMAIL']:
         return None
 
     confirm_key = generate_confirmation_key()
     confirm_email_link = url_for('account.confirm_email', key=confirm_key, _absolute=True)
     message = MIMEText(confirm_email_template.format(first_name=first_name,
-                                                     application=app.config['APP_NAME'],
+                                                     application=current_app.config['APP_NAME'],
                                                      confirm_email_link=confirm_email_link))
-    message['Subject'] = "Please confirm your {} account".format(app.config['APP_NAME'])
-    message['From'] = app.config['EMAIL_FROM']
+    message['Subject'] = "Please confirm your {} account".format(current_app.config['APP_NAME'])
+    message['From'] = current_app.config['EMAIL_FROM']
     message['To'] = email
 
     smtp = smtplib.SMTP('localhost')
@@ -36,3 +36,6 @@ def send_confirm_email(first_name, email):
     smtp.quit()
 
     return confirm_key
+
+def get_current_user():
+    return Account.get(Account.id == session["uid"])
