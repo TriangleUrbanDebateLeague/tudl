@@ -5,8 +5,11 @@
     <div class="form-card">
         <h1>Log in</h1>
         <form method="POST" class="pure-form pure-form-stacked">
+            {{ form.csrf_token() }}
             {{ form_field(form.email) }}
             {{ form_field(form.password) }}
+            <br />
+            <button type="submit" class="pure-button button-primary">Log in</button>
         </form>
     </div>
 </div>

@@ -1,6 +1,7 @@
-from flask import Blueprint, current_app, request, render_template, flash, session
+from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for
 
 from utils import flash_errors
+from .localutils import send_confirm_email, get_current_user
 from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm
 from database import Account, PasswordReset
 
@@ -26,6 +27,7 @@ def create_account():
     else:
         email_confirmed = True
         email_confirm_key = None
+        flash("Account created.", "info")
 
     password = Account.hash_password(form.password.data)
 
@@ -53,14 +55,14 @@ def confirm_email(key):
 @account.route("/login/", methods=["GET", "POST"])
 def login():
     form = AccountLoginForm(request.form)
-    flash_errors(form)
 
     if not form.validate_on_submit():
+        flash_errors(form)
         return render_template("login.html", form=form)
 
     matching_accounts = Account.select().where(Account.email == form.email.data)
     if matching_accounts.count() == 1:
-        account = next(matching_accounts)
+        account = next(matching_accounts.iterator())
         if account.validate_password(form.password.data):
             flash("Login success.", "success")
             session["uid"] = account.id
@@ -72,4 +74,4 @@ def login():
 
 @account.route("/info/")
 def info():
-    return session["uid"]
+    return render_template("info.html", account=get_current_user())
