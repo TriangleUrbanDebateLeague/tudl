@@ -73,6 +73,14 @@ def login():
     flash("Login failed.", "error")
     return render_template("login.html", form=form)
 
+@account.route("/logout/", methods=["GET"])
+def logout():
+    session["logged_in"] = False
+    account = Account.get(id=session["uid"])
+    session["uid"] = -1
+    flash("Logout successful.".format(account.last_name, account.first_name), "info")
+    return redirect(url_for('account.login'))
+
 @account.route("/info/")
 def info():
     return render_template("info.html", account=get_current_user())

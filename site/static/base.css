@@ -161,7 +161,7 @@ label.inline-label {
     background-color: #c5392f;
 }
 
-.message-success .message-info {
+.message-success, .message-info {
     color: white;
     background-color: #0a4883;
 }
