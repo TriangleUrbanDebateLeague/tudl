@@ -5,5 +5,4 @@ staticpages = Blueprint("staticpages", __name__, template_folder="templates", ur
 @staticpages.route("/", defaults={"page": "index"})
 @staticpages.route("/<page>/")
 def show_staticpage(page):
-    print(page)
     return render_template("{}.html".format(page))
