@@ -9,7 +9,9 @@
 
 <div class="main-content">
     <div class="form-card">
+        <h2>Your account</h2>
         Hi, {{ account.first_name }}. There's not much to see here right now.
+        You can <a href="{{ url_for('account.logout') }}">log out</a>, if you like.
     </div>
 </div>
 
