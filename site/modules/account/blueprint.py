@@ -32,9 +32,10 @@ def create_account():
     password = Account.hash_password(form.password.data)
 
     account = Account.create(first_name=form.first_name.data, last_name=form.last_name.data,
-                             state=form.state.data, email=form.email.data,
-                             email_confirm_key=email_confirm_key, email_confirmed=email_confirmed,
-                             password=password)
+                             street_address=form.street_address.data, city=form.city.data,
+                             state=form.state.data, postal_code=form.postal_code.data,
+                             email=form.email.data, email_confirm_key=email_confirm_key,
+                             email_confirmed=email_confirmed, password=password)
 
     return redirect(url_for('account.login'))
 

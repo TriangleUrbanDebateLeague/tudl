@@ -12,7 +12,14 @@
                 <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.last_name, placeholder="Doe") }}</div>
             </div>
             {{ form_field(form.email, placeholder="john@doe.com") }}
-            {{ form_field(form.state, placeholder="NY") }}
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-1">{{ form_field(form.street_address, placeholder="123 Main St") }}</div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.city, placeholder="New York") }}</div>
+                <div class="pure-u-1 pure-u-md-1-4">{{ form_field(form.state, placeholder="NY") }}</div>
+                <div class="pure-u-1 pure-u-md-1-4">{{ form_field(form.postal_code, placeholder="10001") }}</div>
+            </div>
             <div class="pure-g">
                 <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.password, placeholder="********") }}</div>
                 <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.confirm, placeholder="********") }}</div>
