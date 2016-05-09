@@ -5,7 +5,7 @@ import string
 from database import Account
 from email.mime.text import MIMEText
 from flask import current_app, url_for, session
-from site.utils import send_email
+from utils import send_email
 
 valid_chars = string.ascii_letters + string.digits
 confirm_email_template = """Hi {first_name},
