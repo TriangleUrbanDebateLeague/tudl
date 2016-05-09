@@ -5,6 +5,7 @@ import string
 from database import Account
 from email.mime.text import MIMEText
 from flask import current_app, url_for, session
+from utils import send_email
 
 valid_chars = string.ascii_letters + string.digits
 confirm_email_template = """Hi {first_name},
@@ -24,16 +25,10 @@ def send_confirm_email(first_name, email):
 
     confirm_key = generate_confirmation_key()
     confirm_email_link = url_for('account.confirm_email', key=confirm_key, _absolute=True)
-    message = MIMEText(confirm_email_template.format(first_name=first_name,
-                                                     application=current_app.config['APP_NAME'],
-                                                     confirm_email_link=confirm_email_link))
-    message['Subject'] = "Please confirm your {} account".format(current_app.config['APP_NAME'])
-    message['From'] = current_app.config['EMAIL_FROM']
-    message['To'] = email
-
-    smtp = smtplib.SMTP('localhost')
-    smtp.sendmail(message)
-    smtp.quit()
+    message = confirm_email_template.format(first_name=first_name,
+                                            application=current_app.config['APP_NAME'],
+                                            confirm_email_link=confirm_email_link)
+    send_email(current_app.config['EMAIL_FROM'], email, "Please confirm your {} account".format(current_app.config['APP_NAME']), message)
 
     return confirm_key
 
