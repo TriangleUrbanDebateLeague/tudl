@@ -13,4 +13,4 @@ def send_email(from_, to, subject, text):
     message["To"] = to
     message["Subject"] = subject
     process = Popen(["/usr/bin/sendmail", "-t", "-oi"], stdin=PIPE)
-    process.communicate(message.as_string())
+    process.communicate(message.as_string().encode())
