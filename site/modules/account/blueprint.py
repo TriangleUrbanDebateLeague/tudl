@@ -46,7 +46,7 @@ def confirm_email(key):
     if matching_accounts.count() != 1:
         flash("Incorrect data.", "error")
     else:
-        account = next(matching_accounts)
+        account = next(matching_accounts.iterator())
         account.email_confirmed = True
         account.save()
         flash("Email confirmed.", "success")
