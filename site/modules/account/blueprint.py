@@ -81,8 +81,8 @@ def logout():
     flash("Logout successful.", "info")
     return redirect(url_for('account.login'))
 
-@require_login
 @account.route("/info/")
+@require_login
 def info():
     return render_template("info.html", account=get_current_user())
 
