@@ -1,5 +1,6 @@
-from flask import Flask, render_template, flash, redirect
+from flask import Flask, render_template, flash, redirect, make_response
 from database import database
+import traceback
 
 import logging
 log_formatter = logging.Formatter('''
@@ -46,6 +47,11 @@ def create_app(environment):
 
     @app.route("/googlefe31abc06e03d8f7.html")
     def google(): return "google-site-verification: googlefe31abc06e03d8f7.html"
+
+    @app.errorhandler(500)
+    def internal_error(exc):
+        trace = traceback.format_exc()
+        return make_response(render_template("whoops.html", trace=trace), 500)
 
     return app
 
