@@ -76,9 +76,8 @@ def login():
 @account.route("/logout/", methods=["GET"])
 def logout():
     session["logged_in"] = False
-    account = Account.get(id=session["uid"])
     session["uid"] = -1
-    flash("Logout successful.".format(account.last_name, account.first_name), "info")
+    flash("Logout successful.", "info")
     return redirect(url_for('account.login'))
 
 @account.route("/info/")
