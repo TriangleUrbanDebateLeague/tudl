@@ -12,3 +12,5 @@ DB_PATH = "/home/protected/tft.db"
 
 EMAIL_ERRORS = False
 SITE_ADMIN = ['foxwilson123@gmail.com']
+
+SERVER_NAME = "teensforteens.info"
