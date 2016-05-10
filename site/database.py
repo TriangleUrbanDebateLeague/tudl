@@ -31,6 +31,31 @@ class Account(BaseModel):
     def validate_password(self, password):
         return bcrypt.hashpw(password.encode("utf-8"), self.password.encode("utf-8")) == self.password.encode("utf-8")
 
+    @property
+    def volunteer(self):
+        q = self.volunteers
+        if not q.count():
+            return None
+        return next(q.iterator())
+
+class Volunteer(BaseModel):
+    account = ForeignKeyField(Account, related_name='volunteers', null=True)
+
+    local_first_name = CharField(64, null=True)
+    local_last_name = CharField(64, null=True)
+
+    @property
+    def first_name(self):
+        if self.account is not None:
+            return self.account.first_name
+        return self.local_first_name
+
+    @property
+    def last_name(self):
+        if self.account is not None:
+            return self.account.last_name
+        return self.local_last_name
+
 class PasswordReset(BaseModel):
     account = ForeignKeyField(Account, related_name='resets')
     key = CharField(128)
