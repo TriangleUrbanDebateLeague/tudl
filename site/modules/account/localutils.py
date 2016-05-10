@@ -33,4 +33,6 @@ def send_confirm_email(first_name, email):
     return confirm_key
 
 def get_current_user():
-    return Account.get(Account.id == session["uid"])
+    if "uid" in session and session["logged_in"]:
+        return Account.get(Account.id == session["uid"])
+    return None

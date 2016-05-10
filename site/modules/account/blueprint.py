@@ -1,7 +1,8 @@
-from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for
+from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for, g
 
 from utils import flash_errors
 from .localutils import send_confirm_email, get_current_user
+from .decorators import require_login
 from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm
 from database import Account, PasswordReset
 
@@ -68,7 +69,7 @@ def login():
             flash("Login success.", "success")
             session["uid"] = account.id
             session["logged_in"] = True
-            return redirect(url_for('account.info'))
+            return redirect(request.args.get('next', url_for('account.info')))
 
     flash("Login failed.", "error")
     return render_template("login.html", form=form)
@@ -80,6 +81,11 @@ def logout():
     flash("Logout successful.", "info")
     return redirect(url_for('account.login'))
 
+@require_login
 @account.route("/info/")
 def info():
     return render_template("info.html", account=get_current_user())
+
+@account.before_app_request
+def set_user():
+    g.user = get_current_user()
