@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="call-to-action">
+    <div class="cta-text">
+        <span class="cta-header-text header">Volunteer</span>
+        <p>Thank you for your interest in Teens for Teens. If you wish to become further
+        involved in our cause, consider signing up to become a volunter on this page.
+        Being a volunteer allows you to view volunter opportunities, contribute to our
+        candidate guides library, log NHS-approved volunteer hours, and receive our
+        newsletter.</p>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="content-section">
+        <h1>Sign up</h1>
+        <p>If you'd like to sign up to become a volunteer, you can <a href="{{ url_for('account.create') }}">click here</a>.</p>
+    </div>
+
+    <div class="content-section">
+        <h1>Login</h1>
+        <p>If you already have signed up, feel free to <a href="{{ url_for('account.login') }}">log in</a>.</p>
+    </div>
+</div>
+{% endblock %}
