@@ -24,7 +24,7 @@ def send_confirm_email(first_name, email):
         return None
 
     confirm_key = generate_confirmation_key()
-    confirm_email_link = url_for('account.confirm_email', key=confirm_key, _absolute=True)
+    confirm_email_link = url_for('account.confirm_email', key=confirm_key, _external=True)
     message = confirm_email_template.format(first_name=first_name,
                                             application=current_app.config['APP_NAME'],
                                             confirm_email_link=confirm_email_link)
