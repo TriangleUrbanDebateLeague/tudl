@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>Hours history</h1>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Hours</th>
+                <th>Category</th>
+                <th>Approved</th>
+                <th>Last edited</th>
+            </tr>
+            {% for entry in hours %}
+            <tr>
+                <td>{{ entry.date.strftime("%Y-%m-%d") }}</td>
+                <td>{{ entry.hours }}</td>
+                <td>{{ entry.category_str }}</td>
+                <td>{{ entry.approved_str }}</td>
+                <td>{{ entry.modifier.full_name }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

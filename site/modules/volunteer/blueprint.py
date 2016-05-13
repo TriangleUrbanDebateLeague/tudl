@@ -13,7 +13,8 @@ def you():
 @volunteer.route("/hours/")
 @require_login
 def your_hours():
-    return render_template("your_hours.html", hours=g.user.volunteer.hours)
+    hours = g.user.volunteer.hours.order_by(LoggedHours.date.desc())
+    return render_template("your_hours.html", hours=hours)
 
 @volunteer.route("/hours/log/", methods=["GET", "POST"])
 @require_login

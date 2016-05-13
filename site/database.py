@@ -32,12 +32,33 @@ class Account(BaseModel):
     def validate_password(self, password):
         return bcrypt.hashpw(password.encode("utf-8"), self.password.encode("utf-8")) == self.password.encode("utf-8")
 
+    def attach_volunteer(self):
+        if self.volunteer is None:
+            query = Volunteer.select().where(Volunteer.account == None & Volunteer.local_first_name == self.first_name & Volunteer.local_last_name == self.last_name)
+            if query.count() == 1:
+                volunteer = next(query.iterator())
+                volunteer.account = self
+                volunteer.save()
+                return volunteer
+            else:
+                return Volunteer.create(account=self)
+        raise IntegrityError("Account already has an associated Volunteer")
+
     @property
     def volunteer(self):
         q = self.volunteers
-        if not q.count():
+        if q.count() == 0:
             return None
+        if q.count() > 1:
+            raise IntegrityError("Account has multiple associated Volunteers -- this should never happen")
         return next(q.iterator())
+
+    @property
+    def full_name(self, alt=False):
+        if alt:
+            return "{} {}".format(self.first_name, self.last_name)
+        else:
+            return "{}, {}".format(self.last_name, self.first_name)
 
 class Volunteer(BaseModel):
     account = ForeignKeyField(Account, related_name='volunteers', null=True)
