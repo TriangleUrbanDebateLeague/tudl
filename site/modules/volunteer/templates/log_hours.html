@@ -1,0 +1,17 @@
+{% from "_formhelpers.html" import form_field %}
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>Log hours</h1>
+        <p>Here you can enter your hours. Please remember that all hours will be verified before approval.</p>
+        <form method="POST" class="pure-form pure-form-stacked">
+            {{ form.csrf_token() }}
+            {{ form_field(form.date, placeholder="YYYY-MM-DD") }}
+            {{ form_field(form.hours, placeholder="1.5") }}
+            {{ form_field(form.description, "Helped register voters at Town Hall") }}
+            {{ form_field(form.category) }}
+        </form>
+    </div>
+</div>
+{% endblock %}

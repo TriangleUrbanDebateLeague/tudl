@@ -2,6 +2,7 @@ from peewee import *
 database = SqliteDatabase(None)
 
 import bcrypt
+from modules.volunteer import localconfig
 
 class BaseModel(Model):
     class Meta:
@@ -55,6 +56,29 @@ class Volunteer(BaseModel):
         if self.account is not None:
             return self.account.last_name
         return self.local_last_name
+
+class LoggedHours(BaseModel):
+    volunteer = ForeignKeyField(Volunteer, related_name='hours')
+
+    date = DateField()
+    description = CharField(512)
+    category = IntegerField()
+    hours = DecimalField()
+
+    approved = IntegerField(default=0)
+    modifier = ForeignKeyField(Account)
+
+    @property
+    def category_str(self):
+        return hours_types[self.category]
+
+    @property
+    def approved_str(self):
+        if self.approved == -1:
+            return "Rejected"
+        if self.approved == 1:
+            return "Approved"
+        return "Unapproved"
 
 class PasswordReset(BaseModel):
     account = ForeignKeyField(Account, related_name='resets')
