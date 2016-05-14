@@ -78,7 +78,7 @@ p, ul {
 
 @media screen and (min-width: 700px) {
     .main-content {
-        width: 70%;
+        width: 80%;
         margin: auto;
     }
     .call-to-action > .cta-text {
