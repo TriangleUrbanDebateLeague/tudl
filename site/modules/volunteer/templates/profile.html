@@ -16,12 +16,12 @@
     <div class="content-section">
         <h1>Hours</h1>
         <p>Our records show that you've logged a total of {{ volunteer.total_hours() }} approved hours ({{ volunteer.total_hours(False) }} including unapproved hours).</p>
-        <p>You can view your hours in detail or log more hours on the <a href="{{ url_for("volunteer.your_hours") }}" class="whitelink">hours logging page.</a></p>
+        <p>You can view your hours in detail or log more hours on the <a href="{{ url_for("volunteer.your_hours") }}" class="whitelink">hours logging page</a>.</p>
     </div>
     {% if volunteer.account and volunteer.account.role >= 1 and not fake %}
     <div class="content-section">
-        <h1>Approve hours</h1>
-        <p>You're allowed to approve hours. If you'd like to do that, head over to the <a href="{{ url_for("volunteer.approve_hours") }}" class="whitelink">hours approval page.</a></p>
+        <h1>Manage hours</h1>
+        <p>You're allowed to manage hours. If you'd like to approve hours, head over to the <a href="{{ url_for("volunteer.approve_hours") }}" class="whitelink">hours approval page</a>. You can also <a href="{{ url_for("volunteer.rejected_hours") }}" class="whitelink">manage rejected hours</a>.</p>
     </div>
     {% endif %}
 </div>

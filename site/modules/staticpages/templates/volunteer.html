@@ -13,7 +13,7 @@
 </div>
 
 <div class="main-content">
-    {% if g.user is None %}
+    {% if not g.user %}
     <div class="content-section">
         <h1>Sign up</h1>
         <p>If you'd like to sign up to become a volunteer, you can <a class="whitelink" href="{{ url_for('account.create_account') }}">click here</a>.</p>

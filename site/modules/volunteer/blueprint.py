@@ -43,6 +43,7 @@ def approve_hours():
         denied = 0
         for id in hours:
             result = int(request.form["state{}".format(id)])
+            # 0 -> do nothing, 1 -> approve, -1 -> reject
             if result == 0:
                 continue
             elif result == 1:
@@ -60,3 +61,37 @@ def approve_hours():
         unapproved_hours = LoggedHours.select().where(LoggedHours.approved == 0).order_by(LoggedHours.date.desc())
         flash("{} entries modified ({} approved, {} rejected).".format(approved + denied, approved, denied), "info")
         return render_template("unapproved_hours.html", hours=unapproved_hours)
+
+@volunteer.route("/hours/rejected/", methods=["GET", "POST"])
+@require_role(roles.hours_approver)
+def rejected_hours():
+    if request.method == "GET":
+        rejected_hours = LoggedHours.select().where(LoggedHours.approved == -1).order_by(LoggedHours.date.desc())
+        return render_template("rejected_hours.html", hours=rejected_hours)
+    else:
+        hours = [int(k[5:]) for k in request.form.keys() if k.startswith("state")]
+        unrejected = False
+        deleted = 0
+        unrejected = 0
+        for id in hours:
+            result = int(request.form["state{}".format(id)])
+            # 0 -> do nothing, 1 -> unreject, -1 -> delete forever
+
+            entry = LoggedHours.get(LoggedHours.id == id)
+
+            if result == 0:
+                continue
+            elif result == -1:
+                entry.delete_instance()
+                deleted += 1
+            elif result == 1:
+                entry.approved = 0
+                entry.modifier = g.user
+                entry.save()
+                unrejected += 1
+            else:
+                raise Exception("Tried to perform an undefined action on a rejected hours entry -- this should never happen")
+
+        rejected_hours = LoggedHours.select().where(LoggedHours.approved == -1).order_by(LoggedHours.date.desc())
+        flash("{} entries modified ({} unrejected, {} deleted forever).".format(unrejected + deleted, unrejected, deleted), "info")
+        return render_template("rejected_hours.html", hours=rejected_hours)

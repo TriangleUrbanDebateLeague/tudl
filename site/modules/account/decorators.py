@@ -3,6 +3,7 @@ from functools import wraps
 
 class roles:
     hours_approver = 1
+    admin = 1
 
 def require_login(f):
     @wraps(f)
