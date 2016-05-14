@@ -5,6 +5,7 @@
     <div class="form-card">
         <h1>Log hours</h1>
         <p>Here you can enter your hours. Please remember that all hours will be verified before approval.</p>
+        <p>If you decide you don't want to log hours, you can <a href="{{ url_for('volunteer.you') }}">go back to your profile</a>.
         <form method="POST" class="pure-form pure-form-stacked">
             {{ form.csrf_token() }}
             {{ form_field(form.date, placeholder="YYYY-MM-DD") }}
