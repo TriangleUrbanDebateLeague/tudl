@@ -31,6 +31,23 @@ def log_hours():
     flash("Your hours have been entered and should be approved shortly.", "info")
     return redirect(url_for("volunteer.your_hours"))
 
+@volunteer.route("/hours/edit/<int:id>/", methods=["GET", "POST"])
+@require_login
+def edit_hours(id):
+    form = HoursEntryForm(request.form)
+    obj = LoggedHours.get(id=id)
+
+    if not form.validate_on_submit():
+        form = HoursEntryForm(obj=obj)
+        return render_template("log_hours.html", form=form, editing=True)
+
+    form.populate_obj(obj)
+    obj.approved = 0
+    obj.modifier = g.user
+    obj.save()
+
+    return redirect(url_for("volunteer.your_hours"))
+
 @volunteer.route("/hours/approve/", methods=["GET", "POST"])
 @require_role(roles.hours_approver)
 def approve_hours():

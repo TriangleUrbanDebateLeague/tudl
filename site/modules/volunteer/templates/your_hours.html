@@ -15,17 +15,19 @@
                     <th>Description</th>
                     <th>Approved</th>
                     <th>Last edited</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 {% for entry in hours %}
-                <tr>
+                <tr class="approval{{ entry.approved }}">
                     <td>{{ entry.date.strftime("%Y-%m-%d") }}</td>
                     <td>{{ entry.hours }}</td>
                     <td>{{ entry.category_str }}</td>
                     <td>{{ entry.description }}</td>
                     <td>{{ entry.approved_str }}</td>
                     <td>{{ entry.modifier.full_name }}</td>
+                    <td><a href="{{ url_for("volunteer.edit_hours", id=entry.id) }}">Edit</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
