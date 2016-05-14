@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>Unapproved hours</h1>
+        <p>Once you're done, you can <a href="{{ url_for('volunteer.you') }}">go back to your profile</a>.</p>
+        <form method="POST">
+            <table class="pure-table" class="fullwidth">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Hours</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Volunteer</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in hours %}
+                    <tr>
+                        <td>{{ entry.date.strftime("%Y-%m-%d") }}</td>
+                        <td>{{ entry.hours }}</td>
+                        <td>{{ entry.category_str }}</td>
+                        <td>{{ entry.description }}</td>
+                        <td>{{ entry.volunteer.full_name }}</td>
+                        <td>
+                            <select name="state{{ entry.id }}">
+                                <option value="0" selected="selected">Leave alone</option>
+                                <option value="1">Approve</option>
+                                <option value="-1">Reject</option>
+                            </select>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br /><button class="pure-button button-primary" type="submit">Submit changes</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

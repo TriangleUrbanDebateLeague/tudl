@@ -21,7 +21,7 @@ def require_role(minimum_role):
         def _decorated(*args, **kwargs):
             if g.user is not None:
                 if g.user.role >= minimum_role:
-                    return f(**args, **kwargs)
+                    return f(*args, **kwargs)
                 else:
                     flash("You don't have permission to do that :(", "error")
                     return redirect(url_for("account.info"))

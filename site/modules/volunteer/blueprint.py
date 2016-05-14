@@ -8,7 +8,7 @@ volunteer = Blueprint("volunteer", __name__, template_folder="templates", url_pr
 @volunteer.route("/you/")
 @require_login
 def you():
-    return render_template("profile.html")
+    return render_template("profile.html", volunteer=g.user.volunteer, fake=False)
 
 @volunteer.route("/hours/")
 @require_login
@@ -31,8 +31,32 @@ def log_hours():
     flash("Your hours have been entered and should be approved shortly.", "info")
     return redirect(url_for("volunteer.your_hours"))
 
-@volunteer.route("/hours/approve/")
+@volunteer.route("/hours/approve/", methods=["GET", "POST"])
 @require_role(roles.hours_approver)
 def approve_hours():
-    unapproved_hours = LoggedHours.select().where(LoggedHours.approved == 0)
-    return render_template("unapproved_hours.html", hours=unapproved_hours)
+    if request.method == "GET":
+        unapproved_hours = LoggedHours.select().where(LoggedHours.approved == 0).order_by(LoggedHours.date.desc())
+        return render_template("unapproved_hours.html", hours=unapproved_hours)
+    else:
+        hours = [int(k[5:]) for k in request.form.keys() if k.startswith("state")]
+        approved = 0
+        denied = 0
+        for id in hours:
+            result = int(request.form["state{}".format(id)])
+            if result == 0:
+                continue
+            elif result == 1:
+                approved += 1
+            elif result == -1:
+                denied += 1
+            else:
+                raise Exception("Tried to set an hour's approved state to an invalid value -- this should never happen")
+
+            entry = LoggedHours.get(LoggedHours.id == id)
+            entry.approved = result
+            entry.modifier = g.user
+            entry.save()
+
+        unapproved_hours = LoggedHours.select().where(LoggedHours.approved == 0).order_by(LoggedHours.date.desc())
+        flash("{} entries modified ({} approved, {} rejected).".format(approved + denied, approved, denied), "info")
+        return render_template("unapproved_hours.html", hours=unapproved_hours)

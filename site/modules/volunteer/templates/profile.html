@@ -1,6 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="call-to-action">
+    <div class="cta-text">
+        <span class="cta-header-text header">Volunteer profile</span>
+        <p>
+            This is the volunteer profile page for {{ volunteer.full_name }}.
+            {% if not fake %}
+            If that's not you, consider <a class="whitelink" href="{{ url_for("account.logout") }}">logging out</a>.
+            {% endif %}
+        </p>
+    </div>
+</div>
+
 <div class="main-content">
-    Hi there, {{ g.user.first_name }}.
+    <div class="content-section">
+        <h1>Hours</h1>
+        <p>Our records show that you've logged a total of {{ volunteer.total_hours() }} approved hours ({{ volunteer.total_hours(False) }} including unapproved hours).</p>
+        <p>You can view your hours in detail or log more hours on the <a href="{{ url_for("volunteer.your_hours") }}" class="whitelink">hours logging page.</a></p>
+    </div>
+    {% if volunteer.account and volunteer.account.role >= 1 and not fake %}
+    <div class="content-section">
+        <h1>Approve hours</h1>
+        <p>You're allowed to approve hours. If you'd like to do that, head over to the <a href="{{ url_for("volunteer.approve_hours") }}" class="whitelink">hours approval page.</a></p>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

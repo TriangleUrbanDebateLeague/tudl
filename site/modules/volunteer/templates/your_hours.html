@@ -3,6 +3,9 @@
 <div class="main-content">
     <div class="form-card">
         <h1>Hours history</h1>
+        <p>You have a total of {{ g.user.volunteer.total_hours() }} approved hours ({{ g.user.volunteer.total_hours(False) }} including unapproved hours).</p>
+        <p>You can also <a href="{{ url_for("volunteer.log_hours") }}">log more hours</a>, if you like.</p>
+        <p>When you're done, you can <a href="{{ url_for("volunteer.you") }}">go back to your profile</a>.
         <table class="pure-table" class="fullwidth">
             <thead>
                 <tr>
@@ -25,7 +28,6 @@
                 {% endfor %}
             </tbody>
         </table>
-        {{ g.user.volunteer.total_hours() }} approved hours total
     </div>
 </div>
 {% endblock %}

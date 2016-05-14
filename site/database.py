@@ -85,6 +85,13 @@ class Volunteer(BaseModel):
             hours = self.hours.select(fn.Sum(LoggedHours.hours)).where(LoggedHours.approved != -1).scalar()
         return hours if hours else 0
 
+    @property
+    def full_name(self, alt=False):
+        if alt:
+            return "{} {}".format(self.first_name, self.last_name)
+        else:
+            return "{}, {}".format(self.last_name, self.first_name)
+
 class LoggedHours(BaseModel):
     volunteer = ForeignKeyField(Volunteer, related_name='hours')
 

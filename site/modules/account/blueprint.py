@@ -38,6 +38,8 @@ def create_account():
                              email=form.email.data, email_confirm_key=email_confirm_key,
                              email_confirmed=email_confirmed, password=password)
 
+    account.attach_volunteer()
+
     return redirect(url_for('account.login'))
 
 @account.route("/confirm_email/<key>/")
@@ -66,7 +68,6 @@ def login():
     if matching_accounts.count() == 1:
         account = next(matching_accounts.iterator())
         if account.validate_password(form.password.data):
-            flash("Login success.", "success")
             session["uid"] = account.id
             session["logged_in"] = True
             return redirect(request.args.get('next', url_for('account.info')))
@@ -84,7 +85,7 @@ def logout():
 @account.route("/info/")
 @require_login
 def info():
-    return render_template("info.html", account=get_current_user())
+    return redirect(url_for('volunteer.you'))
 
 @account.before_app_request
 def set_user():
