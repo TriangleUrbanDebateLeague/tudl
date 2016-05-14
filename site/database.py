@@ -42,7 +42,7 @@ class Account(BaseModel):
                 return volunteer
             else:
                 return Volunteer.create(account=self)
-        raise IntegrityError("Account already has an associated Volunteer")
+        raise IntegrityError("Account with id {} already has an associated Volunteer, but attach_volunteer was called".format(self.id))
 
     @property
     def volunteer(self):
@@ -50,7 +50,7 @@ class Account(BaseModel):
         if q.count() == 0:
             return None
         if q.count() > 1:
-            raise IntegrityError("Account has multiple associated Volunteers -- this should never happen")
+            raise IntegrityError("Account with id {} has multiple associated Volunteers -- this should never happen".format(self.id))
         return next(q.iterator())
 
     @property
@@ -78,6 +78,13 @@ class Volunteer(BaseModel):
             return self.account.last_name
         return self.local_last_name
 
+    def total_hours(self, approved_only=True):
+        if approved_only:
+            hours = self.hours.select(fn.Sum(LoggedHours.hours)).where(LoggedHours.approved == 1).scalar()
+        else:
+            hours = self.hours.select(fn.Sum(LoggedHours.hours)).where(LoggedHours.approved != -1).scalar()
+        return hours if hours else 0
+
 class LoggedHours(BaseModel):
     volunteer = ForeignKeyField(Volunteer, related_name='hours')
 
@@ -91,7 +98,7 @@ class LoggedHours(BaseModel):
 
     @property
     def category_str(self):
-        return hours_types[self.category]
+        return localconfig.hours_types[self.category]
 
     @property
     def approved_str(self):
