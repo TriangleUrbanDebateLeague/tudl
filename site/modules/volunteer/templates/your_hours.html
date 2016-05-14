@@ -12,6 +12,7 @@
                     <th>Date</th>
                     <th>Hours</th>
                     <th>Category</th>
+                    <th>Description</th>
                     <th>Approved</th>
                     <th>Last edited</th>
                 </tr>
@@ -22,6 +23,7 @@
                     <td>{{ entry.date.strftime("%Y-%m-%d") }}</td>
                     <td>{{ entry.hours }}</td>
                     <td>{{ entry.category_str }}</td>
+                    <td>{{ entry.description }}</td>
                     <td>{{ entry.approved_str }}</td>
                     <td>{{ entry.modifier.full_name }}</td>
                 </tr>
