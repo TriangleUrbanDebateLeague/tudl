@@ -51,7 +51,7 @@ def edit_hours(id):
 @volunteer.route("/hours/all/")
 @require_role(roles.hours_approver)
 def all_hours():
-    return render_template("all_hours.html", hours=LoggedHours.select())
+    return render_template("all_hours.html", hours=LoggedHours.select().order_by(LoggedHours.date.desc()))
 
 @volunteer.route("/hours/approve/", methods=["GET", "POST"])
 @require_role(roles.hours_approver)
