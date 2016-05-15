@@ -48,6 +48,11 @@ def edit_hours(id):
 
     return redirect(url_for("volunteer.your_hours"))
 
+@volunteer.route("/hours/all/")
+@require_role(roles.hours_approver)
+def all_hours():
+    return render_template("all_hours.html", hours=LoggedHours.select())
+
 @volunteer.route("/hours/approve/", methods=["GET", "POST"])
 @require_role(roles.hours_approver)
 def approve_hours():
