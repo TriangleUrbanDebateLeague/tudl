@@ -9,21 +9,21 @@ class BaseModel(Model):
         database = database
 
 class Account(BaseModel):
-    first_name = CharField(64)
-    last_name = CharField(64)
+    first_name = CharField(64, verbose_name="First name")
+    last_name = CharField(64, verbose_name="Last name")
 
-    street_address = CharField(128)
-    city = CharField(64)
-    state = CharField(2)
-    postal_code = CharField(5)
+    street_address = CharField(128, verbose_name="Address")
+    city = CharField(64, verbose_name="City")
+    state = CharField(2, verbose_name="State code")
+    postal_code = CharField(5, verbose_name="ZIP code")
 
-    email = CharField(64, unique=True)
+    email = CharField(64, unique=True, verbose_name="Email address")
     email_confirm_key = CharField(64, null=True)
-    email_confirmed = BooleanField(default=False)
+    email_confirmed = BooleanField(default=False, verbose_name="Email confirmed?")
 
     password = CharField(60)
 
-    role = IntegerField(default=0)
+    role = IntegerField(default=0, verbose_name="Role code")
 
     @staticmethod
     def hash_password(password):
@@ -63,8 +63,8 @@ class Account(BaseModel):
 class Volunteer(BaseModel):
     account = ForeignKeyField(Account, related_name='volunteers', null=True)
 
-    local_first_name = CharField(64, null=True)
-    local_last_name = CharField(64, null=True)
+    local_first_name = CharField(64, null=True, verbose_name="Volunteer first name")
+    local_last_name = CharField(64, null=True, verbose_name="Volunteer last name")
 
     @property
     def first_name(self):
@@ -95,10 +95,10 @@ class Volunteer(BaseModel):
 class LoggedHours(BaseModel):
     volunteer = ForeignKeyField(Volunteer, related_name='hours')
 
-    date = DateField()
-    description = CharField(512)
+    date = DateField(verbose_name="Date")
+    description = CharField(512, verbose_name="Description")
     category = IntegerField()
-    hours = DecimalField()
+    hours = DecimalField(verbose_name="Hours")
 
     approved = IntegerField(default=0)
     modifier = ForeignKeyField(Account)
@@ -122,15 +122,15 @@ class PasswordReset(BaseModel):
     used = BooleanField(default=False)
 
 class Donation(BaseModel):
-    amount = IntegerField()
-    first_name = CharField(64)
-    last_name = CharField(64)
-    street_address = CharField(128)
-    city = CharField(64)
-    state = CharField(2)
-    postal_code = CharField(5)
-    email = CharField(64)
-    phone = CharField(20)
-    occupation = CharField(128)
-    employer = CharField(128)
-    stripe_success = BooleanField(default=False)
+    amount = IntegerField(verbose_name="Amount")
+    first_name = CharField(64, verbose_name="First name")
+    last_name = CharField(64, verbose_name="Last name")
+    street_address = CharField(128, verbose_name="Address")
+    city = CharField(64, verbose_name="City")
+    state = CharField(2, verbose_name="State code")
+    postal_code = CharField(5, verbose_name="ZIP code")
+    email = CharField(64, verbose_name="Email address")
+    phone = CharField(20, verbose_name="Phone number")
+    occupation = CharField(128, verbose_name="Occupation")
+    employer = CharField(128, verbose_name="Employer")
+    stripe_success = BooleanField(default=False, verbose_name="Charge successful")
