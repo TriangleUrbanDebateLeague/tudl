@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "_reporthelpers.html" import render_report_row, render_report_header %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>Volunteers</h1>
+        <table class="pure-table">
+            <thead>
+                <tr>
+                    {{ render_report_header(report) }}
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in report.get_columnar_data()[1:] %}
+                {{ render_report_row(i) }}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

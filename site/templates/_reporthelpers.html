@@ -1,0 +1,11 @@
+{% macro render_report_header(report) %}
+{% for friendly, _ in report.columns %}
+<th>{{ friendly }}</th>
+{% endfor %}
+{% endmacro %}
+
+{% macro render_report_row(row, tag="td") %}
+{% for i in row %}
+<{{ tag }}>{{ i }}</{{ tag }}>
+{% endfor %}
+{% endmacro %}

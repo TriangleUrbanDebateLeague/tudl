@@ -2,6 +2,7 @@ from flask import Blueprint, current_app, request, render_template, flash, sessi
 from modules.account.decorators import require_login, require_role, roles
 from database import Volunteer, LoggedHours
 from .forms import HoursEntryForm
+from .reports import AllVolunteersReport
 
 volunteer = Blueprint("volunteer", __name__, template_folder="templates", url_prefix="/volunteer")
 
@@ -9,6 +10,12 @@ volunteer = Blueprint("volunteer", __name__, template_folder="templates", url_pr
 @require_login
 def you():
     return render_template("profile.html", volunteer=g.user.volunteer, fake=False)
+
+@volunteer.route("/all/")
+@require_role(roles.hours_approver)
+def all_volunteers():
+    report = AllVolunteersReport()
+    return render_template("volunteers.html", report=report)
 
 @volunteer.route("/hours/")
 @require_login
