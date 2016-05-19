@@ -10,5 +10,5 @@ STRIPE_KEY_PUBLIC = os.getenv("STRIPE_KEY_PUBLIC", "")
 
 DB_PATH = "/home/protected/tft.db"
 
-EMAIL_ERRORS = False
-SITE_ADMIN = ['foxwilson123@gmail.com']
+EMAIL_ERRORS = True
+SITE_ADMIN = 'foxwilson123@gmail.com'
