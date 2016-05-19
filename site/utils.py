@@ -31,6 +31,8 @@ def send_error_email(env, trace):
 
     Here is information that may be helpful in debugging the problem.
 
+    URL: {url}
+
     Session data: {session}
 
     Form data: {form_data}
