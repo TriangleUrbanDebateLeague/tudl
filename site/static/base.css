@@ -204,3 +204,7 @@ a.whitelink:visited, a.whitelink {
 .approval-1 {
     background-color: #FF2400;
 }
+
+.nodec {
+    text-decoration: none;
+}
