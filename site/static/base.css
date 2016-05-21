@@ -208,3 +208,8 @@ a.whitelink:visited, a.whitelink {
 .nodec {
     text-decoration: none;
 }
+
+.social {
+    width: 50px;
+    height: 50px;
+}
