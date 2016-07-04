@@ -1,6 +1,7 @@
 from flask.ext.script import Manager
 from app import create_app
 import database as db
+from playhouse.migrate import *
 
 manager = Manager(create_app)
 manager.add_option('-e', '--environment', dest='environment', required=True)
@@ -31,7 +32,6 @@ def create_db():
 @manager.command
 def migrate_add_dob():
     """Add the date of birth field to the accounts table"""
-    from playhouse.migrate import *
     migrator = SqliteMigrator(db.database)
     migrate(
             migrator.add_column('account', 'dob', db.Account.dob)
