@@ -1,10 +1,11 @@
 from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for, g
 
 from utils import flash_errors
-from .localutils import send_confirm_email, get_current_user
+from .localutils import send_confirm_email, send_reset_email, get_current_user
 from .decorators import require_login
-from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm
+from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm, AccountPasswordSetForm
 from database import Account, PasswordReset
+from datetime import datetime, timedelta
 
 account = Blueprint("account", __name__, template_folder="templates", url_prefix="/account")
 
@@ -55,6 +56,54 @@ def confirm_email(key):
         flash("Email confirmed.", "success")
 
     return redirect(url_for('account.login'))
+
+@account.route("/reset/", methods=["GET", "POST"])
+def request_reset():
+    form = AccountPasswordResetForm()
+
+    if not form.validate_on_submit():
+        flash_errors(form)
+        return render_template("request_reset.html", form=form)
+
+    try:
+        account = Account.get(email=form.email.data)
+        send_reset_email(account)
+        flash("Password reset link sent.", "info")
+    except Account.DoesNotExist:
+        flash("No account was found with that email address.", "error")
+
+    return render_template("request_reset.html", form=form)
+
+@account.route("/reset/<key>/", methods=["GET", "POST"])
+def reset_password(key):
+    form = AccountPasswordSetForm(request.form)
+
+    if not form.validate_on_submit():
+        flash_errors(form)
+        return render_template("reset.html", form=form)
+
+    try:
+        reset = PasswordReset.get(key=key)
+    except PasswordReset.DoesNotExist:
+        flash("Invalid password reset key.", "error")
+        return redirect(url_for("account.request_reset"))
+
+    if reset.used:
+        flash("Password reset key already used.", "error")
+        return redirect(url_for("account.request_reset"))
+
+    if reset.created_at - datetime.now() > timedelta(seconds=3600):
+        flash("Password reset expired.", "error")
+        return redirect(url_for("account.request_reset"))
+
+    reset.account.password = Account.hash_password(form.password.data)
+    reset.account.save()
+
+    reset.used = True
+    reset.save()
+
+    flash("Password set.", "info")
+    return redirect(url_for("account.login"))
 
 @account.route("/login/", methods=["GET", "POST"])
 def login():

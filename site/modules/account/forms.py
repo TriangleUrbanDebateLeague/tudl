@@ -25,3 +25,8 @@ class AccountLoginForm(Form):
 
 class AccountPasswordResetForm(Form):
     email = EmailField('Email', [validators.Required(), validators.Email()])
+
+class AccountPasswordSetForm(Form):
+    password = PasswordField('New password', [validators.Required(), validators.Length(min=5, max=92),
+                                          validators.EqualTo('confirm', message='Passwords must match!')])
+    confirm = PasswordField('Confirm new password')
