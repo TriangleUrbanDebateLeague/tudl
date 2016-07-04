@@ -30,3 +30,6 @@ class AccountPasswordSetForm(Form):
     password = PasswordField('New password', [validators.Required(), validators.Length(min=5, max=92),
                                           validators.EqualTo('confirm', message='Passwords must match!')])
     confirm = PasswordField('Confirm new password')
+
+class AccountDobSetForm(Form):
+    dob = DateField('Date of birth (yyyy-mm-dd)', [validators.Required()])

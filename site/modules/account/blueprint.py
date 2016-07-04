@@ -3,7 +3,7 @@ from flask import Blueprint, current_app, request, render_template, flash, sessi
 from utils import flash_errors
 from .localutils import send_confirm_email, send_reset_email, get_current_user
 from .decorators import require_login
-from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm, AccountPasswordSetForm
+from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm, AccountPasswordSetForm, AccountDobSetForm
 from database import Account, PasswordReset
 from datetime import datetime, timedelta
 
@@ -117,12 +117,36 @@ def login():
     if matching_accounts.count() == 1:
         account = next(matching_accounts.iterator())
         if account.validate_password(form.password.data):
-            session["uid"] = account.id
-            session["logged_in"] = True
-            return redirect(request.args.get('next', url_for('account.info')))
+            if account.dob is not None:
+                session["uid"] = account.id
+                session["logged_in"] = True
+                return redirect(request.args.get('next', url_for('account.info')))
+            else:
+                session["dob_uid"] = account.id
+                return redirect(url_for("account.set_dob"))
 
     flash("Login failed.", "error")
     return render_template("login.html", form=form)
+
+@account.route("/set_dob/", methods=["GET", "POST"])
+def set_dob():
+    if "dob_uid" not in session:
+        return redirect(url_for("account.login"))
+
+    form = AccountDobSetForm(request.form)
+
+    if not form.validate_on_submit():
+        flash_errors(form)
+        return render_template("dob.html", form=form)
+
+    account = Account.get(id=session["dob_uid"])
+    account.dob = form.dob.data
+    account.save()
+
+    session["uid"] = session.pop("dob_uid")
+    session["logged_in"] = True
+
+    return redirect(url_for("account.info"))
 
 @account.route("/logout/", methods=["GET"])
 def logout():
