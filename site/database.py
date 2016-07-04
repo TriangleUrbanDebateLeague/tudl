@@ -25,6 +25,8 @@ class Account(BaseModel):
 
     role = IntegerField(default=0, verbose_name="Role code")
 
+    dob = DateField(formats=["%Y-%m-%d", "%m/%d/%Y"], null=True)
+
     @staticmethod
     def hash_password(password):
         return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())

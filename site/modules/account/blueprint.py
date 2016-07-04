@@ -36,7 +36,7 @@ def create_account():
                              street_address=form.street_address.data, city=form.city.data,
                              state=form.state.data, postal_code=form.postal_code.data,
                              email=form.email.data, email_confirm_key=email_confirm_key,
-                             email_confirmed=email_confirmed, password=password)
+                             email_confirmed=email_confirmed, password=password, dob=form.dob.data)
 
     account.attach_volunteer()
 

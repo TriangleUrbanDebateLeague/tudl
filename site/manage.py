@@ -20,5 +20,22 @@ def sync_volunteers():
         volunteer.local_last_name = volunteer.account.last_name
         volunteer.save()
 
+@manager.command
+def create_db():
+    """Create tables in the database"""
+    tables = [db.Account, db.Volunteer, db.LoggedHours, db.Donation]
+    for table in tables:
+        table.create_table()
+        print("Created table for {}".format(table))
+
+@manager.command
+def migrate_add_dob():
+    """Add the date of birth field to the accounts table"""
+    from playhouse.migrate import *
+    migrator = SqliteMigrator(db.database)
+    migrate(
+            migrator.add_column('account', 'dob', db.Account.dob)
+    )
+
 if __name__ == '__main__':
     manager.run()
