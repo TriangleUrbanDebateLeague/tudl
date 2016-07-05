@@ -10,3 +10,5 @@ STRIPE_KEY_PUBLIC = os.getenv("STRIPE_KEY_PUBLIC", "")
 DB_PATH = "tft.db"
 
 EMAIL_ERRORS = False
+
+DISPLAY_DEBUG_INFO = True

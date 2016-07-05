@@ -15,3 +15,5 @@ EMAIL_ERRORS = False
 SITE_ADMIN = ['foxwilson123@gmail.com']
 
 SERVER_NAME = "dev.teensforteens.info"
+
+DISPLAY_DEBUG_INFO = True
