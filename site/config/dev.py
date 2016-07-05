@@ -12,3 +12,4 @@ DB_PATH = "tft.db"
 EMAIL_ERRORS = False
 
 DISPLAY_DEBUG_INFO = True
+ALLOW_RCON = False
