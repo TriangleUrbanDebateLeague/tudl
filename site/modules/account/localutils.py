@@ -54,7 +54,7 @@ def send_reset_email(account):
                                              reset_password_link=reset_link)
 
     if current_app.config['SEND_EMAIL']:
-        send_email(current_app.config['EMAIL_FROM'], email,
+        send_email(current_app.config['EMAIL_FROM'], account.email,
                    "Password reset requested for your {} account".format(current_app.config['APP_NAME']), message)
 
 def get_current_user():
