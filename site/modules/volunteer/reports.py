@@ -7,7 +7,7 @@ class AllVolunteersReport(BaseReport):
     def get_data(self):
         query = Volunteer \
                 .select(Volunteer,
-                        fn.Sum(LoggedHours.hours).alias('total_hours')) \
+                        fn.Round(fn.Sum(LoggedHours.hours), 2).alias('total_hours')) \
                 .join(LoggedHours) \
                 .where(LoggedHours.approved == 1) \
                 .group_by(Volunteer)
