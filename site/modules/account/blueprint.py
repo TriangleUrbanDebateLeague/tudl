@@ -1,7 +1,7 @@
 from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for, g
 
 from utils import flash_errors
-from .localutils import send_confirm_email, send_reset_email, get_current_user
+from .localutils import send_confirm_email, send_reset_email, get_current_user, attach_volunteer
 from .decorators import require_login
 from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm, AccountPasswordSetForm, AccountDobSetForm
 from .models import Account, PasswordReset
@@ -39,7 +39,7 @@ def create_account():
                              email=form.email.data, email_confirm_key=email_confirm_key,
                              email_confirmed=email_confirmed, password=password, dob=form.dob.data)
 
-    account.attach_volunteer()
+    attach_volunteer(account)
 
     return redirect(url_for('account.login'))
 

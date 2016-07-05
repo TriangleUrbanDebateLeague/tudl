@@ -2,10 +2,12 @@ import random
 import smtplib
 import string
 
-from database import Account, PasswordReset
+from .models import Account, PasswordReset
+from modules.volunteer.models import Volunteer
 from datetime import datetime
 from flask import current_app, url_for, session
 from utils import send_email
+from peewee import IntegrityError
 
 valid_chars = string.ascii_letters + string.digits
 
@@ -61,3 +63,15 @@ def get_current_user():
     if "uid" in session and session["logged_in"]:
         return Account.get(Account.id == session["uid"])
     return None
+
+def attach_volunteer(account):
+    if account.volunteer is None:
+        query = Volunteer.select().where(Volunteer.account == None & Volunteer.local_first_name == account.first_name & Volunteer.local_last_name == account.last_name)
+        if query.count() == 1:
+            volunteer = next(query.iterator())
+            volunteer.account = account
+            volunteer.save()
+            return volunteer
+        else:
+            return Volunteer.create(account=account)
+    raise IntegrityError("Account with id {} already has an associated Volunteer, but attach_volunteer was called".format(account.id))

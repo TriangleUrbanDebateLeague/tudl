@@ -1,7 +1,6 @@
 from peewee import *
 
 from database import BaseModel
-from modules.volunteer.models import Volunteer
 
 import bcrypt
 
@@ -30,18 +29,6 @@ class Account(BaseModel):
 
     def validate_password(self, password):
         return bcrypt.hashpw(password.encode("utf-8"), self.password.encode("utf-8")) == self.password.encode("utf-8")
-
-    def attach_volunteer(self):
-        if self.volunteer is None:
-            query = Volunteer.select().where(Volunteer.account == None & Volunteer.local_first_name == self.first_name & Volunteer.local_last_name == self.last_name)
-            if query.count() == 1:
-                volunteer = next(query.iterator())
-                volunteer.account = self
-                volunteer.save()
-                return volunteer
-            else:
-                return Volunteer.create(account=self)
-        raise IntegrityError("Account with id {} already has an associated Volunteer, but attach_volunteer was called".format(self.id))
 
     @property
     def volunteer(self):
