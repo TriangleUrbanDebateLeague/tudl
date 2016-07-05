@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, redirect, make_response
 from database import database
 from utils import send_email, send_error_email
 import traceback
+import subprocess
 
 import logging
 log_formatter = logging.Formatter('''
@@ -50,6 +51,14 @@ def create_app(environment):
 
     @app.route("/googlefe31abc06e03d8f7.html")
     def google(): return "google-site-verification: googlefe31abc06e03d8f7.html"
+
+    @app.context_processor
+    def inject_config():
+        if app.config["DISPLAY_DEBUG_INFO"]:
+            version = subprocess.check_output(["git", "describe", "--always"]).decode().strip()
+        else:
+            version = ""
+        return dict(global_config=app.config, version=version)
 
     @app.errorhandler(500)
     def internal_error(exc):
