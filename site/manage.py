@@ -1,7 +1,12 @@
 from app import create_app
-from flask.ext.script import Manager
-from playhouse.migrate import *
+from flask_script import Manager
 import database as db
+import importlib
+
+from modules.account.models import Account, PasswordReset
+from modules.donations.models import Donation
+from modules.security.models import Permission
+from modules.volunteer.models import Volunteer, LoggedHours
 
 manager = Manager(create_app)
 manager.add_option('-e', '--environment', dest='environment', required=True)
@@ -24,18 +29,18 @@ def sync_volunteers():
 @manager.command
 def create_db():
     """Create tables in the database"""
-    tables = [db.Account, db.Volunteer, db.LoggedHours, db.Donation, db.PasswordReset]
+    tables = [Account, PasswordReset, Donation, Permission, Volunteer, LoggedHours]
     for table in tables:
-        table.create_table()
-        print("Created table for {}".format(table))
+        if table.table_exists():
+            print("Table already exists for {}".format(table))
+        else:
+            table.create_table()
+            print("Created table for {}".format(table))
 
 @manager.command
-def migrate_add_dob():
-    """Add the date of birth field to the accounts table"""
-    migrator = SqliteMigrator(db.database)
-    migrate(
-            migrator.add_column('account', 'dob', db.Account.dob)
-    )
+def migrate(migration):
+    """Run a migration"""
+    importlib.import_module("migrations.{}".format(migration)).migrate(db.database)
 
 if __name__ == '__main__':
     manager.run()
