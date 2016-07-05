@@ -1,6 +1,5 @@
-from peewee import *
-
 from database import BaseModel
+from peewee import *
 
 class Donation(BaseModel):
     amount = IntegerField(verbose_name="Amount")

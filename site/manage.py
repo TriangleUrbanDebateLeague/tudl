@@ -1,7 +1,7 @@
-from flask.ext.script import Manager
 from app import create_app
-import database as db
+from flask.ext.script import Manager
 from playhouse.migrate import *
+import database as db
 
 manager = Manager(create_app)
 manager.add_option('-e', '--environment', dest='environment', required=True)

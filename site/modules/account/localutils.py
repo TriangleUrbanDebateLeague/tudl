@@ -1,13 +1,12 @@
+from .models import Account, PasswordReset
+from datetime import datetime
+from flask import current_app, url_for, session
+from modules.volunteer.models import Volunteer
+from peewee import IntegrityError
+from utils import send_email
 import random
 import smtplib
 import string
-
-from .models import Account, PasswordReset
-from modules.volunteer.models import Volunteer
-from datetime import datetime
-from flask import current_app, url_for, session
-from utils import send_email
-from peewee import IntegrityError
 
 valid_chars = string.ascii_letters + string.digits
 

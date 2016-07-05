@@ -1,10 +1,10 @@
-from flask import Flask, render_template, flash, redirect, make_response
 from database import database
+from flask import Flask, render_template, flash, redirect, make_response
 from utils import send_email, send_error_email
-import traceback
-import subprocess
-
 import logging
+import subprocess
+import traceback
+
 log_formatter = logging.Formatter('''
 Message type:       %(levelname)s
 Location:           %(pathname)s:%(lineno)d

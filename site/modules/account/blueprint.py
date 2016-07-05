@@ -1,11 +1,10 @@
-from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for, g
-
-from utils import flash_errors
-from .localutils import send_confirm_email, send_reset_email, get_current_user, attach_volunteer
 from .decorators import require_login
 from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm, AccountPasswordSetForm, AccountDobSetForm
+from .localutils import send_confirm_email, send_reset_email, get_current_user, attach_volunteer
 from .models import Account, PasswordReset
 from datetime import datetime, timedelta
+from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for, g
+from utils import flash_errors
 
 account = Blueprint("account", __name__, template_folder="templates", url_prefix="/account")
 

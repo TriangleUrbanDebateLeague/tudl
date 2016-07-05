@@ -1,8 +1,8 @@
+from .forms import HoursEntryForm
+from .models import Volunteer, LoggedHours
+from .reports import AllVolunteersReport
 from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for, g
 from modules.account.decorators import require_login, require_role, roles
-from .models import Volunteer, LoggedHours
-from .forms import HoursEntryForm
-from .reports import AllVolunteersReport
 
 volunteer = Blueprint("volunteer", __name__, template_folder="templates", url_prefix="/volunteer")
 

@@ -1,5 +1,5 @@
-from modules.reports import BaseReport
 from .models import Volunteer, LoggedHours
+from modules.reports import BaseReport
 from peewee import fn
 
 class AllVolunteersReport(BaseReport):

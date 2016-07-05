@@ -1,8 +1,7 @@
-from peewee import *
-
+from .localconfig import hours_types
 from database import BaseModel
 from modules.account.models import Account
-from .localconfig import hours_types
+from peewee import *
 
 class Volunteer(BaseModel):
     account = ForeignKeyField(Account, related_name='volunteers', null=True)

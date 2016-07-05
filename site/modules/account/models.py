@@ -1,7 +1,5 @@
-from peewee import *
-
 from database import BaseModel
-
+from peewee import *
 import bcrypt
 
 class Account(BaseModel):

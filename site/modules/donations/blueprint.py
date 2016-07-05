@@ -1,9 +1,7 @@
-from flask import Blueprint, render_template, request, current_app, session, redirect, url_for
-
-from .models import Donation
-from utils import flash_errors
 from .forms import DonateForm
-
+from .models import Donation
+from flask import Blueprint, render_template, request, current_app, session, redirect, url_for
+from utils import flash_errors
 import stripe
 
 donations = Blueprint("donations", __name__, template_folder="templates", url_prefix="/donate")
