@@ -24,7 +24,7 @@ def sync_volunteers():
 @manager.command
 def create_db():
     """Create tables in the database"""
-    tables = [db.Account, db.Volunteer, db.LoggedHours, db.Donation]
+    tables = [db.Account, db.Volunteer, db.LoggedHours, db.Donation, db.PasswordReset]
     for table in tables:
         table.create_table()
         print("Created table for {}".format(table))
