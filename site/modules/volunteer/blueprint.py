@@ -1,6 +1,6 @@
 from flask import Blueprint, current_app, request, render_template, flash, session, redirect, url_for, g
 from modules.account.decorators import require_login, require_role, roles
-from database import Volunteer, LoggedHours
+from .models import Volunteer, LoggedHours
 from .forms import HoursEntryForm
 from .reports import AllVolunteersReport
 

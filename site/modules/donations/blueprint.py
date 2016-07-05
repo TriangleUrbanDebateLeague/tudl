@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, current_app, session, redirect, url_for
 
-from database import Donation
+from .models import Donation
 from utils import flash_errors
 from .forms import DonateForm
 

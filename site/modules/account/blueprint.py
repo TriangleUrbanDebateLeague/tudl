@@ -4,7 +4,7 @@ from utils import flash_errors
 from .localutils import send_confirm_email, send_reset_email, get_current_user
 from .decorators import require_login
 from .forms import AccountCreateForm, AccountLoginForm, AccountPasswordResetForm, AccountPasswordSetForm, AccountDobSetForm
-from database import Account, PasswordReset
+from .models import Account, PasswordReset
 from datetime import datetime, timedelta
 
 account = Blueprint("account", __name__, template_folder="templates", url_prefix="/account")
