@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <br />
+        <a href="{{ url_for('security.security_index') }}">&lt;&lt; back to security home</a>
+        <h1>{{ header }}</h1>
+        <table class="pure-table">
+            <thead>
+                <tr>
+                    <th>Account</th>
+                    <th>Module</th>
+                    <th>Permission</th>
+                    <th>Qualifier</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for permission in permissions %}
+                <tr>
+                    <td><a href="{{ url_for('security.permissions_for_user', uid=permission.account.id) }}">{{ permission.account.full_name }}</a></td>
+                    <td><a href="{{ url_for('security.permissions_for_module', module=permission.module) }}">{{ permission.module }}</a></td>
+                    <td>{{ permission.permission }}</td>
+                    <td>{{ permission.data }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

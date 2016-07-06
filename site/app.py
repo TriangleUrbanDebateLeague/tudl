@@ -35,8 +35,10 @@ def create_app(environment):
     from modules.donations.blueprint import donations
     from modules.volunteer.blueprint import volunteer
     from modules.rcon.blueprint import rcon
+    from modules.security.blueprint import security
 
     app.register_blueprint(account)
+    app.register_blueprint(security)
     app.register_blueprint(volunteer)
     app.register_blueprint(donations)
     app.register_blueprint(rcon)
