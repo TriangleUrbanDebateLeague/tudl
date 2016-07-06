@@ -16,7 +16,7 @@ def donate():
 
     if not form.validate_on_submit():
         flash_errors(form)
-        return render_template("donate.html", form=form)
+        return render_template("donations/donate.html", form=form)
 
     stripe.api_key = current_app.config["STRIPE_KEY_SECRET"]
 
@@ -42,8 +42,8 @@ def donate():
 
 @donations.route("/failed/")
 def donate_failed():
-    return render_template("donation_failed.html")
+    return render_template("donations/donation_failed.html")
 
 @donations.route("/thanks/")
 def thanks():
-    return render_template("thanks.html")
+    return render_template("donations/thanks.html")

@@ -9,19 +9,19 @@ volunteer = Blueprint("volunteer", __name__, template_folder="templates", url_pr
 @volunteer.route("/you/")
 @require_login
 def you():
-    return render_template("profile.html", volunteer=g.user.volunteer, fake=False)
+    return render_template("volunteer/profile.html", volunteer=g.user.volunteer, fake=False)
 
 @volunteer.route("/all/")
 @require_role(roles.hours_approver)
 def all_volunteers():
     report = AllVolunteersReport()
-    return render_template("volunteers.html", report=report)
+    return render_template("volunteer/volunteers.html", report=report)
 
 @volunteer.route("/hours/")
 @require_login
 def your_hours():
     hours = g.user.volunteer.hours.order_by(LoggedHours.date.desc())
-    return render_template("your_hours.html", hours=hours)
+    return render_template("volunteer/your_hours.html", hours=hours)
 
 @volunteer.route("/hours/log/", methods=["GET", "POST"])
 @require_login
@@ -29,7 +29,7 @@ def log_hours():
     form = HoursEntryForm(request.form)
 
     if not form.validate_on_submit():
-        return render_template("log_hours.html", form=form)
+        return render_template("volunteer/log_hours.html", form=form)
 
     LoggedHours.create(volunteer=g.user.volunteer, date=form.date.data,
                        description=form.description.data, category=form.category.data,
@@ -46,7 +46,7 @@ def edit_hours(id):
 
     if not form.validate_on_submit():
         form = HoursEntryForm(obj=obj)
-        return render_template("log_hours.html", form=form, editing=True)
+        return render_template("volunteer/log_hours.html", form=form, editing=True)
 
     form.populate_obj(obj)
     obj.approved = 0
@@ -58,14 +58,14 @@ def edit_hours(id):
 @volunteer.route("/hours/all/")
 @require_role(roles.hours_approver)
 def all_hours():
-    return render_template("all_hours.html", hours=LoggedHours.select().order_by(LoggedHours.date.desc()))
+    return render_template("volunteer/all_hours.html", hours=LoggedHours.select().order_by(LoggedHours.date.desc()))
 
 @volunteer.route("/hours/approve/", methods=["GET", "POST"])
 @require_role(roles.hours_approver)
 def approve_hours():
     if request.method == "GET":
         unapproved_hours = LoggedHours.select().where(LoggedHours.approved == 0).order_by(LoggedHours.date.desc())
-        return render_template("unapproved_hours.html", hours=unapproved_hours)
+        return render_template("volunteer/unapproved_hours.html", hours=unapproved_hours)
     else:
         hours = [int(k[5:]) for k in request.form.keys() if k.startswith("state")]
         approved = 0
@@ -89,14 +89,14 @@ def approve_hours():
 
         unapproved_hours = LoggedHours.select().where(LoggedHours.approved == 0).order_by(LoggedHours.date.desc())
         flash("{} entries modified ({} approved, {} rejected).".format(approved + denied, approved, denied), "info")
-        return render_template("unapproved_hours.html", hours=unapproved_hours)
+        return render_template("volunteer/unapproved_hours.html", hours=unapproved_hours)
 
 @volunteer.route("/hours/rejected/", methods=["GET", "POST"])
 @require_role(roles.hours_approver)
 def rejected_hours():
     if request.method == "GET":
         rejected_hours = LoggedHours.select().where(LoggedHours.approved == -1).order_by(LoggedHours.date.desc())
-        return render_template("rejected_hours.html", hours=rejected_hours)
+        return render_template("volunteer/rejected_hours.html", hours=rejected_hours)
     else:
         hours = [int(k[5:]) for k in request.form.keys() if k.startswith("state")]
         unrejected = False
@@ -123,4 +123,4 @@ def rejected_hours():
 
         rejected_hours = LoggedHours.select().where(LoggedHours.approved == -1).order_by(LoggedHours.date.desc())
         flash("{} entries modified ({} unrejected, {} deleted forever).".format(unrejected + deleted, unrejected, deleted), "info")
-        return render_template("rejected_hours.html", hours=rejected_hours)
+        return render_template("volunteer/rejected_hours.html", hours=rejected_hours)

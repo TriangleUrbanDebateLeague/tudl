@@ -14,12 +14,12 @@ def create_account():
 
     if not form.validate_on_submit():
         flash_errors(form)
-        return render_template("create.html", form=form)
+        return render_template("account/create.html", form=form)
 
     matching_accounts = Account.select().where(Account.email == form.email.data)
     if matching_accounts.count() > 0:
         flash("An account already exists with that email address.", "error")
-        return render_template("create.html", form=form)
+        return render_template("account/create.html", form=form)
 
     if current_app.config['SEND_EMAIL']:
         email_confirmed = False
@@ -62,7 +62,7 @@ def request_reset():
 
     if not form.validate_on_submit():
         flash_errors(form)
-        return render_template("request_reset.html", form=form)
+        return render_template("account/request_reset.html", form=form)
 
     try:
         account = Account.get(email=form.email.data)
@@ -71,7 +71,7 @@ def request_reset():
     except Account.DoesNotExist:
         flash("No account was found with that email address.", "error")
 
-    return render_template("request_reset.html", form=form)
+    return render_template("account/request_reset.html", form=form)
 
 @account.route("/reset/<key>/", methods=["GET", "POST"])
 def reset_password(key):
@@ -79,7 +79,7 @@ def reset_password(key):
 
     if not form.validate_on_submit():
         flash_errors(form)
-        return render_template("reset.html", form=form)
+        return render_template("account/reset.html", form=form)
 
     try:
         reset = PasswordReset.get(key=key)
@@ -110,7 +110,7 @@ def login():
 
     if not form.validate_on_submit():
         flash_errors(form)
-        return render_template("login.html", form=form)
+        return render_template("account/login.html", form=form)
 
     matching_accounts = Account.select().where(Account.email == form.email.data)
     if matching_accounts.count() == 1:
@@ -125,7 +125,7 @@ def login():
                 return redirect(url_for("account.set_dob"))
 
     flash("Login failed.", "error")
-    return render_template("login.html", form=form)
+    return render_template("account/login.html", form=form)
 
 @account.route("/set_dob/", methods=["GET", "POST"])
 def set_dob():
@@ -136,7 +136,7 @@ def set_dob():
 
     if not form.validate_on_submit():
         flash_errors(form)
-        return render_template("dob.html", form=form)
+        return render_template("account/dob.html", form=form)
 
     account = Account.get(id=session["dob_uid"])
     account.dob = form.dob.data
