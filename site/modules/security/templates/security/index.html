@@ -10,7 +10,9 @@
             {% endfor %}
             <li><a href="{{ url_for('security.all_permissions') }}">All permissions</a></li>
         </ul>
-        </p>
+        <h2>Query users</h2>
+        <ul>
+            <li><a href="{{ url_for('security.find_user') }}">Search for users</a></li>
     </div>
 </div>
 {% endblock %}
