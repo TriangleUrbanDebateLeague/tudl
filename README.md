@@ -114,11 +114,7 @@ following process.
 - a 500 error handler is attached
 
 ## Database stuff
-Right now, there is no way to automatically initialize the database. You'll need
-to do something like this:
+To create database tables:
 
-    >>> from database import *
-    >>> database.init("tft.db")
-    >>> Account.create_table()
-
-...running the `create_table` line once for each table you need.
+    platform $ cd site
+    platform/site $ python manage.py -e {environment} create_db
