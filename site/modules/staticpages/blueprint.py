@@ -7,6 +7,6 @@ staticpages = Blueprint("staticpages", __name__, template_folder="templates", ur
 @staticpages.route("/<page>/")
 def show_staticpage(page):
     try:
-        return render_template("{}.html".format(page))
+        return render_template("staticpages/{}.html".format(page))
     except TemplateNotFound:
         return make_response(render_template("not_found.html"), 404)

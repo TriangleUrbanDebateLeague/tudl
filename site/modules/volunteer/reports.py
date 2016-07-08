@@ -1,5 +1,5 @@
+from .models import Volunteer, LoggedHours
 from modules.reports import BaseReport
-from database import Volunteer, Account, LoggedHours
 from peewee import fn
 
 class AllVolunteersReport(BaseReport):
@@ -7,10 +7,8 @@ class AllVolunteersReport(BaseReport):
     def get_data(self):
         query = Volunteer \
                 .select(Volunteer,
-                        Account,
-                        fn.Sum(LoggedHours.hours).alias('total_hours')) \
-                .join(Account) \
+                        fn.Round(fn.Sum(LoggedHours.hours), 2).alias('total_hours')) \
                 .join(LoggedHours) \
                 .where(LoggedHours.approved == 1) \
-                .group_by(Account)
+                .group_by(Volunteer)
         return list(query)

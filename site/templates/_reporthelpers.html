@@ -4,8 +4,10 @@
 {% endfor %}
 {% endmacro %}
 
-{% macro render_report_row(row, tag="td") %}
+{% macro render_report_row(row, tag="td", rowtag="tr") %}
+<{{ rowtag }}>
 {% for i in row %}
 <{{ tag }}>{{ i }}</{{ tag }}>
 {% endfor %}
+</{{ rowtag }}>
 {% endmacro %}

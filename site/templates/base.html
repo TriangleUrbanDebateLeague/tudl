@@ -63,6 +63,9 @@
                         <a class="nodec" href="https://plus.google.com/+TeensforteensInfoinc/about"><img alt="Google+" src="/static/googleplus.png" class="social" /></a>
                     </div>
                 </div>
+                {% if global_config["DISPLAY_DEBUG_INFO"] %}
+                <p>platform version {{ version }}</p>
+                {% endif %}
             </div>
         </div>
 

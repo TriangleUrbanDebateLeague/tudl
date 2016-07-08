@@ -12,3 +12,6 @@ DB_PATH = "/home/protected/tft.db"
 
 EMAIL_ERRORS = True
 SITE_ADMIN = 'foxwilson123@gmail.com'
+
+DISPLAY_DEBUG_INFO = False
+ALLOW_RCON = False

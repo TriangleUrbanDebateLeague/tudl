@@ -1,0 +1,18 @@
+{% from "_formhelpers.html" import form_field %}
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>Set date of birth</h1>
+        <p>FEC regulations on volunteer hours reporting require us to report
+        hours from volunteers who are over 18 only. Providing your date of
+        birth allows us to calculate accurate volunteer information.</p>
+        <form method="POST" class="pure-form pure-form-stacked">
+            {{ form.csrf_token() }}
+            {{ form_field(form.dob) }}
+            <br />
+            <button type="submit" class="pure-button button-primary">Continue login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

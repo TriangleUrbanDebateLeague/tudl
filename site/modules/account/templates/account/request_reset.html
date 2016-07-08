@@ -1,0 +1,15 @@
+{% from "_formhelpers.html" import form_field %}
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>Request password reset</h1>
+        <form method="POST" class="pure-form pure-form-stacked">
+            {{ form.csrf_token() }}
+            {{ form_field(form.email, placeholder="john@doe.com") }}
+            <br />
+            <button type="submit" class="pure-button button-primary">Send reset information</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

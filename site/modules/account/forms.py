@@ -1,6 +1,7 @@
 from flask_wtf import Form
-from wtforms import validators
 from wtforms import StringField, PasswordField
+from wtforms import validators
+from wtforms.ext.dateutil.fields import DateField
 from wtforms.fields.html5 import EmailField
 
 class AccountCreateForm(Form):
@@ -16,6 +17,7 @@ class AccountCreateForm(Form):
     state = StringField('State', [validators.Required(), validators.Length(min=2, max=2)])
     postal_code = StringField('ZIP code', [validators.Required(), validators.Regexp(r'\d{5}')])
 
+    dob = DateField('Date of birth (yyyy-mm-dd)', [validators.Required()])
 
 class AccountLoginForm(Form):
     email = EmailField('Email', [validators.Required(), validators.Email(), validators.Length(max=64)])
@@ -23,3 +25,11 @@ class AccountLoginForm(Form):
 
 class AccountPasswordResetForm(Form):
     email = EmailField('Email', [validators.Required(), validators.Email()])
+
+class AccountPasswordSetForm(Form):
+    password = PasswordField('New password', [validators.Required(), validators.Length(min=5, max=92),
+                                          validators.EqualTo('confirm', message='Passwords must match!')])
+    confirm = PasswordField('Confirm new password')
+
+class AccountDobSetForm(Form):
+    dob = DateField('Date of birth (yyyy-mm-dd)', [validators.Required()])

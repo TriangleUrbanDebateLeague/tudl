@@ -1,0 +1,17 @@
+{% from "_formhelpers.html" import form_field %}
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <br />
+        <a href="{{ url_for('security.security_index') }}">&lt;&lt; back to security home</a>
+        <h1>Find user</h1>
+        <form method="POST" class="pure-form pure-form-stacked">
+            {{ form.csrf_token() }}
+            {{ form_field(form.search) }}
+            <br />
+            <button type="submit" class="pure-button button-primary">Find user</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

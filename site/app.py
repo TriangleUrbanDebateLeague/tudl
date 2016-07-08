@@ -1,9 +1,10 @@
-from flask import Flask, render_template, flash, redirect, make_response
 from database import database
+from flask import Flask, render_template, flash, redirect, make_response
 from utils import send_email, send_error_email
+import logging
+import subprocess
 import traceback
 
-import logging
 log_formatter = logging.Formatter('''
 Message type:       %(levelname)s
 Location:           %(pathname)s:%(lineno)d
@@ -33,10 +34,14 @@ def create_app(environment):
     from modules.staticpages.blueprint import staticpages
     from modules.donations.blueprint import donations
     from modules.volunteer.blueprint import volunteer
+    from modules.rcon.blueprint import rcon
+    from modules.security.blueprint import security
 
     app.register_blueprint(account)
+    app.register_blueprint(security)
     app.register_blueprint(volunteer)
     app.register_blueprint(donations)
+    app.register_blueprint(rcon)
     app.register_blueprint(staticpages) # staticpages must be registered last
 
     @app.route("/favicon.ico")
@@ -50,6 +55,14 @@ def create_app(environment):
 
     @app.route("/googlefe31abc06e03d8f7.html")
     def google(): return "google-site-verification: googlefe31abc06e03d8f7.html"
+
+    @app.context_processor
+    def inject_config():
+        if app.config["DISPLAY_DEBUG_INFO"]:
+            version = subprocess.check_output(["git", "describe", "--always"]).decode().strip()
+        else:
+            version = ""
+        return dict(global_config=app.config, version=version)
 
     @app.errorhandler(500)
     def internal_error(exc):

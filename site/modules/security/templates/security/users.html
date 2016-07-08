@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <br />
+        <a href="{{ url_for('security.find_user') }}">&lt;&lt; back to user search</a>
+        <h1>Results</h1>
+        <table class="pure-table">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for account in results %}
+                <tr>
+                    <td>{{ account.first_name }}</td>
+                    <td>{{ account.last_name }}</td>
+                    <td>{{ account.email }}</td>
+                    <td><a href="{{ url_for('security.permissions_for_user', uid=account.id) }}">view perms</a> &middot; <a href="#">grant perms</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
