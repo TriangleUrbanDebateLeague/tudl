@@ -1,4 +1,5 @@
 from database import BaseModel
+from modules import security
 from peewee import *
 import bcrypt
 
@@ -27,6 +28,9 @@ class Account(BaseModel):
 
     def validate_password(self, password):
         return bcrypt.hashpw(password.encode("utf-8"), self.password.encode("utf-8")) == self.password.encode("utf-8")
+
+    def has_permission(self, module, permission):
+        return security.localutils.has_permission(self, module, permission)
 
     @property
     def volunteer(self):
