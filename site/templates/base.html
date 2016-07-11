@@ -12,28 +12,24 @@
     </head>
     <body>
         <div id="header">
-            <div class="primary-menu pure-menu pure-menu-horizontal">
-                <a class="pure-menu-heading" href="/">
-                    <img alt="Star" src="/static/star-transparent.png" class="logo-image" />
-                    <span class="logo-text">Teens for Teens</span>
-                </a>
-
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='index') }}" class="pure-menu-link">Home</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}" class="pure-menu-link">Platform</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}" class="pure-menu-link">Volunteer</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('donations.donate') }}" class="pure-menu-link">Donate</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}" class="pure-menu-link">About Us</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}" class="pure-menu-link">Press</a></li>
-                    <!--
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
-                    -->
-                </ul>
-            </div>
+			<a href="/">
+				<img alt="TFT Logo" src="/static/tftLogoWide.png" class="logo-image">
+			</a>
+			<ul class="header-nav">
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='index') }}">HOME</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">PLATFORM</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">VOLUNTEER</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">ABOUT US</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}">PRESS</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}"><div class="contribute-button">CONTRIBUTE</div></a></li>
+				<!--
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
+				-->
+			</ul>
         </div>
 
         <div class="content">
