@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <br />
+        <a href="{{ url_for('security.security_index') }}">&lt;&lt; back to security home</a>
+        <h1>User {{ account.full_name }}</h1>
+        <p>This user's <strong>{{ "" if account.email_confirmed else "un" }}confirmed</strong> email is <strong>{{ account.email }}</strong></p>
+        <h2>Volunteer information</h2>
+        {% if account.volunteer == None %}
+        <p>This account doesn't have a volunteer attached. This is probably a problem...</p>
+        {% else %}
+        <p>Volunteer attached: {{ account.volunteer.local_last_name }}, {{ account.volunteer.local_first_name }}.</p>
+        {% endif %}
+        <h2>Private data</h2>
+        <p>Private data (including address) is unavailable through the web interface.</p>
+        <h2>Permissions</h2>
+        <table class="pure-table">
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Permission</th>
+                    <th>Qualifier</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for permission in account.permissions %}
+                <tr>
+                    <td><a href="{{ url_for('security.permissions_for_module', module=permission.module) }}">{{ permission.module }}</a></td>
+                    <td>{{ permission.permission }}</td>
+                    <td>{{ permission.data }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
