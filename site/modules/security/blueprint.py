@@ -24,13 +24,6 @@ def permissions_for_module(module):
     permissions = Permission.select(Permission, Account).where(Permission.module == module).join(Account)
     return render_template("security/permissions.html", header="Permissions for module: {}".format(module), permissions=permissions)
 
-@security.route("/query/permissions/user/<int:uid>/")
-@require_permission("security", "access")
-def permissions_for_user(uid):
-    account = Account.get(id=uid)
-    permissions = account.permissions
-    return render_template("security/permissions.html", header="Permissions for user: {}".format(account.full_name), permissions=permissions)
-
 @security.route("/query/user/", methods=["GET", "POST"])
 @require_permission("security", "access")
 def find_user():
@@ -45,3 +38,8 @@ def find_user():
           | (Account.email == form.search.data)
     )
     return render_template("security/users.html", results=query)
+
+@security.route("/query/user/<int:uid>/")
+def show_user(uid):
+    account = Account.get(id=uid)
+    return render_template("security/user.html", account=account)
