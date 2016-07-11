@@ -32,7 +32,7 @@ p, ul {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.logo-image {
+.header-logo-image {
 	height: 80px;
     vertical-align: middle;
 	margin-left: 30px;
@@ -89,6 +89,7 @@ p, ul {
 	color: #FFF;
 	padding: 0px 6px;
 	border-radius: 10px;
+	box-sizing: border-box;
 	
 	-webkit-transition: background-color 0.25s;
     -moz-transition: background-color 0.25s;
@@ -120,11 +121,26 @@ p, ul {
 }
 
 @media screen and (max-width:1400px) {
+	.header-tab {
+		float: left;
+		font-size: 20px;
+		font-weight: bold;
+		margin: 0px 15px;
+	}
+	.header-logo-image {
+		height: 60px;
+		vertical-align: middle;
+	}
+	.content {
+		margin-top: 60px;
+	}
+}
+@media screen and (max-width:1100px) {
 	#header {
 		position: static;
 		margin: 0;
 	}
-	.logo-image {
+	.header-logo-image {
 		display: block;
 		float: none;
 		margin: auto;
@@ -138,6 +154,10 @@ p, ul {
 		width: 100%;
 		text-align: center;
 		margin: 5px 0px;
+	}
+	.header-nav .contribute-button {
+		width: 400px;
+		margin: auto;
 	}
 	.content {
 		margin-top: 0;
@@ -211,11 +231,31 @@ label.inline-label {
     margin-top: 20px;
     padding: 10px 0;
     padding-bottom: 40px;
-    background: white;
+    background-color: #16489d;
+	color: #FFF;
     box-shadow: 0 -2px rgba(0, 0, 0, 0.1);
 
     bottom: 0;
     width: 100%;
+}
+
+.small-logo {
+	height: 80px;
+	margin: 40px;
+}
+
+.footer-button {
+	box-sizing: border-box;
+	margin: auto;
+	font-size: 22px;
+	font-weight: bold;
+	border-radius: 10px;
+	padding: 6px 10px;
+	//width: initial;
+}
+.footer-button:hover {
+	color: #16489d;
+	background-color: #FFF;
 }
 
 .flashed-message {
