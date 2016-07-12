@@ -12,28 +12,24 @@
     </head>
     <body>
         <div id="header">
-            <div class="primary-menu pure-menu pure-menu-horizontal">
-                <a class="pure-menu-heading" href="/">
-                    <img alt="Star" src="/static/star-transparent.png" class="logo-image" />
-                    <span class="logo-text">Teens for Teens</span>
-                </a>
-
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='index') }}" class="pure-menu-link">Home</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}" class="pure-menu-link">Platform</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}" class="pure-menu-link">Volunteer</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('donations.donate') }}" class="pure-menu-link">Donate</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}" class="pure-menu-link">About Us</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}" class="pure-menu-link">Press</a></li>
-                    <!--
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
-                    -->
-                </ul>
-            </div>
+			<a href="/">
+				<img alt="TFT Logo" src="/static/tftLogoWide.png" class="header-logo-image">
+			</a>
+			<ul class="header-nav">
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='index') }}">HOME</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">PLATFORM</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">VOLUNTEER</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">ABOUT US</a></li>
+				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}">PRESS</a></li>
+				<li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">CONTRIBUTE</div></a></li>
+				<!--
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
+				<li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
+				-->
+			</ul>
         </div>
 
         <div class="content">
@@ -53,15 +49,35 @@
         <div class="footer">
             <div class="footer-text">
                 <div class="pure-g">
-                    <div class="pure-u-1-1 pure-u-lg-1-2">
-                        <h2>Get in touch!</h2>
-                        <p>Send us an email at info@teensforteens.info <br>Call us at (305) 401-6150</p><br>
-                    </div>
-                    <div class="pure-u-1-1 pure-u-lg-1-2">
-                        <h2>Social media</h2>
-                        <a class="nodec" href="https://www.facebook.com/teensforteensusa"><img alt="Facebook" src="/static/facebook.png" class="social" /></a>
-                        <a class="nodec" href="https://plus.google.com/+TeensforteensInfoinc/about"><img alt="Google+" src="/static/googleplus.png" class="social" /></a>
-                    </div>
+					<div class="pure-u-1">
+						<div class="center">
+							<img alt="TFT Logo" src="/static/tftLogoLight.png" class="small-logo">
+						</div>
+					</div>
+					
+					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+						FOLLOW ON TWITTER
+					</div>
+					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+						(305) 401-6150
+					</div>
+					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+						FOLLOW ON FACEBOOK
+					</div>
+					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+						info@unifieddemocracy.org
+					</div>
+					
+					<div class="pure-u-1-4"></div>
+					<div class="pure-u-1-2">
+						<div class="footer-disclaimer">
+							Paid for by Unified Democracy PAC. Not authorized by any candidate or candidate's committee.
+						</div>
+					</div>
+					<div class="pure-u-1-4"></div>
+					
+					<div class="pure-u-1-1 footer-links"><a>OUR PLATFORM</a> <a>PRIVACY POLICY</a> <a>CONTACT</a></div>
+					
                 </div>
                 {% if global_config["DISPLAY_DEBUG_INFO"] %}
                 <p>platform version {{ version }}</p>
