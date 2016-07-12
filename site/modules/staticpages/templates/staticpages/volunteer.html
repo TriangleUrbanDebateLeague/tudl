@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="call-to-action">
+    <div class="cta-text">
+        <span class="cta-header-text header">Volunteer</span>
+        <p>Thank you for your interest in Teens for Teens. If you wish to become further
+        involved in our cause, consider signing up to become a volunteer on this page.
+        Being a volunteer allows you to view volunteer opportunities, contribute to our
+        candidate guides library, log NHS-approved volunteer hours, and receive our
+        newsletter.</p>
+    </div>
+</div>
+
+<div class="main-content">
+    {% if not g.user %}
+    <div class="content-section">
+        <h1>Sign up</h1>
+        <p>If you'd like to sign up to become a volunteer, you can <a class="whitelink" href="{{ url_for('account.create_account') }}">click here</a>.</p>
+    </div>
+
+    <div class="content-section">
+        <h1>Log in</h1>
+        <p>If you already have signed up, feel free to <a class="whitelink" href="{{ url_for('account.login') }}">log in</a>.</p>
+    </div>
+    {% else %}
+    <div class="content-section">
+        <h1>Visit your profile</h1>
+        <p>If you want to view or update your volunteer profile, then you can <a class="whitelink" href="{{ url_for('volunteer.you') }}">visit your profile</a>.</p>
+    </div>
+    <div class="content-section">
+        <h1>Log out</h1>
+        <p>If you don't want to do that, you can also <a class="whitelink" href="{{ url_for('account.logout') }}">log out</a>.</p>
+    {% endif %}
+</div>
+{% endblock %}
