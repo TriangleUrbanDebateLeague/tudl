@@ -1,97 +1,208 @@
 {% from "_formhelpers.html" import form_field, form_checkbox %}
 {% extends "base.html" %}
 {% block content %}
-<div class="main-content">
-    <div class="form-card">
-        <h1>Donate to Teens for Teens</h1>
-        <p>Thank you for your interest in our organization! Please note that the FEC
-        requires us to collect and retain certain information about you,
-        including your name, address, phone number, email address, occupation,
-        and employer.</p>
-        <form method="POST" class="pure-form pure-form-stacked" id="donate-form">
-            {{ form.stripe_token }}
+<div class="pure-g">
+	<div class="pure-u-xl-1-3 pure-u-1-1" id="message">
+		<p>image placeholder</p>
+		
+		<h2>Contribute to the Teens for Teens PAC</h2>
+		
+		<p><strong>It's our time! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</strong></p>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	
+	<div class="pure-u-xl-2-3 pure-u-1-1" id="form">
+		<form method="POST" class="pure-form pure-form-stacked" id="donate-form">
+			{{ form.stripe_token }}
             {{ form.csrf_token }}
-            <h2>Personal information</h2>
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.first_name, placeholder="John") }}</div>
-                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.last_name, placeholder="Doe") }}</div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-1">{{ form_field(form.street_address, placeholder="123 Main St") }}</div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.city, placeholder="New York") }}</div>
-                <div class="pure-u-1 pure-u-md-1-4">{{ form_field(form.state, placeholder="NY") }}</div>
-                <div class="pure-u-1 pure-u-md-1-4">{{ form_field(form.postal_code, placeholder="10001") }}</div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.email, placeholder="johndoe@gmail.com") }}</div>
-                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.phone, placeholder="2125555555") }}</div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.occupation, placeholder="CEO") }}</div>
-                <div class="pure-u-1 pure-u-md-1-2">{{ form_field(form.employer, placeholder="John Doe Incorporated") }}</div>
-            </div>
-            <h2>Donation information</h2>
-            <div class="pure-g">
-                <div class="pure-u-1 pure-u-md-1-1">{{ form_field(form.amount, placeholder="10.00") }}</div>
-            </div>
-            <!-- card fields must never touch our server -->
-            <div class="pure-g">
-                <div class="pure-u-1">
-                    <div class="form-field">
-                        <label>
-                            <span>Card number</span>
-                            <input type="text" data-stripe="number" maxlength="16" />
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1-1 pure-u-md-1-3">
-                    <div class="form-field">
-                        <label>
-                            <span>CVC</span>
-                            <input type="text" data-stripe="cvc" maxlength="4" />
-                        </label>
-                    </div>
-                </div>
-                <div class="pure-u-1-1 pure-u-md-1-3">
-                    <div class="form-field">
-                        <label>
-                            <span>Expiration month</span>
-                            <input type="text" data-stripe="exp-month" maxlength="2" />
-                        </label>
-                    </div>
-                </div>
-                <div class="pure-u-1-1 pure-u-md-1-3">
-                    <div class="form-field">
-                        <label>
-                            <span>Expiration year</span>
-                            <input type="text" data-stripe="exp-year" maxlength="4" />
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <p>Contributions made to the Teens for Teens Political Action
-            Committee are not refundable or transferable and are not deductible
-            as charitable contributions for federal income tax purposes.</p>
-            <p>By making a donation to Teens for Teens, you confirm that the
-            following statements are true and accurate:</p>
-            <ul>
-                <li>I am a United States citizen or a lawfully admitted
-                    permanent resident of the United States</li>
-                <li>I am not a federal contractor</li>
-                <li>I am at least 18 years of age</li>
-                <li>This contribution is not made from the general treasury
-                    funds of a corporation, labor organization, or national
-                    bank</li>
-            </ul>
-            {{ form_checkbox(form.certification_statement) }}
-            <br />
-            <button type="submit" class="pure-button button-primary">Donate</button>
-        </form>
-    </div>
+			
+			<div id="donation-amount" class="form-screen">
+				<div class="pure-g" id="tabs">
+					<div class="pure-u-1-3"><p>Donation Amount</p></div>
+					<div class="pure-u-1-3"><p>Contact Info</p></div>
+					<div class="pure-u-1-3"><p>Payment</p></div>
+				</div>
+				
+				<hr>
+				
+				<h1>Donation Amount</h1>
+				
+				<div class="pure-g" id="once-or-monthly">
+					<div class="pure-u-1-2"><p>Once</p></div>
+					<div class="pure-u-1-2"><p>Monthly</p></div>
+				</div>
+				
+				<div class="pure-g" id="numbers">
+					<div class="pure-u-1-5"><p>$5</p></div>
+					<div class="pure-u-1-5"><p>$10</p></div>
+					<div class="pure-u-1-5"><p>$25</p></div>
+					<div class="pure-u-1-5"><p>$50</p></div>
+					<div class="pure-u-1-5"><p>$100</p></div>
+				</div>
+				
+				<div class="pure-g" id="other">
+					<div class="pure-u-lg-3-5 pure-u-1-1"><p>Other</p></div>
+				</div>
+				
+				<div class="pure-g" id="continue">
+					<div class="pure-u-lg-3-5 pure-u-0-1"></div>
+					<div class="pure-u-lg-2-5 pure-u-1-1"><button>Continue</button></div>
+				</div>
+			</div>
+			
+			<div id="contact-info" class="form-screen">
+				<div class="pure-g">
+					<div class="pure-u-1-2">
+						<label>First Name</label>
+						<input type="text">
+					</div>
+					
+					<div class="pure-u-1-2">
+						<label>Last Name</label>
+						<input type="text">
+					</div>
+				</div>
+				
+				<div class="pure-g">
+					<div class="pure-u-1-1">
+						<label>Street Address</label>
+						<input type="text">
+					</div>
+				</div>
+				
+				<div class="pure-g">
+					<div class="pure-u-2-3">
+						<label>City</label>
+						<input type="text">
+					</div>
+					
+					<div class="pure-u-1-3">
+						<label>State</label>
+						<select>
+							<option value="AL">Alabama</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+							<option value="AR">Arkansas</option>
+							<option value="CA">California</option>
+							<option value="CO">Colorado</option>
+							<option value="CT">Connecticut</option>
+							<option value="DE">Delaware</option>
+							<option value="DC">District Of Columbia</option>
+							<option value="FL">Florida</option>
+							<option value="GA">Georgia</option>
+							<option value="HI">Hawaii</option>
+							<option value="ID">Idaho</option>
+							<option value="IL">Illinois</option>
+							<option value="IN">Indiana</option>
+							<option value="IA">Iowa</option>
+							<option value="KS">Kansas</option>
+							<option value="KY">Kentucky</option>
+							<option value="LA">Louisiana</option>
+							<option value="ME">Maine</option>
+							<option value="MD">Maryland</option>
+							<option value="MA">Massachusetts</option>
+							<option value="MI">Michigan</option>
+							<option value="MN">Minnesota</option>
+							<option value="MS">Mississippi</option>
+							<option value="MO">Missouri</option>
+							<option value="MT">Montana</option>
+							<option value="NE">Nebraska</option>
+							<option value="NV">Nevada</option>
+							<option value="NH">New Hampshire</option>
+							<option value="NJ">New Jersey</option>
+							<option value="NM">New Mexico</option>
+							<option value="NY">New York</option>
+							<option value="NC">North Carolina</option>
+							<option value="ND">North Dakota</option>
+							<option value="OH">Ohio</option>
+							<option value="OK">Oklahoma</option>
+							<option value="OR">Oregon</option>
+							<option value="PA">Pennsylvania</option>
+							<option value="RI">Rhode Island</option>
+							<option value="SC">South Carolina</option>
+							<option value="SD">South Dakota</option>
+							<option value="TN">Tennessee</option>
+							<option value="TX">Texas</option>
+							<option value="UT">Utah</option>
+							<option value="VT">Vermont</option>
+							<option value="VA">Virginia</option>
+							<option value="WA">Washington</option>
+							<option value="WV">West Virginia</option>
+							<option value="WI">Wisconsin</option>
+							<option value="WY">Wyoming</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="pure-g">
+					<div class="pure-u-1-3">
+						<label>ZIP Code</label>
+						<input type="text" pattern="\d{5}-?(\d{4})?">
+					</div>
+					
+					<div class="pure-u-2-3">
+						<label>Country</label>
+						<input type="text" value="USA">
+					</div>
+				</div>
+				
+				<div class="pure-g">
+					<div class="pure-u-2-3">
+						<label>Email</label>
+						<input type="email">
+					</div>
+				</div>
+				
+				<div class="pure-g" id="continue">
+					<div class="pure-u-lg-3-5 pure-u-0-1"></div>
+					<div class="pure-u-lg-2-5 pure-u-1-1"><button>Continue</button></div>
+				</div>
+				
+				<div class="pure-g" id="back">
+					<div class="pure-u-lg-3-5 pure-u-0-1"></div>
+					<div class="pure-u-lg-2-5 pure-u-1-1"><button>Back</button></div>
+				</div>
+			</div>
+			
+			<div id="payment" class="form-screen">
+				<div class="pure-g">
+					<div class="pure-u-1-1">
+						<label>Credit Card Number</label>
+						<input type="text">
+					</div>
+				</div>
+				
+				<div class="pure-g">
+					<div class="pure-u-1-3">
+						<label>CVC</label>
+						<input type="text">
+					</div>
+					
+					<div class="pure-u-2-3">
+						<label>Expiration Date</label>
+						<input type="month">
+					</div>
+				</div>
+				
+				<div class="pure-g">
+					<div class="pure-u-1-1">
+						<p>In the United States, a political action committee (PAC) is a type of organization that pools campaign contributions from members and donates those funds to campaign for or against candidates, ballot initiatives, or legislation.[1][2] The legal term PAC has been created in pursuit of campaign finance reform in the United States. This term is quite specific to all activities of campaign finance in the United States. Democracies of other countries use different terms for the units of campaign spending or spending on political competition (see political finance). At the U.S. federal level, an organization becomes a PAC when it receives or spends more than $2,600 for the purpose of influencing a federal election, according to the Federal Election Campaign Act.[3] At the state level, an organization becomes a PAC according to the state's election laws.</p>
+					</div>
+				</div>
+				
+				<div class="pure-g" id="continue">
+					<div class="pure-u-lg-3-5 pure-u-0-1"></div>
+					<div class="pure-u-lg-2-5 pure-u-1-1"><button type="submit">Donate</button></div>
+				</div>
+				
+				<div class="pure-g" id="back">
+					<div class="pure-u-lg-3-5 pure-u-0-1"></div>
+					<div class="pure-u-lg-2-5 pure-u-1-1"><p>Back</p></div>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 {% endblock %}
 
