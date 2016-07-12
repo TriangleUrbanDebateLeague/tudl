@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="625px" height="284px" viewBox="0 0 625 284" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 20</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-20" sketch:type="MSArtboardGroup">
+            <text id="UNIFIED-DEMOCRACY" sketch:type="MSTextLayer" font-family="Gotham Black" font-size="45" font-weight="686" sketch:alignment="middle" fill="#223052">
+                <tspan x="55.3475" y="222">UNIFIED </tspan>
+                <tspan x="260.2775" y="222" font-family="Gotham Medium" font-weight="normal">DEMOCRACY</tspan>
+                <tspan x="569.6525" y="222" font-size="15"></tspan>
+            </text>
+            <text id="POLITICAL-ACTION-COM" sketch:type="MSTextLayer" font-family="Gotham Light" font-size="14" font-weight="normal" sketch:alignment="middle" letter-spacing="3.60000038" fill="#4A4A4A">
+                <tspan x="152.371995" y="250">POLITICAL ACTION COMMITTEE</tspan>
+            </text>
+            <path d="M273.715737,141.167326 C254.009361,130.442177 241,111.978399 241,91 C241,57.862915 273.459356,31 313.5,31 C353.540644,31 386,57.862915 386,91 C386,124.137085 353.540644,151 313.5,151 C308.753148,151 304.112845,150.62246 299.620543,149.901685 C287.598872,152.80312 261.24681,162.290247 263.092119,159.488464 C265.324837,156.098468 273.605091,149.441109 273.715737,141.167326 Z" id="Oval-3" fill="#223052" sketch:type="MSShapeGroup"></path>
+            <path d="M347.048332,160.208998 C344.134066,160.726992 341.106417,161 338,161 C314.804041,161 296,145.777681 296,127 C296,108.222319 314.804041,93 338,93 C361.195959,93 380,108.222319 380,127 C380,139.60915 371.521113,150.615159 358.927085,156.485472 C359.569169,161.527675 364,164.760311 364,166.661046 C364,168.52909 353.638588,162.155911 347.048332,160.208998 Z" id="Oval-4" stroke="#FF4C62" stroke-width="3" fill="#FF4C62" sketch:type="MSShapeGroup"></path>
+            <polygon id="Star-5" fill="#FFFFFF" sketch:type="MSShapeGroup" points="316.5 132.25 310.91604 135.185661 311.982482 128.967831 307.464963 124.564339 313.70802 123.657169 316.5 118 319.29198 123.657169 325.535037 124.564339 321.017518 128.967831 322.08396 135.185661 "></polygon>
+            <polygon id="Star-6" fill="#FFFFFF" sketch:type="MSShapeGroup" points="338.5 132.25 332.91604 135.185661 333.982482 128.967831 329.464963 124.564339 335.70802 123.657169 338.5 118 341.29198 123.657169 347.535037 124.564339 343.017518 128.967831 344.08396 135.185661 "></polygon>
+            <polygon id="Star-7" fill="#FFFFFF" sketch:type="MSShapeGroup" points="360.5 132.25 354.91604 135.185661 355.982482 128.967831 351.464963 124.564339 357.70802 123.657169 360.5 118 363.29198 123.657169 369.535037 124.564339 365.017518 128.967831 366.08396 135.185661 "></polygon>
+        </g>
+    </g>
+</svg>
