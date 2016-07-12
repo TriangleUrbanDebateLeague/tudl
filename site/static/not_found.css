@@ -1,0 +1,17 @@
+.not_found-main-div {
+	background-image: url("/static/background-images/supreme-court-haze.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 50px);
+}
+.not_found-text {
+	position: absolute;
+	top: calc(50% - 70px);
+	width: 100%;
+	color: #FFF;
+	text-align: center;
+	font-size: 60px;
+}
