@@ -1,18 +1,12 @@
 /*
- * built by Fox Wilson
- * http://fwilson.me/
- */
-
-/*
  * colors:
  *  blue: #0a4883
  *  red: #c5392f
  *  white: #ffffff
- *  isn't this such a brilliant color scheme though
  */
 
 * {
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-family: Montserrat, Helvetica, Arial, sans-serif;
     line-height: 1.5;
 }
 
