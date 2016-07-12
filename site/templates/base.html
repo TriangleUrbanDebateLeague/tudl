@@ -1,3 +1,4 @@
+{% set extra_css = False %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,6 +12,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <script src="/static/jquery.min.js"></script>
+        {% if extra_css %}<link rel="stylesheet" type="text/css" href="/static/{{ extra_css }}.css" />{% endif %}
     </head>
     <body>
         <div id="header">
