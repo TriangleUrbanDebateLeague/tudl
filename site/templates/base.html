@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="/static/grids-responsive.min.css" />
         <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="/static/base.css" />
+		<link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <script src="/static/jquery.min.js"></script>
     </head>
@@ -56,16 +57,16 @@
 					</div>
 					
 					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						FOLLOW ON TWITTER
+						<i class="fa fa-twitter-square fa-lg"></i> FOLLOW ON TWITTER
 					</div>
 					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						(305) 401-6150
+						<i class="fa fa-phone-square fa-lg"></i> (855) 939-2013
 					</div>
 					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						FOLLOW ON FACEBOOK
+						<i class="fa fa-facebook-square fa-lg"></i> FOLLOW ON FACEBOOK
 					</div>
 					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						info@unifieddemocracy.org
+						<i class="fa fa-envelope fa-lg"></i> info@unifieddemocracy.org
 					</div>
 					
 					<div class="pure-u-1-4"></div>
@@ -79,10 +80,10 @@
 					<div class="pure-u-1-1 footer-links"><a>OUR PLATFORM</a> <a>PRIVACY POLICY</a> <a>CONTACT</a></div>
 					
                 </div>
-                {% if global_config["DISPLAY_DEBUG_INFO"] %}
-                <p>platform version {{ version }}</p>
-                {% endif %}
             </div>
+			{% if global_config["DISPLAY_DEBUG_INFO"] %}
+			<p>platform version {{ version }}</p>
+			{% endif %}
         </div>
 
         {% block scripts %}
