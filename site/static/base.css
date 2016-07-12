@@ -258,6 +258,18 @@ label.inline-label {
 	background-color: #FFF;
 }
 
+.footer-disclaimer {
+	box-sizing: border-box;
+	font-size: 20px;
+	text-align: center;
+	color: #7391c4;
+	border: solid 2px #7391c4;
+	border-radius: 10px;
+	padding: 25px;
+	margin: 20px 0px;
+	margin-bottom: 50px;
+}
+
 .flashed-message {
     width: 70%;
     padding: 15px 25px;
