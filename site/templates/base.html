@@ -1,3 +1,4 @@
+{% set extra_css = extra_css | default(False) %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,31 +8,32 @@
         <link rel="stylesheet" type="text/css" href="/static/grids-responsive.min.css" />
         <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="/static/base.css" />
-		<link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
-		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
         <link rel="shortcut icon" href="/static/favicon.ico" />
         <script src="/static/jquery.min.js"></script>
+        {% if extra_css %}<link rel="stylesheet" type="text/css" href="/static/{{ extra_css }}.css" />{% endif %}
     </head>
     <body>
         <div id="header">
-			<a href="/">
-				<img alt="TFT Logo" src="/static/UD-vertical.svg" class="header-logo-image">
-			</a>
-			<ul class="header-nav">
-				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='index') }}">HOME</a></li>
-				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">PLATFORM</a></li>
-				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">VOLUNTEER</a></li>
-				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">ABOUT US</a></li>
-				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}">PRESS</a></li>
-				<li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">CONTRIBUTE</div></a></li>
-				<!--
-				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
-				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
-				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
-				<li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
-				<li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
-				-->
-			</ul>
+            <a href="/">
+                <img alt="TFT Logo" src="/static/UD-vertical.svg" class="header-logo-image">
+            </a>
+            <ul class="header-nav">
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='index') }}">HOME</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">PLATFORM</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">VOLUNTEER</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">ABOUT US</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}">PRESS</a></li>
+                <li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">CONTRIBUTE</div></a></li>
+                <!--
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
+                -->
+            </ul>
         </div>
 
         <div class="content">
@@ -51,40 +53,40 @@
         <div class="footer">
             <div class="footer-text">
                 <div class="pure-g">
-					<div class="pure-u-1">
-						<div class="center">
-							<img alt="TFT Logo" src="/static/UD-icon-light.svg" class="small-logo">
-						</div>
-					</div>
-					
-					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						<i class="fa fa-twitter-square fa-lg"></i> FOLLOW ON TWITTER
-					</div>
-					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						<i class="fa fa-phone-square fa-lg"></i> (855) 939-2013
-					</div>
-					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						<i class="fa fa-facebook-square fa-lg"></i> FOLLOW ON FACEBOOK
-					</div>
-					<div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
-						<i class="fa fa-envelope fa-lg"></i> info@unifieddemocracy.org
-					</div>
-					
-					<div class="pure-u-lg-1-4 pure-u-1"></div>
-					<div class="pure-u-lg-1-2 pure-u-1">
-						<div class="footer-disclaimer">
-							Paid for by Unified Democracy PAC. Not authorized by any candidate or candidate's committee.
-						</div>
-					</div>
-					<div class="pure-u-lg-1-4 pure-u-1"></div>
-					
-					<div class="pure-u-1-1 footer-links"><a>OUR PLATFORM</a> <a>PRIVACY POLICY</a> <a>CONTACT</a></div>
-					
+                    <div class="pure-u-1">
+                        <div class="center">
+                            <img alt="TFT Logo" src="/static/UD-icon-light.svg" class="small-logo">
+                        </div>
+                    </div>
+                    
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+                        <i class="fa fa-twitter-square fa-lg"></i> FOLLOW ON TWITTER
+                    </div>
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+                        <i class="fa fa-phone-square fa-lg"></i> (855) 939-2013
+                    </div>
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+                        <i class="fa fa-facebook-square fa-lg"></i> FOLLOW ON FACEBOOK
+                    </div>
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+                        <i class="fa fa-envelope fa-lg"></i> info@unifieddemocracy.org
+                    </div>
+                    
+                    <div class="pure-u-lg-1-4 pure-u-1"></div>
+                    <div class="pure-u-lg-1-2 pure-u-1">
+                        <div class="footer-disclaimer">
+                            Paid for by Unified Democracy PAC. Not authorized by any candidate or candidate's committee.
+                        </div>
+                    </div>
+                    <div class="pure-u-lg-1-4 pure-u-1"></div>
+                    
+                    <div class="pure-u-1-1 footer-links"><a>OUR PLATFORM</a> <a>PRIVACY POLICY</a> <a>CONTACT</a></div>
+                    
                 </div>
             </div>
-			{% if global_config["DISPLAY_DEBUG_INFO"] %}
-			<p>platform version {{ version }}</p>
-			{% endif %}
+            {% if global_config["DISPLAY_DEBUG_INFO"] %}
+            <p>platform version {{ version }}</p>
+            {% endif %}
         </div>
 
         {% block scripts %}
