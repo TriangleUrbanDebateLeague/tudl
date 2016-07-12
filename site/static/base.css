@@ -258,10 +258,6 @@ label.inline-label {
     background-color: #0a4883;
 }
 
-a.whitelink:visited, a.whitelink {
-    color: #ffffff;
-}
-
 .center {
     margin-left: auto;
     margin-right: auto;
