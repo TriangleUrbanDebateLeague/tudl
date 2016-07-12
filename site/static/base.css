@@ -38,6 +38,7 @@ p, ul {
 	width: 100%;
 	background-color: #FFF;
 	box-shadow: 0px 0px 5px #000;
+	z-index: 999;
 }
 
 .header-logo-image {
@@ -107,12 +108,12 @@ p, ul {
     margin-bottom: 10px;
 }
 
-@media screen and (max-width:1400px) {
+@media screen and (max-width:1600px) {
 	.header-tab {
 		float: left;
 		font-size: 20px;
 		font-weight: bold;
-		margin: 0px 15px;
+		margin: 0px 10px;
 	}
 	.header-logo-image {
 		height: 60px;
@@ -122,7 +123,7 @@ p, ul {
 		margin-top: 60px;
 	}
 }
-@media screen and (max-width:1100px) {
+@media screen and (max-width:1200px) {
 	#header {
 		position: static;
 		margin: 0;
@@ -157,7 +158,6 @@ p, ul {
 }
 
 .footer {
-    margin-top: 20px;
     padding: 10px 0;
     padding-bottom: 40px;
     background-color: #16489d;
@@ -194,7 +194,7 @@ p, ul {
 	border: solid 2px #7391c4;
 	border-radius: 10px;
 	padding: 25px;
-	margin: 20px 0px;
+	margin: 30px 0px;
 	margin-bottom: 50px;
 }
 
@@ -207,29 +207,6 @@ p, ul {
 	margin: 0px 20px;
 }
 /* --- end header/footer styles --- */
-
-@media screen and (min-width: 700px) {
-    .main-content {
-        width: 80%;
-        margin: auto;
-    }
-    .call-to-action > .cta-text {
-        width: 80%;
-        margin: auto;
-    }
-}
-
-@media screen and (max-width: 699px) {
-    .main-content {
-        width: 90%;
-        margin: auto;
-    }
-    .call-to-action > .cta-text {
-        width: 90%;
-        margin: auto;
-    }
-
-}
 
 input:not([type=checkbox]) {
     width: 100%;
@@ -244,10 +221,6 @@ label.inline-label {
     padding-right: 3px;
 }
 
-.main-content:last-child {
-    margin-bottom: 10px;
-}
-
 .message-error {
     color: white;
     background-color: #c5392f;
@@ -256,6 +229,10 @@ label.inline-label {
 .message-success, .message-info {
     color: white;
     background-color: #0a4883;
+}
+
+a.whitelink:visited, a.whitelink {
+    color: #ffffff;
 }
 
 .center {
