@@ -12,7 +12,7 @@
  */
 
 * {
-    font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -31,26 +31,6 @@ p, ul {
     color: white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-
-.header-logo-image {
-	height: 80px;
-    vertical-align: middle;
-	margin-left: 30px;
-    margin-right: 30px; /* completely arbitrary */
-	float: left;
-}
-.pure-menu-heading {
-    text-transform: none;
-    margin-top: 3px;
-    font-size: 140%;
-}
-.primary-menu {
-    background: white;
-    z-index: 999999; /* yeah lol */
-    margin-bottom: 0;
-    overflow-x: auto;
-}
-
 /* --- header/footer styles --- */
 #header {
 	position: fixed;
@@ -58,6 +38,12 @@ p, ul {
 	width: 100%;
 	background-color: #FFF;
 	box-shadow: 0px 0px 5px #000;
+}
+
+.header-logo-image {
+	height: 80px;
+    vertical-align: middle;
+	float: left;
 }
 
 .header-nav {

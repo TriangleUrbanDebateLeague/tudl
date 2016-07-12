@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="70"
+   height="66"
+   viewBox="0 0 70 66"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="UD-icon-dark.svg">
+  <metadata
+     id="metadata28">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Artboard 21</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview26"
+     showgrid="false"
+     inkscape:zoom="5.0283149"
+     inkscape:cx="9.682427"
+     inkscape:cy="66.527972"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4">Artboard 21</title>
+  <description>Created with Sketch.</description>
+  <defs
+     id="defs6" />
+  <path
+     style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1"
+     inkscape:connector-curvature="0"
+     sketch:type="MSShapeGroup"
+     id="Oval-3"
+     d="M 16.094044,54.330176 C 6.4127413,49.082591 0,39.922501 0,29.5 0,13.2076 15.670034,0 35,0 54.329966,0 70,13.2076 70,29.5 70,45.7924 54.329966,59 35,59 c -2.467861,0 -4.876066,-0.21528 -7.199623,-0.624774 -5.965097,1.529033 -17.603873,5.66227 -16.756511,4.382468 1.040413,-1.571374 4.838491,-4.624816 5.050184,-8.427514 z" />
+  <path
+     style="fill:#ff4c62;fill-rule:evenodd;stroke:none;stroke-width:1"
+     inkscape:connector-curvature="0"
+     sketch:type="MSShapeGroup"
+     id="Oval-4"
+     d="M 51.064948,62.75139 C 49.907167,62.914792 48.715947,63 47.5,63 36.178163,63 27,55.612698 27,46.5 27,37.387302 36.178163,30 47.5,30 58.821837,30 68,37.387302 68,46.5 68,52.709842 63.737908,58.118456 57.439765,60.93415 57.648844,63.383696 60,64.939821 60,65.84356 c 0,0.903422 -5.688278,-2.369453 -8.935052,-3.09217 z" />
+  <polygon
+     style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1"
+     points="39.145034,50.140577 36.5,48.75 33.854966,50.140577 34.360123,47.195288 32.220246,45.109423 35.177483,44.679712 36.5,42 37.822517,44.679712 40.779754,45.109423 38.639877,47.195288 "
+     sketch:type="MSShapeGroup"
+     id="Star-5" />
+  <polygon
+     style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1"
+     points="49.145034,50.140577 46.5,48.75 43.854966,50.140577 44.360123,47.195288 42.220246,45.109423 45.177483,44.679712 46.5,42 47.822517,44.679712 50.779754,45.109423 48.639877,47.195288 "
+     sketch:type="MSShapeGroup"
+     id="Star-6" />
+  <polygon
+     style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:1"
+     points="60.145034,50.140577 57.5,48.75 54.854966,50.140577 55.360123,47.195288 53.220246,45.109423 56.177483,44.679712 57.5,42 58.822517,44.679712 61.779754,45.109423 59.639877,47.195288 "
+     sketch:type="MSShapeGroup"
+     id="Star-7" />
+</svg>
