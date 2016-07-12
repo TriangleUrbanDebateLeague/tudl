@@ -12,7 +12,7 @@
  */
 
 * {
-    font-family: Gotham, “Helvetica Neue”, Helvetica, Arial, sans-serif;
+    font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 1.5;
 }
 
@@ -51,6 +51,7 @@ p, ul {
     overflow-x: auto;
 }
 
+/* --- header/footer styles --- */
 #header {
 	position: fixed;
 	top: 0;
@@ -164,64 +165,6 @@ p, ul {
 	}
 }
 
-@media screen and (min-width: 700px) {
-    .main-content {
-        width: 80%;
-        margin: auto;
-    }
-    .call-to-action > .cta-text {
-        width: 80%;
-        margin: auto;
-    }
-}
-
-@media screen and (max-width: 699px) {
-    .main-content {
-        width: 90%;
-        margin: auto;
-    }
-    .call-to-action > .cta-text {
-        width: 90%;
-        margin: auto;
-    }
-
-}
-
-.content-section {
-    background-color: #0a4883;
-    margin-top: 10px;
-    padding: 2px 20px;
-    color: white;
-    border-radius: 2px;
-}
-
-.bottom-too { margin-bottom: 15px; }
-
-.form-card {
-    background-color: white;
-    padding: 2px 20px;
-    margin-top: 10px;
-    padding-bottom: 20px;
-    border-radius: 2px;
-}
-
-input:not([type=checkbox]) {
-    width: 100%;
-}
-
-label.inline-label {
-    display: inline;
-}
-
-.form-field {
-    padding-left: 3px;
-    padding-right: 3px;
-}
-
-.main-content:last-child {
-    margin-bottom: 10px;
-}
-
 .footer-text {
     width: 70%;
     margin: auto;
@@ -277,13 +220,46 @@ label.inline-label {
 .footer-links a {
 	margin: 0px 20px;
 }
+/* --- end header/footer styles --- */
 
-.flashed-message {
-    width: 70%;
-    padding: 15px 25px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+@media screen and (min-width: 700px) {
+    .main-content {
+        width: 80%;
+        margin: auto;
+    }
+    .call-to-action > .cta-text {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .main-content {
+        width: 90%;
+        margin: auto;
+    }
+    .call-to-action > .cta-text {
+        width: 90%;
+        margin: auto;
+    }
+
+}
+
+input:not([type=checkbox]) {
+    width: 100%;
+}
+
+label.inline-label {
+    display: inline;
+}
+
+.form-field {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.main-content:last-child {
+    margin-bottom: 10px;
 }
 
 .message-error {
@@ -296,17 +272,6 @@ label.inline-label {
     background-color: #0a4883;
 }
 
-.person-card {
-    width: 90%;
-    margin: auto;
-}
-
-.person-image {
-    float: left;
-    margin-right: 5px;
-    border-radius: 7px;
-}
-
 a.whitelink:visited, a.whitelink {
     color: #ffffff;
 }
@@ -315,31 +280,4 @@ a.whitelink:visited, a.whitelink {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-}
-
-.img {
-    max-width: 95%;
-}
-
-.fullwidth {
-    width: 100%;
-}
-
-.approval1 {
-    background-color: #32CD32;
-}
-
-.approval-1 {
-    background-color: #FF2400;
-}
-
-.nodec {
-    text-decoration: none;
-}
-
-.social {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
-  margin-right: 8px;
 }
