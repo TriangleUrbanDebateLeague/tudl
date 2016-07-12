@@ -246,12 +246,11 @@ label.inline-label {
 
 .footer-button {
 	box-sizing: border-box;
-	margin: auto;
 	font-size: 22px;
 	font-weight: bold;
+	text-align: center;
 	border-radius: 10px;
 	padding: 6px 10px;
-	//width: initial;
 }
 .footer-button:hover {
 	color: #16489d;
@@ -268,6 +267,15 @@ label.inline-label {
 	padding: 25px;
 	margin: 20px 0px;
 	margin-bottom: 50px;
+}
+
+.footer-links {
+	color: #7391c4;
+	font-size: 16px;
+	text-align: center;
+}
+.footer-links a {
+	margin: 0px 20px;
 }
 
 .flashed-message {
