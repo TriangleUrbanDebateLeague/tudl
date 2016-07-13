@@ -1,0 +1,114 @@
+{% set extra_css = "index" %}
+{% extends "base.html" %}
+{% block content %}
+<div class="image-box">
+	<div class="box-background" id="vote-box-background">
+	</div>
+	<div class="box-foreground">
+		<div id="voting-text-box">
+			VOTING ISN'T A<br>
+			<span id="privilege">PRIVILEGE.<span>
+		</div>
+		<div id="rights-text-box">
+			FROM ABOLISHING GERRYMANDERING TO ESTABLISHING A NATIONAL HOLIDAY FOR ELECTIONS - WE ARE LEADING THE FIGHT FOR VOTING RIGHTS FOR ALL
+		</div>
+		<div id="join-box">
+			<form>
+				 <input id="email-entry-box" type="text" name="email" placeholder="Email Address">
+				 <input id="email-submit" type="submit" value="JOIN THE FIGHT">
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="main-text">
+	<div class="left-box">
+		<h2>Voting should be easy</h2>
+		Not only does automatic voter registration make voting easier, but it also saves states' money. Imaging a world where you neither had to work on election day, nor did you have to register to vote in advance. That's the America we're fighting for.
+	</div>
+	<div class="right-box">
+		<img src="/static/homepage/easy-voting.png" class="side-image">
+	</div>
+	<div class="clear-bar"></div>
+	<div class="right-box">
+		<h2>Voting should be fair</h2>
+		Gerrymandering lets politicians pick their voters. Let's let voters pick their politicians with reformed campaign finance laws and independently drawn Congressional Districts.
+	</div>
+	<div class="left-box">
+		<img src="/static/homepage/maryland.png" class="side-image">
+	</div>
+	<div class="clear-bar"></div>
+	<div class="left-box">
+		<h2>Voting should be taught</h2>
+		There's a reason the US ranks 120th in average national voter turnout; we don't even require high school seniors to pass a 6th grade civics test. Just like we mandate gym no encourage exercise, let's invest in our democracy by funding civics classes.
+	</div>
+	<div class="right-box">
+		<img src="/static/homepage/civics.png" class="side-image">
+	</div>
+	<div class="clear-bar"></div>
+</div>
+
+<div class="image-box">
+	<div class="box-background" id="map-box-background">
+	</div>
+	<div class="box-foreground">
+		<div id="see-what-text-box">
+			SEE WHAT'S HAPPENING IN YOUR STATE
+		</div>
+		<select id="state-select">
+			<option value="" disabled selected>SELECT STATE</option>
+			<option value="AL">Alabama</option>
+			<option value="AK">Alaska</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="DC">District Of Columbia</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
+		</select>
+	</div>
+</div>
+{% endblock %}
