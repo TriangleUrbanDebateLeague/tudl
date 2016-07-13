@@ -49,6 +49,7 @@ p, ul {
 
 .header-nav {
 	list-style-type: none;
+	padding: 0;
 }
 
 .header-tab {
@@ -126,7 +127,7 @@ p, ul {
 @media screen and (max-width:1200px) {
 	#header {
 		position: static;
-		margin: 0;
+		padding-bottom: 5px;
 	}
 	.header-logo-image {
 		display: block;
@@ -143,8 +144,11 @@ p, ul {
 		text-align: center;
 		margin: 5px 0px;
 	}
+	.header-nav:last-child {
+		margin-bottom: 0px;
+	}
 	.header-nav .contribute-button {
-		width: 400px;
+		max-width: 400px;
 		margin: auto;
 	}
 	.content {
