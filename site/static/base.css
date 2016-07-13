@@ -13,12 +13,11 @@
 
 * {
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    line-height: 1.5;
 }
 
 body {
-    background-image: url("/static/texture.png");
-    background-repeat: repeat;
+    background-color: #FFF;
+	line-height: 1.5;
 }
 
 p, ul {
