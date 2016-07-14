@@ -1,5 +1,5 @@
 from database import database
-from flask import Flask, render_template, flash, redirect, make_response, request
+from flask import Flask, render_template, flash, redirect, make_response, request, session
 from utils import send_email, send_error_email
 import logging
 import subprocess
