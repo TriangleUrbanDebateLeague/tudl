@@ -80,6 +80,8 @@ def create_app(environment):
             session["ip"] = user_ip
         else:
             if session["ip"] != user_ip:
+                session.pop("logged_in", None)
+                session.pop("uid", None)
                 return redirect('/')
 
     return app
