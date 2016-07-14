@@ -39,3 +39,13 @@ def send_error_email(env, trace):
 
     Request method: {method}
     """.format(**info))
+
+def send_warning_email(env, warning_text):
+    if not current_app.config["EMAIL_ERRORS"]:
+        return
+    send_email(current_app.config["EMAIL_FROM"], current_app.config["SITE_ADMIN"], "Application warning ({})".format(env),
+    """
+    The following warning occurred in {env}:
+
+    {warning}
+    """.format(env=env, warning=warning_text))

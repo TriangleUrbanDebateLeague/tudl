@@ -1,6 +1,6 @@
 from database import database
 from flask import Flask, render_template, flash, redirect, make_response, request, session
-from utils import send_email, send_error_email
+from utils import send_email, send_error_email, send_warning_email
 import logging
 import subprocess
 import traceback
@@ -80,6 +80,7 @@ def create_app(environment):
             session["ip"] = user_ip
         else:
             if session["ip"] != user_ip:
+                send_warning_email(environment, "Session validation failed: {}".format(list(session.items())))
                 session.pop("logged_in", None)
                 session.pop("uid", None)
                 session.pop("ip", None)
