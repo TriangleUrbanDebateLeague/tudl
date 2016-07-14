@@ -1,5 +1,5 @@
 from database import database
-from flask import Flask, render_template, flash, redirect, make_response
+from flask import Flask, render_template, flash, redirect, make_response, request
 from utils import send_email, send_error_email
 import logging
 import subprocess
@@ -72,6 +72,15 @@ def create_app(environment):
         except:
             trace = traceback.format_exc()
         return make_response(render_template("whoops.html", trace=trace), 500)
+
+    @app.before_request
+    def verify_session():
+        user_ip = request.headers["X-Forwarded-For"]
+        if "ip" not in session:
+            session["ip"] = user_ip
+        else:
+            if session["ip"] != user_ip:
+                return redirect('/')
 
     return app
 
