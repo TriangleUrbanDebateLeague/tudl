@@ -33,4 +33,25 @@ def thanks():
 
 @email_list.route("/confirm/<key>/", methods=["GET", "POST"])
 def confirm_email(key):
-    pass
+    form = ListConfirmSubscribeForm(request.form)
+
+    if not form.validate_on_submit():
+        flash_errors(form)
+        return render_template("list/confirm.html", form=form)
+
+    query = ListEntry.select().where(ListEntry.email_confirm_key == key)
+    if query.count() != 1:
+        flash("Invalid confirmation key.", "error")
+        return redirect(url_for("email_list.list_subscribe"))
+
+    entry = next(query.iterator())
+    entry.first_name = form.first_name.data
+    entry.last_name = form.last_name.data
+    entry.email_confirmed = True
+    entry.save()
+
+    return redirect(url_for("email_list.thanks_confirm"))
+
+@email_list.route("/thanks/confirm/")
+def thanks_confirm():
+    return render_template("list/thanks_confirm.html")
