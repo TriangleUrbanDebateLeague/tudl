@@ -207,6 +207,11 @@ p, ul {
 	border-radius: 10px;
 	padding: 6px 10px;
 }
+
+.footer-button a {
+    text-decoration: none;
+	color: inherit;
+}
 .footer-button:hover {
 	color: #16489d;
 	background-color: #FFF;
@@ -229,9 +234,23 @@ p, ul {
 	font-size: 16px;
 	text-align: center;
 }
+
 .footer-links a {
-	margin: 0px 20px;
+    margin: 0px 20px;
+	font-weight: 400;
+	text-decoration: none;
+	color: inherit;
+	-webkit-transition: color 0.2s;
+	-moz-transition: color 0.2s;
+	transition: color 0.2s;
 }
+
+.footer-links a:hover,
+.footer-links a:focus {
+	color: #fff;
+}
+
+
 /* --- end header/footer styles --- */
 
 input:not([type=checkbox]) {
