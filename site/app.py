@@ -75,7 +75,7 @@ def create_app(environment):
 
     @app.before_request
     def verify_session():
-        user_ip = request.headers["X-Forwarded-For"]
+        user_ip = request.headers.get("X-Forwarded-For", None)
         if "ip" not in session:
             session["ip"] = user_ip
         else:
