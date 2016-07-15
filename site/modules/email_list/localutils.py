@@ -1,6 +1,9 @@
 from flask import current_app, url_for
 from utils import send_email
 import random
+import string
+
+valid_chars = string.ascii_letters + string.digits
 
 confirm_email_template = """Hi,
 Thanks for signing up for the {application} mailing list. Please click the
