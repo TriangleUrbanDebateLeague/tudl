@@ -250,11 +250,13 @@ label.inline-label {
 .message-error {
     color: white;
     background-color: #c5392f;
+	padding: 5px;
 }
 
 .message-success, .message-info {
     color: white;
     background-color: #0a4883;
+	padding: 5px;
 }
 
 a.whitelink:visited, a.whitelink {
