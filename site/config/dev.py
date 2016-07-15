@@ -15,8 +15,4 @@ EMAIL_ERRORS = False
 DISPLAY_DEBUG_INFO = False
 ALLOW_RCON = False
 
-def send_email(from_, to, subject, text):
-    print("From: {}".format(from_))
-    print("To: {}".format(to))
-    print("Subject: {}".format(subject))
-    print("Text: {}".format(text))
+DEV_EMAIL = True

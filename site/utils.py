@@ -7,10 +7,16 @@ def flash_errors(form):
         for error in errors:
             flash("{} - {}".format(getattr(form, field).label.text, error), "error")
 
+def pretend_email(from_, to, subject, text):
+    print("From: {}".format(from_))
+    print("To: {}".format(to))
+    print("Subject: {}".format(subject))
+    print("Text: {}".format(text))
+
 def send_email(from_, to, subject, text):
-    override = current_app.config.get("send_email", None)
-    if override is not None:
-        return override(from_, to, subject, text)
+    override = current_app.config.get("DEV_EMAIL", False)
+    if override:
+        return pretend_email(from_, to, subject, text)
 
     message = MIMEText(text)
     message["From"] = from_
