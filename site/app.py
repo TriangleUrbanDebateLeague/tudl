@@ -1,6 +1,6 @@
 from database import database
-from flask import Flask, render_template, flash, redirect, make_response
-from utils import send_email, send_error_email
+from flask import Flask, render_template, flash, redirect, make_response, request, session
+from utils import send_email, send_error_email, send_warning_email
 import logging
 import subprocess
 import traceback
@@ -72,6 +72,18 @@ def create_app(environment):
         except:
             trace = traceback.format_exc()
         return make_response(render_template("whoops.html", trace=trace), 500)
+
+    @app.before_request
+    def verify_session():
+        user_ip = request.headers.get("X-Forwarded-For", None)
+        if "ip" not in session:
+            session["ip"] = user_ip
+        else:
+            if session["ip"] != user_ip and "logged_in" in session:
+                send_warning_email(environment, "Session validation failed: {}".format(list(session.items())))
+                session.pop("logged_in", None)
+                session.pop("uid", None)
+                session.pop("ip", None)
 
     return app
 
