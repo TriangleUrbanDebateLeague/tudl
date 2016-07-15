@@ -79,12 +79,11 @@ def create_app(environment):
         if "ip" not in session:
             session["ip"] = user_ip
         else:
-            if session["ip"] != user_ip:
+            if session["ip"] != user_ip and "logged_in" in session:
                 send_warning_email(environment, "Session validation failed: {}".format(list(session.items())))
                 session.pop("logged_in", None)
                 session.pop("uid", None)
                 session.pop("ip", None)
-                return redirect('/')
 
     return app
 
