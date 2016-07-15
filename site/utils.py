@@ -8,6 +8,10 @@ def flash_errors(form):
             flash("{} - {}".format(getattr(form, field).label.text, error), "error")
 
 def send_email(from_, to, subject, text):
+    override = current_app.config.get("send_email", None)
+    if override is not None:
+        return override(from_, to, subject, text)
+
     message = MIMEText(text)
     message["From"] = from_
     message["To"] = to
