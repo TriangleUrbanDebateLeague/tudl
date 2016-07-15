@@ -196,12 +196,12 @@ p, ul {
 
 .small-logo {
 	height: 80px;
-	margin: 40px;
+	margin: 30px;
 }
 
 .footer-button {
 	box-sizing: border-box;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	text-align: center;
 	border-radius: 10px;
@@ -219,14 +219,14 @@ p, ul {
 
 .footer-disclaimer {
 	box-sizing: border-box;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 	color: #7391c4;
 	border: solid 2px #7391c4;
 	border-radius: 10px;
-	padding: 25px;
-	margin: 30px 0px;
-	margin-bottom: 50px;
+	padding: 20px;
+	margin: 28px 0px;
+	margin-bottom: 18px;
 }
 
 .footer-links {
