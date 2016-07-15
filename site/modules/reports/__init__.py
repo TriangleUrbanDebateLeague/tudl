@@ -1,6 +1,7 @@
 class BaseReport(object):
     args = []
     columns = []
+    name = "I am an unnamed report, please fix me!"
 
     def __init__(self, **params):
         for param, value in self.args:
