@@ -11,8 +11,8 @@
 }
 
 body {
-    background-image: url("/static/texture.png");
-    background-repeat: repeat;
+    background-color: #FFF;
+	line-height: 1.5;
 }
 
 p, ul {
@@ -43,6 +43,7 @@ p, ul {
 
 .header-nav {
 	list-style-type: none;
+	padding: 0;
 }
 
 .header-tab {
@@ -120,7 +121,7 @@ p, ul {
 @media screen and (max-width:1200px) {
 	#header {
 		position: static;
-		margin: 0;
+		padding-bottom: 5px;
 	}
 	.header-logo-image {
 		display: block;
@@ -137,8 +138,11 @@ p, ul {
 		text-align: center;
 		margin: 5px 0px;
 	}
+	.header-nav:last-child {
+		margin-bottom: 0px;
+	}
 	.header-nav .contribute-button {
-		width: 400px;
+		max-width: 400px;
 		margin: auto;
 	}
 	.content {
@@ -157,9 +161,38 @@ p, ul {
     background-color: #16489d;
 	color: #FFF;
     box-shadow: 0 -2px rgba(0, 0, 0, 0.1);
-
     bottom: 0;
     width: 100%;
+}
+
+.small-logo {
+	height: 80px;
+	margin: 40px;
+}
+
+.footer-button {
+	box-sizing: border-box;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 10px;
+	padding: 6px 10px;
+}
+.footer-button:hover {
+	color: #16489d;
+	background-color: #FFF;
+}
+
+.footer-disclaimer {
+	box-sizing: border-box;
+	font-size: 20px;
+	text-align: center;
+	color: #7391c4;
+	border: solid 2px #7391c4;
+	border-radius: 10px;
+	padding: 25px;
+	margin: 30px 0px;
+	margin-bottom: 50px;
 }
 
 .small-logo {

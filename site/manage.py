@@ -18,7 +18,7 @@ def shell_ctx():
 @manager.command
 def sync_volunteers():
     """Fix any Volunteers where local names differ from account names"""
-    volunteers = db.Volunteer.select().where(db.Volunteer.account != None)
+    volunteers = Volunteer.select().where(Volunteer.account != None)
     print("Syncing {} volunteer(s)".format(volunteers.count()))
     for volunteer in volunteers:
         print(volunteer.full_name)
