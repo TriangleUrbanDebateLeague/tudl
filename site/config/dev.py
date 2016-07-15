@@ -1,6 +1,7 @@
 import os
 
-SEND_EMAIL = False
+SEND_EMAIL = True
+EMAIL_FROM = "dev@local.dev"
 APP_NAME = "Teens for Teens"
 SECRET_KEY = "key"
 
@@ -13,3 +14,5 @@ EMAIL_ERRORS = False
 
 DISPLAY_DEBUG_INFO = False
 ALLOW_RCON = False
+
+DEV_EMAIL = True

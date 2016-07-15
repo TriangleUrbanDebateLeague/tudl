@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main-content">
+    <div class="form-card">
+        <h1>All reports</h1>
+        {% for module, reports in all_reports %}
+        <h2>{{ module }}</h2>
+        <ul>
+        {% for report in reports %}
+            <li><a href="{{ url_for('reports.run', module=module, report=report.__name__) }}">{{ report.name }}</a></li>
+        {% endfor %}
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
