@@ -2,10 +2,11 @@ from .forms import ListSubscribeForm, ListConfirmSubscribeForm
 from .localutils import send_confirm_email
 from .models import ListEntry
 from flask import Blueprint, current_app, request, render_template, redirect, url_for
+from utils import flash_errors
 
 email_list = Blueprint("email_list", __name__, template_folder="templates", url_prefix="/list")
 
-@email_list.route("/susbcribe/", methods=["GET", "POST"])
+@email_list.route("/subscribe/", methods=["GET", "POST"])
 def list_subscribe():
     form = ListSubscribeForm(request.form)
 
