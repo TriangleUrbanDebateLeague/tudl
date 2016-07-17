@@ -164,7 +164,7 @@ h2 {
 
 /* map */
 #map-box-background {
-	background-image: url("/static/background-images/map.png");
+	background-image: url("/static/background-images/map.svg");
 }
 #see-what-text-box {
 	width: 80%;

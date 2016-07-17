@@ -196,16 +196,21 @@ p, ul {
 
 .small-logo {
 	height: 80px;
-	margin: 40px;
+	margin: 30px;
 }
 
 .footer-button {
 	box-sizing: border-box;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	text-align: center;
 	border-radius: 10px;
 	padding: 6px 10px;
+}
+
+.footer-button a {
+    text-decoration: none;
+	color: inherit;
 }
 .footer-button:hover {
 	color: #16489d;
@@ -214,14 +219,14 @@ p, ul {
 
 .footer-disclaimer {
 	box-sizing: border-box;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
 	color: #7391c4;
 	border: solid 2px #7391c4;
 	border-radius: 10px;
-	padding: 25px;
-	margin: 30px 0px;
-	margin-bottom: 50px;
+	padding: 20px;
+	margin: 28px 0px;
+	margin-bottom: 18px;
 }
 
 .footer-links {
@@ -229,9 +234,23 @@ p, ul {
 	font-size: 16px;
 	text-align: center;
 }
+
 .footer-links a {
-	margin: 0px 20px;
+    margin: 0px 20px;
+	font-weight: 400;
+	text-decoration: none;
+	color: inherit;
+	-webkit-transition: color 0.2s;
+	-moz-transition: color 0.2s;
+	transition: color 0.2s;
 }
+
+.footer-links a:hover,
+.footer-links a:focus {
+	color: #fff;
+}
+
+
 /* --- end header/footer styles --- */
 
 input:not([type=checkbox]) {
@@ -250,11 +269,13 @@ label.inline-label {
 .message-error {
     color: white;
     background-color: #c5392f;
+	padding: 5px;
 }
 
 .message-success, .message-info {
     color: white;
     background-color: #0a4883;
+	padding: 5px;
 }
 
 a.whitelink:visited, a.whitelink {
