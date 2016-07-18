@@ -111,7 +111,7 @@
 }
 @media screen and (max-width:450px) {
 	.image-box {
-		height: 80vw;
+		height: 85vw;
 	}
 	#voting-text-box {
 		margin-top: 5vw;
