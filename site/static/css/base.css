@@ -18,6 +18,10 @@ p, ul {
     text-align: justify;
 }
 
+a {
+	text-decoration: none;
+}
+
 .content {
 	margin-top: 80px;
     margin-left: auto;
