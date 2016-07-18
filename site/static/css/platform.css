@@ -37,9 +37,9 @@ p {
     padding: 10px 35px;
     text-decoration: none;
     color: inherit;
-    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-    -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-    transition: font-size 0.3s ease, background-color 0.3s ease;
+    -webkit-transition: font-size 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+    -moz-transition: font-size 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+    transition: font-size 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
 }
  
 #platform-list li a:hover {
@@ -47,4 +47,15 @@ p {
     padding: 10px 35px 10px 70px;
     color: #1e50a6;
 }
-
+#platform-list li:hover .redbar {
+	width: 35px;
+}
+.redbar {
+	float: left;
+	width: 0px;
+	height: 65px;
+	background-color: #d0021b;
+	-webkit-transition: width 0.3s ease;
+    -moz-transition: width 0.3s ease;
+    transition: width 0.3s ease;
+}
