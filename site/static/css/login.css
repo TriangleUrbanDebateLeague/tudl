@@ -1,0 +1,54 @@
+.main-content {
+	background-image: url("/static/background-images/memorial.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	height: calc(100vh - 50px);
+	min-height: 500px;
+	padding: 0;
+}
+#log-in-label {
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+	border-radius: 10px 10px 0px 0px;
+	background-color: #3a77e0;
+	color: #FFF;
+	font-size: 18px;
+	padding: 4px;
+	text-align: center;
+}
+#log-in-label h1 {
+	margin: 0;
+}
+.form-card {
+	position: absolute;
+	left: 10%;
+	top: 80px;
+	box-sizing: border-box;
+	width: 500px;
+	height: 360px;
+	background-color: #FFF;
+	border-radius: 10px;
+	padding: 20px;
+	padding-top: 80px;
+}
+#create-account-button {
+	font-size: 110%;
+}
+#log-in-button {
+	background-color: #ff4c62;
+	float: right;
+}
+@media screen and (max-width:1200px) {
+	.form-card {
+		left: 10%;
+		right: 10%;
+		width: 80%;
+		height: auto;
+	}
+}

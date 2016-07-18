@@ -1,16 +1,19 @@
+{% set extra_css = "css/login" %}
 {% from "_formhelpers.html" import form_field %}
 {% extends "base.html" %}
 {% block content %}
 <div class="main-content">
     <div class="form-card">
-        <h1>Log in</h1>
+        <div id="log-in-label"><h1>LOG IN</h1></div>
         <form method="POST" class="pure-form pure-form-stacked">
             {{ form.csrf_token() }}
             {{ form_field(form.email) }}
             {{ form_field(form.password) }}
             <br />
-            <button type="submit" class="pure-button button-primary">Log in</button>
+			<a id="create-account-button" href="/account/create/">CREATE AN ACCOUNT</a>
+            <button type="submit" id="log-in-button" class="pure-button button-primary">Log in</button>
         </form>
+		<br>
         <p>Forgot your password? You can <a href="{{ url_for('account.request_reset') }}">request a reset link</a>.</p>
     </div>
 </div>
