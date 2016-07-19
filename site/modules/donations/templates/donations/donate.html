@@ -168,87 +168,56 @@
 {% block scripts %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
-Stripe.setPublishableKey('{{ key }}');
-$("#donate-form").submit(function(e) {
-		var $form = $(this);
-		var form = this;
-		$form.find('button').prop('disabled', true);
-		Stripe.card.createToken($form, function(status, response) {
-			if (response.error) {
-				alert(response.error.message);
-				$form.find('button').prop('disabled', false);
-			}
-			else {
-				var token = response.id;
-				$("input[name=stripe_token]").val(token);
-				form.submit();
-			}
-		});
-	return false;
-});
+    Stripe.setPublishableKey('{{ key }}');
+    $("#donate-form").submit(function(e) {
+            var $form = $(this);
+            var form = this;
+            $form.find('button').prop('disabled', true);
+            Stripe.card.createToken($form, function(status, response) {
+                if(response.error) {
+                alert(response.error.message);
+                $form.find('button').prop('disabled', false);
+                }
+                else {
+                var token = response.id;
+                $("input[name=stripe_token]").val(token);
+                form.submit();
+                }
+                });
+            return false;
+            });
 
 var tabs = ["donation-amount-tab", "contact-info-tab", "payment-tab"];
 
 function switchTab(tabName) {
-	for (var tab in tabs) {
-		var name = tabs[tab];
-		document.getElementById(name).style.display = "none";
-	}
+    for (var tab in tabs) {
+        var name = tabs[tab];
+        document.getElementById(name).style.display = "none";
+    }
 
-	document.getElementById(tabName).style.display = "block";
+    document.getElementById(tabName).style.display = "block";
 }
 
 document.getElementById("donation-amount").onclick = function () {
-	switchTab("donation-amount-tab");
+    switchTab("donation-amount-tab");
 }
 document.getElementById("contact-info").onclick = function () {
-	switchTab("contact-info-tab");
+    switchTab("contact-info-tab");
 }
 document.getElementById("payment").onclick = function () {
-	switchTab("payment-tab");
+    switchTab("payment-tab");
 }
 document.getElementById("donation-amount-continue").onclick = function () {
-	switchTab("contact-info-tab");
+    switchTab("contact-info-tab");
 }
 document.getElementById("contact-info-continue").onclick = function () {
-	switchTab("payment-tab");
+    switchTab("payment-tab");
 }
 document.getElementById("contact-info-back").onclick = function () {
-	switchTab("donation-amount-tab");
+    switchTab("donation-amount-tab");
 }
 document.getElementById("payment-back").onclick = function () {
-	switchTab("contact-info-tab");
-}
-
-function switchInterval(interval) {
-	if (interval == "monthly") {
-		document.getElementById("once-button").classList.remove("selected");
-		document.getElementById("monthly-button").classList.add("selected");
-		document.getElementById("recurring-donation-input").value = "true";
-	}
-	else {
-		document.getElementById("monthly-button").classList.remove("selected");
-		document.getElementById("once-button").classList.add("selected");
-		document.getElementById("recurring-donation-input").value = "false";
-	}
-}
-
-//The name of this function is somewhat deceptive. The argument passed is 0-5 for which input element is clicked, NOT a dollar amount
-var dollarAmounts = [5,10,25,50,100];
-function switchAmount(number) {
-	for (var i = 0; i < 5; i++) {
-		document.getElementsByClassName("donation-number")[i].classList.remove("selected");
-		document.getElementById("other-amount-box").classList.remove("selected");
-	}
-	if (number < 5) {
-		document.getElementsByClassName("donation-number")[number].classList.add("selected");
-		document.getElementById("other-amount-box").value = null;
-		document.getElementById("amount-input").value = dollarAmounts[number];
-	}
-	else {
-		document.getElementById("other-amount-box").classList.add("selected");
-		document.getElementById("amount-input").value = document.getElementById("other-amount-box").value;
-	}
+    switchTab("contact-info-tab");
 }
 
 switchTab("donation-amount-tab");
