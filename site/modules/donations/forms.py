@@ -21,4 +21,6 @@ class DonateForm(Form):
     occupation = StringField('Occupation', [validators.Required(), validators.Length(max=128)])
     employer = StringField('Employer', [validators.Required(), validators.Length(max=128)])
 
+    recurring = BooleanField('Recurring donation')
+
     certification_statement = BooleanField('I understand the statements above', [validators.Required()])

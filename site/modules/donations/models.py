@@ -13,4 +13,5 @@ class Donation(BaseModel):
     phone = CharField(20, verbose_name="Phone number")
     occupation = CharField(128, verbose_name="Occupation")
     employer = CharField(128, verbose_name="Employer")
+    recurring = BooleanField(default=False, verbose_name="Recurring Donation")
     stripe_success = BooleanField(default=False, verbose_name="Charge successful")
