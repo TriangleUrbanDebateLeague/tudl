@@ -1,73 +1,159 @@
 {% extends "base.html" %}
+{% set extra_css = ["huge-header", "about"] %}
+
 {% block content %}
-<div class="call-to-action">
-    <div class="cta-text">
-        <span class="cta-header-text header">About Us</span>
-        <p>Teens for Teens is built upon the primary goal of changing the political ideology of "Students not being heard" in domestic legislative bodies. Up to date, no other nonprofit organization or Political Action Committee (PAC) has taken the initiative to put a stop to the lack of representation that constituents under the age of eighteen have been receiving. Founded in early February 2015, Teens for Teens was created to advocate for the civil rights and liberties that students have been calling for. By unifying students into a central force for change and progress, Teens for Teens is hoping to help students across the country finally be heard and have their opinions matter to the people representing them.</p>
-        <p>The activities pursued by Teens for Teens include: Hosting candidate debates among candidates in upcoming elections, advising candidates and officials on youth specific issues, contributing service hours to local election candidates, working with municipalities to change the voting age for local elections, and registering students to vote.</p>
-    </div>
+
+<div id="huge-header">
+	<h1>About Us</h1>
 </div>
 
-<div class="main-content">
-    <div class="content-section">
-        <h1>Our Team</h1>
-        <div class="pure-g">
-            <div class="pure-u-1-1 pure-u-md-1-2">
-                <div class="person-card">
-                    <img src="/static/ben.jpg" class="person-image" />
-                    <strong>Benjamin Burstein</strong><br />
-                    <em>President</em>
-                    <p>Benjamin Burstein is a junior at Miami Beach High School in Miami Beach, Florida and founded Teens for Teens to improve youth political engagement. In his free time he participates in Congressional Debate and chairs a local business association.</p>
-                </div>
-            </div>
-            <div class="pure-u-1-1 pure-u-md-1-2">
-                <div class="person-card">
-                    <img src="/static/victoria.jpg" class="person-image" />
-                    <strong>Victoria Bevard</strong><br />
-                    <em>Executive Vice President</em>
-                    <p>Victoria Bevard is a junior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. She joined Teens for Teens in 2016 to expand the management and scope of the organization. In her free time, she captains her school's Congressional Debate team.</p>
-                </div>
-            </div>
-        </div>
-        <div class="pure-g">
-            <div class="pure-u-1-1 pure-u-md-1-2">
-                <div class="person-card">
-                    <img src="/static/narrelle.jpg" class="person-image" />
-                    <strong>Narrelle Gilchrist</strong><br />
-                    <em>National Director of Communication</em>
-                    <p>Narrelle Gilchrist is a homeschooled senior from West Palm Beach, Florida. She joined Teens for Teens to encourage more youth to become politically active and informed. Narrelle spends her free time competing in congressional debate, writing for several magazines, and singing in a community choir.</p>
-                </div>
-            </div>
-            <div class="pure-u-1-1 pure-u-md-1-2">
-                <div class="person-card">
-                    <img src="/static/tyler.jpg" class="person-image" />
-                    <strong>Tyler Hess</strong><br />
-                    <em>National Director of Literature</em>
-                    <p>Tyler Hess is a junior at Broad Run High School in Ashburn, Virginia. He joined Teens for Teens in 2016 to add to the PAC's literature content.  In his spare time, he captains his school's Speech team and is currently the state Parliamentarian of Virginia FBLA.</p>
-                </div>
-            </div>
-            <div class="pure-u-1-1 pure-u-md-1-2">
-                <div class="person-card">
-                    <img src="/static/fox.jpg" class="person-image" />
-                    <strong>Fox Wilson</strong><br />
-                    <em>National Director of Information Technology</em>
-                    <p>Fox Wilson is a senior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. He joined Teens for Teens in 2016 to establish our back-end technology infrastructure.  In his free time, he works as the head system administrator at TJHSST, works on coding projects, plays the piano, and writes music.</p>
-                </div>
-            </div>
-             <div class="pure-u-1-1 pure-u-md-1-2">
-                <div class="person-card">
-                    <img src="/static/sharon.png" class="person-image" />
-                    <strong>Sharon Liu</strong><br />
-                    <em>National Director of Web Design</em>
-                    <p>Sharon Liu is a junior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. She joined Teens for Teens to aid with front-end web design and general website maintenance. Sharon is in her school's Congressional Debate team, and spends her free time pursuing the visual arts and creative writing.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--
-    <div class="content-section">
-        <h1>Timeline</h1>
-    </div>
-    -->
+<div class="pure-g" id="sections">
+	<div class="pure-u-1-4">
+		<h2 class="link" id="our-team">Our Team</h2>
+	</div>
+	
+	<div class="pure-u-1-4">
+		<h2 class="link" id="council">Advisory Councils</h2>
+	</div>
+	
+	<div class="pure-u-1-4">
+		<h2 class="link" id="our-story">Our Story</h2>
+	</div>
+	
+	<div class="pure-u-1-4">
+		<h2 class="link" id="press">Press</h2>
+	</div>
 </div>
+
+<div class="tab" id="tab-our-team" class="text">
+	<h1>Our Team</h1>
+	
+	<img alt="Benjamin Burstein" src="{{ url_for('static', filename='ben.jpg') }}">
+	<h2>Benjamin Burstein</h2>
+	<h3>President</h3>
+	<p>Benjamin Burstein is a senior at Miami Beach Senior High School in Miami Beach, Florida. He created the Unified Democracy PAC to increase civic involvement in America’s largely disengaged constituency. When not managing the PAC, he chairs a local business association in Miami Beach, Florida and leads his city’s youth commission.</p>
+	
+	<hr>
+	
+	<img alt="Victoria Bevard" src="{{ url_for('static', filename='victoria.jpg') }}">
+	<h2>Victoria Bevard</h2>
+	<h3>Executive Vice President</h3>
+	<p>Victoria Bevard is a senior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. She joined in 2016 to facilitate the PAC’s national transition. In her free time, she captains her school’s Congressional Debate team.</p>
+	
+	<hr>
+	
+	<img alt="Fox Wilson" src="{{ url_for('static', filename='fox.jpg') }}">
+	<h2>Fox Wilson</h2>
+	<h3>Director of Information Technology</h3>
+	<p>Fox Wilson is a senior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. He joined in 2016 to establish the organization’s back-end technology infrastructure. In his free time, he works as the head system administrator at TJHSST, works on coding projects, plays the piano, and writes music.</p>
+	
+	<hr>
+	
+	<img alt="Narrelle Ghilchrist" src="{{ url_for('static', filename='narrelle.jpg') }}">
+	<h2>Narrelle Ghilchrist</h2>
+	<h3>Director of Literature</h3>
+	<p>Narrelle Gilchrist is a freshman at the University of Florida. She joined in 2016 to manage the PAC’s platform research and published literature. Narrelle spends her free time for several magazines and singing in her university’s choir.</p>
+</div>
+
+<div class="tab" id="tab-council" class="text">
+	<h1>ERA Councils: The Three Pillars of an Engaged Constituency</h1>
+	
+	<h2><span class="fancy">Education:</span> The Council to Foster Political Awareness</h2>
+	<p>The Education Council spearheads our efforts to promote political education. It directs activities identifying and disseminating relevant information regarding local, state, national elections, and political advocacy. The Education Council further advises on efficient practices for establishing and facilitating access to political literature pertinent to candidates, issues, and PAC information. The education activities of this council are paramount to building and maintaining an informed youth constituency.</p>
+	
+	<h2><span class="fancy">Representation:</span> The Council to Expand Representation in Government</h2>
+	<p>The Representation Council bolsters the voice of Americans in government. The profound lack of political concern regarding the views of Americans has hindered their involvement in policy decisions. This council works to reverse that trend by seeking out opportunities to expand the American people’s voice in government and provide a forum for political expression. By promoting representation in government the Representation Council improves the legitimacy of American democracy and illustrates the importance of civic involvement.</p>
+	
+	<h2><span class="fancy">Action:</span> The Council to Implement Legislative Strategies</h2>
+	<p>The Action Council pioneers action to advance legislation that will meaningfully remove obstacles to political involvement. This council focuses primarily fostering new avenues for a greater participation in government through legislative actions. The legislative implications of the Action Council have far reaching effects for representation thereby encouraging political participation.</p>
+</div>
+
+<div class="tab" id="tab-our-story" class="text">
+	<h1>Our Story</h1>
+	
+	<p>The Unified Democracy Political Action Committee was founded by Benjamin Burstein in February 2015 to encourage increased civic involvement in his home city of Miami Beach, Florida. Originally by the name Teens for Teens, the Unified Democracy PAC played a significant role in helping increase political participation among students in South Florida.</p>
+	
+	<p>After a year of working with candidates in South Florida, the potential to spread the message of creating a better democracy was working. Voter turnout among young people was increasing, voter registration numbers were at all time highs, and the Unified Democracy PAC quickly became one of the largest political organizations in the country with 105 volunteers contributing over 8,000 hours of their time to candidates supported by the PAC.</p>
+	
+	<p>The Unified Democracy PAC helped increase voter turnout in numerous local elections:</p>
+	<ul>
+		<li>November 2015 city of Miami election</li>
+		<li>November 2015 city of Miami Beach election</li>
+		<li>November 2015 city of Hialeah election</li>
+		<li>January 2016 Florida City election</li>
+		<li>February 2016 city of South Miami election</li>
+		<li>March 2016 city of Miami Beach special election</li>
+		<li>March 2016 city of Miami referendum special election</li>
+	</ul>
+	
+	<p>In early 2016, the Unified Democracy PAC began its transition to become a national organization. We now have 11 state affiliates under the organization with more than one hundred students working for the PAC.</p>
+</div>
+
+<div class="tab" id="tab-press" class="text">
+	<h1>Press</h1>
+	
+	<div class="well">
+		<h2>Miami Herald, Joey Flechas</h2>
+		<p>“[Benjamin Burstein, 17, a rising Beach High senior], wants Miami Beach youths to get involved at City Hall.”</p>
+		<p><a class="pure-button" href="http://www.miamiherald.com/news/local/community/miami-dade/miami-beach/article85499052.html" target="_blank">Read more</a></p>
+	</div>
+	
+	<div class="well">
+		<h2>Fusion, Daniel Rivero</h2>
+		<p>“I can’t vote, and I can’t give monetary political contributions to change the status quo, so of course it’s logical to start a political action committee,” Burstein reasoned.</p>
+		<p><a class="pure-button" href="http://fusion.net/story/280231/benjamin-burstein-is-16-and-has-a-super-pac/" target="_blank">Read more</a></p>
+	</div>
+	
+	<div class="well">
+		<h2>NPR, Wilson Sayre</h2>
+		<p>Through working with students Teens for Teens has contributed over 8,000 hours of service to local offices of area politicians.</p>
+		<p><a class="pure-button" href="http://wlrn.org/post/youngest-person-press-room" target="_blank">Read more</a></p>
+	</div>
+		
+	<div class="well">
+		<h2>National Journal, Emma Roller</h2>
+		<p>Benjamin Burstein is a high school sophomore from Miami Beach, Florida. He turns 16 next week. And last week, he started his own political action committee.</p>
+		<p><a class="pure-button" href="http://www.theatlantic.com/politics/archive/2015/04/this-15-year-old-started-his-own-political-action-committee/455421/" target="_blank">Read more</a></p>
+	</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	var tabs = document.getElementsByClassName("tab");
+	var links = document.getElementsByClassName("link");
+	console.log(links);
+	
+	function setOnclicks (name) {
+		var link = document.getElementById(name);
+		link.onclick = function () {
+			for (var i = 0; i < tabs.length; i++) {
+				var tab = tabs[i];
+				tab.style.display = "none";
+			}
+			
+			for (var i = 0; i < links.length; i++) {
+				var currentLink = links[i];
+				currentLink.classList.remove("selected");
+			}
+			
+			link.classList.add("selected");
+			
+			document.getElementById("tab-" + name).style.display = "block";
+		}
+	}
+	
+	setOnclicks("our-team");
+	setOnclicks("council");
+	setOnclicks("our-story");
+	setOnclicks("press");
+	
+	/* set just the first tab visible. */
+	for (var i = 1; i < tabs.length; i++) {
+		var tab = tabs[i];
+		tab.style.display = "none";
+	}
+	
+	links[0].classList.add("selected");
+</script>
 {% endblock %}
