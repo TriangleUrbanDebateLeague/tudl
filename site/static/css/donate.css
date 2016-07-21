@@ -59,6 +59,10 @@ body {
 	transition: background-color 0.2s;
 }
 
+input.selected{
+	background-color: #c5392f !important;
+}
+
 #form {
 	color: #ffffff;
 }
