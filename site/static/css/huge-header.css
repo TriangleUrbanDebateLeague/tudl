@@ -1,0 +1,12 @@
+#huge-header {
+
+}
+
+#huge-header h1 {
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	border: solid 1px white;
+	padding: 5px;
+	border-radius: 5px;
+}
