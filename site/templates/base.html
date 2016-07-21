@@ -12,7 +12,15 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel='stylesheet' type='text/css' />
         <link href="/static/favicon.ico" rel='shortcut icon' />
         <script src="/static/jquery.min.js"></script>
-        {% if extra_css %}<link href="/static/css/{{ extra_css }}.css" rel='stylesheet' type='text/css' />{% endif %}
+        {% if extra_css %}
+        {% if extra_css is string %}
+        <link href="/static/css/{{ extra_css }}.css" rel='stylesheet' type='text/css' />
+        {% elif extra_css is iterable %}
+        {% for v in extra_css %}
+        <link href="/static/css/{{ v }}.css" rel='stylesheet' type='text/css' />
+        {% endfor %}
+        {% endif %}
+        {% endif %}
     </head>
     <body>
         <div id="header">
