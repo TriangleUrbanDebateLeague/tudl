@@ -22,6 +22,8 @@ a {
 	text-decoration: none;
 }
 
+/* can these styles be removed? they look - and possibly unused. */
+
 .content {
 	margin-top: 80px;
     margin-left: auto;
@@ -45,6 +47,8 @@ a {
 .main-content {
     padding: 20px 100px 50px;
 }
+
+/* end */
 
 .button-primary {
     background-color: #0a4883;

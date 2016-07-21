@@ -1,0 +1,38 @@
+#sections {
+	text-align: center;
+}
+
+#sections h2 {
+	border-bottom: solid 5px #ffffff;
+}
+
+#sections h2:hover, #sections h2:focus, #sections h2.selected {
+	color: #c5392f;
+	border-bottom: solid 5px #c5392f;
+}
+
+.tab {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+img {
+	float: right;
+	margin-left: 10px;
+	width: 150px;
+}
+
+.fancy {
+	color: #0a4883;
+	font-style: italic;
+}
+
+.well {
+	background-color: #f5f5f5;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	box-shadow: inset 0px 5px 10px #dddddd;
+	border: solid 1px #dddddd;
+}
