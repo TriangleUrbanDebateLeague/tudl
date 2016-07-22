@@ -87,7 +87,7 @@
 
 					<div class="pure-u-1-3">
 						<label>State</label>
-						<select>
+						<select name="state">
 							{% for state, abbrev in states.items() %}
 							<option value="{{ abbrev }}" name="State">{{ state }}</option>
 							{% endfor %}
