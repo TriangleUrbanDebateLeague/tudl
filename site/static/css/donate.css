@@ -3,6 +3,10 @@ body {
 	background-image: none;
 }
 
+.hiddenInput {
+	display: none !important;
+}
+
 #message #wrap {
 	padding: 10px;
 	background-color: #ffffff;
@@ -11,6 +15,10 @@ body {
 #tabs p {
 	text-align: center;
 	text-transform: uppercase;
+}
+
+#donation-amount, #contact-info, #payment {
+	cursor: pointer;
 }
 
 #once-or-monthly, #numbers {
@@ -27,6 +35,11 @@ body {
 
 #once-or-monthly p, #numbers p {
 	text-align: center;
+	cursor: pointer;
+}
+
+#once-or-monthly p {
+	padding: 20px 0px;
 }
 
 #numbers p {
@@ -44,6 +57,10 @@ body {
 #once-or-monthly p.selected, #numbers p.selected {
 	background-color: #c5392f;
 	transition: background-color 0.2s;
+}
+
+input.selected{
+	background-color: #c5392f !important;
 }
 
 #form {
@@ -92,15 +109,4 @@ button.red {
 button.red:hover, button.red.selected {
 	background-color: #940904;
 	transition: background-color 0.2s;
-}
-
-#cvc-hover #cvc-info {
-	display: none;
-}
-
-#cvc-hover:hover #cvc-info {
-	background-color: white;
-	display: block;
-	color: black;
-	padding: 10px;
 }
