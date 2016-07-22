@@ -1,4 +1,10 @@
 /* --- intro styles --- */
+.title {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    color: #16489d;
+}
 .image-box {
 	position: relative;
 	width: 100%;
@@ -35,7 +41,7 @@
 }
 @media screen and (max-width:450px) {
 	.image-box {
-		height: 80vw;
+		height: 90vw;
 	}
 }
 /* --- end intro styles --- */

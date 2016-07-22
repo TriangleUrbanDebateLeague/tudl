@@ -130,7 +130,7 @@ a {
 		height: 60px;
 		vertical-align: middle;
 	}
-	.content {
+	#content {
 		margin-top: 60px;
 	}
 }
@@ -164,7 +164,7 @@ a {
 		max-width: 400px;
 		margin: auto;
 	}
-	.content {
+	#content {
 		margin-top: 0;
 	}
 }
@@ -269,11 +269,9 @@ a {
 .footer-links a:focus {
 	color: #fff;
 }
-
 .text-normal {
     text-transform: none;
 }
-
 /* --- end header/footer styles --- */
 
 input:not([type=checkbox]) {
