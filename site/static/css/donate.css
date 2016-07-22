@@ -93,3 +93,14 @@ button.red:hover, button.red.selected {
 	background-color: #940904;
 	transition: background-color 0.2s;
 }
+
+#cvc-hover #cvc-info {
+	display: none;
+}
+
+#cvc-hover:hover #cvc-info {
+	background-color: white;
+	display: block;
+	color: black;
+	padding: 10px;
+}
