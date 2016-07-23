@@ -89,7 +89,6 @@ a {
 .header-tab a{
 	text-decoration: none;
 	color: #223153;
-	
 	-webkit-transition: color 0.25s;
     -moz-transition: color 0.25s;
     -o-transition: color 0.25s;
@@ -106,14 +105,14 @@ a {
 	padding: 0px 6px;
 	border-radius: 10px;
 	box-sizing: border-box;
-	
-	-webkit-transition: background-color 0.25s;
-    -moz-transition: background-color 0.25s;
-    -o-transition: background-color 0.25s;
-    transition: background-color 0.25s;
+	-webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
 }
 .contribute-button:hover {
 	background-color: #FF6679;
+	transform: scale(1.1);
 }
 
 @media screen and (max-width:1600px) {
