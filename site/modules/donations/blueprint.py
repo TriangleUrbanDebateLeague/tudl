@@ -43,10 +43,10 @@ def donate():
                                    street_address=form.street_address.data, city=form.city.data, state=form.state.data,
                                    postal_code=form.postal_code.data, email=form.email.data, recurring=recurring_donation)
         if not donation.recurring:
-            stripe.Charge.create(amount=amount, currency="usd", source=token, description="Teens for Teens Donation {}".format(donation.id))
+            stripe.Charge.create(amount=amount, currency="usd", source=token, description="Teens for Teens Donation #{}".format(donation.id))
         else:
-            plan = stripe.Plan.create(id=donation.id, amount=amount, currency='USD', interval='month', name="Teens for Teens Recurring Donation {} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data))
-            customer = stripe.Customer.create(email=form.email.data, source=token, description="Teens for Teens Recurring Donation {} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data), plan=plan.id)
+            plan = stripe.Plan.create(id=donation.id, amount=amount, currency='USD', interval='month', name="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data))
+            customer = stripe.Customer.create(email=form.email.data, source=token, description="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data), plan=plan.id)
         donation.stripe_success = True
         donation.save()
         return redirect(url_for(".thanks"))
