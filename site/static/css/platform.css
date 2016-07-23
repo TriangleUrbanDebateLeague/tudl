@@ -6,13 +6,13 @@
 	text-align: center;
 	
 }
-.image-box h1 {
+.image-box .page-title {
     display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
+	margin: auto auto;
 	font-weight: bold;
 	color: white;
-	border: solid 2px white;
+	font-size: 100px;
+	border: solid 6px white;
 	padding: 5px 10px;
 	border-radius: 10px;
 	text-transform: uppercase;
@@ -40,7 +40,6 @@
 }
 #platform-box-foreground {
     display: inline-block;
-
     margin: auto;
 	font-weight: bold;
 	color: white;
@@ -53,11 +52,19 @@
 	.image-box {
 		height: 320px;
 	}
+	.image-box .page-title {
+        font-size: 45px;
+	    border: solid 3px white;
+    }
 }
 @media screen and (max-width:450px) {
 	.image-box {
 		height: 90vw;
 	}
+	.image-box .page-title {
+	    font-size: 30px;
+	    border: solid 2px white;
+    }
 }
 /* --- end box styles --- */
 
