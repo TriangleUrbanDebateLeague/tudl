@@ -1,6 +1,6 @@
 from .forms import DonateForm
 from .models import Donation
-from flask import Blueprint, render_template, request, current_app, session, redirect, url_for
+from flask import Blueprint, render_template, request, current_app, session, redirect, url_for, flash
 from utils import flash_errors
 import stripe
 import os
