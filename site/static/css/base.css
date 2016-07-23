@@ -5,6 +5,8 @@
  *  white: #ffffff
  */
 
+/* --- misc styles --- */
+
 * {
     font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
@@ -22,33 +24,11 @@ a {
 	text-decoration: none;
 }
 
-/* can these styles be removed? they look - and possibly unused. */
-
-.content {
+#content {
 	margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
 }
-
-.call-to-action {
-    background: #c5392f;
-    color: white;
-    padding: 20px 100px;
-    margin-bottom: 20px;
-}
-
-.cta-header-text {
-    font-size: 250%;
-    font-weight: 900;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.main-content {
-    padding: 20px 100px 50px;
-}
-
-/* end */
 
 .button-primary {
     background-color: #0a4883;
@@ -56,7 +36,29 @@ a {
     color: white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+
+/* remove after pages are completed */
+.main-content {
+    padding: 20px 100px 50px;
+}
+.call-to-action {
+    background: #c5392f;
+    color: white;
+    padding: 20px 100px;
+    margin-bottom: 20px;
+}
+.cta-header-text {
+    font-size: 250%;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* --- end misc styles --- */
+
 /* --- header/footer styles --- */
+#header, #footer {
+    text-transform: uppercase;
+}
 #header {
 	position: fixed;
 	top: 0;
@@ -125,7 +127,7 @@ a {
 		height: 60px;
 		vertical-align: middle;
 	}
-	.content {
+	#content {
 		margin-top: 60px;
 	}
 }
@@ -159,17 +161,12 @@ a {
 		max-width: 400px;
 		margin: auto;
 	}
-	.content {
+	#content {
 		margin-top: 0;
 	}
 }
 
-.footer-text {
-    width: 70%;
-    margin: auto;
-}
-
-.footer {
+#footer {
     padding: 10px 0;
     padding-bottom: 40px;
     background-color: #16489d;
@@ -182,6 +179,11 @@ a {
 .small-logo {
 	height: 80px;
 	margin: 40px;
+}
+
+.footer-text {
+    width: 70%;
+    margin: auto;
 }
 
 .footer-button {
@@ -264,8 +266,9 @@ a {
 .footer-links a:focus {
 	color: #fff;
 }
-
-
+.text-normal {
+    text-transform: none;
+}
 /* --- end header/footer styles --- */
 
 input:not([type=checkbox]) {
