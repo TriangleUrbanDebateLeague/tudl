@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% set extra_css = "states" %}
+
+{% block content %}
+<h1>See what's happening in your state</h1>
+
+<select>
+	{% for abbrev, state in states.items() %}
+	<option href="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
+	{% endfor %}
+</select>
+</select>
+{% endblock %}
