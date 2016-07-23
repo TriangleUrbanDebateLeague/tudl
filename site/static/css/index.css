@@ -75,7 +75,6 @@
 	font-size: 30px;
 	border: none;
 }
-
 @media screen and (max-width:950px) {
 	.image-box {
 		height: 305px;
@@ -144,7 +143,6 @@
 }
 
 /* main explainer text */
-
 .main-text {
 	width: 100%;
 	max-width: 1000px;
