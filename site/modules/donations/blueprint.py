@@ -34,10 +34,6 @@ def donate():
     else:
         recurring_donation = True
 
-    if amount > 25000:
-        flash("You can't donate that much using this form!", "error")
-        return redirect(url_for(".donate_failed"))
-
     try:
         donation = Donation.create(amount=amount, first_name=form.first_name.data, last_name=form.last_name.data,
                                    street_address=form.street_address.data, city=form.city.data, state=form.state.data,
