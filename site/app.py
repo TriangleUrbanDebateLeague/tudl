@@ -68,6 +68,10 @@ def create_app(environment):
             version = ""
         return dict(global_config=app.config, version=version)
 
+    @app.errorhandler(404)
+    def page_not_found(exc):
+        return make_response(render_template("not_found.html"), 404)
+
     @app.errorhandler(500)
     def internal_error(exc):
         trace = traceback.format_exc()
