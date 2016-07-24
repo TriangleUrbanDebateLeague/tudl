@@ -37,7 +37,8 @@ def donate():
     try:
         donation = Donation.create(amount=amount, first_name=form.first_name.data, last_name=form.last_name.data,
                                    street_address=form.street_address.data, city=form.city.data, state=form.state.data,
-                                   postal_code=form.postal_code.data, email=form.email.data, recurring=recurring_donation)
+                                   postal_code=form.postal_code.data, email=form.email.data, occupation=form.occupation.data, 
+                                   employer=form.employer.data, precurring=recurring_donation)
         if not donation.recurring:
             stripe.Charge.create(amount=amount, currency="usd", source=token, description="Teens for Teens Donation #{}".format(donation.id))
         else:
