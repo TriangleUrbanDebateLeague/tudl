@@ -12,6 +12,10 @@ body {
 	background-color: #ffffff;
 }
 
+#message img {
+	width: 100%;
+}
+
 #tabs p {
 	text-align: center;
 	text-transform: uppercase;
@@ -61,6 +65,10 @@ body {
 
 input.selected{
 	background-color: #c5392f !important;
+}
+
+input[type="checkbox"] {
+	width: auto;
 }
 
 #form {
