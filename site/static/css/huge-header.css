@@ -4,7 +4,6 @@
 	background-position: center center;
 	background-size: cover;
 }
-
 #huge-header h1 {
 	display: inline-block;
 	margin-left: auto;
@@ -13,8 +12,25 @@
 	margin-bottom: 150px;
 	font-weight: bold;
 	color: white;
-	border: solid 2px white;
-	padding: 5px 10px;
-	border-radius: 10px;
+    font-size: 90px;
+	border: solid 5px white;
+	border-radius: 20px;
+	padding: 5px 20px;
 	text-transform: uppercase;
+}
+@media screen and (max-width:1000px) {
+	#huge-header h1 {
+        font-size: 45px;
+	    border: solid 3px white;
+	    border-radius: 15px;
+	    padding: 5px 10px;
+    }
+}
+@media screen and (max-width:450px) {
+	#huge-header h1 {
+	    font-size: 30px;
+	    border: solid 2px white;
+	    border-radius: 10px;
+	    padding: 5px 10px;
+    }
 }

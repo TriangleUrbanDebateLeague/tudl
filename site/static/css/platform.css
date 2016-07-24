@@ -1,7 +1,9 @@
+/* --- box styles --- */
 #huge-header {
 	background-image: url("../background-images/platform-background-dark.png");
 	background-position: center bottom;
 }
+/* --- end box styles --- */
 
 /* --- content styles --- */
 #title {
