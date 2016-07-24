@@ -17,4 +17,7 @@ class DonateForm(Form):
 
     email = EmailField('Email', [validators.Required(), validators.Email(), validators.Length(max=64)])
 
+    occupation = StringField('Occupation', [validators.Required(), validators.Length(max=64)])
+    employer = StringField('Employer', [validators.Required(), validators.Length(max=64)])
+
     recurring = BooleanField('Recurring donation')
