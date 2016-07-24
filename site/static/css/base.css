@@ -37,24 +37,6 @@ a {
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* remove after pages are completed */
-.main-content {
-    padding: 20px 100px 50px;
-}
-.call-to-action {
-    background: #c5392f;
-    color: white;
-    padding: 20px 100px;
-    margin-bottom: 20px;
-}
-.cta-header-text {
-    font-size: 250%;
-    font-weight: 900;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-/* --- end misc styles --- */
-
 /* --- header/footer styles --- */
 #header, #footer {
     text-transform: uppercase;
