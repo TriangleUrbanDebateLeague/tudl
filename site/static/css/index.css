@@ -193,6 +193,51 @@ h2 {
 	}
 }
 
+/* stats */
+#stats {
+	background-color: #c5392f;
+}
+
+#stats p {
+	text-align: center;
+	color: #ffffff;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.stat-title {
+	font-size: 200%;
+	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+	text-transform: uppercase;
+}
+
+.stat-number {
+	font-size: 500%;
+	text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+#stats div {
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#stat-volunteers {
+	background-image: url("/static/glyphicon-user.png");
+}
+
+#stat-hours {
+	background-image: url("/static/glyphicon-hourglass.png");
+}
+
+#stat-states {
+	background-image: url("/static/glyphicon-flag.png");
+}
+
 /* map */
 #map-box-background {
 	background-image: url("/static/background-images/map.svg");

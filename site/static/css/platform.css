@@ -1,72 +1,7 @@
-/* --- box styles --- */
-.image-box {
-	position: relative;
-	width: 100%;
-	height: 700px;
-	text-align: center;
-	
+#huge-header {
+	background-image: url("../background-images/platform-background-dark.png");
+	background-position: center bottom;
 }
-.image-box .page-title {
-    display: inline-block;
-	margin: auto auto;
-	font-weight: bold;
-	color: white;
-	font-size: 100px;
-	border: solid 6px white;
-	padding: 5px 10px;
-	border-radius: 10px;
-	text-transform: uppercase;
-}
-.box-background {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	z-index: -5;
-}
-.box-foreground {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-#platform-box-background {
-	background-image: url("/static/background-images/platform-background.jpg");
-}
-#platform-box-foreground {
-    display: inline-block;
-    margin: auto;
-	font-weight: bold;
-	color: white;
-	border: solid 2px white;
-	padding: 5px 10px;
-	border-radius: 10px;
-	text-transform: uppercase
-}
-@media screen and (max-width:1000px) {
-	.image-box {
-		height: 320px;
-	}
-	.image-box .page-title {
-        font-size: 45px;
-	    border: solid 3px white;
-    }
-}
-@media screen and (max-width:450px) {
-	.image-box {
-		height: 90vw;
-	}
-	.image-box .page-title {
-	    font-size: 30px;
-	    border: solid 2px white;
-    }
-}
-/* --- end box styles --- */
 
 /* --- content styles --- */
 #title {
@@ -105,6 +40,7 @@
 
 /* --- platform list styles --- */
 #platform-list ul {
+	text-align: left;
     width: 100%;
 	max-width: 1150px;
 	margin: auto;
