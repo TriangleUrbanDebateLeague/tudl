@@ -57,6 +57,10 @@ a {
 	float: left;
 }
 
+#toggleButton {
+	display: none;
+}
+
 .header-nav {
 	list-style-type: none;
 	padding: 0;
@@ -164,6 +168,14 @@ a {
 	}
 	#content {
 		margin-top: 0;
+	}
+	#toggleButton {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 10px;
+		font-size: 45px;
+		cursor: pointer;
 	}
 }
 
