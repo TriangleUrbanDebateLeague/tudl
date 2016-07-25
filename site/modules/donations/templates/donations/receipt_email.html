@@ -25,7 +25,11 @@
 		<p>{{ header_date }}</p>
 		<p><br /></p>
 		<p>Dear {{ donation.first_name }} {{ donation.last_name }},</p>
+		{% if not donation.recurring %}
 		<p>Thank you for your contribution in the amount of {{ donation.amount | money_format }} which we received on {{ body_date }}.</p>
+		{% else %}
+		<p>Thank you for your monthly contribution in the amount of {{ donation.amount | money_format }} beginning on {{ body_date }}.</p>
+		{% endif %}
 		<p><br /></p>
 		<p>Sincerely,</p>
 		<p>Benjamin Burstein, President</p>
