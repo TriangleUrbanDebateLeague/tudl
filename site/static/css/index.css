@@ -243,9 +243,9 @@ h2 {
 	background-image: url("/static/background-images/map.svg");
 }
 #see-what-text-box {
-	width: 80%;
+	width: 100%;
 	margin: auto;
-	margin-top: 125px;
+	margin-top: 20%;
 	font-size: 50px;
 	color: #FFF;
 	text-align: center;
@@ -259,9 +259,9 @@ h2 {
 }
 @media screen and (max-width:950px) {
 	#see-what-text-box {
-		width: 80%;
+		width: 100%;
 		margin: auto;
-		margin-top: 60px;
+		margin-top: 20%;
 		font-size: 25px;
 		color: #FFF;
 		text-align: center;
@@ -273,4 +273,8 @@ h2 {
 		margin-top: 30px;
 		padding: 5px;
 	}
+}
+
+#see-what-text-box button {
+	white-space: normal;
 }

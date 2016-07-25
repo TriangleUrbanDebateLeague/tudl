@@ -4,7 +4,7 @@ import os
 import json
 from collections import OrderedDict
 
-states = Blueprint("states", __name__, template_folder="templates", url_prefix="/state")
+states = Blueprint("states", __name__, template_folder="templates", url_prefix="/states")
 
 
 with open(os.path.dirname(os.path.realpath(__file__)) + '/templates/states/states.json', 'r') as f:
