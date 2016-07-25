@@ -1,0 +1,61 @@
+#content {
+	background-image: url("/static/background-images/memorial.jpg");
+	background-size: cover;
+	background-position: center center;
+	border-bottom: solid 1px #000000;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	/* doing this somehow removes the random gap between content and footer */
+}
+
+#block {
+	background-color: white;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+	#block {
+		width: 100%;
+	}
+	
+	#content {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+}
+
+form {
+	padding: 5px;
+}
+
+#block h1 {
+	background-color: #0a4883;
+	color: #ffffff;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+label {
+	text-transform: uppercase;
+}
+
+button {
+	margin-top: 10px;
+	background-color: #0a4883;
+	border-radius: 5px;
+	color: #ffffff;
+	border: none;
+	padding: 5px;
+	font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+button:hover, button:active {
+	background-color: #003973;
+}
+	
