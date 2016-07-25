@@ -92,7 +92,14 @@
             <p>platform version {{ version }}</p>
             {% endif %}
         </div>
-
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $("#toggleButton").click(function() {
+                    $(".header-nav").slideToggle("slow");
+                });
+            });
+        </script>
         {% block scripts %}
         {% endblock %}
     </body>
