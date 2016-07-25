@@ -6,15 +6,11 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="648px"
-   height="104px"
-   viewBox="0 0 648 104"
-   version="1.1"
    id="svg2"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="UD-vertical.svg">
+   version="1.1"
+   viewBox="0 0 648 104"
+   height="104px"
+   width="648px">
   <metadata
      id="metadata28">
     <rdf:RDF>
@@ -27,26 +23,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     id="namedview26"
-     showgrid="false"
-     inkscape:zoom="1.2570787"
-     inkscape:cx="512.3106"
-     inkscape:cy="-21.010514"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
   <!-- Generator: Sketch 3.0.1 (7597) - http://www.bohemiancoding.com/sketch -->
   <title
      id="title4">Artboard 21</title>
@@ -54,73 +30,116 @@
   <defs
      id="defs6" />
   <g
-     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
-     sketch:type="MSArtboardGroup"
-     id="Artboard-21">
-    <text
-       style="font-size:45px;font-family:'Gotham Black';fill:#223052"
-       sketch:alignment="middle"
-       font-weight="686"
-       font-size="45"
-       sketch:type="MSTextLayer"
-       id="UNIFIED-DEMOCRACY">
-      <tspan
-         id="tspan11"
-         y="56"
-         x="108.3475"
-         style="-inkscape-font-specification:Montserrat;font-family:Montserrat;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">UNIFIED</tspan>
-      <tspan
-         style="font-weight:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat;font-style:normal;font-stretch:normal;font-variant:normal"
-         id="tspan13"
-         font-weight="normal"
-         y="56"
-         x="313.2775">DEMOCRACY</tspan>
-    </text>
-    <text
-       style="font-weight:normal;font-size:14px;font-family:'Gotham Light';letter-spacing:3.60000038;fill:#4a4a4a"
-       letter-spacing="3.60000038"
-       sketch:alignment="middle"
-       font-weight="normal"
-       font-size="14"
-       sketch:type="MSTextLayer"
-       id="POLITICAL-ACTION-COM">
-      <tspan
-         id="tspan18"
-         y="79"
-         x="112.37199"
-         style="-inkscape-font-specification:Montserrat;font-family:Montserrat;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">POLITICAL ACTION COMMITTEE</tspan>
-    </text>
-    <g
-       transform="translate(27,20)"
-       sketch:type="MSLayerGroup"
-       id="Group">
-      <path
-         style="fill:#223052"
-         inkscape:connector-curvature="0"
-         sketch:type="MSShapeGroup"
-         id="Oval-3"
-         d="M 16.094044,54.330176 C 6.4127413,49.082591 0,39.922501 0,29.5 0,13.2076 15.670034,0 35,0 54.329966,0 70,13.2076 70,29.5 70,45.7924 54.329966,59 35,59 c -2.467861,0 -4.876066,-0.21528 -7.199623,-0.624774 -5.965097,1.529033 -17.603873,5.66227 -16.756511,4.382468 1.040413,-1.571374 4.838491,-4.624816 5.050184,-8.427514 z" />
-      <path
-         style="fill:#ff4c62"
-         inkscape:connector-curvature="0"
-         sketch:type="MSShapeGroup"
-         id="Oval-4"
-         d="M 51.064948,62.75139 C 49.907167,62.914792 48.715947,63 47.5,63 36.178163,63 27,55.612698 27,46.5 27,37.387302 36.178163,30 47.5,30 58.821837,30 68,37.387302 68,46.5 68,52.709842 63.737908,58.118456 57.439765,60.93415 57.648844,63.383696 60,64.939821 60,65.84356 c 0,0.903422 -5.688278,-2.369453 -8.935052,-3.09217 z" />
-      <polygon
-         style="fill:#ffffff"
-         points="34.360123,47.195288 32.220246,45.109423 35.177483,44.679712 36.5,42 37.822517,44.679712 40.779754,45.109423 38.639877,47.195288 39.145034,50.140577 36.5,48.75 33.854966,50.140577 "
-         sketch:type="MSShapeGroup"
-         id="Star-5" />
-      <polygon
-         style="fill:#ffffff"
-         points="44.360123,47.195288 42.220246,45.109423 45.177483,44.679712 46.5,42 47.822517,44.679712 50.779754,45.109423 48.639877,47.195288 49.145034,50.140577 46.5,48.75 43.854966,50.140577 "
-         sketch:type="MSShapeGroup"
-         id="Star-6" />
-      <polygon
-         style="fill:#ffffff"
-         points="55.360123,47.195288 53.220246,45.109423 56.177483,44.679712 57.5,42 58.822517,44.679712 61.779754,45.109423 59.639877,47.195288 60.145034,50.140577 57.5,48.75 54.854966,50.140577 "
-         sketch:type="MSShapeGroup"
-         id="Star-7" />
-    </g>
+     id="UNIFIED-DEMOCRACY"
+     style="font-size:45px;font-family:'Gotham Black';fill:#223052;fill-rule:evenodd;stroke:none;stroke-width:1">
+    <path
+       id="path4157"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 119.7775,48.8 q 2.16,2.52 5.85,2.52 3.69,0 5.85,-2.52 2.16,-2.52 2.16,-6.84 l 0,-17.415 5.31,0 0,17.64 q 0,6.795 -3.735,10.485 -3.735,3.645 -9.585,3.645 -5.85,0 -9.585,-3.645 -3.735,-3.69 -3.735,-10.485 l 0,-17.64 5.31,0 0,17.415 q 0,4.32 2.16,6.84 z" />
+    <path
+       id="path4159"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 170.83352,24.545 5.31,0 0,31.455 -5.76,0 -17.82,-22.95 0,22.95 -5.31,0 0,-31.455 5.31,0 18.27,23.49 0,-23.49 z" />
+    <path
+       id="path4161"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 184.87071,24.545 5.31,0 0,31.455 -5.31,0 0,-31.455 z" />
+    <path
+       id="path4163"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 204.24321,29.495 0,8.64 13.95,0 0,4.905 -13.95,0 0,12.96 -5.31,0 0,-31.455 20.97,0 -0.045,4.95 -15.615,0 z" />
+    <path
+       id="path4165"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 226.09141,24.545 5.31,0 0,31.455 -5.31,0 0,-31.455 z" />
+    <path
+       id="path4167"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 262.24891,24.545 0,4.995 -16.785,0 0,8.325 15.075,0 0,4.725 -15.075,0 0,8.415 17.325,0 0,4.995 -22.635,0 0,-31.455 22.095,0 z" />
+    <path
+       id="path4169"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 280.39727,24.545 q 8.46,0 13.005,4.14 4.545,4.095 4.545,11.43 0,7.335 -4.41,11.61 -4.41,4.275 -13.5,4.275 l -10.44,0 0,-31.455 10.8,0 z m 12.195,15.705 q 0,-10.8 -12.375,-10.8 l -5.31,0 0,21.555 5.895,0 q 5.715,0 8.73,-2.7 3.06,-2.745 3.06,-8.055 z" />
+    <path
+       id="path4171"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 328.4425,24.545 q 8.46,0 13.005,4.14 4.545,4.095 4.545,11.43 0,7.335 -4.41,11.61 -4.41,4.275 -13.5,4.275 l -10.44,0 0,-31.455 10.8,0 z m 12.195,15.705 q 0,-10.8 -12.375,-10.8 l -5.31,0 0,21.555 5.895,0 q 5.715,0 8.73,-2.7 3.06,-2.745 3.06,-8.055 z" />
+    <path
+       id="path4173"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 374.89375,24.545 0,4.995 -16.785,0 0,8.325 15.075,0 0,4.725 -15.075,0 0,8.415 17.325,0 0,4.995 -22.635,0 0,-31.455 22.095,0 z" />
+    <path
+       id="path4175"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 387.55211,56 -5.31,0 0,-31.455 8.28,0 9.495,19.755 9.495,-19.755 8.235,0 0,31.455 -5.31,0 0,-24.57 -10.98,21.825 -2.97,0 -10.935,-21.825 0,24.57 z" />
+    <path
+       id="path4177"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 448.86109,31.97 q -3.195,-3.33 -7.875,-3.33 -4.68,0 -7.92,3.33 -3.195,3.33 -3.195,8.1 0,4.725 3.195,8.055 3.24,3.33 7.92,3.33 4.68,0 7.875,-3.33 3.24,-3.33 3.24,-8.055 0,-4.77 -3.24,-8.1 z m 3.915,19.71 q -4.77,4.635 -11.79,4.635 -7.02,0 -11.79,-4.635 -4.77,-4.68 -4.77,-11.61 0,-6.975 4.77,-11.61 4.77,-4.68 11.79,-4.68 7.02,0 11.79,4.68 4.77,4.635 4.77,11.61 0,6.93 -4.77,11.61 z" />
+    <path
+       id="path4179"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 478.59906,51.185 q 2.745,0 4.725,-0.9 1.98,-0.945 4.14,-2.97 l 3.42,3.51 q -4.995,5.535 -12.15,5.535 -7.11,0 -11.835,-4.59 -4.68,-4.59 -4.68,-11.61 0,-7.02 4.77,-11.7 4.815,-4.68 12.105,-4.68 7.335,0 12.24,5.4 l -3.375,3.69 q -2.25,-2.16 -4.275,-3.015 -1.98,-0.855 -4.68,-0.855 -4.77,0 -8.01,3.105 -3.24,3.06 -3.24,7.875 0,4.77 3.195,8.01 3.24,3.195 7.65,3.195 z" />
+    <path
+       id="path4181"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 522.48882,34.76 q 0,7.785 -6.795,9.81 l 8.235,11.43 -6.75,0 -7.515,-10.575 -6.975,0 0,10.575 -5.31,0 0,-31.455 11.7,0 q 7.2,0 10.305,2.43 3.105,2.43 3.105,7.785 z m -13.185,5.85 q 4.5,0 6.12,-1.395 1.62,-1.395 1.62,-4.455 0,-3.105 -1.665,-4.23 -1.665,-1.17 -5.94,-1.17 l -6.75,0 0,11.25 6.615,0 z" />
+    <path
+       id="path4183"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 534.61703,48.845 -3.15,7.155 -5.67,0 13.86,-31.455 5.67,0 13.86,31.455 -5.67,0 -3.15,-7.155 -15.75,0 z m 13.59,-4.905 -5.715,-12.96 -5.715,12.96 11.43,0 z" />
+    <path
+       id="path4185"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 577.91547,51.185 q 2.745,0 4.725,-0.9 1.98,-0.945 4.14,-2.97 l 3.42,3.51 q -4.995,5.535 -12.15,5.535 -7.11,0 -11.835,-4.59 -4.68,-4.59 -4.68,-11.61 0,-7.02 4.77,-11.7 4.815,-4.68 12.105,-4.68 7.335,0 12.24,5.4 l -3.375,3.69 q -2.25,-2.16 -4.275,-3.015 -1.98,-0.855 -4.68,-0.855 -4.77,0 -8.01,3.105 -3.24,3.06 -3.24,7.875 0,4.77 3.195,8.01 3.24,3.195 7.65,3.195 z" />
+    <path
+       id="path4187"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat"
+       d="m 609.07023,56 -5.4,0 0,-12.42 -11.7,-19.035 5.805,0 8.595,14.31 8.595,-14.31 5.805,0 -11.7,19.035 0,12.42 z" />
+  </g>
+  <text
+     style="font-weight:normal;font-size:14px;font-family:'Gotham Light';letter-spacing:3.60000038;fill:#4a4a4a;fill-rule:evenodd;stroke:none;stroke-width:1"
+     letter-spacing="3.60000038"
+     sketch:alignment="middle"
+     font-weight="normal"
+     font-size="14"
+     sketch:type="MSTextLayer"
+     id="POLITICAL-ACTION-COM">
+    <tspan
+       id="tspan18"
+       y="79"
+       x="112.37199"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Montserrat;-inkscape-font-specification:Montserrat">POLITICAL ACTION COMMITTEE</tspan>
+  </text>
+  <g
+     transform="translate(27,20)"
+     sketch:type="MSLayerGroup"
+     id="Group"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1">
+    <path
+       style="fill:#223052"
+       sketch:type="MSShapeGroup"
+       id="Oval-3"
+       d="M 16.094044,54.330176 C 6.4127413,49.082591 0,39.922501 0,29.5 0,13.2076 15.670034,0 35,0 54.329966,0 70,13.2076 70,29.5 70,45.7924 54.329966,59 35,59 c -2.467861,0 -4.876066,-0.21528 -7.199623,-0.624774 -5.965097,1.529033 -17.603873,5.66227 -16.756511,4.382468 1.040413,-1.571374 4.838491,-4.624816 5.050184,-8.427514 z" />
+    <path
+       style="fill:#ff4c62"
+       sketch:type="MSShapeGroup"
+       id="Oval-4"
+       d="M 51.064948,62.75139 C 49.907167,62.914792 48.715947,63 47.5,63 36.178163,63 27,55.612698 27,46.5 27,37.387302 36.178163,30 47.5,30 58.821837,30 68,37.387302 68,46.5 68,52.709842 63.737908,58.118456 57.439765,60.93415 57.648844,63.383696 60,64.939821 60,65.84356 c 0,0.903422 -5.688278,-2.369453 -8.935052,-3.09217 z" />
+    <polygon
+       style="fill:#ffffff"
+       points="35.177483,44.679712 36.5,42 37.822517,44.679712 40.779754,45.109423 38.639877,47.195288 39.145034,50.140577 36.5,48.75 33.854966,50.140577 34.360123,47.195288 32.220246,45.109423 "
+       sketch:type="MSShapeGroup"
+       id="Star-5" />
+    <polygon
+       style="fill:#ffffff"
+       points="45.177483,44.679712 46.5,42 47.822517,44.679712 50.779754,45.109423 48.639877,47.195288 49.145034,50.140577 46.5,48.75 43.854966,50.140577 44.360123,47.195288 42.220246,45.109423 "
+       sketch:type="MSShapeGroup"
+       id="Star-6" />
+    <polygon
+       style="fill:#ffffff"
+       points="56.177483,44.679712 57.5,42 58.822517,44.679712 61.779754,45.109423 59.639877,47.195288 60.145034,50.140577 57.5,48.75 54.854966,50.140577 55.360123,47.195288 53.220246,45.109423 "
+       sketch:type="MSShapeGroup"
+       id="Star-7" />
   </g>
 </svg>
