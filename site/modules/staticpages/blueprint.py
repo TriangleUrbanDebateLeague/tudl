@@ -8,7 +8,7 @@ staticpages = Blueprint("staticpages", __name__, template_folder="templates", ur
 
 @staticpages.context_processor
 def expose_models():
-    return dict(Volunteer=Volunteer, LoggedHours=LoggedHours, fn=fn, round=round)
+    return dict(Volunteer=Volunteer, LoggedHours=LoggedHours, fn=fn)
 
 @staticpages.route("/", defaults={"page": "index"})
 @staticpages.route("/<page>/")
