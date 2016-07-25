@@ -13,4 +13,5 @@ class Donation(BaseModel):
     occupation = CharField(64, verbose_name="Occupation")
     employer = CharField(64, verbose_name="Employer")
     recurring = BooleanField(default=False, verbose_name="Recurring Donation")
+    agreed = BooleanField(default=True, verbose_name="Agree to Conditions")
     stripe_success = BooleanField(default=False, verbose_name="Charge successful")

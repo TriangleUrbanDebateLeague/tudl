@@ -46,9 +46,9 @@ def donate():
         donation = Donation.create(amount=amount, first_name=form.first_name.data, last_name=form.last_name.data,
                                    street_address=form.street_address.data, city=form.city.data, state=form.state.data,
                                    postal_code=form.postal_code.data, email=form.email.data, occupation=form.occupation.data, 
-                                   employer=form.employer.data, precurring=recurring_donation)
+                                   employer=form.employer.data, recurring=recurring_donation, agreed=form.agreed.data)
         if not donation.recurring:
-            stripe.Charge.create(amount=amount, currency="usd", source=token, description="Teens for Teens Donation #{}".format(donation.id))
+            stripe.Charge.create(amount=amount, receipt_email=form.email.data, currency="usd", source=token, description="Teens for Teens Donation #{}".format(donation.id))
         else:
             plan = stripe.Plan.create(id=donation.id, amount=amount, currency='USD', interval='month', name="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data))
             customer = stripe.Customer.create(email=form.email.data, source=token, description="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data), plan=plan.id)

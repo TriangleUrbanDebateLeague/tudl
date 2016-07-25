@@ -21,3 +21,5 @@ class DonateForm(Form):
     employer = StringField('Employer', [validators.Required(), validators.Length(max=64)])
 
     recurring = BooleanField('Recurring donation')
+
+    agreed = BooleanField('I understand the statements above', [validators.DataRequired()])
