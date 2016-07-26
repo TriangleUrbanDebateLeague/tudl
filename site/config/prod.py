@@ -1,8 +1,8 @@
 import os
 
 SEND_EMAIL = True
-EMAIL_FROM = "site@teensforteens.info"
-APP_NAME = "Teens for Teens"
+EMAIL_FROM = "site@unifieddemocracy.org"
+APP_NAME = "Unified Democracy"
 
 SECRET_KEY = os.getenv("SECRET_KEY", os.urandom(32))
 STRIPE_KEY_SECRET = os.getenv("STRIPE_KEY_SECRET", "")
