@@ -14,7 +14,7 @@ def create_account():
 
     if not form.validate_on_submit():
         flash_errors(form)
-        return render_template("account/create.html", form=form)
+        return render_template("account/signup.html", form=form)
 
     matching_accounts = Account.select().where(Account.email == form.email.data)
     if matching_accounts.count() > 0:
@@ -30,7 +30,7 @@ def create_account():
         email_confirm_key = None
         flash("Account created.", "info")
 
-    password = Account.hash_password(form.password.data)
+    password = Account.hash_password(str(form.password.data))
 
     account = Account.create(first_name=form.first_name.data, last_name=form.last_name.data,
                              street_address=form.street_address.data, city=form.city.data,
