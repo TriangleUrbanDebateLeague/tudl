@@ -118,3 +118,10 @@ button.red:hover, button.red.selected {
 	background-color: #940904;
 	transition: background-color 0.2s;
 }
+
+#cvc-info {
+	color: white;
+	font-size: 50px;
+	line-height: 150%;
+	margin-left: 20px;
+}
