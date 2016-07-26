@@ -7,7 +7,7 @@
 		<div id="wrap">
 			<img alt="Unified Democracy logo" src="{{ url_for('static', filename='UD.svg') }}">
 
-			<h2>Contribute to the Teens for Teens PAC</h2>
+			<h2>Contribute to the {{ config.APP_NAME }} PAC</h2>
 
 			<p><strong>Together we can end gerrymandering, simplify voter registration, and ensure that every American has the right to vote.</strong></p>
 			
@@ -169,9 +169,9 @@
 
 				<div class="pure-g">
 					<div class="pure-u-1-1">
-						<p>Contributions made to the Teens for Teens Political Action Committee are not refundable or transferable and are not deductible as charitable contributions for federal income tax purposes.</p>
+						<p>Contributions made to the {{ config.APP_NAME }} Political Action Committee are not refundable or transferable and are not deductible as charitable contributions for federal income tax purposes.</p>
 
-						<p>By making a donation to Teens for Teens, you confirm that the following statements are true and accurate:</p>
+						<p>By making a donation to {{ config.APP_NAME }}, you confirm that the following statements are true and accurate:</p>
 						
 						<ul>
 							<li>I am a United States citizen or a lawfully admitted permanent resident of the United States</li>

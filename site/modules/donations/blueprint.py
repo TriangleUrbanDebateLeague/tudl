@@ -48,10 +48,10 @@ def donate():
                                    postal_code=form.postal_code.data, email=form.email.data, occupation=form.occupation.data, 
                                    employer=form.employer.data, recurring=recurring_donation, agreed=form.agreed.data)
         if not donation.recurring:
-            stripe.Charge.create(amount=amount, receipt_email=form.email.data, currency="usd", source=token, description="Teens for Teens Donation #{}".format(donation.id))
+            stripe.Charge.create(amount=amount, receipt_email=form.email.data, currency="usd", source=token, description="Unified Democracy Donation #{}".format(donation.id))
         else:
-            plan = stripe.Plan.create(id=donation.id, amount=amount, currency='USD', interval='month', name="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data))
-            customer = stripe.Customer.create(email=form.email.data, source=token, description="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data), plan=plan.id)
+            plan = stripe.Plan.create(id=donation.id, amount=amount, currency='USD', interval='month', name="Unified Democracy Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data))
+            customer = stripe.Customer.create(email=form.email.data, source=token, description="Unified Democracy Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data), plan=plan.id)
         donation.stripe_success = True
         donation.save()
         send_receipt_email(donation)
