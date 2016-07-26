@@ -97,10 +97,18 @@
         
         <script type="text/javascript">
             $(document).ready(function() {
+				if ($(document).width() <= 1100)
+					$(".header-nav").toggle();
                 $("#toggleButton").click(function() {
                     $(".header-nav").slideToggle("slow");
                 });
             });
+			$(window).resize(function() {
+				if (window.innerWidth > 1100)
+					$(".header-nav").show();
+				else
+					$(".header-nav").hide();
+			});
         </script>
         {% block scripts %}
         {% endblock %}
