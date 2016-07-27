@@ -21,7 +21,7 @@
 <div id="textBased" class="pure-form">
   <select id="dynamic_select">
     <option disabled selected>Select Your State</option>
-    {% for abbrev, state in states.items() %}
+    {% for state, abbrev in states.items() %}
     <option value="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
     {% endfor %}
   </select>

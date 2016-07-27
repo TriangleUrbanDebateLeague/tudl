@@ -1,9 +1,17 @@
 {% set extra_css = "formpage" %}
 {% from "_formhelpers.html" import div_free_field %}
 {% extends "base.html" %}
+{% block inline_css %}
+{% if get_flashed_messages() %}
+	#content {
+		padding-top: 0px !important;
+	}
+{% endif %}
+{% endblock %}
 {% block content %}
 <div id="block">
-	<h1>Log in</h1>
+	<h1>We're not in that state yet!</h1>
+	<h2 class="center">Please fill out this form to apply to be a state director.</h2>
 	<form class="pure-form pure-form-stacked" method="POST">
 		{{ form.csrf_token() }}
         <div class="pure-g">
