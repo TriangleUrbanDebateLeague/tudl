@@ -6,3 +6,9 @@
 	box-shadow: inset 0px 5px 10px #dddddd;
 	border: solid 1px #dddddd;
 }
+
+.well img {
+	float: right;
+	margin-left: 10px;
+	width: 150px;
+}
