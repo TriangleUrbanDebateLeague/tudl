@@ -20,6 +20,7 @@
 <h1>See what's happening in your state</h1>
 <div id="textBased" class="pure-form">
   <select id="dynamic_select">
+    <option disabled selected>Select Your State</option>
     {% for abbrev, state in states.items() %}
     <option value="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
     {% endfor %}

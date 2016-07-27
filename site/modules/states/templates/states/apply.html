@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "_formhelpers.html" import div_free_field %}
+{% block content %}
+<div class="pure-g">
+<div class="pure-u-3-5">
+<form method="POST" class="pure-form pure-form-stacked">
+	<fieldset>
+	{{ div_free_field(form.first_name, "John") }}
+
+	{{ div_free_field(form.last_name, "Doe") }}
+
+	{{ div_free_field(form.email, "john@doe.com") }}
+
+	{{ div_free_field(form.state, "New York") }}
+
+	<button type="submit" class="pure-button pure-button-primary">Submit</button>
+	</fieldset>
+</form>
+</div>
+</div>
+{% endblock %}
