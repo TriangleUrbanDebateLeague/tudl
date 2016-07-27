@@ -1,21 +1,33 @@
-{% extends "base.html" %}
+{% set extra_css = "formpage" %}
 {% from "_formhelpers.html" import div_free_field %}
+{% extends "base.html" %}
 {% block content %}
-<div class="pure-g">
-<div class="pure-u-3-5">
-<form method="POST" class="pure-form pure-form-stacked">
-	<fieldset>
-	{{ div_free_field(form.first_name, "John") }}
+<div id="block">
+	<h1>Log in</h1>
+	<form class="pure-form pure-form-stacked" method="POST">
+		{{ form.csrf_token() }}
+        <div class="pure-g">
+			<div class="pure-u-1">
+				{{ div_free_field(form.first_name, "John") }}
+			</div>
+			
+			<div class="pure-u-1">
+				{{ div_free_field(form.last_name, "Doe") }}
+			</div>
 
-	{{ div_free_field(form.last_name, "Doe") }}
+			<div class="pure-u-1">
+				{{ div_free_field(form.email, "john@doe.com") }}
+			</div>
 
-	{{ div_free_field(form.email, "john@doe.com") }}
-
-	{{ div_free_field(form.state, "New York") }}
-
-	<button type="submit" class="pure-button pure-button-primary">Submit</button>
-	</fieldset>
-</form>
+			<div class="pure-u-1">
+				{{ div_free_field(form.state, "New York") }}
+			</div>
+			
+			<div class="pure-u-1">
+				<button type="submit">Apply</button>
+			</div>
+        </div>
+	</form>
 </div>
-</div>
+
 {% endblock %}
