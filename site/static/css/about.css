@@ -31,12 +31,3 @@
 	color: #0a4883;
 	font-style: italic;
 }
-
-.well {
-	background-color: #f5f5f5;
-	padding: 10px 15px;
-	margin-bottom: 10px;
-	border-radius: 5px;
-	box-shadow: inset 0px 5px 10px #dddddd;
-	border: solid 1px #dddddd;
-}
