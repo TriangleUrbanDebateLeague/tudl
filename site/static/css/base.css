@@ -99,10 +99,7 @@ a {
 .last-item {
     margin-bottom: 90px;
 }
-/* sorry for confusion, remove when volunteer page styles are complete */
-.main-content {		
-   padding: 20px 100px 50px;		
-}
+
 .call-to-action {		
     background: #c5392f;		
     color: white;		
@@ -147,13 +144,6 @@ a {
 	#content {
 		margin-top: 60px;
 	}
-	.first-item {
-        margin-top: 55px;
-    }
-
-    .last-item {
-        margin-bottom: 80px;
-    }
 }
 @media screen and (max-width:1100px) {
 	#header {
@@ -197,13 +187,6 @@ a {
 		font-size: 45px;
 		cursor: pointer;
     }
-    .first-item {
-        margin-top: 45px;
-    }
-
-    .last-item {
-        margin-bottom: 70px;
-    }
 }
 @media screen and (max-width:600px) {
 	.header-logo-image {
@@ -213,13 +196,6 @@ a {
 	#toggleButton {
 		font-size: 8vw;
 	}
-	.first-item {
-        margin-top: 35px;
-    }
-
-    .last-item {
-        margin-bottom: 60px;
-    }
 }
 
 #footer {
