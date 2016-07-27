@@ -17,8 +17,8 @@
         {% if extra_css is string %}
         <link href="/static/css/{{ extra_css }}.css" rel='stylesheet' type='text/css' />
         {% elif extra_css is iterable %}
-        {% for v in extra_css %}
-        <link href="/static/css/{{ v }}.css" rel='stylesheet' type='text/css' />
+        {% for file in extra_css %}
+        <link href="/static/css/{{ file }}.css" rel='stylesheet' type='text/css' />
         {% endfor %}
         {% endif %}
         {% endif %}
@@ -34,8 +34,9 @@
             <ul class="header-nav">
                 <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Platform</a></li>
 				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">About Us</a></li>
-                <li class="header-tab"><a href="{{ url_for('volunteer.you', page='volunteer') }}">Volunteer</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">Volunteer</a></li>
                 <li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">Contribute</div></a></li>
+                <li class="header-tab right">{% if not g.user %}<a href="{{ url_for('account.login') }}">Log In</a>{% else %}<a href="{{ url_for('volunteer.you') }}">My Account</a>{% endif %}
             </ul>
         </div>
 

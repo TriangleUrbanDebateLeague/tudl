@@ -80,6 +80,10 @@ a {
 	margin: 0px 15px;
 }
 
+.header-tab .right {
+	float: right;
+}
+
 .header-tab a{
 	text-decoration: none;
 	color: #223153;
