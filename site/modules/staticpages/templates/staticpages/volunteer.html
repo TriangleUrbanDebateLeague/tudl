@@ -1,35 +1,53 @@
+{% set extra_css = ["huge-header", "volunteer"] %}
 {% extends "base.html" %}
 {% block content %}
-<div class="call-to-action">
-    <div class="cta-text">
-        <span class="cta-header-text header">Volunteer</span>
-        <p>Thank you for your interest in {{ config.APP_NAME }}. If you wish to become further
-        involved in our cause, consider signing up to become a volunteer on this page.
-        Being a volunteer allows you to view volunteer opportunities, contribute to our
-        candidate guides library, log NHS-approved volunteer hours, and receive our
-        newsletter.</p>
-    </div>
+
+<div id="huge-header">
+	<h1>Volunteer</h1>
 </div>
 
-<div class="main-content">
-    {% if not g.user %}
-    <div class="content-section">
-        <h1>Sign up</h1>
-        <p>If you'd like to sign up to become a volunteer, you can <a href="{{ url_for('account.create_account') }}">click here</a>.</p>
-    </div>
+<div id="faq">
+	<p>Thank you for your interest in Unified Democracy PAC!  Our PAC depends on the support of people just like you.  If you want to become more involved with our mission, consider becoming a volunteer.</p>
+	
+	<button>Sign Up</button>
+	
+	<h2>FAQ</h2>
+	
+	<p class="question">What do volunteers do?</p>
+	<p>Volunteering for Unified Democracy is a completely flexible process.  What you do as a volunteer is what you want to do.  You can do purely virtual work or do political work for your state director.  The first step is to create a volunteer account using the below link.</p>
 
-    <div class="content-section">
-        <h1>Log in</h1>
-        <p>If you already have signed up, feel free to <a href="{{ url_for('account.login') }}">log in</a>.</p>
-    </div>
-    {% else %}
-    <div class="content-section">
-        <h1>Visit your profile</h1>
-        <p>If you want to view or update your volunteer profile, then you can <a href="{{ url_for('volunteer.you') }}">visit your profile</a>.</p>
-    </div>
-    <div class="content-section">
-        <h1>Log out</h1>
-        <p>If you don't want to do that, you can also <a href="{{ url_for('account.logout') }}">log out</a>.</p>
-    {% endif %}
+	<p class="question">What happens when I make an account?</p>
+	<p>You will be able to complete volunteer work for our PAC and will be added to our mailing list to receive our newsletter.</p>
+
+	<p class="question">What kind of political work can I do?</p>
+	<p>If Unified Democracy has a state director for your state, you should contact them by looking at your state’s page.  They will direct you to lobbying, local canvasing, and candidate support opportunities for our PAC.</p>
+
+	<p class="question">What if Unified Democracy is not in my state?</p>
+	<p>Consider contacting xxx to apply to become a state director.  If you’re not interested heading a state operation, we have many virtual volunteer opportunities.</p>
+
+	<p class="question">Are there any limitations on the type of political work I can do?</p>
+	<p>All lobbying and political work should support our platform or the general mission of improving voter turnout.  Additionally, any representation on behalf of the PAC must conform to our ethics code found here: .  The Unified Democracy PAC does not endorse messages or volunteers that run contrary to our ethics code.</p>
+
+	<p class="question">What type of virtual work can I do?</p>
+	<p>We’re currently looking for three types of virtual volunteers:</p>
+	<ul>
+		<li>If you’re interested in writing, we accept assistants for researching and compiling reports.  Please contact xxx for literature opportunities.</li>
+		<li>We accept applications to join our IT team.  Please contact xxx if interested.</li>
+		<li>Coming soon, any volunteer will be able to complete candidate guides.  Check back later.</li>
+	</ul>
+
+	<p class="question">Why do I have to make an account to do volunteer work?
+	<p>Once you make an account, you will be able to log hours for volunteer work you complete.  This allows us to keep track of our volunteer database and ensure accountability in reporting volunteer hours to the FEC.</p>
+
+	<p class="question">How does the volunteer hours log system work?</p>
+	<p>Once you complete volunteer work for our PAC, you can log your hours with our database.  The hours will then be vetted by our national management.  If the hours are found credible, they will be approved.</p>
+
+	<p class="question">What are the volunteer hours for?</p>
+	<p>If your hours are approved, they meet National Honor Society and FEC hours requirements.  You can use your hours to contribute towards a graduation requirement.
+	On our end, we report volunteer hours contributed by those over 18 to the FEC.  Those under 18, will not have their hours reported to the FEC as per federal guidelines.</p>
+
+	<p class="question">What if I did work for this PAC before the hours log system was created?</p>
+	<p>All of your hours have already been backlogged.  When you create an account with the correct information, your previous hours will be synced to your current account.</p>
 </div>
+
 {% endblock %}
