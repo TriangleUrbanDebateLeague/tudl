@@ -1,4 +1,4 @@
-var things = ["lowering the voting age", "improving political literacy", "reducing voter discrimination", "increasing transparency", "eliminating gerrymandering", "simplifying voting", "Teens for Teens"];
+var things = ["lowering the voting age", "improving political literacy", "reducing voter discrimination", "increasing transparency", "eliminating gerrymandering", "simplifying voting", "{{ config.APP_NAME }}"];
 var index = -1;
 $(function() {
     setInterval(function() {
@@ -11,7 +11,7 @@ $(function() {
             });
         }
         else {
-            el.html("Teens for Teens.");
+            el.html("{{ config.APP_NAME }}.");
             el.show();
         }
     }, 4000);

@@ -1,11 +1,12 @@
 from .forms import DonateForm
 from .models import Donation
 from flask import Blueprint, render_template, request, current_app, session, redirect, url_for, flash
-from utils import flash_errors
+from utils import flash_errors, send_email
 import stripe
 import os
 from collections import OrderedDict
 import json
+from datetime import datetime
 
 donations = Blueprint("donations", __name__, template_folder="templates", url_prefix="/donate")
 
@@ -15,6 +16,13 @@ with open(os.path.dirname(os.path.realpath(__file__)) + '/templates/donations/st
 @donations.context_processor
 def make_key_available():
     return dict(key=current_app.config["STRIPE_KEY_PUBLIC"])
+
+
+def send_receipt_email(donation):
+    header_date = datetime.now().strftime("%x")
+    body_date = datetime.now().strftime("%A %B %d, %Y")
+    text = render_template("donations/receipt_email.html", donation=donation, header_date=header_date, body_date=body_date)
+    send_email('benjamin.burstein@unifieddemocracy.org', donation.email, "Thanks for your donation to Unified Democracy!", text)
 
 @donations.route("/", methods=["GET", "POST"])
 def donate():
@@ -37,14 +45,16 @@ def donate():
     try:
         donation = Donation.create(amount=amount, first_name=form.first_name.data, last_name=form.last_name.data,
                                    street_address=form.street_address.data, city=form.city.data, state=form.state.data,
-                                   postal_code=form.postal_code.data, email=form.email.data, recurring=recurring_donation)
+                                   postal_code=form.postal_code.data, email=form.email.data, occupation=form.occupation.data, 
+                                   employer=form.employer.data, recurring=recurring_donation, agreed=form.agreed.data)
         if not donation.recurring:
-            stripe.Charge.create(amount=amount, currency="usd", source=token, description="Teens for Teens Donation #{}".format(donation.id))
+            stripe.Charge.create(amount=amount, receipt_email=form.email.data, currency="usd", source=token, description="Unified Democracy Donation #{}".format(donation.id))
         else:
-            plan = stripe.Plan.create(id=donation.id, amount=amount, currency='USD', interval='month', name="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data))
-            customer = stripe.Customer.create(email=form.email.data, source=token, description="Teens for Teens Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data), plan=plan.id)
+            plan = stripe.Plan.create(id=donation.id, amount=amount, currency='USD', interval='month', name="Unified Democracy Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data))
+            customer = stripe.Customer.create(email=form.email.data, source=token, description="Unified Democracy Recurring Donation #{} - {} {} ".format(donation.id, form.first_name.data, form.last_name.data), plan=plan.id)
         donation.stripe_success = True
         donation.save()
+        send_receipt_email(donation)
         return redirect(url_for(".thanks"))
     except stripe.error.CardError:
         flash("Your card was declined :(", "error")

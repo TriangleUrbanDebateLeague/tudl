@@ -2,7 +2,7 @@ import os
 
 SEND_EMAIL = True
 EMAIL_FROM = "dev@local.dev"
-APP_NAME = "Teens for Teens"
+APP_NAME = "Unified Democracy"
 SECRET_KEY = "key"
 
 STRIPE_KEY_SECRET = os.getenv("STRIPE_KEY_SECRET", "")

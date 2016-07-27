@@ -51,17 +51,17 @@
 <div id="stats" class="pure-g">
 	<div id="stat-volunteers" class="pure-u-md-1-3 pure-u-1">
 		<p class="stat-title">Registered volunteers</p>
-		<p class="stat-number">7</p>
+        <p class="stat-number">{{ Volunteer.select().count() }}</p>
 	</div>
 	
 	<div id="stat-hours" class="pure-u-md-1-3 pure-u-1">
 		<p class="stat-title">Hours logged</p>
-		<p class="stat-number">6</p>
+        <p class="stat-number">{{ LoggedHours.select().aggregate(fn.Sum(LoggedHours.hours)) | round }}</p>
 	</div>
 	
 	<div id="stat-states" class="pure-u-md-1-3 pure-u-1">
 		<p class="stat-title">States we're in</p>
-		<p class="stat-number">4</p>
+		<p class="stat-number">11</p>
 	</div>
 </div>
 

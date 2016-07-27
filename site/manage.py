@@ -39,9 +39,9 @@ def create_db():
             print("Created table for {}".format(table))
 
 @manager.command
-def migrate(migration):
+def run_migration(migration):
     """Run a migration"""
-    importlib.import_module("migrations.{}".format(migration)).migrate(db.database)
+    importlib.import_module("migrations.{}".format(migration)).run(db.database)
 
 if __name__ == '__main__':
     manager.run()

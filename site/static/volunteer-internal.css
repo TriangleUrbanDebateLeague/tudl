@@ -1,4 +1,4 @@
-#content {
+.content {
 	width: 90%;
 	max-width: 1300px;
 	margin-left: auto;
@@ -11,13 +11,10 @@
 	padding: 0px 20px;
 }
 @media screen and (max-width:1200px) {
-	#content {
+	.content {
 		width: 100%;
 		max-width: none;
 		font-size: 100%;
 		padding-top: 2px;
 	}
-}
-.call-to-action a{
-	text-decoration: underline;
 }

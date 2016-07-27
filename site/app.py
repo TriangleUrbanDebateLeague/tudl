@@ -4,6 +4,7 @@ from utils import send_email, send_error_email, send_warning_email
 import logging
 import subprocess
 import traceback
+import decimal
 
 log_formatter = logging.Formatter('''
 Message type:       %(levelname)s
@@ -92,6 +93,11 @@ def create_app(environment):
                 session.pop("logged_in", None)
                 session.pop("uid", None)
                 session.pop("ip", None)
+
+    @app.template_filter('money_format')
+    def money_format(amount):
+        dollars = decimal.Decimal(amount) / 100
+        return "${}".format(dollars)
 
     return app
 
