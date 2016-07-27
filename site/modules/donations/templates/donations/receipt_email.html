@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div class="emailHeader">
-		<img class="emailHeader" src="{{ url_for('static', filename='UD-vertical.svg') }}" alt="Unified Democracy Logo" />
+		<img class="emailHeader" src="{{ url_for('static', filename='UD-vertical.svg', _external=True) }}" alt="Unified Democracy Logo" />
 	</div>
 	<div class="thankYou">
 		<p><strong>Thank you for donating to the Unified Democracy Political Action Committee. Your receipt of donation is attached below.</strong></p>
@@ -33,4 +33,5 @@
 		<p><br /></p>
 		<p>Sincerely,</p>
 		<p>Benjamin Burstein, President</p>
+	</div>
 </body>
