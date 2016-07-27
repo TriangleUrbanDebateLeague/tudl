@@ -1,46 +1,28 @@
 {% extends "base.html" %}
 {% set extra_css = ["states", "jqvmap"] %}
 {% block scripts %}
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery.vmap.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery.vmap.usa.js') }}" charset="utf-8"></script>
-    <script>
-      jQuery(document).ready(function () {
-        jQuery('#vmap').vectorMap({
-          map: 'usa_en',
-          enableZoom: true,
-          showTooltip: true,
-          selectedColor: null,
-          hoverColor: '#FF0000',
-          onRegionClick: function(event, code, region){
-            moving = $(event.currentTarget).data('mapObject').isMoving
-            if(!moving){
-              window.open("/state/" + code + "/", "_blank").focus();
-            }
-            event.preventDefault();
-          }
-        });
-        $(function(){
+<script>
+  $(document).ready(function () {
+    $(function(){
       // bind change event to select
-       $('#dynamic_select').on('change', function () {
+      $('#dynamic_select').on('change', function () {
           var url = $(this).val(); // get selected value
           if (url) { // require a URL
               window.location = url; // redirect
-          }
-          return false;
-      });
+            }
+            return false;
+          });
     });
-      });
-    </script>
-  {% endblock %}
+  });
+</script>
+{% endblock %}
 {% block content %}
-    <h1>See what's happening in your state</h1>
-    <div id="vmap" style="width: 100%; height: 500px;"></div>
-    <div id="textBased">
-      <select id="dynamic_select">
-        {% for abbrev, state in states.items() %}
-        <option value="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
-        {% endfor %}
-      </select>
-    </div>
+<h1>See what's happening in your state</h1>
+<div id="textBased" class="pure-form">
+  <select id="dynamic_select">
+    {% for abbrev, state in states.items() %}
+    <option value="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
+    {% endfor %}
+  </select>
+</div>
 {% endblock %}
