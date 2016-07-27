@@ -1,0 +1,27 @@
+#huge-header {
+	background-image: url("../background-images/supreme-court-haze.jpg");
+}
+
+#faq {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.question {
+	font-weight: bold;
+	color: #0a4883;
+}
+
+button {
+	border: solid 2px #003973;
+	background-color: #0a4883;
+	color: #ffffff;
+	font-size: 150%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+button:hover, button:active {
+	background-color: #003973;
+}

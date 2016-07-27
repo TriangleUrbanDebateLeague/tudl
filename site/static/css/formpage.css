@@ -45,7 +45,7 @@ label {
 	text-transform: uppercase;
 }
 
-button {
+button, .button {
 	margin-top: 10px;
 	background-color: #0a4883;
 	border-radius: 5px;
@@ -55,7 +55,7 @@ button {
 	font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
 
-button:hover, button:active {
+button:hover, button:active, .button:hover, .button:active {
 	background-color: #003973;
 }
 	

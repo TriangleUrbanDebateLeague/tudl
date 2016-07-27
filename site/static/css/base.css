@@ -1,6 +1,7 @@
 /*
  * colors:
  *  blue: #0a4883
+ *	darker blue: #003973
  *  red: #c5392f
  *  white: #ffffff
  */
@@ -14,10 +15,6 @@
 body {
     background-color: #FFF;
 	line-height: 1.5;
-}
-
-p, ul {
-    text-align: justify;
 }
 
 a {
@@ -36,6 +33,15 @@ a {
     color: white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+
+#flash-container {
+	text-align: center;
+}
+
+.flashed-message {
+	display: inline-block;
+}
+
 /* --- end misc styles -- */
 
 /* --- header/footer styles --- */
