@@ -39,7 +39,8 @@ a {
 
 .flashed-message {
 	display: inline-block;
-	text-align: center;
+	margin-left: center;
+	margin-right: center;
 }
 
 /* --- end misc styles -- */
