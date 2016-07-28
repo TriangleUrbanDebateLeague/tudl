@@ -1,5 +1,15 @@
+{% set extra_css = "formpage" %}
 {% extends "base.html" %}
+{% block inline_css %}
+{% if get_flashed_messages() %}
+#content {
+padding-top: 0px !important;
+}
+{% endif %}
+{% endblock %}
 {% block content %}
-<h2>Thanks!</h2>
-<p>Thanks for signing up for our mailing list. Check your email for a confirmation.</p>
+<div id="block">
+<h1>Thanks!</h2>
+<h2 class="center">Thanks for signing up for our mailing list. Check your email for a confirmation.</h2>
+<p><br></p>
 {% endblock %}

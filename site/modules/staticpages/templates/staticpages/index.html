@@ -13,8 +13,9 @@
 			WE ARE LEADING THE FIGHT FOR VOTING RIGHTS FOR ALL
 		</div>
 		<div id="join-box">
-			<form>
-				 <input id="email-entry-box" type="text" name="email" placeholder="Email Address">
+			<form method="POST" action="{{ url_for('email_list.list_subscribe') }}">
+				 {{ form.csrf_token() }}
+				 {{ form.email(placeholder="Email Address", id="email-entry-box") }}
 				 <input id="email-submit" type="submit" value="JOIN IN">
 			</form>
 		</div>
