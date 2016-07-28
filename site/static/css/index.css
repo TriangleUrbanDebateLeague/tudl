@@ -234,6 +234,10 @@ h2 {
 	background-image: url("/static/glyphicon-hourglass.png");
 }
 
+#footer {
+    margin-top: 0px;
+}
+
 #stat-states {
 	background-image: url("/static/glyphicon-flag.png");
 }
