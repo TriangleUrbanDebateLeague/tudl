@@ -15,11 +15,13 @@
 		
 		<div class="clearfix" id="director">
 			<h2>Director: {% if state.director %}{{ state.director.account.informal_full_name }}</a>{% else %}None{% endif %}</h2>
+			{% if state.director %}
 			<div class="well clearfix">
-			<img alt="{% if state.director %}{{ state.director.account.full_name }}{% else %}None{% endif %}" src="{{ url_for('static', filename='states/' + state.name.lower() + '/director.png') }}">
-			<p>{{ state.director.bio }}</p>
-			{% if state.director %}<p class="center"><a href="mailto:{{ state.director.account.informal_full_name.split() | join('.') | lower }}@{{ config.APP_NAME.replace(' ', '') | lower }}.org" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope"></i> Email {{ state.director.account.first_name }}</a></p>{% endif %}
+				<img alt="{{ state.director.account.full_name }}" src="{{ url_for('static', filename='states/' + state.name.lower() + '/director.png') }}">
+				<p>{{ state.director.bio }}</p>
+				<p class="center"><a href="mailto:{{ state.director.account.informal_full_name.split() | join('.') | lower }}@{{ config.APP_NAME.replace(' ', '') | lower }}.org" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope"></i> Email {{ state.director.account.first_name }}</a></p>
 			</div>
+			{% endif %}
 		</div>
 	</div>
 
