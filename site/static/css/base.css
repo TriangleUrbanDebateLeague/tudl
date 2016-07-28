@@ -136,7 +136,7 @@ a {
 		margin-top: 60px;
 	}
 }
-@media screen and (max-width:1100px) {
+@media screen and (max-width: 1200px) {
 	#header {
 		position: static;
 		padding-bottom: 5px;

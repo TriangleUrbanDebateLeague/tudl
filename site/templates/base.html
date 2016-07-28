@@ -104,14 +104,14 @@
         
         <script type="text/javascript">
             $(document).ready(function() {
-				if ($(document).width() <= 1100)
+				if ($(document).width() <=  1200)
 					$(".header-nav").toggle();
                 $("#toggleButton").click(function() {
                     $(".header-nav").slideToggle("slow");
                 });
             });
 			$(window).resize(function() {
-				if (window.innerWidth > 1100)
+				if (window.innerWidth >  1200)
 					$(".header-nav").show();
 				else
 					$(".header-nav").hide();
