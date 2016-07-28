@@ -2,6 +2,9 @@ from app import create_app
 from flask_script import Manager
 import database as db
 import importlib
+import json
+import os
+from peewee import IntegrityError
 
 from modules.account.models import Account, PasswordReset
 from modules.donations.models import Donation
@@ -43,6 +46,18 @@ def create_db():
 def run_migration(migration):
     """Run a migration"""
     importlib.import_module("migrations.{}".format(migration)).run(db.database)
+
+@manager.command
+def create_states():
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/modules/states/states.json', 'r') as f:
+        states_list = json.loads(f.read())
+
+    for state, abbrev in states_list.items():
+        try:
+            s = State.create(name=state, code=abbrev)
+            print("Created {} - {}".format(s.name, s))
+        except IntegrityError:
+            print("{} already exists".format(state))
 
 if __name__ == '__main__':
     manager.run()
