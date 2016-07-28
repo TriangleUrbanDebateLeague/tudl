@@ -13,6 +13,7 @@
 #sections h2:hover, #sections h2:focus, #sections h2.selected, #subsections h2:hover, #subsections h2:focus, #subsections h2.selected {
 	color: #c5392f;
 	border-bottom: solid 5px #c5392f;
+	cursor: pointer;
 }
 
 .tab, .subtab {
