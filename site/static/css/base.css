@@ -121,7 +121,7 @@ a {
 	transform: scale(1.1);
 }
 
-@media screen and (max-width:1500px) {
+@media screen and (max-width:1600px) {
 	.header-tab {
 		float: left;
 		font-size: 20px;
