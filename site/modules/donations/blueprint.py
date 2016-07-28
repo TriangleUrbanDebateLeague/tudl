@@ -10,7 +10,7 @@ from datetime import datetime
 
 donations = Blueprint("donations", __name__, template_folder="templates", url_prefix="/donate")
 
-with open(os.path.dirname(os.path.realpath(__file__)) + '/templates/donations/states.json', 'r') as f:
+with open(os.path.dirname(os.path.realpath(__file__)) + '/states.json', 'r') as f:
     states = OrderedDict(sorted(json.loads(f.read()).items(), key=lambda k: k[0]))
 
 @donations.context_processor

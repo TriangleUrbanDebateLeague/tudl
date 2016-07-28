@@ -2,12 +2,16 @@ from app import create_app
 from flask_script import Manager
 import database as db
 import importlib
+import json
+import os
+from peewee import IntegrityError
 
 from modules.account.models import Account, PasswordReset
 from modules.donations.models import Donation
 from modules.email_list.models import ListEntry
 from modules.security.models import Permission
 from modules.volunteer.models import Volunteer, LoggedHours
+from modules.states.models import State, Event, StatePosition
 
 manager = Manager(create_app)
 manager.add_option('-e', '--environment', dest='environment', required=True)
@@ -30,7 +34,7 @@ def sync_volunteers():
 @manager.command
 def create_db():
     """Create tables in the database"""
-    tables = [Account, PasswordReset, Donation, Permission, Volunteer, LoggedHours, ListEntry]
+    tables = [Account, PasswordReset, Donation, Permission, Volunteer, LoggedHours, ListEntry, State, Event, StatePosition]
     for table in tables:
         if table.table_exists():
             print("Table already exists for {}".format(table))
@@ -42,6 +46,18 @@ def create_db():
 def run_migration(migration):
     """Run a migration"""
     importlib.import_module("migrations.{}".format(migration)).run(db.database)
+
+@manager.command
+def create_states():
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/modules/states/states.json', 'r') as f:
+        states_list = json.loads(f.read())
+
+    for state, abbrev in states_list.items():
+        try:
+            s = State.create(name=state, code=abbrev)
+            print("Created {} - {}".format(s.name, s))
+        except IntegrityError:
+            print("{} already exists".format(state))
 
 if __name__ == '__main__':
     manager.run()

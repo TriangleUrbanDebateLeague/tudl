@@ -22,6 +22,10 @@
         {% endfor %}
         {% endif %}
         {% endif %}
+        <style>
+        {% block inline_css %}
+        {% endblock %}
+        </style>
     </head>
     <body>
         <div id="header">
@@ -35,6 +39,7 @@
                 <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Platform</a></li>
 				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">About Us</a></li>
                 <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">Volunteer</a></li>
+                <li class="header-tab"><a href="{{ url_for('states.main_state_page') }}">States</a></li>
                 <li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">Contribute</div></a></li>
                 <li class="header-tab">{% if not g.user %}<a href="{{ url_for('account.login') }}">Log In</a>{% else %}<a href="{{ url_for('volunteer.you') }}">My Account</a>{% endif %}
             </ul>

@@ -39,6 +39,7 @@ def create_app(environment):
     from modules.rcon.blueprint import rcon
     from modules.reports.blueprint import reports
     from modules.security.blueprint import security
+    from modules.states.blueprint import states
 
     app.register_blueprint(account)
     app.register_blueprint(security)
@@ -47,6 +48,7 @@ def create_app(environment):
     app.register_blueprint(email_list)
     app.register_blueprint(rcon)
     app.register_blueprint(reports)
+    app.register_blueprint(states)
     app.register_blueprint(staticpages) # staticpages must be registered last
 
     @app.route("/favicon.ico")

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% set extra_css = ["states", "jqvmap"] %}
+{% block scripts %}
+<script>
+  $(document).ready(function () {
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+            }
+            return false;
+          });
+    });
+  });
+</script>
+{% endblock %}
+{% block content %}
+<h1>See what's happening in your state</h1>
+<div id="textBased" class="pure-form">
+  <select id="dynamic_select">
+    <option disabled selected>Select Your State</option>
+    {% for state, abbrev in states.items() %}
+    <option value="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
+    {% endfor %}
+  </select>
+</div>
+{% endblock %}
