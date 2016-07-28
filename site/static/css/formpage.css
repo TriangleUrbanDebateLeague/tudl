@@ -58,4 +58,8 @@ button, .button {
 button:hover, button:active, .button:hover, .button:active {
 	background-color: #003973;
 }
-	
+
+
+#footer {
+    margin-top: 0px;
+}	
