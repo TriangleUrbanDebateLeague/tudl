@@ -14,9 +14,9 @@
 	<div class="pure-u-lg-1-3 pure-u-1-1">
 		
 		<div class="clearfix" id="director">
-			<h2>State director: {{ state.director.account.full_name }}</h2>
-			<div class="well">
-			<img alt="{{ state.director.account.full_name }} " src="{{ url_for('static', filename='states/' + state.name.lower() + '/director.png') }}">
+			<h2>director: {% if state.director %}{{ state.director.account.first_name }} {{ state.director.account.last_name }}{% else %}None{% endif %}</h2>
+			<div class="well clearfix">
+			<img alt="{% if state.director %}{{ state.director.account.full_name }}{% else %}None{% endif %}" src="{{ url_for('static', filename='states/' + state.name.lower() + '/director.png') }}">
 			<p>{{ state.director.bio }}</p>
 			</div>
 		</div>

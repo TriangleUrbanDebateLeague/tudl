@@ -10,5 +10,8 @@ with open(os.path.dirname(os.path.realpath(__file__)) + '/modules/states/templat
     states_list = OrderedDict(sorted(json.loads(f.read()).items(), key=lambda k: k[0]))
 
 for state, abbrev in states_list.items():
-	s = State.create(name=state, code=abbrev)
-	print("Created {} - {}".format(s.name, s))
+	try:
+		s = State.create(name=state, code=abbrev)
+		print("Created {} - {}".format(s.name, s))
+	except IntegrityError:
+		print("{} already exists".format(state))

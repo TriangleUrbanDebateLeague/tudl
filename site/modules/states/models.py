@@ -19,12 +19,12 @@ class State(BaseModel):
 
 class Event(BaseModel):
     name = CharField(128, verbose_name="Event name")
-    date = DateField(formats=["%Y", "%m/%Y", "%Y-%m-%d"], verbose_name="Date", null=True)
+    date = DateField(formats=["%Y", "%m/%Y", "%Y-%m-%d"], verbose_name="Date")
     state = ForeignKeyField(State, related_name="events")
 
 class StatePosition(BaseModel):
     state = ForeignKeyField(State, related_name="positions")
     account = ForeignKeyField(Account, related_name="state_positions")
-    title = CharField(64, verbose_name="Position title")
+    title = CharField(64, verbose_name="Position title", null=True)
     bio = CharField(8192, verbose_name="Position biography", null=True)
     role = IntegerField(default=0, verbose_name="Role")
