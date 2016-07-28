@@ -30,5 +30,6 @@ def show_state_page(state_code):
     		return render_template("states/apply.html", form=form)
     	message = render_template("states/apply_email.html", form=form)
     	send_email('noreply@unifieddemocracy.org', 'benjamin.burstein@unifieddemocracy.org', 'State Director Application - {}'.format(current_app.config.get("APP_NAME", "Unified Democracy")), message)
+        send_email('noreply@unifieddemocracy.org', 'victoria.bevard@unifieddemocracy.org', 'State Director Application - {}'.format(current_app.config.get("APP_NAME", "Unified Democracy")), message)
     	flash("Application Successful", "success")
     	return redirect(url_for("staticpages.show_staticpage", page="index"))
