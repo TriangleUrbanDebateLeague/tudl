@@ -7,7 +7,6 @@
  */
 
 /* --- misc styles --- */
-
 * {
     font-family: Montserrat, Helvetica, Arial, sans-serif;
 }
@@ -27,6 +26,12 @@ a {
     margin-right: auto;
 }
 
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 .button-primary {
     background-color: #0a4883;
     border-radius: 4px;
@@ -35,7 +40,7 @@ a {
 }
 /* --- end misc styles -- */
 
-/* --- header/footer styles --- */
+/* --- header styles --- */
 #header, #footer {
     text-transform: uppercase;
 }
@@ -103,7 +108,6 @@ a {
     margin-top: 10px;		
     margin-bottom: 10px;		
 }
-/* end comment */
 
 .contribute-button {
 	background-color: #ff4c62;
@@ -188,9 +192,12 @@ a {
 		font-size: 8vw;
 	}
 }
+/* --- end header styles --- */
 
+/* --- footer styles --- */
 #footer {
     padding: 10px 0;
+    margin-top: 130px;
     padding-bottom: 40px;
     background-color: #16489d;
 	color: #FFF;
@@ -292,7 +299,7 @@ a {
 .text-normal {
     text-transform: none;
 }
-/* --- end header/footer styles --- */
+/* --- end footer styles --- */
 
 input:not([type=checkbox]) {
     width: 100%;
@@ -323,8 +330,3 @@ a.whitelink:visited, a.whitelink {
     color: #ffffff;
 }
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
