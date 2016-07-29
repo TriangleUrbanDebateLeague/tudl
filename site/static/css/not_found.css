@@ -9,6 +9,16 @@
 }
 
 .not_found-text {
+	position: absolute;
+	top: calc(50% - 70px);
+	width: 100%;
+	color: #FFF;
+	text-align: center;
+	font-size: 60px;
+}
+
+#footer {
+    margin-top: 0px;
     position: absolute;
     top: calc(50% - 70px);
     width: 100%;

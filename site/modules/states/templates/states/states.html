@@ -18,7 +18,7 @@
 {% endblock %}
 {% block content %}
 <h1>See what's happening in your state</h1>
-<div id="textBased" class="pure-form">
+<div class="dropdown">
   <select id="dynamic_select">
     <option disabled selected>Select Your State</option>
     {% for state, abbrev in states.items() %}

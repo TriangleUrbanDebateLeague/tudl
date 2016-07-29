@@ -42,11 +42,6 @@ h1 {
     top: 55px;
     line-height: 30px;
 }
-
-#footer {
-    margin-top: 0;
-}
-
 @media screen and (max-width: 1200px) {
     #content {
         font-size: 130%;
@@ -56,6 +51,9 @@ h1 {
     h1 {
          margin-top: 110px;
     }
+    #footer {
+    margin-top: 0;
+}
 }
 
 @media screen and (max-width: 650px) {
@@ -67,4 +65,63 @@ h1 {
     h1 {
          margin-top: 40px;
     }
+}
+
+/* --- dropdown styles --- */
+.dropdown select {
+    outline: 0;
+    height: 2.25em;
+    background-color: white;
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #003973;
+    border-radius: 11px;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dropdown select:focus {
+    outline: 0;
+    border-color: #129FEA;
+}
+
+.dropdown select:focus:invalid {
+    color: #b94a48;
+    border-color: #e9322d;
+}
+
+.dropdown select option {
+    padding-left: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.dropdown select option:hover {
+    transform: scale(1.04);
+}
+
+.dropdown select option[disabled]:hover {
+    transform: scale(1);
+}
+
+.dropdown select[multiple] {
+    height: auto;
+}
+
+.dropdown select[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
+}
+
+.dropdown select[readonly] {
+    background-color: #eee; 
+    color: #777; 
+    border-color: #ccc;
+}
+/* --- end dropdown styles --- */
+
+#footer {
+	margin-top: 0px !important;
 }
