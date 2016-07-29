@@ -5,6 +5,7 @@
     border-radius: 5px;
     box-shadow: inset 0 5px 10px #ddd;
     border: solid 1px #ddd;
+	overflow: hidden;
 }
 
 .well img {
