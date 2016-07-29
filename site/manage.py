@@ -26,9 +26,15 @@ def sync_volunteers():
     volunteers = Volunteer.select().where(Volunteer.account != None)
     print("Syncing {} volunteer(s)".format(volunteers.count()))
     for volunteer in volunteers:
+
+        account = volunteer.account
+        account.first_name = account.first_name.strip()
+        account.last_name = account.last_name.strip()
+        account.save()
+
         print(volunteer.full_name)
-        volunteer.local_first_name = volunteer.account.first_name
-        volunteer.local_last_name = volunteer.account.last_name
+        volunteer.local_first_name = account.first_name
+        volunteer.local_last_name = account.last_name
         volunteer.save()
 
 @manager.command
