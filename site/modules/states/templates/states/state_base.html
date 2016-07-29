@@ -48,7 +48,7 @@
 			{% for event in events %}
 			<tr>
 				<td>{{ event.name }}</td>
-				<td>{{ event.date.split("-")[0] }}</td>
+				<td>{{ event.date.split()[0] }}</td>
 			</tr>
 			{% endfor %}
 		</table>
