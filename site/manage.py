@@ -28,8 +28,8 @@ def sync_volunteers():
     for volunteer in volunteers:
 
         account = volunteer.account
-        account.first_name = account.first_name.strip()
-        account.last_name = account.last_name.strip()
+        account.first_name = account.first_name.strip().title()
+        account.last_name = account.last_name.strip().title()
         account.save()
 
         print(volunteer.full_name)
