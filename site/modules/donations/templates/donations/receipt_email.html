@@ -1,37 +1,37 @@
 <head>
-	<style>
-		* {
-    		font-family: Montserrat, Helvetica, Arial, sans-serif;
-		}
-		.emailHeader {
-			width: 100%;
-		}
-		.thankYou {
-			text-align: center;
-		}
-		.receipt {
-			margin: 10%;
-		}
-	</style>
+    <style>
+        * {
+            font-family: Montserrat, Helvetica, Arial, sans-serif;
+        }
+        .emailHeader {
+            width: 100%;
+        }
+        .thankYou {
+            text-align: center;
+        }
+        .receipt {
+            margin: 10%;
+        }
+    </style>
 </head>
 <body>
-	<div class="emailHeader">
-		<img class="emailHeader" src="{{ url_for('static', filename='UD-vertical.svg', _external=True) }}" alt="Unified Democracy Logo" />
-	</div>
-	<div class="thankYou">
-		<p><strong>Thank you for donating to the Unified Democracy Political Action Committee. Your receipt of donation is attached below.</strong></p>
-	</div>
-	<div class="receipt">
-		<p>{{ header_date }}</p>
-		<p><br /></p>
-		<p>Dear {{ donation.first_name }} {{ donation.last_name }},</p>
-		{% if not donation.recurring %}
-		<p>Thank you for your contribution in the amount of {{ donation.amount | money_format }} which we received on {{ body_date }}.</p>
-		{% else %}
-		<p>Thank you for your monthly contribution in the amount of {{ donation.amount | money_format }} beginning on {{ body_date }}.</p>
-		{% endif %}
-		<p><br /></p>
-		<p>Sincerely,</p>
-		<p>Benjamin Burstein, President</p>
-	</div>
+    <div class="emailHeader">
+        <img class="emailHeader" src="{{ url_for('static', filename='UD-vertical.svg', _external=True) }}" alt="Unified Democracy Logo" />
+    </div>
+    <div class="thankYou">
+        <p><strong>Thank you for donating to the Unified Democracy Political Action Committee. Your receipt of donation is attached below.</strong></p>
+    </div>
+    <div class="receipt">
+        <p>{{ header_date }}</p>
+        <p><br /></p>
+        <p>Dear {{ donation.first_name }} {{ donation.last_name }},</p>
+        {% if not donation.recurring %}
+        <p>Thank you for your contribution in the amount of {{ donation.amount | money_format }} which we received on {{ body_date }}.</p>
+        {% else %}
+        <p>Thank you for your monthly contribution in the amount of {{ donation.amount | money_format }} beginning on {{ body_date }}.</p>
+        {% endif %}
+        <p><br /></p>
+        <p>Sincerely,</p>
+        <p>Benjamin Burstein, President</p>
+    </div>
 </body>

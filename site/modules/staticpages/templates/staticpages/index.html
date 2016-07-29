@@ -2,67 +2,68 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="image-box">
-	<div class="box-background" id="vote-box-background">
-	</div>
-	<div class="box-foreground" id="vote-box-foreground">
-		<div id="voting-text-box">
-			VOTING IS NOT A<br>
-			<span id="privilege">PRIVILEGE.</span>
-		</div>
-		<div id="rights-text-box">
-			WE ARE LEADING THE FIGHT FOR VOTING RIGHTS FOR ALL
-		</div>
-		<div id="join-box">
-			<form method="POST" action="{{ url_for('email_list.list_subscribe') }}">
-				 {{ form.csrf_token() }}
-				 {{ form.email(placeholder="Email Address", id="email-entry-box") }}
-				 <input id="email-submit" type="submit" value="JOIN IN">
-			</form>
-		</div>
-	</div>
+    <div class="box-background" id="vote-box-background">
+    </div>
+    <div class="box-foreground" id="vote-box-foreground">
+        <div id="voting-text-box">
+            VOTING IS NOT A
+            <br>
+            <span id="privilege">PRIVILEGE.</span>
+        </div>
+        <div id="rights-text-box">
+            WE ARE LEADING THE FIGHT FOR VOTING RIGHTS FOR ALL
+        </div>
+        <div id="join-box">
+            <form method="POST" action="{{ url_for('email_list.list_subscribe') }}">
+                 {{ form.csrf_token() }}
+                 {{ form.email(placeholder="Email Address", id="email-entry-box") }}
+                 <input id="email-submit" type="submit" value="JOIN IN">
+            </form>
+        </div>
+    </div>
 </div>
 
 <div class="main-text">
-	<div class="left-box">
-		<h2>Voting should be easy.</h2>
-		Imagine a world where no American will lose their right to vote because they lack the ability to obtain an ID or register on-time. Where no citizen will be forced to choose between going to work and going to vote. That is the America we are fighting for.
-	</div>
-	<div class="right-box">
-		<img alt="Plan for easier voting" src="/static/homepage/easy-voting.png" class="side-image" />
-	</div>
-	<div class="clear-bar"></div>
-	<div class="right-box">
-		<h2>Every vote should count.</h2>
-		Realities such as gerrymandering and flawed campaign finance laws have allowed money, power, and influence to drown out the voice of the people. It’s time to let voters truly pick their leaders - to let the people's voice be heard across our government. We can make every vote count with reformed campaign finance laws and independently drawn Congressional districts.
-	</div>
-	<div class="left-box">
-		<img alt="Maryland voting district" src="/static/homepage/maryland.png" class="side-image" />
-	</div>
-	<div class="clear-bar"></div>
-	<div class="left-box">
-		<h2>Students should learn why voting matters.</h2>
-		There is a reason the United States ranks 120th in the world in average national voter turnout: our education system fails to adequately emphasize social civics and political literacy. If students do not learn why voting matters, they will be far less likely to vote. When we invest in civic education, we invest in the future of our democracy.
-	</div>
-	<div class="right-box">
-		<img alt="Civics" src="/static/homepage/civics.png" class="side-image" />
-	</div>
-	<div class="clear-bar"></div>
+    <div class="left-box">
+        <h2>Voting should be easy.</h2>
+        Imagine a world where no American will lose their right to vote because they lack the ability to obtain an ID or register on-time. Where no citizen will be forced to choose between going to work and going to vote. That is the America we are fighting for.
+    </div>
+    <div class="right-box">
+        <img alt="Plan for easier voting" src="/static/homepage/easy-voting.png" class="side-image" />
+    </div>
+    <div class="clear-bar"></div>
+    <div class="right-box">
+        <h2>Every vote should count.</h2>
+        Realities such as gerrymandering and flawed campaign finance laws have allowed money, power, and influence to drown out the voice of the people. It’s time to let voters truly pick their leaders - to let the people's voice be heard across our government. We can make every vote count with reformed campaign finance laws and independently drawn Congressional districts.
+    </div>
+    <div class="left-box">
+        <img alt="Maryland voting district" src="/static/homepage/maryland.png" class="side-image" />
+    </div>
+    <div class="clear-bar"></div>
+    <div class="left-box">
+        <h2>Students should learn why voting matters.</h2>
+        There is a reason the United States ranks 120th in the world in average national voter turnout: our education system fails to adequately emphasize social civics and political literacy. If students do not learn why voting matters, they will be far less likely to vote. When we invest in civic education, we invest in the future of our democracy.
+    </div>
+    <div class="right-box">
+        <img alt="Civics" src="/static/homepage/civics.png" class="side-image" />
+    </div>
+    <div class="clear-bar"></div>
 </div>
 
 <div id="stats" class="pure-g">
-	<div id="stat-volunteers" class="pure-u-md-1-3 pure-u-1">
-		<p class="stat-title">Registered volunteers</p>
+    <div id="stat-volunteers" class="pure-u-md-1-3 pure-u-1">
+        <p class="stat-title">Registered volunteers</p>
         <p class="stat-number">{{ Volunteer.select().count() }}</p>
-	</div>
-	
-	<div id="stat-hours" class="pure-u-md-1-3 pure-u-1">
-		<p class="stat-title">Hours logged</p>
+    </div>
+    
+    <div id="stat-hours" class="pure-u-md-1-3 pure-u-1">
+        <p class="stat-title">Hours logged</p>
         <p class="stat-number">{{ LoggedHours.select().aggregate(fn.Sum(LoggedHours.hours)) | round }}</p>
-	</div>
-	
-	<div id="stat-states" class="pure-u-md-1-3 pure-u-1">
-		<p class="stat-title">States we're in</p>
-		<p class="stat-number">{{ State.select().count() }}</p>
-	</div>
+    </div>
+    
+    <div id="stat-states" class="pure-u-md-1-3 pure-u-1">
+        <p class="stat-title">States we're in</p>
+        <p class="stat-number">{{ State.select().count() }}</p>
+    </div>
 </div>
 {% endblock %}
