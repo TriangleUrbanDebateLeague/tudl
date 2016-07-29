@@ -125,3 +125,7 @@ button.red:hover, button.red.selected {
 	line-height: 150%;
 	margin-left: 20px;
 }
+
+#footer {
+    margin-top: 0px;
+}
