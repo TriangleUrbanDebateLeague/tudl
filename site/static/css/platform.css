@@ -1,7 +1,7 @@
 /* --- box styles --- */
 #huge-header {
-	background-image: url("../background-images/platform-background-dark.png");
-	background-position: center bottom;
+    background-image: url("../background-images/platform-background-dark.png");
+    background-position: center bottom;
 }
 /* --- end box styles --- */
 
@@ -13,53 +13,61 @@
     color: #16489d;
     margin-top: 50px;
 }
+
 #main-text {
-	width: 100%;
-	max-width: 1150px;
+    width: 100%;
+    max-width: 1150px;
     margin: 20px auto;
-	padding: 0;
-	font-size: 120%;
+    padding: 0;
+    font-size: 120%;
 }
+
 @media screen and (max-width:1250px) {
-	#title {
-		font-size: 35px;
-	}
-	#main-text {
-	    max-width: 80%;
-	    font-size: 110%;
+    #title {
+        font-size: 35px;
+    }
+
+    #main-text {
+        max-width: 80%;
+        font-size: 110%;
     }
 }
+
 @media screen and (max-width:450px) {
     #title {
-		font-size: 30px;
-	}
-	#main-text {
-	    max-width: 80%;
-	    font-size: 100%;
+        font-size: 30px;
+    }
+
+    #main-text {
+        max-width: 80%;
+        font-size: 100%;
     }
 }
 /* --- end content styles --- */
 
 /* --- platform list styles --- */
 #platform-list ul {
-	text-align: left;
+    text-align: left;
     width: 100%;
-	max-width: 1150px;
-	margin: auto;
+    max-width: 1150px;
+    margin: auto;
     text-transform: uppercase;
     list-style-type: none;
     font-size: 30px;
     color: #467de0;
-    padding: 0px 0px 0px 20px;
+    padding: 0 0 0 20px;
 }
+
 #platform-list li {
     border-top: 1px solid #d1d1d1;
     position: relative;
 }
+
 #platform-list li:last-child {
     border-bottom: 1px solid #d1d1d1;
     margin-bottom: 95px;
 }
+
 #platform-list li a {
     color: #000;
     display: block;
@@ -70,56 +78,66 @@
     -moz-transition: background-color 0.3s ease, padding 0.3s ease;
     transition: background-color 0.3s ease, padding 0.3s ease;
 }
+
 #platform-list li a:hover {
     background: #f6f6f6;
-    padding: 10px 0px 10px 70px;
+    padding: 10px 0 10px 70px;
     color: #1e50a6;
 }
+
 #platform-list li:hover .redbar {
-	width: 35px;
+    width: 35px;
 }
 .redbar {
-	float: left;
-	width: 0px;
-	position: absolute; 
+    float: left;
+    width: 0;
+    position: absolute; 
     height: 100%; 
-	background-color: #d0021b;
-	-webkit-transition: width 0.3s ease;
+    background-color: #d0021b;
+    -webkit-transition: width 0.3s ease;
     -moz-transition: width 0.3s ease;
     transition: width 0.3s ease;
 }
-@media screen and (max-width:1250px) {
+
+@media screen and (max-width: 1250px) {
     #platform-list ul {
         font-size: 25px;
-        padding: 0px 0px 0px 15px;
+        padding: 0 0 0 15px;
     }
+
     #platform-list li a {
         padding: 9px 30px;
     }
+
     #platform-list li a:hover {
         background: #f6f6f6;
-        padding: 10px 0px 10px 65px;
+        padding: 10px 0 10px 65px;
         color: #1e50a6;
     }
+
     #platform-list li:hover .redbar {
-	    width: 30px;
+        width: 30px;
     }
 }
-@media screen and (max-width:450px) {
+
+@media screen and (max-width: 450px) {
     #platform-list ul {
         font-size: 17px;
-        padding: 0px 0px 0px 7px;
+        padding: 0 0 0 7px;
     }
+
     #platform-list li a {
         padding: 8px 22px;
     }
+
     #platform-list li a:hover {
         background: #f6f6f6;
-        padding: 10px 0px 10px 57px;
+        padding: 10px 0 10px 57px;
         color: #1e50a6;
     }
+
     #platform-list li:hover .redbar {
-	    width: 22px;
+        width: 22px;
     }
 }
 /* --- end platform list styles --- */

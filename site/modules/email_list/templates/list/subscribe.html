@@ -4,25 +4,24 @@
 {% block inline_css %}
 {% if get_flashed_messages() %}
 #content {
-padding-top: 0px !important;
+    padding-top: 0 !important;
 }
 {% endif %}
 {% endblock %}
 {% block content %}
 <div id="block">
-
-	<h1>Subscribe to our mailing list</h1>
-	<form class="pure-form pure-form-stacked" method="POST">
-		{{ form.csrf_token() }}
-		<div class="pure-g">
-			<div class="pure-u-1">
-				{{ div_free_field(form.email, "john@doe.com") }}
-			</div>
-		</div>
-		<div class="pure-u-1">
-			<button type="submit" class="pure-button button-primary">Subscribe</button>
-		</div>
-	</form>
+    <h1>Subscribe to our mailing list</h1>
+    <form class="pure-form pure-form-stacked" method="POST">
+        {{ form.csrf_token() }}
+        <div class="pure-g">
+            <div class="pure-u-1">
+                {{ div_free_field(form.email, "john@doe.com") }}
+            </div>
+        </div>
+        <div class="pure-u-1">
+            <button type="submit" class="pure-button button-primary">Subscribe</button>
+        </div>
+    </form>
 </div>
 </div>
 {% endblock %}

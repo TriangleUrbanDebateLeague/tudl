@@ -3,217 +3,243 @@
 {% block content %}
 
 <div id="huge-header">
-	<h1>About Us</h1>
+    <h1>About Us</h1>
 </div>
 
 <div class="pure-g" id="sections">
-	<div class="pure-u-md-1-4 pure-u-1">
-		<h2 class="link" id="our-team">Our Team</h2>
-	</div>
-	
-	<div class="pure-u-md-1-4 pure-u-1">
-		<h2 class="link" id="council">Advisory Councils</h2>
-	</div>
-	
-	<div class="pure-u-md-1-4 pure-u-1">
-		<h2 class="link" id="our-story">Our Story</h2>
-	</div>
-	
-	<div class="pure-u-md-1-4 pure-u-1">
-		<h2 class="link" id="press">Press</h2>
-	</div>
-<!--	
-	<div class="pure-u-md-1-6 pure-u-1">
-		<h2 class="link" id="it">IT</h2>
-	</div>
-	
-	<div class="pure-u-md-1-6 pure-u-1">
-		<h2 class="link" id="lit">Literature</h2>
-	</div>-->
+    <div class="pure-u-md-1-4 pure-u-1">
+        <h2 class="link" id="our-team">Our Team</h2>
+    </div>
+    
+    <div class="pure-u-md-1-4 pure-u-1">
+        <h2 class="link" id="council">Advisory Councils</h2>
+    </div>
+    
+    <div class="pure-u-md-1-4 pure-u-1">
+        <h2 class="link" id="our-story">Our Story</h2>
+    </div>
+    
+    <div class="pure-u-md-1-4 pure-u-1">
+        <h2 class="link" id="press">Press</h2>
+    </div>
+<!--    
+    <div class="pure-u-md-1-6 pure-u-1">
+        <h2 class="link" id="it">IT</h2>
+    </div>
+    
+    <div class="pure-u-md-1-6 pure-u-1">
+        <h2 class="link" id="lit">Literature</h2>
+    </div>-->
 </div>
 
 <div class="tab" id="tab-our-team" class="text">
-	<div class="pure-g" id="subsections">
-		<div class="pure-u-md-1-3 pure-u-1">
-			<h2 class="sub-link" id="execs">Executive Team</h2>
-		</div>
-		<div class="pure-u-md-1-3 pure-u-1">
-			<h2 class="sub-link" id="it">IT Team</h2>
-		</div>
-		<div class="pure-u-md-1-3 pure-u-1">
-			<h2 class="sub-link" id="lit">Literature Team</h2>
-		</div>
-	</div>
-	<div class="subtab" id="subtab-execs">
-		<h1>Executive Team</h1>
+    <div class="pure-g" id="subsections">
+        <div class="pure-u-md-1-3 pure-u-1">
+            <h2 class="sub-link" id="execs">Executive Team</h2>
+        </div>
+        <div class="pure-u-md-1-3 pure-u-1">
+            <h2 class="sub-link" id="it">IT Team</h2>
+        </div>
+        <div class="pure-u-md-1-3 pure-u-1">
+            <h2 class="sub-link" id="lit">Literature Team</h2>
+        </div>
+    </div>
+    <div class="subtab" id="subtab-execs">
+        <h1>Executive Team</h1>
+        
+        <div class="well">
+            <img alt="Benjamin Burstein" src="{{ url_for('static', filename='ben.jpg') }}">
+            <h2>Benjamin Burstein</h2>
+            <h3>President</h3>
+            <p>Benjamin Burstein is a senior at Miami Beach Senior High School in Miami Beach, Florida. He created the Unified Democracy PAC to increase civic involvement in America’s largely disengaged constituency. When not managing the PAC, he chairs a local business association in Miami Beach, Florida and leads his city’s youth commission.</p>
+        </div>
+        
+        <div class="well">
+            <img alt="Victoria Bevard" src="{{ url_for('static', filename='victoria.jpg') }}">
+            <h2>Victoria Bevard</h2>
+            <h3>Executive Vice President</h3>
+            <p>Victoria Bevard is a senior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. She joined in 2016 to facilitate the PAC’s national transition. In her free time, she captains her school’s Congressional Debate team.</p>
+        </div>
+    </div>
+    <div class="subtab" id="subtab-it">
+        <h1>IT Team</h1>
+        
+        <div class="well">
+            <img alt="Fox Wilson" src="{{ url_for('static', filename='fox.jpg') }}">
+            <h2>Fox Wilson</h2>
+            <h3>Director of Information Technology</h3>
+            <p>Fox Wilson is a freshman at the University of Alabama in Huntsville. He joined in 2016 to establish the organization’s back-end technology infrastructure. In his free time, he works on programming projects, plays the piano, and writes music.</p>
+        </div>
 		
 		<div class="well">
-			<img alt="Benjamin Burstein" src="{{ url_for('static', filename='ben.jpg') }}">
-			<h2>Benjamin Burstein</h2>
-			<h3>President</h3>
-			<p>Benjamin Burstein is a senior at Miami Beach Senior High School in Miami Beach, Florida. He created the Unified Democracy PAC to increase civic involvement in America’s largely disengaged constituency. When not managing the PAC, he chairs a local business association in Miami Beach, Florida and leads his city’s youth commission.</p>
-		</div>
+            <img alt="Adam 'Zeal' An" src="{{ url_for('static', filename='zeel.png') }}">
+            <h2>Adam "Zeal" An</h2>
+            <h3>Director of Web Development</h3>
+            <p>Adam An attends the College of William and Mary, unless it's 2020 and he forgot to update his bio. See <a href="http://theycallmezeal.me">http://theycallmezeal.me</a> for the most recent updates about him. Notice how he wrote "most recent updates" as if anything interesting happens to him.</p>
+        </div>
 		
 		<div class="well">
-			<img alt="Victoria Bevard" src="{{ url_for('static', filename='victoria.jpg') }}">
-			<h2>Victoria Bevard</h2>
-			<h3>Executive Vice President</h3>
-			<p>Victoria Bevard is a senior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. She joined in 2016 to facilitate the PAC’s national transition. In her free time, she captains her school’s Congressional Debate team.</p>
-		</div>
-	</div>
-	<div class="subtab" id="subtab-it">
-		<h1>IT Team</h1>
+            <img alt="Omkar Kulkarni" src="{{ url_for('static', filename='omkar.png') }}">
+            <h2>Omkar Kulkarni</h2>
+            <h3>Director of Web Systems</h3>
+        </div>
 		
 		<div class="well">
-			<img alt="Fox Wilson" src="{{ url_for('static', filename='fox.jpg') }}">
-			<h2>Fox Wilson</h2>
-			<h3>Director of Information Technology</h3>
-			<p>Fox Wilson is a senior at Thomas Jefferson High School for Science and Technology in Alexandria, Virginia. He joined in 2016 to establish the organization’s back-end technology infrastructure. In his free time, he works as the head system administrator at TJHSST, works on coding projects, plays the piano, and writes music.</p>
-		</div>
-	</div>
-	<div class="subtab" id="subtab-lit">
-		<h1> Literature Team</h1>
-	
+            <img alt="Sharon Liu" src="{{ url_for('static', filename='sharon.png') }}">
+            <h2>Sharon Liu</h2>
+            <h3>Director of Graphic Design</h3>
+        </div>
+		
 		<div class="well">
-			<img alt="Narrelle Ghilchrist" src="{{ url_for('static', filename='narrelle.jpg') }}">
-			<h2>Narrelle Ghilchrist</h2>
-			<h3>Director of Literature</h3>
-			<p>Narrelle Gilchrist is a freshman at the University of Florida. She joined in 2016 to manage the PAC’s platform research and published literature. Narrelle spends her free time writing for several magazines and singing in her university’s choir.</p>
-		</div>
-	</div>
+            <img alt="Evan Shi" src="{{ url_for('static', filename='evan.png') }}">
+            <h2>Evan Shi</h2>
+            <h3>Director of Web Development</h3>
+        </div>
+    </div>
+    <div class="subtab" id="subtab-lit">
+        <h1> Literature Team</h1>
+    
+        <div class="well">
+            <img alt="Narrelle Ghilchrist" src="{{ url_for('static', filename='narrelle.jpg') }}">
+            <h2>Narrelle Ghilchrist</h2>
+            <h3>Director of Literature</h3>
+            <p>Narrelle Gilchrist is a freshman at the University of Florida. She joined in 2016 to manage the PAC’s platform research and published literature. Narrelle spends her free time writing for several magazines and singing in her university’s choir.</p>
+        </div>
+    </div>
 </div>
 
 <div class="tab" id="tab-council" class="text">
-	<h1>ERA Councils: The Three Pillars of an Engaged Constituency</h1>
-	<div>
-	    <h2><span class="fancy">Education:</span> The Council to Foster Political Awareness</h2>
-	    <p>The Education Council spearheads our efforts to promote civic education. It oversees projects to keep citizens informed about local, state, and national elections and the issues at stake. The Education Council also advises our PAC members on the best ways to raise public awareness of our PAC’s mission and platform goals. The work of this council is paramount to building and maintaining an informed constituency.</p>
-	
-	    <h2><span class="fancy">Representation:</span> The Council to Expand Representation in Government</h2>
-	    <p>The Representation Council works to bolster the voices of average Americans in government. Too often, politicians lose their accountability to their constituents, believing that their jobs and popularity are secure. This profound lack of political concern leads them to disregard the views of their constituency, silencing the voice of average Americans in policy decisions. The Representation Council works to reverse that trend by making every vote count so that politicians are held accountable; it seeks out opportunities to expand the American people’s voice in politics.</p>
-	
-	    <h2><span class="fancy">Action:</span> The Council to Implement Legislative Strategies</h2>
-	    <p>The Action Council pioneers strategies to advance legislation that will meaningfully remove obstacles to political involvement. This council focuses primarily on fostering new avenues to advocate for our platform goals at the local, state, and federal levels. The success of that advocacy will have far-reaching effects for political representation and participation in our country.</p>
-	</div>
+    <h1>ERA Councils: The Three Pillars of an Engaged Constituency</h1>
+    <div>
+        <h2><span class="fancy">Education:</span> The Council to Foster Political Awareness</h2>
+        <p>The Education Council spearheads our efforts to promote civic education. It oversees projects to keep citizens informed about local, state, and national elections and the issues at stake. The Education Council also advises our PAC members on the best ways to raise public awareness of our PAC’s mission and platform goals. The work of this council is paramount to building and maintaining an informed constituency.</p>
+    
+        <h2><span class="fancy">Representation:</span> The Council to Expand Representation in Government</h2>
+        <p>The Representation Council works to bolster the voices of average Americans in government. Too often, politicians lose their accountability to their constituents, believing that their jobs and popularity are secure. This profound lack of political concern leads them to disregard the views of their constituency, silencing the voice of average Americans in policy decisions. The Representation Council works to reverse that trend by making every vote count so that politicians are held accountable; it seeks out opportunities to expand the American people’s voice in politics.</p>
+    
+        <h2><span class="fancy">Action:</span> The Council to Implement Legislative Strategies</h2>
+        <p>The Action Council pioneers strategies to advance legislation that will meaningfully remove obstacles to political involvement. This council focuses primarily on fostering new avenues to advocate for our platform goals at the local, state, and federal levels. The success of that advocacy will have far-reaching effects for political representation and participation in our country.</p>
+    </div>
 </div>
 
 <div class="tab" id="tab-our-story" class="text">
-	<h1>Our Story</h1>
-	<div>
-	    <p>The Unified Democracy Political Action Committee was founded by Benjamin Burstein in February 2015 to encourage increased civic involvement in his home city of Miami Beach, Florida. Originally by the name {{ config.APP_NAME }}, the Unified Democracy PAC played a significant role in helping increase political participation among students in South Florida.</p>
-	
-	    <p>After a year of working with candidates in South Florida, the potential to spread the message of creating a better democracy was working. Voter turnout among young people was increasing, voter registration numbers were at all time highs, and the Unified Democracy PAC quickly became one of the largest political organizations in the country with 105 volunteers contributing over 8,000 hours of their time to candidates supported by the PAC.</p>
-	
-	    <p>The Unified Democracy PAC helped increase voter turnout in numerous local elections:</p>
-	    <ul>
-		    <li>November 2015 city of Miami election</li>
-		    <li>November 2015 city of Miami Beach election</li>
-		    <li>November 2015 city of Hialeah election</li>
-		    <li>January 2016 Florida City election</li>
-		    <li>February 2016 city of South Miami election</li>
-		    <li>March 2016 city of Miami Beach special election</li>
-		    <li>March 2016 city of Miami referendum</li>
-	    </ul>
-	
-	    <p>In early 2016, the Unified Democracy PAC began its transition to become a national organization. We now have 11 state affiliates under the organization with more than one hundred students working for the PAC.</p>
-	</div>
+    <h1>Our Story</h1>
+    <div>
+        <p>The Unified Democracy Political Action Committee was founded by Benjamin Burstein in February 2015 to encourage increased civic involvement in his home city of Miami Beach, Florida. Originally by the name {{ config.APP_NAME }}, the Unified Democracy PAC played a significant role in helping increase political participation among students in South Florida.</p>
+    
+        <p>After a year of working with candidates in South Florida, the potential to spread the message of creating a better democracy was working. Voter turnout among young people was increasing, voter registration numbers were at all time highs, and the Unified Democracy PAC quickly became one of the largest political organizations in the country with 105 volunteers contributing over 8,000 hours of their time to candidates supported by the PAC.</p>
+    
+        <p>The Unified Democracy PAC helped increase voter turnout in numerous local elections:</p>
+        <ul>
+            <li>November 2015 city of Miami election</li>
+            <li>November 2015 city of Miami Beach election</li>
+            <li>November 2015 city of Hialeah election</li>
+            <li>January 2016 Florida City election</li>
+            <li>February 2016 city of South Miami election</li>
+            <li>March 2016 city of Miami Beach special election</li>
+            <li>March 2016 city of Miami referendum</li>
+        </ul>
+    
+        <p>In early 2016, the Unified Democracy PAC began its transition to become a national organization. We now have 11 state affiliates under the organization with more than one hundred students working for the PAC.</p>
+    </div>
 </div>
 
 <div class="tab" id="tab-press" class="text">
-	<h1>Press</h1>
-	
-	<div class="well">
-		<h2>Miami Herald, Joey Flechas</h2>
-		<p>“[Benjamin Burstein, 17, a rising Beach High senior], wants Miami Beach youths to get involved at City Hall.”</p>
-		<p><a class="pure-button" href="http://www.miamiherald.com/news/local/community/miami-dade/miami-beach/article85499052.html" target="_blank">Read more</a></p>
-	</div>
-	
-	<div class="well">
-		<h2>Fusion, Daniel Rivero</h2>
-		<p>“I can’t vote, and I can’t give monetary political contributions to change the status quo, so of course it’s logical to start a political action committee,” Burstein reasoned.</p>
-		<p><a class="pure-button" href="http://fusion.net/story/280231/benjamin-burstein-is-16-and-has-a-super-pac/" target="_blank">Read more</a></p>
-	</div>
-	
-	<div class="well">
-		<h2>NPR, Wilson Sayre</h2>
-		<p>Through working with students {{ config.APP_NAME }} has contributed over 8,000 hours of service to local offices of area politicians.</p>
-		<p><a class="pure-button" href="http://wlrn.org/post/youngest-person-press-room" target="_blank">Read more</a></p>
-	</div>
-		
-	<div class="well">
-		<h2>National Journal, Emma Roller</h2>
-		<p>Benjamin Burstein is a high school sophomore from Miami Beach, Florida. He turns 16 next week. And last week, he started his own political action committee.</p>
-		<p><a class="pure-button" href="http://www.theatlantic.com/politics/archive/2015/04/this-15-year-old-started-his-own-political-action-committee/455421/" target="_blank">Read more</a></p>
-	</div>
+    <h1>Press</h1>
+    
+    <div class="well">
+        <h2>Miami Herald, Joey Flechas</h2>
+        <p>“[Benjamin Burstein, 17, a rising Beach High senior], wants Miami Beach youths to get involved at City Hall.”</p>
+        <p><a class="pure-button" href="http://www.miamiherald.com/news/local/community/miami-dade/miami-beach/article85499052.html" target="_blank">Read more</a></p>
+    </div>
+    
+    <div class="well">
+        <h2>Fusion, Daniel Rivero</h2>
+        <p>“I can’t vote, and I can’t give monetary political contributions to change the status quo, so of course it’s logical to start a political action committee,” Burstein reasoned.</p>
+        <p><a class="pure-button" href="http://fusion.net/story/280231/benjamin-burstein-is-16-and-has-a-super-pac/" target="_blank">Read more</a></p>
+    </div>
+    
+    <div class="well">
+        <h2>NPR, Wilson Sayre</h2>
+        <p>Through working with students {{ config.APP_NAME }} has contributed over 8,000 hours of service to local offices of area politicians.</p>
+        <p><a class="pure-button" href="http://wlrn.org/post/youngest-person-press-room" target="_blank">Read more</a></p>
+    </div>
+        
+    <div class="well">
+        <h2>National Journal, Emma Roller</h2>
+        <p>Benjamin Burstein is a high school sophomore from Miami Beach, Florida. He turns 16 next week. And last week, he started his own political action committee.</p>
+        <p><a class="pure-button" href="http://www.theatlantic.com/politics/archive/2015/04/this-15-year-old-started-his-own-political-action-committee/455421/" target="_blank">Read more</a></p>
+    </div>
 </div>
-	
+    
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script type="text/javascript">
-	var tabs = document.getElementsByClassName("tab");
-	var links = document.getElementsByClassName("link");
-	var subtabs = document.getElementsByClassName("subtab");
-	var sublinks = document.getElementsByClassName("sub-link");
-	
-	function setOnclicks (name) {
-		var link = document.getElementById(name);
-		link.onclick = function () {
-			for (var i = 0; i < tabs.length; i++) {
-				var tab = tabs[i];
-				tab.style.display = "none";
-			}
-			
-			for (var i = 0; i < links.length; i++) {
-				var currentLink = links[i];
-				currentLink.classList.remove("selected");
-			}
-			
-			link.classList.add("selected");
-			
-			document.getElementById("tab-" + name).style.display = "block";
-		}
-	}
+    var tabs = document.getElementsByClassName("tab");
+    var links = document.getElementsByClassName("link");
+    var subtabs = document.getElementsByClassName("subtab");
+    var sublinks = document.getElementsByClassName("sub-link");
 
-	function setSubOnClick (name) {
-		var sublink = document.getElementById(name);
-		sublink.onclick = function () {
-			for (var i = 0; i < subtabs.length; i++) {
-				var subtab = subtabs[i];
-				subtab.style.display = "none";
-			}
-			for ( var i = 0; i < sublinks.length; i++ ){
-				var currentSubLink = sublinks[i];
-				currentSubLink.classList.remove("selected");
-			}
+    function setOnclicks (name) {
+        var link = document.getElementById(name);
+        link.onclick = function () {
+            for (var i = 0; i < tabs.length; i++) {
+                var tab = tabs[i];
+                tab.style.display = "none";
+            }
 
-			sublink.classList.add("selected");
+            for (var i = 0; i < links.length; i++) {
+                var currentLink = links[i];
+                currentLink.classList.remove("selected");
+            }
 
-			document.getElementById("subtab-" + name).style.display = "block";
-		}
-	}
-	
-	setOnclicks("our-team");
-	setOnclicks("council");
-	setOnclicks("our-story");
-	setOnclicks("press");
-	setSubOnClick("execs");
-	setSubOnClick("it");
-	setSubOnClick("lit");
-	
-	/* set just the first tab visible. */
-	for (var i = 1; i < tabs.length; i++) {
-		var tab = tabs[i];
-		tab.style.display = "none";
-	}
+            link.classList.add("selected");
 
-	for(var i = 1; i < subtabs.length; i++) {
-		var subtab = subtabs[i];
-		subtab.style.display = "none";
-	}
-	
-	links[0].classList.add("selected");
-	sublinks[0].classList.add("selected");
+            document.getElementById("tab-" + name).style.display = "block";
+        }
+    }
+
+    function setSubOnClick (name) {
+        var sublink = document.getElementById(name);
+        sublink.onclick = function () {
+            for (var i = 0; i < subtabs.length; i++) {
+                var subtab = subtabs[i];
+                subtab.style.display = "none";
+            }
+
+            for (var i = 0; i < sublinks.length; i++) {
+                var currentSubLink = sublinks[i];
+                currentSubLink.classList.remove("selected");
+            }
+
+            sublink.classList.add("selected");
+
+            document.getElementById("subtab-" + name).style.display = "block";
+        }
+    }
+
+    setOnclicks("our-team");
+    setOnclicks("council");
+    setOnclicks("our-story");
+    setOnclicks("press");
+    setSubOnClick("execs");
+    setSubOnClick("it");
+    setSubOnClick("lit");
+
+    /* set just the first tab visible. */
+    for (var i = 1; i < tabs.length; i++) {
+        var tab = tabs[i];
+        tab.style.display = "none";
+    }
+
+    for (var i = 1; i < subtabs.length; i++) {
+        var subtab = subtabs[i];
+        subtab.style.display = "none";
+    }
+
+    links[0].classList.add("selected");
+    sublinks[0].classList.add("selected");
 </script>
 {% endblock %}

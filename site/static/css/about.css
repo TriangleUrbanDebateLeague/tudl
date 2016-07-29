@@ -1,28 +1,36 @@
 #huge-header {
-	background-image: url("../background-images/supreme-court-haze.jpg");
+    background-image: url("../background-images/supreme-court-haze.jpg");
 }
 
 #sections, #subsections {
-	text-align: center;
+    text-align: center;
 }
 
 #sections h2, #subsections h2 {
-	border-bottom: solid 5px #ffffff;
+    border-bottom: solid 5px rgb(256, 256, 256, 0);
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
 }
 
-#sections h2:hover, #sections h2:focus, #sections h2.selected, #subsections h2:hover, #subsections h2:focus, #subsections h2.selected {
-	color: #c5392f;
-	border-bottom: solid 5px #c5392f;
-	cursor: pointer;
+#sections h2:hover,
+#sections h2:focus,
+#sections h2.selected,
+#subsections h2:hover,
+#subsections h2:focus,
+#subsections h2.selected {
+    color: #c5392f;
+    border-bottom: solid 5px #c5392f;
+    cursor: pointer;
 }
 
 .tab, .subtab {
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .fancy {
-	color: #0a4883;
-	font-style: italic;
+    color: #0a4883;
+    font-style: italic;
 }

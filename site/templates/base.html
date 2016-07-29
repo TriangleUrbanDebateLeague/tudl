@@ -32,12 +32,12 @@
             <a href="/">
                 <img alt="TFT Logo" src="/static/UD-vertical.svg" class="header-logo-image">
             </a>
-			<div id="toggleButton">
-				<i class="fa fa-bars" aria-hidden="true"></i>
-			</div>
+            <div id="toggleButton">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <ul class="header-nav">
                 <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Platform</a></li>
-				<li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">About Us</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">About Us</a></li>
                 <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">Volunteer</a></li>
                 <li class="header-tab"><a href="{{ url_for('states.main_state_page') }}">States</a></li>
                 <li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">Contribute</div></a></li>
@@ -104,19 +104,19 @@
         </div>
         
         <script type="text/javascript">
-            $(document).ready(function() {
-				if ($(document).width() <=  1200)
-					$(".header-nav").toggle();
+            $(function() {
+                if ($(document).width() <=  1200)
+                    $(".header-nav").toggle();
                 $("#toggleButton").click(function() {
                     $(".header-nav").slideToggle("slow");
                 });
             });
-			$(window).resize(function() {
-				if (window.innerWidth >  1200)
-					$(".header-nav").show();
-				else
-					$(".header-nav").hide();
-			});
+            $(window).resize(function() {
+                if (window.innerWidth >  1200)
+                    $(".header-nav").show();
+                else
+                    $(".header-nav").hide();
+            });
         </script>
 
         {% block scripts %}

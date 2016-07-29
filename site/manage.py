@@ -26,9 +26,15 @@ def sync_volunteers():
     volunteers = Volunteer.select().where(Volunteer.account != None)
     print("Syncing {} volunteer(s)".format(volunteers.count()))
     for volunteer in volunteers:
+
+        account = volunteer.account
+        account.first_name = account.first_name.strip().title()
+        account.last_name = account.last_name.strip().title()
+        account.save()
+
         print(volunteer.full_name)
-        volunteer.local_first_name = volunteer.account.first_name
-        volunteer.local_last_name = volunteer.account.last_name
+        volunteer.local_first_name = account.first_name
+        volunteer.local_last_name = account.last_name
         volunteer.save()
 
 @manager.command
@@ -49,6 +55,7 @@ def run_migration(migration):
 
 @manager.command
 def create_states():
+    """Import State objects"""
     with open(os.path.dirname(os.path.realpath(__file__)) + '/modules/states/states.json', 'r') as f:
         states_list = json.loads(f.read())
 
@@ -58,6 +65,12 @@ def create_states():
             print("Created {} - {}".format(s.name, s))
         except IntegrityError:
             print("{} already exists".format(state))
+
+@manager.command
+def assign_permission(email, module, permission):
+    """Assign a permission to a user"""
+    account = Account.get(email=email)
+    Permission.create(account=account, module=module, permission=permission)
 
 if __name__ == '__main__':
     manager.run()

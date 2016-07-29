@@ -15,7 +15,7 @@ class State(BaseModel):
             return dir_[0]
         else:
             raise IntegrityError("{} has more than 1 director".format(self.name.title()))
-    
+
 
 class Event(BaseModel):
     name = CharField(128, verbose_name="Event name")
