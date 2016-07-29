@@ -1,3 +1,6 @@
+#footer {
+	margin-top: 0px !important;
+}
 #content {
 	background-image: url("/static/background-images/memorial.jpg");
 	background-size: cover;
