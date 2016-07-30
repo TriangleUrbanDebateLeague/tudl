@@ -7,6 +7,8 @@
 /* --- tab styles --- */
 #sections {
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #sections h2 {
