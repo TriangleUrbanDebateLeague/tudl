@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% set extra_css = ["statepage", "huge-header", "well"] %}
+
 {% block inline_css %}
 #huge-header {
     background-image: url("{{ url_for('static', filename='states/' + state.name.lower() + '/main.png') }}");
 }
 {% endblock %}
+
 {% block content %}
 <div id="huge-header">
     <h1>{{ state.name | title }}</h1>
