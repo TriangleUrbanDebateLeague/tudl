@@ -18,21 +18,37 @@
 
 #sections h2:hover,
 #sections h2:focus,
-#sections h2.selected,
-#subsections h2:hover,
-#subsections h2:focus,
-#subsections h2.selected {
+#sections h2.selected {
     color: #c5392f;
     border-bottom: solid 5px #c5392f;
     cursor: pointer;
 }
 
 .tab {
-    width: 80%;
+    width: 65%;
     margin-left: auto;
     margin-right: auto;
 }
 /* --- end tab styles --- */
+
+/* --- privacy policy styles --- */
+.call-to-action {
+    margin-bottom: 35px;
+}
+
+.call-to-action a {
+    text-decoration: none;
+    color: white;
+    font-size: 130%;
+}
+
+.label {
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 130%;
+    color: #0a4883;
+}
+/* --- end privacy policy styles --- */
 
 /* --- ethics code styles --- */
 #tab-ethics-code {
