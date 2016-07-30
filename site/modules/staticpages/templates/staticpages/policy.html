@@ -1,12 +1,23 @@
-{% set extra_css = "privacy" %}
+{% set extra_css = ["huge-header", "policy"] %}
 {% extends "base.html" %}
 
 {% block content %}
-<div id="main-text">
-    <div id="title">Policies</div> 
-    <div class="content-section">
-        Respect for your privacy is important to the Unified Democracy PAC.  If you have any questions about our privacy policy, please do not hesitate to contact fox.wilson@unifieddemocracy.org.
+<div id="huge-header">
+    <h1>Policies</h1>
+</div>
 
+<div class="pure-g" id="sections">
+    <div class="pure-u-md-1-4 pure-u-1">
+        <h2 class="link" id="privacy-policy">Privacy Policy</h2>
+    </div>
+    
+    <div class="pure-u-md-1-4 pure-u-1">
+        <h2 class="link" id="ethics-code">Ethics Code</h2>
+    </div>
+</div>
+
+<div class="tab" id="tab-privacy-policy" class="text">
+        Respect for your privacy is important to the Unified Democracy PAC.  If you have any questions about our privacy policy, please do not hesitate to contact fox.wilson@unifieddemocracy.org.
         EFFECTIVE DATE:  August 1, 2016
 
         General Clarification
@@ -45,6 +56,48 @@
 
         “Linked-To” Web Sites
         The Site may contain links, banners, or widgets that lead to other website.  We are not responsible for these other sites, and so their posted privacy policies (not this Policy) will govern the collection and use of your information on them.
+</div>
+
+<div class="tab" id="tab-ethics-code" class="text">
+    <div class="center">
+        <embed id="pdf" src="/static/ethics_code.pdf" type='application/pdf'>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    var tabs = document.getElementsByClassName("tab");
+    var links = document.getElementsByClassName("link");
+
+    function setOnclicks (name) {
+        var link = document.getElementById(name);
+        link.onclick = function () {
+            for (var i = 0; i < tabs.length; i++) {
+                var tab = tabs[i];
+                tab.style.display = "none";
+            }
+
+            for (var i = 0; i < links.length; i++) {
+                var currentLink = links[i];
+                currentLink.classList.remove("selected");
+            }
+
+            link.classList.add("selected");
+
+            document.getElementById("tab-" + name).style.display = "block";
+        }
+    }
+
+    setOnclicks("privacy-policy");
+    setOnclicks("ethics-code");
+
+    /* set just the first tab visible. */
+    for (var i = 1; i < tabs.length; i++) {
+        var tab = tabs[i];
+        tab.style.display = "none";
+    }
+    
+    links[0].classList.add("selected");
+</script>
 {% endblock %}

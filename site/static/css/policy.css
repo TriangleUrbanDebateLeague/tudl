@@ -1,0 +1,70 @@
+/* --- box styles --- */
+#huge-header {
+    background-image: url("../background-images/policy.jpg");
+}
+/* --- end box styles --- */
+
+/* --- tab styles --- */
+#sections {
+    text-align: center;
+}
+
+#sections h2 {
+    border-bottom: solid 5px rgb(256, 256, 256, 0);
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+}
+
+#sections h2:hover,
+#sections h2:focus,
+#sections h2.selected,
+#subsections h2:hover,
+#subsections h2:focus,
+#subsections h2.selected {
+    color: #c5392f;
+    border-bottom: solid 5px #c5392f;
+    cursor: pointer;
+}
+
+.tab {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* --- end tab styles --- */
+
+/* --- ethics code styles --- */
+#tab-ethics-code {
+    text-align: center;
+}
+
+
+#pdf {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 1600px) {
+    #pdf {
+        max-width: 800px;
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #pdf {
+        max-width: 600px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #pdf {
+        max-width: 400px;
+        height: 400px;
+    }
+}
+/* --- end ethics code styles --- */
