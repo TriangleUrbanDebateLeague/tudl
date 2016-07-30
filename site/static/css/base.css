@@ -39,6 +39,11 @@ a {
     color: white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+
+.text-normal {
+    text-transform: none;
+}
+
 /* --- end misc styles -- */
 
 /* --- header styles --- */
@@ -212,9 +217,9 @@ a {
 
 /* --- footer styles --- */
 #footer {
-    padding: 10px 0;
     margin-top: 130px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 50px;
     background-color: #16489d;
     color: #fff;
     box-shadow: 0 -2px rgba(0, 0, 0, 0.1);
@@ -312,8 +317,27 @@ a {
 .footer-links a:focus {
     color: #fff;
 }
-.text-normal {
-    text-transform: none;
+
+@media screen and (max-width: 1600px) {
+    #footer {
+        margin-top: 100px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #footer {
+        margin-top: 80px;
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #footer {
+        margin-top: 60px;
+        padding-top: 8px;
+        padding-bottom: 20px;
+    }
 }
 /* --- end footer styles --- */
 
