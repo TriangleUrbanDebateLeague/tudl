@@ -3,7 +3,7 @@
 
 {% block inline_css %}
 #huge-header {
-    background-image: url("{{ url_for('static', filename='states/' + state.name.lower() + '/main.png') }}");
+    background-image: url("{{ url_for('static', filename='states/' + state.name.lower().replace(" ", "_") + '/main.png') }}");
 }
 {% endblock %}
 
@@ -19,7 +19,7 @@
             <h2>Director: {% if state.director %}{{ state.director.account.informal_full_name }}</a>{% else %}None{% endif %}</h2>
             {% if state.director %}
             <div class="well clearfix">
-                <img alt="{{ state.director.account.full_name }}" src="{{ url_for('static', filename='states/' + state.name.lower() + '/director.png') }}">
+                <img alt="{{ state.director.account.full_name }}" src="{{ url_for('static', filename='states/' + state.name.lower().replace(" ", "_") + '/director.png') }}">
                 <p>{{ state.director.bio }}</p>
                 <p class="center"><a href="mailto:{{ state.director.account.informal_full_name.split() | join('.') | lower }}@{{ config.APP_NAME.replace(' ', '') | lower }}.org" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope"></i> Email {{ state.director.account.first_name }}</a></p>
             </div>
