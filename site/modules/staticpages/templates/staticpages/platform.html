@@ -45,3 +45,27 @@
     </div>
 </div>
 {% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	var planks = document.getElementsByClassName("plank");
+	var descs = document.getElementsByClassName("plank-desc");
+	
+	for (var i = 0; i < descs.length; i++) {
+		descs[i].style.display = "none";
+	}
+	
+	for (var i = 0; i < planks.length; i++) {
+		planks[i].onclick = function () {
+			this.classList.toggle("selected");
+			var desc = this.nextSibling.nextSibling;
+			console.log(desc.style.display + "!");
+			if (desc.style.display == "block") {
+				desc.style.display = "none";
+			} else if (desc.style.display == "none") {
+				desc.style.display = "block";
+			}
+		}
+	}
+</script>
+{% endblock %}

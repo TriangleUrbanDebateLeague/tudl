@@ -74,7 +74,7 @@
 	transition: padding-left 0.5s ease, background-color 0.5s ease;
 }
 
-.plank:hover p, .plank.selected p {
+.plank.selected p {
 	padding-left: 30px;
 	color: #003973;
 	background-color: #fcfcfc;
