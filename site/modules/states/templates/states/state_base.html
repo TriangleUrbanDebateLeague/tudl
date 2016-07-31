@@ -16,11 +16,11 @@
     <div class="pure-u-lg-1-2 pure-u-1-1">
         
         <div class="clearfix" id="director">
-            <h2>Director</h2>
+            <h1>Director</h1>
             {% if state.director %}
             <div class="well clearfix">
                 <img alt="{{ state.director.account.full_name }}" src="{{ url_for('static', filename='states/' + state.name.lower().replace(" ", "_") + '/director.png') }}">
-                <p><strong>{% if state.director %}{{ state.director.account.informal_full_name }}{% else %}None{% endif %}</strong></p>
+                <h2>{% if state.director %}{{ state.director.account.informal_full_name }}{% else %}None{% endif %}</h2>
                 <p>{{ state.director.bio }}</p>
                 <p class="email"><a href="mailto:{{ state.director.account.informal_full_name.split() | join('.') | lower }}@{{ config.APP_NAME.replace(' ', '') | lower }}.org" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope"></i> Email {{ state.director.account.first_name }}</a></p>
             </div>
@@ -30,13 +30,13 @@
 
     <div class="pure-u-lg-1-2 pure-u-1-1">
         <div>
-            <h2>State team</h2>
+            <h1>State team</h1>
             {% for person in positions %}
             {% with acct = person.account %}
             <div class="person well {% if person.title %}with-blurb{% else %}name-only{% endif %}">
-                <h3>{{ acct.informal_full_name }}</h3>
+                <h2>{{ acct.informal_full_name }}</h2>
                 {% if person.title %}
-                    <h4>{{ person.title }}</h4>
+                    <h3>{{ person.title }}</h3>
                 {% endif %}
             </div>
             {% endwith %}
