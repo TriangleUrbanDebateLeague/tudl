@@ -1,9 +1,7 @@
-/* --- box styles --- */
 #huge-header {
     background-image: url("../background-images/platform-background-dark.png");
     background-position: center bottom;
 }
-/* --- end box styles --- */
 
 /* --- content styles --- */
 #title {
@@ -46,98 +44,46 @@
 /* --- end content styles --- */
 
 /* --- platform list styles --- */
-#platform-list ul {
-    text-align: left;
-    width: 100%;
-    max-width: 1150px;
-    margin: auto;
-    text-transform: uppercase;
-    list-style-type: none;
-    font-size: 30px;
-    color: #467de0;
-    padding: 0 0 0 20px;
+.plank {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-top: solid 1px #0a4883;
+	border-bottom: solid 1px #0a4883;
+	
+	text-transform: uppercase;
+	color: #0a4883;
+	
+	background-color: #c5392f;
 }
 
-#platform-list li {
-    border-top: 1px solid #d1d1d1;
-    position: relative;
+.plank:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+ }
+
+.plank p {
+	margin: 0px;
+	padding: 10px;
+	
+	background-color: white;
+	
+	transition: padding-left 0.5s ease, background-color 0.5s ease;
 }
 
-#platform-list li:last-child {
-    border-bottom: 1px solid #d1d1d1;
-    margin-bottom: 95px;
+.plank:hover p, .plank.selected p {
+	padding-left: 30px;
+	color: #003973;
+	background-color: #fcfcfc;
 }
 
-#platform-list li a {
-    color: #000;
-    display: block;
-    padding: 10px 35px;
-    text-decoration: none;
-    color: inherit;
-    -webkit-transition: background-color 0.3s ease, padding 0.3s ease;
-    -moz-transition: background-color 0.3s ease, padding 0.3s ease;
-    transition: background-color 0.3s ease, padding 0.3s ease;
-}
-
-#platform-list li a:hover {
-    background: #f6f6f6;
-    padding: 10px 0 10px 70px;
-    color: #1e50a6;
-}
-
-#platform-list li:hover .redbar {
-    width: 35px;
-}
-.redbar {
-    float: left;
-    width: 0;
-    position: absolute; 
-    height: 100%; 
-    background-color: #d0021b;
-    -webkit-transition: width 0.3s ease;
-    -moz-transition: width 0.3s ease;
-    transition: width 0.3s ease;
-}
-
-@media screen and (max-width: 1250px) {
-    #platform-list ul {
-        font-size: 25px;
-        padding: 0 0 0 15px;
-    }
-
-    #platform-list li a {
-        padding: 9px 30px;
-    }
-
-    #platform-list li a:hover {
-        background: #f6f6f6;
-        padding: 10px 0 10px 65px;
-        color: #1e50a6;
-    }
-
-    #platform-list li:hover .redbar {
-        width: 30px;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    #platform-list ul {
-        font-size: 17px;
-        padding: 0 0 0 7px;
-    }
-
-    #platform-list li a {
-        padding: 8px 22px;
-    }
-
-    #platform-list li a:hover {
-        background: #f6f6f6;
-        padding: 10px 0 10px 57px;
-        color: #1e50a6;
-    }
-
-    #platform-list li:hover .redbar {
-        width: 22px;
-    }
+.plank-desc {
+	padding: 10px;
+	margin: 0px;
+	background-color: #eeeeee;
+	font-size: 90%;
 }
 /* --- end platform list styles --- */
