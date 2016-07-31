@@ -1,57 +1,76 @@
+{% set extra_css = ["huge-header", "platform"] %}
 {% extends "base.html" %}
 
 {% block content %}
-<div class="call-to-action">
-    <div class="cta-text">
-        <span class="cta-header-text header">Our Platform</span>
-        <p>Teens for Teens is an organization working to increase political literacy and representation among students in the United States. We recognize that the amount of political alienation towards minors is largely due to their inability to vote. This has led to their representation at the local, state, and federal levels of government being nearly nonexistent.</p>
-        <p>Through Teens for Teens, students are given a voice with a forum for lobbying, direct communication with a multitude of legislative bodies, and a variety of political commentaries with fellow students across the nation.</p>
-    </div>
+<div id="huge-header">
+    <h1>Our Platform</h1>
 </div>
 
-<div class="main-content">
+<div id="main-text">
+    <div id="title">Our Electoral Problems Are Mounting</div> 
     <div class="content-section">
-        <h1>The Problem</h1>
-        <p>America faces the staggering problem of a lack of voter turnout:</p>
-        <ul>
-            <li>The presidential voter turnout rate was 55% in 2012.</li>
-            <li>The 2014 Congressional Midterm election turnout rate was 37%, the lowest since World War Two.</li>
-            <li>Elections for state legislatures vary, but are generally comparable to midterm turnout rates per state.</li>
-            <li>Local elections see the least turnout, with around 25% turnout for larger city elections and 10% turnout for smaller municipalities.</li>
-            <li>As of 2014, the US ranks 120th in average national voter turnout, behind Yemen and Estonia.</li>
-        </ul>
+        <p>America faces the staggering problem of a lack of voter turnout: the presidential voter turnout rate was 55% in 2012. The 2014 Congressional Midterm election turnout rate was 36%, the lowest since World War Two. Elections for state legislatures vary but are generally comparable to midterm turnout rates per state. Local elections see the least turnout, with around 25% turnout for larger city elections and 10% turnout for smaller municipalities. As of 2014, the U.S. ranks 120th in average national voter turnout, behind Yemen and Estonia.</p>
+        
         <p>Political apathy certainly contributes to a fall in turnout. However, frustration in the lack of political progress and perceived flaws in the campaign system play a much more active role in discouraging voting.</p>
+        
+        <p>When the constituency doesn't vote, democracy fails to represent the people. The lack of voter turnout is a vicious cycle.  People fail to vote because they believe the political system is broken.  When fewer people vote, the system represents the views of fewer Americans.  The moderate voice becomes lost and Americans become even more disillusioned with politics as things continue to get worse.  Government accountability declines as fewer people vote, thereby increasing both the actual and perceived corruption.  Political disillusionment thus becomes a self fulfilling prophecy.</p> <br/>
     </div>
-
-    <div class="content-section">
-        <h1>The Impact</h1>
-        <p>When the constituency doesn't vote, democracy fails to represent the people.</p>
-        <p>The lack of voter turnout is a vicious cycle.  People fail to vote because they believe the political system is broken.  When fewer people vote, the system represents the views of fewer Americans.  The moderate voice becomes lost and Americans become even more disillusioned with politics as things continue to get worse.  Government accountability declines as fewer people vote, thereby increasing both the actual and perceived corruption.  Political disillusionment thus becomes a self fulfilling prophecy.</p>
-    </div>
-
-    <div class="content-section">
-        <h1>The Solution</h1>
-        <p>Americans have only one way to return accountability to the system.  Their vote is the only thing that can make a difference.</p>
-        <p>Unlike other organizations that work directly to eliminate political corruption, Teens for Teens works to build the number of youth voters.  Teens for Teens believes that a higher voter turnout rate will solve much of current political inadequacies via increased political accountability.</p>
-        <p>Teens for Teens focuses on young voters and lowering the voting age because we believe that encouraging young people to vote establishes a habit of political engagement.  Improving engagement among youth remains the best hope for the next generation of American politics.</p>
-    </div>
-
-    <div class="content-section">
-        <h1>Our Objectives</h1>
-        <ul>
-            <li>Lowering the voting age in municipal elections.</li>
-            <li>Improving political literacy through K-12 education funding in civics.</li>
-            <li>Establishing a national holiday for voting to improve accessibility to polls.</li>
-            <li>Reducing voter discrimination and ID laws that depress minority turnout.</li>
-            <li>Increasing transparency in campaign contributions.</li>
-            <li>Eliminating the practice of gerrymandering in House and state legislature elections by using automated redistricting such as the Shortest Splitline algorithm.</li>
-            <li>Simplifying voter registration.</li>
-            <li>Streamlining and simplifying voting.</li>
-            <li>Hiring invested and engaged poll workers. </li>
-            <li>Implementing same-day voter registration at voting locations.</li>
-            <li>Increasing early voting in municipal and state elections.</li>
-            <li>Automatic voter registration at 18 and preregistration at 16.</li>
-        </ul>
+    <div id="platform-list">
+		<div class="plank"><p>Lower the voting age in municipal elections.</p></div>
+		<p class="plank-desc">America’s youth is the future of our nation, but they have no say in choosing the government of the present. Lowering the voting age to 16, beginning in municipal elections, would not only enfranchise youth, but would also help solve their political apathy. If youth began voting at 16, rather than the tumultuous age of 18, they would be much more likely to build a habit of voting that would continue for the rest of their life. It is time to bring the next generation into the nation’s political process.<br>
+		<a target="_blank" href="{{ url_for('static', filename='platform-pdfs/Lower The Voting Age Municipal.pdf') }}">Full report</a></p>
+		
+		<div class="plank"><p>Fund more K-12 civic classes.</p></div>
+		<p class="plank-desc">Informed citizens are the foundation of democracy. An understanding of the rights and responsibilities that come with American citizenship is fundamental to knowing how and why participation in democracy is essential. That knowledge comes from civic education in grades K-12. With budget cuts and packed curriculums has come an increasingly lackluster focus on civic education. It is time to reverse that trend.</p>
+		
+		<div class="plank"><p>Establish a national holiday for voting.</p></div>
+		<p class="plank-desc">The everyday rush of work, school, and responsibility dominates American life, leaving little room for anything else. Election Day is no exception. Too often, American voters are forced to choose between going to work and going to vote. If Election Day were made a national holiday, Americans could put aside the day to vote and reflect upon the most important process in a democracy.<br>
+		<a target="_blank" href="{{ url_for('static', filename='platform-pdfs/NationalElectionDayHoliday.pdf') }}">Full report</a></p>
+		
+		<div class="plank"><p>Abolish voter ID laws.</p></div>
+		<p class="plank-desc">For some, possessing an ID may seem simple, but for others, it is an impassable barrier to voting. Despite the fact that voter fraud is incredibly rare, voter ID laws have become entrenched in local, state, and federal elections. Ultimately, they are just another way that poor and minority Americans are disenfranchised. Repealing voter ID laws is a critical step towards universal civic enfranchisement.</p>
+		
+		<div class="plank"><p>Eliminate the practice of gerrymandering.</p></div>
+		<p class="plank-desc">Gerrymandering is partisan politics at its worst. It silences the will of the people, producing a government that represents only the powerful. When incumbents do not have to worry about reelection, they can no longer be held accountable to their constituents. When the outcomes of elections should never be determined before the first vote is cast, people lose faith in democracy. Redistricting must be placed in the hands of independent commissions, whose only concern is ensuring accurate representation for the people.<br>
+		<a target="_blank" href="{{ url_for('static', filename='platform-pdfs/Gerrymandering.pdf') }}">Full report</a></p>
+		
+		<div class="plank"><p>Simplify voter registration.</p></div>
+		<p class="plank-desc">When registering to vote becomes a burden, millions of Americans never journey to their polling places. When missing a deadline means losing a voice in the election, millions of Americans are silenced, and the outcomes of elections no longer represent the views of the electorate. Policies that make voting easier, such as automatic registration and same-day registration, can help reverse trends towards record-low civic engagement and voter turnout.<br>
+		<a target="_blank" href="{{ url_for('static', filename='platform-pdfs/Voter Registration.pdf') }}">Full report</a></p>
+		
+		<div class="plank"><p>Ensure transparency in all elections.</p></div>
+		<p class="plank-desc">Without agencies such as the Federal Election Commission and Internal Revenue Service to regulate campaign strategies in municipal and state elections, the electorate is cut off from campaign finance reports and information about elections. An uninformed electorate is a disengaged constituency. Local policies such as appointing inspector generals can increase election transparency.</p>
+		
+		<div class="plank"><p>Decrease lines at polling places.</p></div>
+		<p class="plank-desc">A long line in the sun is one of the most powerful deterrents to voting. Americans neither want nor can afford to wait in line for hours to cast a vote that they feel will be meaningless. When polling places lack the resources to handle Election Day crowds, they create a voting experience that is unpleasant and uninviting. Polling places must be given the resources they need to keep lines short, so that voting is a pleasure, and not a chore.<br>
+		<a target="_blank" href="{{ url_for('static', filename='platform-pdfs/BallotLines.pdf') }}">Full report</a></p>
+		
+		<div class="plank"><p>Grant DC representation in Congress.</p></div>
+		<p class="plank-desc">The citizens of Washington D.C. live at the heart of America's democracy, but don't have the full rights to participate in it. As the only city whose budget is controlled by congress, Washington D.C. depends on congress for its livelihood, but it is also the only city without a representative in the nation's legislative body. As a result, the needs of the capital's citizens are often ignored. Granting DC representation in congress is the only way to correct that injustice.</p>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+	var planks = document.getElementsByClassName("plank");
+	var descs = document.getElementsByClassName("plank-desc");
+	
+	for (var i = 0; i < descs.length; i++) {
+		descs[i].style.display = "none";
+	}
+	
+	for (var i = 0; i < planks.length; i++) {
+		planks[i].onclick = function () {
+			this.classList.toggle("selected");
+			var desc = this.nextSibling.nextSibling;
+			console.log(desc.style.display + "!");
+			if (desc.style.display == "block") {
+				desc.style.display = "none";
+			} else if (desc.style.display == "none") {
+				desc.style.display = "block";
+			}
+		}
+	}
+</script>
 {% endblock %}

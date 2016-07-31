@@ -42,11 +42,12 @@ class Account(BaseModel):
         return next(q.iterator())
 
     @property
-    def full_name(self, alt=False):
-        if alt:
-            return "{} {}".format(self.first_name, self.last_name)
-        else:
-            return "{}, {}".format(self.last_name, self.first_name)
+    def full_name(self):
+        return "{}, {}".format(self.last_name, self.first_name)
+
+    @property
+    def informal_full_name(self):
+        return "{} {}".format(self.first_name, self.last_name)
 
 class PasswordReset(BaseModel):
     account = ForeignKeyField(Account, related_name='resets')

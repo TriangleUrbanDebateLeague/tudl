@@ -1,0 +1,112 @@
+{% set extra_css = ["huge-header", "policy"] %}
+{% extends "base.html" %}
+
+{% block content %}
+<div id="huge-header">
+    <h1>Policies</h1>
+</div>
+
+<div class="pure-g" id="sections">
+    <div class="pure-u-md-1-2 pure-u-1">
+        <h2 class="link" id="privacy-policy">Privacy Policy</h2>
+    </div>
+    
+    <div class="pure-u-md-1-2 pure-u-1">
+        <h2 class="link" id="ethics-code">Ethics Code</h2>
+    </div>
+</div>
+
+<div class="tab" id="tab-privacy-policy" class="text">
+    <div class="call-to-action">
+        <p>Respect for your privacy is important to the Unified Democracy PAC.  If you have any questions about our privacy policy, please do not hesitate to contact <a href="mailto:fox.wilson@unifieddemocracy.org" target="_blank">us</a>.</p>
+        <h3>EFFECTIVE DATE:  August 1, 2016</h3>
+    </div>
+    <div>
+        <p class="label">General Clarification</p>
+        <p>The Site is owned and operated by the Unified Democracy Political Action Committee referred to in this policy as “the Unified Democracy PAC,” as well as “we,” “us,” “our” and other similar pronouns.</p>
+        <p>This Policy does not apply to information that you may provide to us, or that we may obtain, other than through our Site, such as over the phone, by mail, or in person.</p>
+
+        <p class="label">Handling of Personal Information</p>
+        <p>We acknowledge the importance of protecting your privacy and personal information, and will adhere to all applicable privacy laws.</p>
+
+        <p class="label">User Provided Information</p>
+        <p>We collect used provided information from you when you:</p>
+        <ul>
+            <li>Make a donation</li>
+            <li>Sign up to become a volunteer</li>
+            <li>Sign up to our mailing list</li>
+            <li>Enter information into your volunteer account</li>
+        </ul>
+        <p>When you perform any of the above functions, no information other than what you provide is collected.</p>
+        <p>We do not knowingly collect personal information from anyone under 13 years old. If you are under 13 years old, please do not provide us with any such information or ask your parents for permission.</p>
+
+        <p class="label">Use of Cookies</p>
+        <p>We use a session cookie to keep you logged if you log in as a volunteer.  We do not use any other cookies.</p>
+
+        <p class="label">General Analytics</p>
+        <p>We automatically collect your IP address upon visiting our site in server request logs.</p>
+
+        <p class="label">Security of Personal Information</p>
+        <p>We use the Stripe payment service to secure your donation information.  Data in transit to our Site is encrypted in TLSv1.2.</p>
+
+        <p class="label">Disclosure of Personal Information</p>
+        <p>We do not share any of your personal information with three exceptions:</p>
+        <ol>
+            <li>Due to the inherent nature of the Internet as an open global communications vehicle, we cannot guarantee that any information, during transmission through the Internet or while stored on our system or otherwise in our care, will be absolutely safe from intrusion by others, such as hackers.</li>
+            <li>In the unlikely event we need to investigate or resolve possible problems or inquiries, we can (and you authorize us to) disclose any information about you that may be in our possession to private entities, law enforcement or other government officials if necessary and appropriate.</li>
+            <li>We report volunteer hours entered by those over the age of 18 to the Federal Election Commission (FEC).  This report will include the information you provided when you signed up to become a volunteer.</li>
+        </ol>
+
+        <p class="label">Use of Your Email</p>
+        <p>We will send you correspondence and newsletters if you provide your email to us in any of the afore mentioned forms.  You may choose to opt out of this feature.  We will not distribute your email to any parties with the exceptions listed in the “Disclosure of Personal Information” section.</p>
+
+        <p class="label">“Linked-To” Web Sites</p>
+        <p>The Site may contain links, banners, or widgets that lead to other websites.  We are not responsible for these other sites, and so their posted privacy policies (not this Policy) will govern the collection and use of your information on them.</p>
+    </div>
+</div>
+
+<div class="tab" id="tab-ethics-code" class="text">
+    <div class="center">
+        <p>Having trouble viewing? Download our ethics code <a href="/static/ethics_code.pdf" target="_blank" class="label">here.</a></p>
+        <br/>
+        <embed id="pdf" src="/static/ethics_code.pdf" type='application/pdf'>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    var tabs = document.getElementsByClassName("tab");
+    var links = document.getElementsByClassName("link");
+
+    function setOnclicks (name) {
+        var link = document.getElementById(name);
+        link.onclick = function () {
+            for (var i = 0; i < tabs.length; i++) {
+                var tab = tabs[i];
+                tab.style.display = "none";
+            }
+
+            for (var i = 0; i < links.length; i++) {
+                var currentLink = links[i];
+                currentLink.classList.remove("selected");
+            }
+
+            link.classList.add("selected");
+
+            document.getElementById("tab-" + name).style.display = "block";
+        }
+    }
+
+    setOnclicks("privacy-policy");
+    setOnclicks("ethics-code");
+
+    /* set just the first tab visible. */
+    for (var i = 1; i < tabs.length; i++) {
+        var tab = tabs[i];
+        tab.style.display = "none";
+    }
+    
+    links[0].classList.add("selected");
+</script>
+{% endblock %}

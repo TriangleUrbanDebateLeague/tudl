@@ -11,3 +11,8 @@
     {{ field.label(class="inline-label") }}
 </div>
 {% endmacro %}
+
+{% macro div_free_field(field, placeholder="") %}
+    {{ field.label() }}
+    {{ field(placeholder=placeholder) }}
+{% endmacro %}

@@ -1,0 +1,100 @@
+.block {
+    background-color: #0a4883;
+    padding: 10px;
+    color: #ffffff;
+    clear: both;
+    margin: 5px;
+}
+
+h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#director {
+    margin: 10px;
+}
+
+#director img {
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+}
+
+.person img {
+    max-width: 150px;
+    max-height: 200px;
+}
+
+.person h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.person h3, .person h4 {
+    text-align: center;
+}
+
+.person h4 {
+    font-style: italic;
+}
+
+.person.img-left img {
+    float: left;
+}
+
+.person.img-right img {
+    float: right;
+}
+
+.person.with-blurb.img-left img {
+    margin-right: 10px;
+}
+
+.person.with-blurb.img-right img {
+    margin-left: 10px;
+}
+
+.person.name-only {
+    height: 200px;
+}
+
+.person.name-only h3 {
+    line-height: 200px;
+}
+
+.clearfix:after, .person:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+#timeline {
+    table-layout: fixed;
+}
+
+.timeline {
+    margin-bottom: 10px;
+}
+
+#timeline td {
+    width: 50%;
+    padding: 30px 5px;
+    text-align: center;
+    vertical-align: middle;
+    color: #0a4883;
+}
+
+#timeline tr td:first-child {
+    border-right: solid 10px red;
+}
+
+#timeline tr td:last-child {
+    font-size: 200%;
+    text-align: left;
+    padding-left: 15px;
+    border-left: solid 10px red;
+}

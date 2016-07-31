@@ -1,9 +1,16 @@
+{% set extra_css = "formpage" %}
 {% extends "base.html" %}
+{% block inline_css %}
+{% if get_flashed_messages() %}
+#content {
+padding-top: 0px !important;
+}
+{% endif %}
+{% endblock %}
 {% block content %}
-<div class="main-content">
-    <div class="form-card">
-        <h1>Thanks for your contributions!</h1>
-        We really appreciate your support of Teens for Teens. You can <a href="{{ url_for('staticpages.show_staticpage', page='index') }}">go back to the home page</a> if you'd like.
-    </div>
+<div id="block">
+    <h1>Thanks for your contributions!</h1>
+    <h2>We really appreciate your support of {{ config.APP_NAME }}. You can <a href="{{ url_for('staticpages.show_staticpage', page='index') }}">go back to the home page</a> if you'd like.</h2>
+    <p><br /></p>
 </div>
 {% endblock %}

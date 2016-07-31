@@ -1,73 +1,123 @@
+{% set extra_css = extra_css | default(False) %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Teens for Teens</title>
+        <title>Unified Democracy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="/static/pure.min.css" />
-        <link rel="stylesheet" type="text/css" href="/static/grids-responsive.min.css" />
-        <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css' />
-        <link rel="stylesheet" type="text/css" href="/static/base.css" />
-        <link rel="shortcut icon" href="/static/favicon.ico" />
+        <link href="/static/css/pure.min.css" rel='stylesheet' type='text/css' />
+        <link href="/static/css/grids-responsive.min.css" rel='stylesheet' type='text/css' />
+        <link href="/static/css/base.css" rel='stylesheet' type='text/css' />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel='stylesheet' />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel='stylesheet' type='text/css' />
+        <link href="/static/css/font.css" rel='stylesheet' type='text/css' />
+        <link href="/static/favicon.ico" rel='shortcut icon' />
         <script src="/static/jquery.min.js"></script>
+        {% if extra_css %}
+        {% if extra_css is string %}
+        <link href="/static/css/{{ extra_css }}.css" rel='stylesheet' type='text/css' />
+        {% elif extra_css is iterable %}
+        {% for file in extra_css %}
+        <link href="/static/css/{{ file }}.css" rel='stylesheet' type='text/css' />
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+        <style>
+        {% block inline_css %}
+        {% endblock %}
+        </style>
     </head>
     <body>
         <div id="header">
-            <div class="primary-menu pure-menu pure-menu-horizontal">
-                <a class="pure-menu-heading" href="/">
-                    <img alt="Star" src="/static/star-transparent.png" class="logo-image" />
-                    <span class="logo-text">Teens for Teens</span>
-                </a>
-
-                <ul class="pure-menu-list">
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='index') }}" class="pure-menu-link">Home</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}" class="pure-menu-link">Platform</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}" class="pure-menu-link">Volunteer</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('donations.donate') }}" class="pure-menu-link">Donate</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}" class="pure-menu-link">About Us</a></li>
-                    <li class="pure-menu-item"><a href="{{ url_for('staticpages.show_staticpage', page='press') }}" class="pure-menu-link">Press</a></li>
-                    <!--
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Volunteer</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Activities</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Literature</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">Press</a></li>
-                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">About Us</a></li>
-                    -->
-                </ul>
+            <a href="/">
+                <img alt="TFT Logo" src="/static/UD-vertical.svg" class="header-logo-image">
+            </a>
+            <div id="toggleButton">
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
+            <ul class="header-nav">
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Platform</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">About Us</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">Volunteer</a></li>
+                <li class="header-tab"><a href="{{ url_for('states.main_state_page') }}">States</a></li>
+                <li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">Contribute</div></a></li>
+                <li class="header-tab">{% if not g.user %}<a href="{{ url_for('account.login') }}">Log In</a>{% else %}<a href="{{ url_for('volunteer.you') }}">My Account</a>{% endif %}
+            </ul>
         </div>
 
-        <div class="content">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="flashed-message message-{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
+        <div id="content">
+            <div id="flash-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="flashed-message message-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
             {% block content %}
             {% endblock %}
         </div>
 
-        <div class="footer">
+        <div id="footer">
             <div class="footer-text">
                 <div class="pure-g">
-                    <div class="pure-u-1-1 pure-u-lg-1-2">
-                        <h2>Get in touch!</h2>
-                        <p>Send us an email at info@teensforteens.info <br>Call us at (305) 401-6150</p><br>
+                    <div class="pure-u-1">
+                        <div class="center">
+                            <img alt="TFT Logo" src="/static/UD-icon-light.svg" class="small-logo">
+                        </div>
                     </div>
-                    <div class="pure-u-1-1 pure-u-lg-1-2">
-                        <h2>Social media</h2>
-                        <a class="nodec" href="https://www.facebook.com/teensforteensusa"><img alt="Facebook" src="/static/facebook.png" class="social" /></a>
-                        <a class="nodec" href="https://plus.google.com/+TeensforteensInfoinc/about"><img alt="Google+" src="/static/googleplus.png" class="social" /></a>
+                    
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+                        <a href="https://plus.google.com/+TeensforteensInfoinc/about"><i class="fa fa-google-plus-square fa-lg"></i>&nbsp;&nbsp;Follow on Google+</a>
+                    </div>
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+                        <a href="tel:1-855-939-2013" target="_blank"><i class="fa fa-phone-square fa-lg"></i>&nbsp;&nbsp;(855) 939 2013</a>
+                    </div>
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button">
+                        <a href="https://www.facebook.com/teensforteensusa"><i class="fa fa-facebook-square fa-lg"></i>&nbsp;&nbsp;Follow on Facebook</a>
+                    </div>
+                    <div class="pure-u-xl-1-4 pure-u-1-2 footer-button text-normal">
+                        <a href="mailto:info@unifieddemocracy.org" target="_blank"><i class="fa fa-envelope fa-lg"></i>&nbsp;&nbsp;info@<wbr>unified<wbr>democracy<wbr>.org</a>
+                    </div>
+                    
+                    <div class="pure-u-lg-1-4 pure-u-1"></div>
+                    <div class="pure-u-lg-1-2 pure-u-1">
+                        <div class="footer-disclaimer text-normal">
+                            Paid for by The Unified Democracy PAC. Not authorized by any candidate or candidate's committee.
+                        </div>
+                    </div>
+                    <div class="pure-u-lg-1-1 pure-u-1"></div>
+                    
+                    <div class="pure-u-1-1 footer-links">
+                        <a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Our Platform</a> 
+                        <a href="{{ url_for('staticpages.show_staticpage', page='policy') }}">Privacy&nbsp;Policy</a>
+                        <a href="{{ url_for('staticpages.show_staticpage', page='volunteer', _anchor='faq') }}">Volunteer FAQ</a> 
                     </div>
                 </div>
-                {% if global_config["DISPLAY_DEBUG_INFO"] %}
-                <p>platform version {{ version }}</p>
-                {% endif %}
             </div>
+            {% if global_config["DISPLAY_DEBUG_INFO"] %}
+            <p>platform version {{ version }}</p>
+            {% endif %}
         </div>
+        
+        <script type="text/javascript">
+            $(function() {
+                if ($(document).width() <=  1200)
+                    $(".header-nav").toggle();
+                $("#toggleButton").click(function() {
+                    $(".header-nav").slideToggle("slow");
+                });
+            });
+            $(window).resize(function() {
+                if (window.innerWidth >  1200)
+                    $(".header-nav").show();
+                else
+                    $(".header-nav").hide();
+            });
+        </script>
 
         {% block scripts %}
         {% endblock %}

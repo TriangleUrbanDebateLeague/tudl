@@ -4,6 +4,7 @@ from utils import send_email, send_error_email, send_warning_email
 import logging
 import subprocess
 import traceback
+import decimal
 
 log_formatter = logging.Formatter('''
 Message type:       %(levelname)s
@@ -38,6 +39,7 @@ def create_app(environment):
     from modules.rcon.blueprint import rcon
     from modules.reports.blueprint import reports
     from modules.security.blueprint import security
+    from modules.states.blueprint import states
 
     app.register_blueprint(account)
     app.register_blueprint(security)
@@ -46,6 +48,7 @@ def create_app(environment):
     app.register_blueprint(email_list)
     app.register_blueprint(rcon)
     app.register_blueprint(reports)
+    app.register_blueprint(states)
     app.register_blueprint(staticpages) # staticpages must be registered last
 
     @app.route("/favicon.ico")
@@ -68,6 +71,10 @@ def create_app(environment):
             version = ""
         return dict(global_config=app.config, version=version)
 
+    @app.errorhandler(404)
+    def page_not_found(exc):
+        return make_response(render_template("not_found.html"), 404)
+
     @app.errorhandler(500)
     def internal_error(exc):
         trace = traceback.format_exc()
@@ -88,6 +95,11 @@ def create_app(environment):
                 session.pop("logged_in", None)
                 session.pop("uid", None)
                 session.pop("ip", None)
+
+    @app.template_filter('money_format')
+    def money_format(amount):
+        dollars = decimal.Decimal(amount) / 100
+        return "${}".format(dollars)
 
     return app
 

@@ -1,0 +1,133 @@
+body {
+    background-color: #0a4883;
+    background-image: none;
+}
+
+.hiddenInput {
+    display: none !important;
+}
+
+#message #wrap {
+    padding: 10px 40px;
+    background-color: #fff;
+}
+
+#message img {
+    width: 100%;
+}
+
+#tabs p {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#donation-amount, #contact-info, #payment {
+    cursor: pointer;
+}
+
+#once-or-monthly, #numbers {
+    margin-bottom: 20px;
+}
+
+#once-or-monthly p, #numbers p, #other input {
+    background-color: #3a77e0;
+    margin: 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#once-or-monthly p, #numbers p {
+    text-align: center;
+    cursor: pointer;
+}
+
+#once-or-monthly p {
+    padding: 20px 0;
+}
+
+#numbers p {
+    padding: 30px 0;
+}
+
+#form #other input {
+    border: none;
+    color: #fff;
+    box-shadow: none;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+#once-or-monthly p:hover, #numbers p:hover,
+#once-or-monthly p.selected, #numbers p.selected {
+    background-color: #c5392f;
+    transition: background-color 0.2s;
+}
+
+input.selected{
+    background-color: #c5392f !important;
+}
+
+input[type="checkbox"] {
+    width: auto;
+}
+
+#form {
+    color: #fff;
+}
+
+#form form {
+    padding: 10px;
+}
+
+button, label, #form h1 {
+    text-transform: uppercase;
+}
+
+#form input, #form select {
+    border-radius: 0;
+    color: #777;
+    font-size: 25px;
+    font-weight: bold;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+button.green {
+    background-color: #7ed321;
+}
+
+button.green:hover,
+button.green.selected {
+    background-color: #53a100;
+    transition: background-color 0.2s;
+}
+
+button.red {
+    background-color: #c5392f;
+}
+
+button.red:hover,
+button.red.selected {
+    background-color: #940904;
+    transition: background-color 0.2s;
+}
+
+#cvc-info {
+	color: white;
+	font-size: 50px;
+	line-height: 150%;
+	margin-left: 20px;
+}
+
+#footer {
+    margin-top: 0px;
+}

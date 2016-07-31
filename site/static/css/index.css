@@ -1,0 +1,324 @@
+/* hero image */
+.image-box {
+    position: relative;
+    width: 100%;
+    height: 630px;
+}
+
+.box-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -5;
+}
+
+.box-foreground {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#vote-box-background {
+    background-image: url("/static/background-images/convention-half-dark.jpg");
+}
+
+#vote-box-foreground {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+#voting-text-box {
+    width: 100%;
+    margin-top: 60px;
+    font-size: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+}
+
+#privilege {
+    font-size: 140px;
+    font-weight: bold;
+}
+
+#rights-text-box {
+    width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+}
+
+#join-box {
+    width: 900px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+#email-entry-box {
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 220px);
+    height: 50px;
+    padding: 10px;
+    margin: 0;
+    font-size: 25px;
+    border: none;
+}
+
+#email-submit {
+    float: right;
+    width: 200px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-size: 30px;
+    border: none;
+}
+
+#lower {
+    position: relative;
+    bottom: -20px;
+}
+
+@media screen and (max-width: 950px) {
+    .image-box {
+        height: 305px;
+    }
+
+    #voting-text-box {
+        margin-top: 30px;
+        font-size: 45px;
+    }
+
+    #privilege {
+        font-size: 70px;
+    }
+
+    #rights-text-box {
+        width: 400px;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    #join-box {
+        width: 400px;
+        margin-top: 40px;
+    }
+
+    #email-entry-box {
+        box-sizing: border-box;
+        width: calc(100% - 110px);
+        padding: 4px;
+        height: 25px;
+        font-size: 15px;
+    }
+
+    #email-submit {
+        width: 100px;
+        height: 25px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .image-box {
+        height: 80vw;
+    }
+
+    #voting-text-box {
+        margin-top: 5vw;
+        font-size: 9vw;
+    }
+
+    #privilege {
+        font-size: 15vw;
+    }
+
+    #rights-text-box {
+        width: 100%;
+        margin-top: 4vw;
+        font-size: 4vw;
+    }
+
+    #join-box {
+        width: 100%;
+        margin-top: 8vw;
+    }
+
+    #email-entry-box {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1vw;
+        height: 10vw;
+        font-size: 5vw;
+    }
+
+    #email-submit {
+        width: 100%;
+        height: 10vw;
+        font-size: 6vw;
+    }
+}
+
+/* main explainer text */
+.main-text {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    color: #4a4a4a;
+    font-size: 120%;
+}
+
+.left-box {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+.right-box {
+    box-sizing: border-box;
+    float: right;
+    width: 50%;
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+.clear-bar {
+    clear: both;
+}
+
+h2 {
+    color: #000;
+}
+
+.side-image {
+    width: 100%;
+}
+@media screen and (max-width: 800px) {
+    .left-box {
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+        padding: 20px;
+    }
+
+    .right-box {
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+        padding: 20px;
+    }
+
+    .side-image {
+        display: block;
+        width: 70%;
+        margin: auto;
+    }
+}
+
+/* stats */
+#stats {
+    background-color: #c5392f;
+}
+
+#stats p {
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.stat-title {
+    font-size: 200%;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+.stat-number {
+    font-size: 500%;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+#stats div {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#stat-volunteers {
+    background-image: url("/static/glyphicon-user.png");
+}
+
+#stat-hours {
+    background-image: url("/static/glyphicon-hourglass.png");
+}
+
+#footer {
+    margin-top: 0;
+}
+
+#stat-states {
+    background-image: url("/static/glyphicon-flag.png");
+}
+
+/* map */
+#map-box-background {
+    background-image: url("/static/background-images/map.svg");
+}
+
+#see-what-text-box {
+    width: 100%;
+    margin: auto;
+    margin-top: 20%;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+#state-select {
+    display: block;
+    font-size: 28px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 5px;
+}
+
+@media screen and (max-width: 950px) {
+    #see-what-text-box {
+        width: 100%;
+        margin: auto;
+        margin-top: 20%;
+        font-size: 25px;
+        color: #fff;
+        text-align: center;
+    }
+
+    #state-select {
+        display: block;
+        font-size: 20px;
+        margin: auto;
+        margin-top: 30px;
+        padding: 5px;
+    }
+}
+
+#see-what-text-box button {
+    white-space: normal;
+}

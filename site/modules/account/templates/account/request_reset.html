@@ -1,15 +1,27 @@
-{% from "_formhelpers.html" import form_field %}
+{% set extra_css = "formpage" %}
+{% from "_formhelpers.html" import div_free_field %}
 {% extends "base.html" %}
+{% block inline_css %}
+{% if get_flashed_messages() %}
+#content {
+    padding-top: 0 !important;
+}
+{% endif %}
+{% endblock %}
 {% block content %}
-<div class="main-content">
-    <div class="form-card">
-        <h1>Request password reset</h1>
-        <form method="POST" class="pure-form pure-form-stacked">
-            {{ form.csrf_token() }}
-            {{ form_field(form.email, placeholder="john@doe.com") }}
-            <br />
-            <button type="submit" class="pure-button button-primary">Send reset information</button>
-        </form>
-    </div>
+<div id="block">
+    <h1>Request password reset</h1>
+    <form method="POST" class="pure-form pure-form-stacked">
+        {{ form.csrf_token() }}
+        <div class="pure-g">
+            <div class="pure-u-3-5"></div>
+            <div class="pure-u-1">
+                {{ div_free_field(form.email, placeholder="john@doe.com") }}
+            </div>
+            <div class="pure-u-1">
+                <button type="submit">Send Reset Information</button>
+            </div>
+        </div>
+    </form>
 </div>
 {% endblock %}

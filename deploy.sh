@@ -1,14 +1,33 @@
 #!/bin/bash
+git pull -r
+rm -rf /tmp/tft
 git clone $(pwd) /tmp/tft
 pushd /tmp/tft
 
-if test $1 = test; then
-    git checkout testing
-    rsync -rv --exclude .git site nfsn.sh fwilson42_tft-test@ssh.phx.nearlyfreespeech.net:/home/protected
-elif test $1 = prod; then
-    git checkout master
-    rsync -rv --exclude .git site nfsn.sh fwilson42_tft-production@ssh.phx.nearlyfreespeech.net:/home/protected
+environment=$1
+commitish=$2
+if test -z $2; then
+    case $1 in
+        test) commitish=testing;;
+        production) commitish=master;;
+        *) echo "Couldn't figure out what to deploy."; exit 1;;
+    esac
 fi
+
+echo "About to deploy $2 to environment $1."
+echo -n "OK? "
+read go
+
+case $go in
+    y|Y)
+        git checkout $commitish
+        rsync -rv --exclude .git site nfsn.sh fwilson42_tft-${environment}@ssh.phx.nearlyfreespeech.net:/home/protected
+    ;;
+    *)
+        echo "Aborting deployment."
+        exit 0;
+    ;;
+esac
 
 popd
 rm -rf /tmp/tft

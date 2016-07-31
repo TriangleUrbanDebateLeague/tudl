@@ -1,7 +1,11 @@
+{% set extra_css = "not_found" %}
 {% extends "base.html" %}
+
 {% block content %}
-<div class="main-content">
-    <h1>We couldn't find what you were looking for :(</h1>
-    You could try the <a href="/">home page</a>.
+<div class="not_found-main-div">
+    <div class="not_found-text">
+        Hmm...<br>
+        We can't find that page.
+    </div>
 </div>
 {% endblock %}

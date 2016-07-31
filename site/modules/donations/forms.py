@@ -16,9 +16,10 @@ class DonateForm(Form):
     postal_code = StringField('ZIP code', [validators.Required(), validators.Regexp(r'\d{5}')])
 
     email = EmailField('Email', [validators.Required(), validators.Email(), validators.Length(max=64)])
-    phone = StringField('Phone', [validators.Required(), validators.Length(min=10, max=20)])
 
-    occupation = StringField('Occupation', [validators.Required(), validators.Length(max=128)])
-    employer = StringField('Employer', [validators.Required(), validators.Length(max=128)])
+    occupation = StringField('Occupation', [validators.Required(), validators.Length(max=64)])
+    employer = StringField('Employer', [validators.Required(), validators.Length(max=64)])
 
-    certification_statement = BooleanField('I understand the statements above', [validators.Required()])
+    recurring = BooleanField('Recurring donation')
+
+    agreed = BooleanField('I understand the statements above', [validators.DataRequired()])

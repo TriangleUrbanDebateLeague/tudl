@@ -1,17 +1,35 @@
-{% from "_formhelpers.html" import form_field %}
+{% set extra_css = "formpage" %}
 {% extends "base.html" %}
+{% block inline_css %}
+{% if get_flashed_messages() %}
+#content {
+    padding-top: 0 !important;
+}
+{% endif %}
+{% endblock %}
 {% block content %}
-<div class="main-content">
-    <div class="form-card">
-        <h1>Log in</h1>
-        <form method="POST" class="pure-form pure-form-stacked">
-            {{ form.csrf_token() }}
-            {{ form_field(form.email) }}
-            {{ form_field(form.password) }}
-            <br />
-            <button type="submit" class="pure-button button-primary">Log in</button>
-        </form>
-        <p>Forgot your password? You can <a href="{{ url_for('account.request_reset') }}">request a reset link</a>.</p>
-    </div>
+<div id="block">
+    <h1>Log in</h1>
+    <form class="pure-form pure-form-stacked" method="POST">
+        {{ form.csrf_token() }}
+        <div class="pure-g">
+            <div class="pure-u-1">
+                <label for="username">Username</label>
+                <input id="username" type="text" name="email">
+            </div>
+            
+            <div class="pure-u-1">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password">
+            </div>
+            
+            <div class="pure-u-4-5">
+                <button type="submit">Log in</button>
+                <p><a href="{{ url_for('account.create_account') }}" class="button">Create account</a></p>
+				<p><a href="{{ url_for('account.request_reset') }}" class="button">Forgot your password?</a></p>
+            </div>
+        </div>
+    </form>
 </div>
+
 {% endblock %}

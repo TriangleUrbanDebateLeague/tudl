@@ -1,62 +1,70 @@
+{% set extra_css = "index" %}
 {% extends "base.html" %}
 
 {% block content %}
-<div class="call-to-action">
-    <div class="cta-text">
-        <span class="cta-header-text header">We are <span id="what-we-are">Teens for Teens.</span></span>
-        <p>The Teens for Teens Political Action Committee is the voice of more than 34.1 million young Americans in local, state, and federal politics. It supports an increase in political participation among 16–24 year olds through grassroots efforts targeting an expanded youth presence in government.</p>
-        <p>Teens for Teens was founded in 2015 as a nonpartisan solution to the lack of representation for students across the United States. Over the past two years, Teens for Teens has developed a successful track record of educating lawmakers on issues important to teenagers and supporting legislation to increase voter turnout among young voters. <a class="whitelink" href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Click here to view a full list of our advocacy.</a> Teens for Teens’ primary role is to serve as a source of information on youth issues, both for lawmakers and for students wishing to engage in their political landscapes.</p>
+<div class="image-box">
+    <div class="box-background" id="vote-box-background">
     </div>
-</div>
-
-<div class="main-content">
-    <div class="content-section bottom-too">
-       <h1>Our Accomplishments</h1>
-       Teens for Teens has a record of <strong>extensive grassroots contributions and support for candidates seeking elected office.</strong>
-       <ul>
-           <li>Over 105 Teens for Teens members have contributed over 8,000 hours of in-kind political service</li>
-           <li>We conduct political fundraising for candidates in municipal, county, and state-level elections</li>
-           <li>We support Democratic, Republican, and third-party candidates aligned with Teens for Teens' <a class="whitelink" href="{{ url_for('staticpages.show_staticpage', page='platform') }}">platform</a>.</li>
-       </ul>
-    </div>
-
-    <div class="pure-g">
-        <div class="pure-u-1-2 icont center">
-            <img alt="Students" src="/static/homepage/0.jpg" class="img" />
+    <div class="box-foreground" id="vote-box-foreground">
+        <div id="voting-text-box">
+            VOTING IS NOT A
+            <br>
+            <span id="privilege">PRIVILEGE.</span>
         </div>
-        <div class="pure-u-1-2 icont center">
-            <img alt="Panel" src="/static/homepage/1.jpg" class="img" />
+        <div id="rights-text-box">
+            WE ARE LEADING THE FIGHT FOR VOTING RIGHTS FOR ALL
         </div>
-    </div>
-
-    <div class="content-section bottom-too">
-        <h1>Legislative Work</h1>
-        <ul>
-            <li>We have engaged in lobbying to lower the voting age in the cities of Doral, Miami Beach, and South Miami</li>
-            <li>We have helped to increase voter turnout in numerous local elections:</li>
-            <ul>
-                <li>November 2015 city of Miami election</li>
-                <li>November 2015 city of Miami Beach election</li>
-                <li>November 2015 city of Hialeah election</li>
-                <li>January 2016 Florida City election</li>
-                <li>February 2016 city of South Miami election </li>
-                <li>March 2016 city of Miami Beach special election</li>
-                <li>March 2016 of Miami referendum special election</li>
-            </ul>
-        </ul>
-    </div>
-
-    <div class="pure-g">
-        <div class="pure-u-1-2 icont center">
-            <img alt="Shop" src="/static/homepage/2.jpg" class="img" />
-        </div>
-        <div class="pure-u-1-2 icont center">
-            <img alt="Speaker" src="/static/homepage/3.jpg" class="img" />
+        <div id="join-box">
+            <form method="POST" action="{{ url_for('email_list.list_subscribe') }}">
+                 {{ form.csrf_token() }}
+                 {{ form.email(placeholder="Email Address", id="email-entry-box") }}
+                 <input id="email-submit" type="submit" value="JOIN IN">
+            </form>
         </div>
     </div>
 </div>
-{% endblock %}
 
-{% block scripts %}
-<script src="/static/box.js"></script>
+<div class="main-text">
+    <div class="left-box">
+        <h2>Voting should be easy.</h2>
+        Imagine a world where no American will lose their right to vote because they lack the ability to obtain an ID or register on-time. Where no citizen will be forced to choose between going to work and going to vote. That is the America we are fighting for.
+    </div>
+    <div class="right-box">
+        <img alt="Plan for easier voting" src="/static/homepage/easy-voting.png" class="side-image" />
+    </div>
+    <div class="clear-bar"></div>
+    <div class="right-box">
+        <h2>Every vote should count.</h2>
+        Realities such as gerrymandering have allowed power and influence to drown out the voice of the people. It’s time to let voters truly pick their leaders - to let the people's voice be heard across our government. We can make every vote count with reformed campaign finance laws and independently drawn Congressional districts.
+    </div>
+    <div class="left-box">
+        <img alt="Maryland voting district" src="/static/homepage/maryland.png" class="side-image" id="lower"/>
+    </div>
+    <div class="clear-bar"></div>
+    <div class="left-box">
+        <h2>Students should learn why voting matters.</h2>
+        There is a reason the United States ranks 120th in the world in average national voter turnout: our education system fails to adequately emphasize social civics and political literacy. If students do not learn why voting matters, they will be far less likely to vote. When we invest in civic education, we invest in the future of our democracy.
+    </div>
+    <div class="right-box">
+        <img alt="Civics" src="/static/homepage/civics.png" class="side-image" />
+    </div>
+    <div class="clear-bar"></div>
+</div>
+
+<div id="stats" class="pure-g">
+    <div id="stat-volunteers" class="pure-u-md-1-3 pure-u-1">
+        <p class="stat-title">Registered volunteers</p>
+        <p class="stat-number">{{ Volunteer.select().count() }}</p>
+    </div>
+    
+    <div id="stat-hours" class="pure-u-md-1-3 pure-u-1">
+        <p class="stat-title">Hours logged</p>
+        <p class="stat-number">{#{{ LoggedHours.select().aggregate(fn.Sum(LoggedHours.hours)) | round }}#}</p>
+    </div>
+    
+    <div id="stat-states" class="pure-u-md-1-3 pure-u-1">
+        <p class="stat-title">States we're in</p>
+        <p class="stat-number">{{ State.select().count() }}</p>
+    </div>
+</div>
 {% endblock %}

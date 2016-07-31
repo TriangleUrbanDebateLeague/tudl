@@ -1,0 +1,89 @@
+#huge-header {
+    background-image: url("../background-images/platform-background-dark.png");
+    background-position: center bottom;
+}
+
+/* --- content styles --- */
+#title {
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: bold;
+    color: #16489d;
+    margin-top: 50px;
+}
+
+#main-text {
+    width: 100%;
+    max-width: 1150px;
+    margin: 20px auto;
+    padding: 0;
+    font-size: 120%;
+}
+
+@media screen and (max-width:1250px) {
+    #title {
+        font-size: 35px;
+    }
+
+    #main-text {
+        max-width: 80%;
+        font-size: 110%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    #title {
+        font-size: 30px;
+    }
+
+    #main-text {
+        max-width: 80%;
+        font-size: 100%;
+    }
+}
+/* --- end content styles --- */
+
+/* --- platform list styles --- */
+.plank {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border-top: solid 1px #0a4883;
+	border-bottom: solid 1px #0a4883;
+	
+	text-transform: uppercase;
+	color: #0a4883;
+	
+	background-color: #c5392f;
+}
+
+.plank:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+ }
+
+.plank p {
+	margin: 0px;
+	padding: 10px;
+	
+	background-color: white;
+	
+	transition: padding-left 0.5s ease, background-color 0.5s ease;
+}
+
+.plank:hover p, .plank.selected p {
+	padding-left: 30px;
+	color: #003973;
+	background-color: #fcfcfc;
+}
+
+.plank-desc {
+	padding: 10px;
+	margin: 0px;
+	background-color: #eeeeee;
+	font-size: 90%;
+}
+/* --- end platform list styles --- */
