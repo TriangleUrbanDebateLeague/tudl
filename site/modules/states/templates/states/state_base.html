@@ -19,8 +19,8 @@
             <h2>Director</h2>
             {% if state.director %}
             <div class="well clearfix">
-                <p><strong>{% if state.director %}{{ state.director.account.informal_full_name }}{% else %}None{% endif %}</strong></p>
                 <img alt="{{ state.director.account.full_name }}" src="{{ url_for('static', filename='states/' + state.name.lower().replace(" ", "_") + '/director.png') }}">
+                <p><strong>{% if state.director %}{{ state.director.account.informal_full_name }}{% else %}None{% endif %}</strong></p>
                 <p>{{ state.director.bio }}</p>
                 <p class="email"><a href="mailto:{{ state.director.account.informal_full_name.split() | join('.') | lower }}@{{ config.APP_NAME.replace(' ', '') | lower }}.org" target="_blank" rel="noopener noreferrer"><i class="fa fa-envelope"></i> Email {{ state.director.account.first_name }}</a></p>
             </div>
