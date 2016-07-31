@@ -23,9 +23,12 @@
                 <input id="password" type="password" name="password">
             </div>
             
-            <div class="pure-u-1">
+            <div class="pure-u-4-5">
                 <button type="submit">Log in</button>
                 <a href="{{ url_for('account.create_account') }}" class="button">Create account</a>
+            </div>
+            <div class="pure-u-1-5">
+                <a href="{{ url_for('account.request_reset') }}">Forgot your password?</a>
             </div>
         </div>
     </form>
