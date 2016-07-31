@@ -38,7 +38,7 @@
         Realities such as gerrymandering have allowed power and influence to drown out the voice of the people. It’s time to let voters truly pick their leaders - to let the people's voice be heard across our government. We can make every vote count with reformed campaign finance laws and independently drawn Congressional districts.
     </div>
     <div class="left-box">
-        <img alt="Maryland voting district" src="/static/homepage/maryland.png" class="side-image" />
+        <img alt="Maryland voting district" src="/static/homepage/maryland.png" class="side-image" id="lower"/>
     </div>
     <div class="clear-bar"></div>
     <div class="left-box">
@@ -59,7 +59,7 @@
     
     <div id="stat-hours" class="pure-u-md-1-3 pure-u-1">
         <p class="stat-title">Hours logged</p>
-        <p class="stat-number">{{ LoggedHours.select().aggregate(fn.Sum(LoggedHours.hours)) | round }}</p>
+        <p class="stat-number">{#{{ LoggedHours.select().aggregate(fn.Sum(LoggedHours.hours)) | round }}#}</p>
     </div>
     
     <div id="stat-states" class="pure-u-md-1-3 pure-u-1">
