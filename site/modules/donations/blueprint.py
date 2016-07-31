@@ -22,7 +22,7 @@ def send_receipt_email(donation):
     header_date = datetime.now().strftime("%x")
     body_date = datetime.now().strftime("%A %B %d, %Y")
     text = render_template("donations/receipt_email.html", donation=donation, header_date=header_date, body_date=body_date)
-    send_email('benjamin.burstein@unifieddemocracy.org', donation.email, "Thanks for your donation to Unified Democracy!", text)
+    send_email('benjamin.burstein@unifieddemocracy.org', donation.email, "Thanks for your donation to Unified Democracy!", text, "html")
 
 @donations.route("/", methods=["GET", "POST"])
 def donate():

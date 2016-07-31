@@ -45,6 +45,10 @@ form {
     border-top-right-radius: 5px;
 }
 
+#block h2 {
+    padding: 10px;
+}
+
 label {
     text-transform: uppercase;
 }
