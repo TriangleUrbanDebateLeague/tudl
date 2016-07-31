@@ -9,9 +9,24 @@
     margin-right: auto;
 }
 
+#faq h1 {
+    color: #0a4883;
+    text-align: center;
+}
+.call-to-action {
+    margin-top: 40px;
+}
+
 .question {
     font-weight: bold;
     color: #0a4883;
+    margin-top: 50px;
+}
+
+hr {
+    color: #d9d9d9;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
 button {
@@ -20,10 +35,13 @@ button {
     color: #fff;
     font-size: 150%;
     padding: 10px;
-    border-radius: 5px;
+    line-height: 20px;
+    border-radius: 12px;
 }
 
 button:hover,
 button:active {
     background-color: #003973;
 }
+
+
