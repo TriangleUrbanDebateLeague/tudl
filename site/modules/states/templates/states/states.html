@@ -19,11 +19,12 @@
 {% block content %}
 <h1>See what's happening in your state</h1>
 <div class="dropdown">
-  <select id="dynamic_select">
-    <option disabled selected>Select Your State</option>
-    {% for state, abbrev in states.items() %}
-    <option value="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
-    {% endfor %}
-  </select>
+    <select id="dynamic_select">
+        <option disabled selected>Select Your State</option>
+        {% for state, abbrev in states.items() %}
+        <option value="{{ url_for('states.show_state_page', state_code=abbrev) }}">{{ state }}</option>
+        {% endfor %}
+    </select>
+    <p id="not">Not in your state? Email <a href="mailto:victoria.bevard@unifieddemocracy.org" target="_blank"/>victoria.bevard@unifieddemocracy.org</a> to apply to become a state director or make a suggestion.</p>
 </div>
 {% endblock %}
