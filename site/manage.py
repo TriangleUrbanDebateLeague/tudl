@@ -1,5 +1,6 @@
 from app import create_app
 from flask_script import Manager
+import csv
 import database as db
 import importlib
 import json
@@ -65,6 +66,23 @@ def create_states():
             print("Created {} - {}".format(s.name, s))
         except IntegrityError:
             print("{} already exists".format(state))
+
+@manager.command
+def import_directors(filename):
+    """Import state directors"""
+    with open(filename) as f:
+        for state, bio, director, do_import in csv.reader(f):
+            if not int(do_import):
+                print("Not importing {}".format(state))
+                continue
+            firstname, lastname = director.split(" ", maxsplit=1)
+            state = State.get(name=state)
+            if state.director is not None:
+                print("State {} already has a director {}".format(state.code, state.director.account.full_name))
+                continue
+            account = Account.get(first_name=firstname, last_name=lastname)
+            StatePosition.create(state=state, account=account, title="State Director", bio=bio, role=99)
+            print("Added {} as the director for {}".format(account.full_name, state.code))
 
 @manager.command
 def assign_permission(email, module, permission):
