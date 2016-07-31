@@ -13,12 +13,12 @@ def pretend_email(from_, to, subject, text):
     print("Subject: {}".format(subject))
     print("Text: {}".format(text))
 
-def send_email(from_, to, subject, text):
+def send_email(from_, to, subject, text, html='plain'):
     override = current_app.config.get("DEV_EMAIL", False)
     if override:
         return pretend_email(from_, to, subject, text)
 
-    message = MIMEText(text)
+    message = MIMEText(text, html)
     message["From"] = from_
     message["To"] = to
     message["Subject"] = subject
