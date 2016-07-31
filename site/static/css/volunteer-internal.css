@@ -10,6 +10,7 @@
 
 .main-content {
     padding: 0 20px;
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -19,6 +20,10 @@
         font-size: 100%;
         padding-top: 2px;
     }
+}
+
+.call-to-action {
+    margin-top: 40px;
 }
 
 .call-to-action a {
