@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf /tmp/tft
 git clone $(pwd) /tmp/tft
 pushd /tmp/tft
 
