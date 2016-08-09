@@ -96,6 +96,11 @@ def create_app(environment):
                 session.pop("uid", None)
                 session.pop("ip", None)
 
+    @app.after_request
+    def no_cache(response):
+        response.headers["Cache-Control"] = "private, max-age=0, no-cache"
+        return response
+
     @app.template_filter('money_format')
     def money_format(amount):
         dollars = decimal.Decimal(amount) / 100
