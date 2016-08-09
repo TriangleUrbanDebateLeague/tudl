@@ -73,7 +73,7 @@
 	height: 0;
  }
 
-.plank p {
+.plank a {
 	margin: 0px;
 	font-size: 30px;
 	padding: 10px 35px;
@@ -84,7 +84,7 @@
 	transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
-.plank:hover p, .plank.selected p {
+.plank:hover a, .plank.selected a {
 	padding-left: 70px;
 	color: #1e50a6;
 	background-color: #fcfcfc;
@@ -95,7 +95,8 @@
 }
 
 .plank-desc {
-	padding: 10px 70px;
+	display: none;
+	padding: 17px 70px;
 	margin: 0px;
 	background-color: #eeeeee;
 	font-size: 100%;
@@ -117,12 +118,12 @@
 		padding-left: 15px;
 	}
 
-	.plank p {
+	.plank a {
 		font-size: 25px;
 		padding: 9px 30px;
 	}
 
-	.plank:hover p, .plank.selected p {
+	.plank:hover a, .plank.selected a {
 		padding-left: 65px;
 	}
 
@@ -131,7 +132,7 @@
 	}
 
 	.plank-desc {
-		padding: 10px 65px;
+		padding: 14px 65px;
 		font-size: 90%;
 	}
 }
@@ -141,12 +142,12 @@
 		padding-left: 7px;
 	}
 
-	.plank p {
+	.plank a {
 		font-size: 17px;
 		padding: 8px 22px;
 	}
 
-	.plank:hover p, .plank.selected p {
+	.plank:hover a, .plank.selected a {
 		padding-left: 57px;
 	}
 
@@ -155,7 +156,7 @@
 	}
 
 	.plank-desc {
-		padding: 10px 57px;
+		padding: 12px 57px;
 		font-size: 75%;
 	}
 }
