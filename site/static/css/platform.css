@@ -57,7 +57,6 @@
 	margin-bottom: 0px;
 	border-top: solid 1px #d1d1d1;
 	text-transform: uppercase;
-
 	position: relative;
 }
 
@@ -96,7 +95,7 @@
 }
 
 .plank-desc {
-	padding: 10px 70px 10px 70px;
+	padding: 10px 70px;
 	margin: 0px;
 	background-color: #eeeeee;
 	font-size: 100%;
@@ -111,5 +110,53 @@
 	-webkit-transition: width 0.3s ease;
 	-moz-transition: width 0.3s ease;
 	transition: width 0.3s ease;
+}
+
+@media screen and (max-width: 1250px) {
+	#platform-list {
+		padding-left: 15px;
+	}
+
+	.plank p {
+		font-size: 25px;
+		padding: 9px 30px;
+	}
+
+	.plank:hover p, .plank.selected p {
+		padding-left: 65px;
+	}
+
+	.plank:hover .redbar, .plank.selected .redbar {
+		width: 30px;
+	}
+
+	.plank-desc {
+		padding: 10px 65px;
+		font-size: 90%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#platform-list {
+		padding-left: 7px;
+	}
+
+	.plank p {
+		font-size: 17px;
+		padding: 8px 22px;
+	}
+
+	.plank:hover p, .plank.selected p {
+		padding-left: 57px;
+	}
+
+	.plank:hover .redbar, .plank.selected .redbar {
+		width: 22px;
+	}
+
+	.plank-desc {
+		padding: 10px 57px;
+		font-size: 75%;
+	}
 }
 /* --- end platform list styles --- */
