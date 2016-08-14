@@ -44,46 +44,120 @@
 /* --- end content styles --- */
 
 /* --- platform list styles --- */
+#platform-list {
+	text-align: left;
+	width: 100%;
+	max-width: 1150px;
+	margin: auto;
+	padding-left: 20px;
+}
+
 .plank {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	border-top: solid 1px #0a4883;
-	border-bottom: solid 1px #0a4883;
-	
+	border-top: solid 1px #d1d1d1;
 	text-transform: uppercase;
-	color: #0a4883;
-	
-	background-color: #c5392f;
+	position: relative;
+}
+
+.last-plank {
+	border-bottom: solid 1px #d1d1d1;
 }
 
 .plank:after {
 	visibility: hidden;
 	display: block;
 	font-size: 0;
-	content: " ";
+	content: "";
 	clear: both;
 	height: 0;
  }
 
-.plank p {
+.plank a {
 	margin: 0px;
-	padding: 10px;
-	
-	background-color: white;
-	
-	transition: padding-left 0.5s ease, background-color 0.5s ease;
+	font-size: 30px;
+	padding: 10px 35px;
+	display: block;
+	color: #467de0;
+	-webkit-transition: padding 0.3s ease, background-color 0.3s ease;	
+	-moz-transition: padding 0.3s ease, background-color 0.3s ease;
+	transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
-.plank:hover p, .plank.selected p {
-	padding-left: 30px;
-	color: #003973;
+.plank:hover a, .plank.selected a {
+	padding-left: 70px;
+	color: #1e50a6;
 	background-color: #fcfcfc;
 }
 
+.plank:hover .redbar, .plank.selected .redbar {
+	width: 35px;
+}
+
 .plank-desc {
-	padding: 10px;
+	display: none;
+	padding: 17px 70px;
 	margin: 0px;
 	background-color: #eeeeee;
-	font-size: 90%;
+	font-size: 100%;
+}
+
+.redbar {
+	float: left;
+	width: 0px;
+	position: absolute;
+	height: 100%;
+	background-color: #d0021b;
+	-webkit-transition: width 0.3s ease;
+	-moz-transition: width 0.3s ease;
+	transition: width 0.3s ease;
+}
+
+@media screen and (max-width: 1250px) {
+	#platform-list {
+		padding-left: 15px;
+	}
+
+	.plank a {
+		font-size: 25px;
+		padding: 9px 30px;
+	}
+
+	.plank:hover a, .plank.selected a {
+		padding-left: 65px;
+	}
+
+	.plank:hover .redbar, .plank.selected .redbar {
+		width: 30px;
+	}
+
+	.plank-desc {
+		padding: 14px 65px;
+		font-size: 90%;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#platform-list {
+		padding-left: 7px;
+	}
+
+	.plank a {
+		font-size: 17px;
+		padding: 8px 22px;
+	}
+
+	.plank:hover a, .plank.selected a {
+		padding-left: 57px;
+	}
+
+	.plank:hover .redbar, .plank.selected .redbar {
+		width: 22px;
+	}
+
+	.plank-desc {
+		padding: 12px 57px;
+		font-size: 75%;
+	}
 }
 /* --- end platform list styles --- */

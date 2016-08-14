@@ -22,19 +22,20 @@
 	text-align: center;
 }
 
-.well .email a {
+.well .email a , .well .button{
 	display: inline-block;
-	background-color: #eeeeee;
-	color: #777777;
+	background-color: #0a4883;
+	color: #ffffff;
 	padding: 8px;
 	border-radius: 5px;
-	box-shadow: inset 0 5px 10px #dddddd;
-	border: solid 1px #dddddd;
+	box-shadow: inset 0 5px 10px #003973;
+	border: solid 1px #003973;
 }
 
-.well .email a:hover, .well .email a:focus {
-	color: #666666;
-	background-color: #dddddd;
-	box-shadow: inset 0 5px 10px #cccccc;
-	border: solid 1px #cccccc;
+.well .email a:hover, .well .email a:focus,
+.well .button:hover, .well .button:focus {
+	color: #eeeeee;
+	background-color: #003973;
+	box-shadow: inset 0 5px 10px #002b63;
+	border: solid 1px #002b63;
 }
