@@ -1,18 +1,19 @@
 from app import create_app
+from email.mime.text import MIMEText
 from flask_script import Manager
+from modules.account.models import Account, PasswordReset
+from modules.donations.models import Donation
+from modules.email_list.models import ListEntry
+from modules.security.models import Permission
+from modules.states.models import State, Event, StatePosition
+from modules.volunteer.models import Volunteer, LoggedHours
+from peewee import IntegrityError
+from subprocess import Popen, PIPE
 import csv
 import database as db
 import importlib
 import json
 import os
-from peewee import IntegrityError
-
-from modules.account.models import Account, PasswordReset
-from modules.donations.models import Donation
-from modules.email_list.models import ListEntry
-from modules.security.models import Permission
-from modules.volunteer.models import Volunteer, LoggedHours
-from modules.states.models import State, Event, StatePosition
 
 manager = Manager(create_app)
 manager.add_option('-e', '--environment', dest='environment', required=True)
@@ -89,6 +90,17 @@ def assign_permission(email, module, permission):
     """Assign a permission to a user"""
     account = Account.get(email=email)
     Permission.create(account=account, module=module, permission=permission)
+
+@manager.command
+def send_email(from_, to, subject, input_file):
+    with open(input_file) as f:
+        text = f.read()
+    message = MIMEText(text)
+    message["From"] = from_
+    message["To"] = to
+    message["Subject"] = subject
+    process = Popen(["/usr/bin/sendmail", "-t", "-oi"], stdin=PIPE)
+    process.communicate(message.as_string().encode())
 
 if __name__ == '__main__':
     manager.run()
