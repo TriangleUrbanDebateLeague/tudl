@@ -1,0 +1,29 @@
+{% from "_formhelpers.html" import form_field, form_textbox, form_checkbox %}
+{% extends "base.html" %}
+{% block content %}
+<div id="ctr">
+    <h1>Editing {{ state.name }}</h1>
+    <h2>Existing content sections</h2>
+    {% for form in forms %}
+    <div class="cts">
+        <form method="post">
+            {{ form.csrf_token() }}
+            {{ form_field(form.id, label=False) }}
+            {{ form_field(form.title) }}
+            {{ form_textbox(form.text) }}
+            {{ form_field(form.delete) }}
+            <button type="submit" class="pure-button button-primary">Save</button>
+        </form>
+    </div>
+    {% endfor %}
+    <h2>New section</h2>
+    <div class="cts">
+        <form method="post">
+            {{ new.csrf_token() }}
+            {{ form_field(new.title) }}
+            {{ form_textbox(new.text) }}
+            <button type="submit" class="pure-button button-primary">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

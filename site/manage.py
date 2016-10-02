@@ -5,7 +5,7 @@ from modules.account.models import Account, PasswordReset
 from modules.donations.models import Donation
 from modules.email_list.models import ListEntry
 from modules.security.models import Permission
-from modules.states.models import State, Event, StatePosition
+from modules.states.models import State, Event, StatePosition, StateText
 from modules.volunteer.models import Volunteer, LoggedHours
 from peewee import IntegrityError
 from subprocess import Popen, PIPE
@@ -42,7 +42,7 @@ def sync_volunteers():
 @manager.command
 def create_db():
     """Create tables in the database"""
-    tables = [Account, PasswordReset, Donation, Permission, Volunteer, LoggedHours, ListEntry, State, Event, StatePosition]
+    tables = [Account, PasswordReset, Donation, Permission, Volunteer, LoggedHours, ListEntry, State, Event, StatePosition, StateText]
     for table in tables:
         if table.table_exists():
             print("Table already exists for {}".format(table))

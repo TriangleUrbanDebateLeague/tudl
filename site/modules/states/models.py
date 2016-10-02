@@ -28,3 +28,8 @@ class StatePosition(BaseModel):
     title = CharField(64, verbose_name="Position title", null=True)
     bio = CharField(8192, verbose_name="Position biography", null=True)
     role = IntegerField(default=0, verbose_name="Role")
+
+class StateText(BaseModel):
+    state = ForeignKeyField(State, related_name="texts")
+    title = CharField(128, verbose_name="Section title")
+    text = TextField(verbose_name="Section text", default="")

@@ -1,7 +1,15 @@
-{% macro form_field(field, placeholder="") %}
+{% macro form_field(field, placeholder="", label=True) %}
 <div class="form-field">
-    {{ field.label() }}
+    {% if label %}{{ field.label() }}{% endif %}
     {{ field(placeholder=placeholder) }}
+</div>
+{% endmacro %}
+
+
+{% macro form_textbox(field, placeholder="") %}
+<div class="form-field">
+    {{ field.label() }}<br />
+    {{ field(placeholder=placeholder, rows=5, cols=80) }}
 </div>
 {% endmacro %}
 

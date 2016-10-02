@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, make_response, current_app, flash, url_for, request
+from flask import Blueprint, render_template, make_response, current_app, flash, url_for, request, g, redirect
 from jinja2 import TemplateNotFound
 from collections import OrderedDict
-from .forms import ApplyStateForm
-from .models import State, StatePosition, Event
+from modules.security.localutils import has_permission
+from .forms import ApplyStateForm, StateTextForm
+from .models import State, StatePosition, Event, StateText
 from utils import flash_errors, send_email
 import os
 import json
@@ -33,3 +34,33 @@ def show_state_page(state_code):
         send_email(current_app.config["EMAIL_FROM"], 'victoria.bevard@unifieddemocracy.org', 'State Director Application - {}'.format(current_app.config.get("APP_NAME", "Unified Democracy")), message)
         flash("Application Successful", "success")
         return redirect(url_for("staticpages.show_staticpage", page="index"))
+
+@states.route("/<state_code>/edit/", methods=["GET", "POST"])
+def edit_state(state_code):
+    state = State.get(State.code ** state_code)
+    if not (state.director.account == g.user or has_permission(g.user, "states", "admin")):
+        flash("Nope.", "error")
+        return redirect(url_for("staticpages.show_staticpage", page="index"))
+
+    form = StateTextForm()
+    if not form.validate_on_submit():
+        forms = [StateTextForm(obj=text) for text in state.texts]
+        for form in forms: form.delete.data = False
+        return render_template("states/edit.html", state=state, forms=forms, new=StateTextForm())
+
+    if not form.id.data:
+        StateText.create(state=state, title=form.title.data, text=form.text.data)
+        return redirect(url_for("states.edit_state", state_code=state_code))
+
+    text = StateText.get(StateText.id == form.id.data)
+    if text.state != state:
+        return redirect(url_for("states.edit_state", state_code=state_code))
+
+    if form.delete.data:
+        StateText.delete().where(StateText.id == form.id.data).execute()
+
+    else:
+        form.populate_obj(text)
+        text.save()
+
+    return redirect(url_for("states.edit_state", state_code=state_code))
