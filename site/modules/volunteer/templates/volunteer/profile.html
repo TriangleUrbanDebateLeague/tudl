@@ -25,5 +25,11 @@
         <p>You're allowed to manage hours. If you'd like to approve hours, head over to the <a href="{{ url_for("volunteer.approve_hours") }}">hours approval page</a>. You can also <a href="{{ url_for("volunteer.rejected_hours") }}" class="whitelink">manage rejected hours</a>.</p>
     </div>
     {% endif %}
+    {% if directorships and not fake %}
+    <h1>Edit states</h1>
+    {% for d in directorships %}
+    <li><a href="{{ url_for("states.edit_state", state_code=d) }}">{{d}}</a></li>
+    {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}
