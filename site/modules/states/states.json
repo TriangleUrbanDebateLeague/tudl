@@ -3,6 +3,10 @@
     "Arizona": "AZ",
     "California": "CA",
     "Florida": "FL",
+    "Illinois": "IL",
+    "Kentucky": "KY",
+    "Louisiana": "LA",
+    "Massachusetts": "MA",
     "Minnesota": "MN",
     "New York": "NY",
     "North Carolina": "NC",
@@ -11,5 +15,6 @@
     "Texas": "TX",
     "Utah": "UT",
     "Vermont": "VT",
-    "Washington DC": "DC"
+    "Washington DC": "DC",
+    "Wyoming": "WY"
 }
