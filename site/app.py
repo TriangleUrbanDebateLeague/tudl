@@ -63,6 +63,11 @@ def create_app(environment):
     @app.route("/googlefe31abc06e03d8f7.html")
     def google(): return "google-site-verification: googlefe31abc06e03d8f7.html"
 
+    @app.route("/.well-known/acme-challenge/<a>")
+    def acme(a):
+        with open("/home/public/.well-known/acme-challenge/{}".format(a)) as f:
+            return f.read()
+
     @app.context_processor
     def inject_config():
         if app.config["DISPLAY_DEBUG_INFO"]:
