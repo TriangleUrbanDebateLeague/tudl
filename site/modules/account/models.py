@@ -24,10 +24,10 @@ class Account(BaseModel):
 
     @staticmethod
     def hash_password(password):
-        return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+        return bcrypt.hashpw(password, bcrypt.gensalt())
 
     def validate_password(self, password):
-        return bcrypt.hashpw(password.encode("utf-8"), self.password.encode("utf-8")) == self.password.encode("utf-8")
+        return bcrypt.hashpw(password, self.password) == self.password
 
     def has_permission(self, module, permission):
         return security.localutils.has_permission(self, module, permission)
