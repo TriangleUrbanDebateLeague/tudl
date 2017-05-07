@@ -1,8 +1,8 @@
-# Teens for Teens framework
+# Unified Democracy framework
 
 ## What is this?
-This is the code that runs the Teens for Teens platform. You can find the
-`master` branch live at [the Teens for Teens website](https://teensforteens.info).
+This is the code that runs the Unified Democracy platform. You can find the
+`master` branch live at [the Unified Democracy website](https://unifieddemocracy.org).
 
 ## What do I do if I find a bug?
 If you find a bug, that is not security-related, you should report it on GitHub
