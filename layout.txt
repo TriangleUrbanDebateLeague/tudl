@@ -1,0 +1,24 @@
+Home Page
+-some fancy pictures and fluff and mailing list signup 
+
+About Us
+-history of organization
+-Officers
+-our donors (hide this page for now)
+-contact us
+4 submenu items
+
+Our Programs
+-overview of coaching and tournament setup
+-page detailing the coaching structure
+-tournament schedule
+3 submenu items
+
+Donate
+
+Privacy Policy
+
+
+4 main headers
+10 total pages
+
