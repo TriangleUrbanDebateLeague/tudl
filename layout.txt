@@ -1,24 +1,214 @@
+General Layout
 Home Page
--some fancy pictures and fluff and mailing list signup 
-
+Mission
+Programs
+Volunteer
 About Us
--history of organization
--Officers
--our donors (hide this page for now)
--contact us
-4 submenu items
-
-Our Programs
--overview of coaching and tournament setup
--page detailing the coaching structure
--tournament schedule
-3 submenu items
-
+Tournament Schedule 
 Donate
 
-Privacy Policy
+Privacy Policy (not in header, only footer)
+
+No drop-down menus
+
+8 total pages
+
+Home page will require most design work.
+About us page has a more complex display system which you can take from PAC website.
+Donation page can essential be copied with color changes.
+
+No login backend for now.  Likely added down the road.
+
+
+General Formatting Notes
+
+Unless otherwise noted, include the PAC formatting of starting each page with an image and having the text on the image.  Ensure images are free to use.
+
+Feel free to use the PAC font and background white coloring.
+
+Color scheme should be dark and light blue to mimic the Duke the UNC blue.
+
+Logo is in the logo folder.  For small images of the logo, use the reduced logo with the three triangles and no background.  For larger images of the logo, use the more developed one with the background imaging.
 
 
-4 main headers
-10 total pages
 
+
+****Home Page - Medha****
+
+*note that the most design work is required for the front page, particularly the main body section*
+Header
+Same format as PAC
+Tabs should read in this order:
+Logo (home page) - Mission - Programs - Volunteer - About Us - Tournament Schedule - Donate
+
+Upper Body
+An image and brief mission statement (need graphics designer for this)
+The PAC website does a very nice job with this.  I’m not sure what phrases we would like to use:
+
+
+“We are enabling access to speech and debate”
+
+Place to enter email to get onto mailing list
+
+Main Body
+Take advice of graphic designer of what to put here
+Coaching
+
+Tournaments
+Often tournaments are located a considerable distance from high schools.  Those without the resources to transport themselves of a school that can afford a bus cannot compete in tournaments.
+
+Impacts
+
+Lower Body
+Same setup as PAC with three metrics:  Coaches, students competed, schools
+
+Footer
+Phone number, FB, linkedin, Twitter, email, address
+Mission, Privacy Policy, Tournament Schedule
+
+
+****Mission - Steven****
+
+Upper Body
+Our vision is a world in which all students, regardless of income level, are able to benefit from the invaluable opportunities provided by competitive speech and debate. 
+
+Our mission is to create and sustain competitive speech and debate teams in public schools across the North Carolina Triangle region. Participating in speech and debate equips students with lifelong communication, professional, and research skills and fosters greater academic achievement. Yet, without initiatives like the Triangle Urban Debate League, this opportunity would be available only to the select few with the financial resources to obtain coaching or the fortune to attend a well-funded school with an established team. Our goal is to change that reality and provide speech and debate resources to students at every school in the region, at no cost to individual families. 
+
+Lower Body
+Whitepapers
+Coming Soon
+
+
+****About Us - Zeal****
+
+Upper Body
+The purpose of the Triangle Urban Debate League (TUDL) is to create and sustain competitive speech and debate programs for public schools across the North Carolina Triangle region.  TUDL strives to provide free coaching, tournaments and other forensics opportunities to historically disadvantaged schools.
+TUDL was founded in the summer of 2018 as a joint initiative between Cary and Durham Academy.  TUDL is incorporated in North Carolina and registered with the IRS as a 501(c)(3) non-profit organization.
+
+Lower Body
+Officers - Board - Donors (use the same setup as PAC)
+
+Officers
+President
+Vice President (2)
+Treasurer
+Secretary
+
+Board
+6 members
+
+Donors
+Hide for now
+
+****Programs - Mariusz****
+
+TUDL provides coaching and tournament opportunities in the Congressional Debate format.  Founded in 1938 by the National Speech and Debate Asosciation, Congressional Debate is the longest running form of Debate in the United States.  We believe that the opportunities that Congressional Debate offers with its focus on persuasive presentation, social collaboration, and a debating a wide variety of current events make it uniquely suited for building communication skills in students.
+
+Upper Body
+Coaching
+In 2018-19, TUDL plans to coach 4 Durham County Public High Schools.  
+
+TUDL provides Debate coaches to local high schools at no cost to schools or participants.  Each participant TUDL high school has between 1-3 coaches assigned to them for the semester.  Coaches may change between semesters, but TUDL strives to maintain continuity whenever possible.  TUDL coaches are often founding the first debate team a school has ever had, and responsible for building the team from the ground up.  TUDL works in partnership with local high schools to provide coaching sessions even when schools cannot provide for a staff member to attend meetings.
+
+Coaches provide instruction and critiques to students at 90-minute weekly after school meetings.  Coaching sessions focus on preparing for upcoming tournaments and improving communication skills.  TUDL trains all coaches to ensure high standards of instruction and provides a standardized curriculum and guide to coaching.
+
+Coaches are often university students with previous debate experience who commit to coaching for at least one semester.  In addition to becoming county approved volunteers, coaches also undergo TUDL’s extensive background check and vetting process to ensure the safety of all participants.
+
+In addition to the formal TUDL coaches, TUDL also plans to provide informal supporting mentorship to students.  About once a month, students from developed debate teams in the area such as Cary and Durham Academy will visit TUDL high schools to work directly with their peers in collaborative research and mutual critiquing.  We believe this unique opportunity will foster a stronger sense of collective community in the Triangle region and level the playing field for all students. 
+
+
+Lower Body
+Tournaments
+TUDL anticipates holding 4 tournaments in 2018-19.
+
+TUDL is working to improve accessibility to debate by hosting tournaments specifically for participant TUDL high schools.  TUDL anticipates holding afterschool tournaments twice a semester at a nearby venue such as Durham or Cary Academy.  These tournaments will be completely free for all participants and TUDL will provide the transportation to the tournaments.
+
+Tournaments will include two 1.5 hour sessions of Congressional Debate and an awards ceremony to honor top competitors.  Competitors will also receive written ballots with feedback from judges.
+
+TUDL staff members along with volunteers from Cary and Durham Academy will run tournaments.  TUDL makes use of the software tabroom.com for tabulating results and tracking participants.
+
+
+
+
+
+
+
+****Volunteer - Divjot****
+
+TUDL needs volunteers like you to make our mission possible.  The debate community has traditionally relied on the altruism of individual coaches and volunteer to provide students with life changing opportunities.  TUDL is no exception.  Without the time, dedication, and efforts of countless individuals, TUDL would not exist.  Please consider giving a little of your time to support our cause.
+
+Volunteering as a Coach
+TUDL coaches commit to coaching for at least one semester at a single high school.  As a coach, you would also need to undergo our background check process and receive training for our coaching process.   TUDL also has a number of risk management practices in place regarding student-coach interaction that all coaches must abide to.
+As a coach, you will likely be accompanied by at least one other coach.  Coaching sessions take place once a week at local high schools and last for around 90 minutes.  Durham County Public High Schools end around 4 PM, so expect coaching to run from around 4:00-5:30 PM.  The coaching session is on different days at different schools, and we will make every effort to match you with a school that works for your schedule.
+We strongly encourage coaches to attend the tournaments that take place twice a semester, but it is not strictly required.  You must however, attend every weekly coaching session, barring extenuating circumstances.
+TUDL draws most of its coaches from Duke University and the University of North Carolina Chapel Hill.  If you are a student at one of those universities and are interested in coaching, please contact xxxxx or yyyyy for more information.  TUDL evaluates prospective coaches and makes assignments on a semester basis.
+If you are not at one of those universities, please contact info@tudl.org.
+
+Other Volunteers
+TUDL needs volunteers in a variety of other capacities including:
+-running tournaments
+-serving on our IT Committee in maintaining our website and hardware property
+-serving on our Finance Committee in sourcing grants and funding
+-assisting in writing and publishing TUDL’s literature 
+-serving in an administrative capacity in expanding TUDL’s efforts
+If you are interested in any of these roles, please contacts info@tudl.org.
+
+In Kind Donations
+TUDL greatly appreciates any in-kind donations you may be able to contribute.  These include:
+-use of venue space, such as schools for tournaments
+-computers, laptops, and other electronic devices for students research
+-office supplies including printing supplies and paper
+-food donations for tournaments
+-trophies for awards
+
+If you are a business owner interested in providing or sponsoring any in-kind donations, TUDL would be happy to discuss a partnership with you.
+
+Please contact xyxyxyx if you are interested in contributing an in-kind donation.
+
+FAQs
+How much time do I have to commit?
+The only volunteer role with set time commitments is serving as a coach.  Coaches must attend the 90 minute meeting each week.  All other volunteer roles are flexible to your schedule. 
+
+Are volunteers paid?
+As a non-profit organization, TUDL does not pay volunteers, and volunteers are not considered employees in any capacity.  However, TUDL will make a reasonable effort to compensate volunteers for their expenses, such as travel costs for coaches.
+
+Do I need debate experience to volunteer?
+While we prefer for coaches to have some sort of debate experience, TUDL does occasionally make exceptions if the other coaches assigned to your school have sufficient debate background.
+Other volunteers do not need debate experience.
+
+I don’t live in the area.  Can I volunteer?
+While you cannot serve as a coach or help run tournaments, you can absolutely serve as a volunteer in another capacity.  We welcome volunteers who can only collaborate virtually.
+
+Who should I contact to volunteer?
+For general inquiries, please contact info@tudl.org
+
+I’m under 18; can I volunteer?
+While you may not serve as a coach, all other volunteer roles are open to you.
+
+
+
+
+****Tournament Schedule - Amey****
+
+Upper Body
+The Triangle Urban Debate league aims to host 4 tournaments in the 2018-19 academic year.
+
+Middle Body
+Tournament Schedule
+Check back in September!
+
+Lower Body
+League Rules
+Coming soon
+Tournament Results
+Coming soon
+Donate
+Copy PAC website
+
+-include a brief link to the volunteer page for in-kind donations
+
+
+
+
+****Privacy Policy - Medha****
+Put in filler text for now.
