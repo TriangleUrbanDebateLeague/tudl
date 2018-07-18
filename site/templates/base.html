@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Unified Democracy</title>
+        <title>Triangle Urban Debate League</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/static/css/pure.min.css" rel='stylesheet' type='text/css' />
         <link href="/static/css/grids-responsive.min.css" rel='stylesheet' type='text/css' />
@@ -36,12 +36,14 @@
                 <i class="fa fa-bars" aria-hidden="true"></i>
             </div>
             <ul class="header-nav">
-                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Platform</a></li>
-                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">About Us</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='platform') }}"><img src="/static/logo.png" alt= "Logo">Home</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">Mission</a></li>
                 <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">Volunteer</a></li>
-                <li class="header-tab"><a href="{{ url_for('states.main_state_page') }}">States</a></li>
-                <li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">Contribute</div></a></li>
-                <li class="header-tab">{% if not g.user %}<a href="{{ url_for('account.login') }}">Log In</a>{% else %}<a href="{{ url_for('volunteer.you') }}">My Account</a>{% endif %}
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='about') }}">About Us</a></li>
+                <li class="header-tab"><a href="{{ url_for('staticpages.show_staticpage', page='volunteer') }}">Tournament Schedule</a></li>
+                <li class="header-tab"><a href="{{ url_for('donations.donate') }}"><div class="contribute-button">Donate</div></a></li>
+                
+                <!--<li class="header-tab">{% if not g.user %}<a href="{{ url_for('account.login') }}">Log In</a>{% else %}<a href="{{ url_for('volunteer.you') }}">My Account</a>{% endif %}-->
             </ul>
         </div>
 
@@ -86,15 +88,15 @@
                     <div class="pure-u-lg-1-4 pure-u-1"></div>
                     <div class="pure-u-lg-1-2 pure-u-1">
                         <div class="footer-disclaimer text-normal">
-                            Paid for by The Unified Democracy PAC. Not authorized by any candidate or candidate's committee.
+                            Developed by The Triangle Urban Debate League Team.
                         </div>
                     </div>
                     <div class="pure-u-lg-1-1 pure-u-1"></div>
                     
                     <div class="pure-u-1-1 footer-links">
-                        <a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Our Platform</a> 
+                        <a href="{{ url_for('staticpages.show_staticpage', page='platform') }}">Mission</a> 
                         <a href="{{ url_for('staticpages.show_staticpage', page='policy') }}">Privacy&nbsp;Policy</a>
-                        <a href="{{ url_for('staticpages.show_staticpage', page='volunteer', _anchor='faq') }}">Volunteer FAQ</a> 
+                        <a href="{{ url_for('staticpages.show_staticpage', page='volunteer', _anchor='faq') }}">Tournament Schedule</a> 
                     </div>
                 </div>
             </div>
