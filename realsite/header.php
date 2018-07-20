@@ -15,5 +15,5 @@ echo
     <li class="header-tab"><a href="TODO">About Us</a></li>
     <li class="header-tab"><a href="TODO">Tournament Schedule</a></li>
     <li class="header-tab"><a href="TODO"><div class="contribute-button">Donate</div></a></li>
-</ul>
+</ul>;
 ?>
