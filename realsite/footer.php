@@ -1,5 +1,5 @@
 <?php
-<div class="footer-text">
+echo <div class="footer-text">
                 <div class="pure-g">
                     <div class="pure-u-1">
                         <div class="center">
