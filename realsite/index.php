@@ -12,7 +12,7 @@
     </head>
     <body>
         <div id="header">
-           <?php include 'realsite/header.php';?>
+           <?php include 'header.php';?>
         </div>
         
 		<div id="huge-header" style="background-image: url(images/backgrounds/memorial.jpg)">
@@ -54,7 +54,7 @@
         </div>
 
         <div id="footer">
-            <?php include 'realsite/footer.php';?>
+            <?php include 'footer.php';?>
         </div>
         
         <script type="text/javascript">
