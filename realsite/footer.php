@@ -34,5 +34,5 @@ echo <div class="footer-text">
                         <a href="TODO">Tournament Schedule</a> 
                     </div>
                 </div>
-            </div>
+            </div>;
             ?>
