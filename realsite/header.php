@@ -1,4 +1,5 @@
 <?php
+echo
 <a href="TODO">
     <img alt="TFT Logo" src="images/Logos/logo.png" class="header-logo-image">
 </a>
