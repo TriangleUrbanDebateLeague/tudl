@@ -1,7 +1,7 @@
 <?php
 echo
 <a href="TODO">
-    <img alt="TFT Logo" src="images/Logos/logo.png" class="header-logo-image">
+    <img alt="TFT Logo" src="images/Logos/title.png" class="header-logo-image">
 </a>
 
 <div id="toggleButton">
