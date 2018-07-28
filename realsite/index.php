@@ -2,19 +2,11 @@
 <html>
     <head>
         <title>Triangle Urban Debate League</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="css/pure.min.css" rel='stylesheet' type='text/css' />
-        <link href="css/grids-responsive.min.css" rel='stylesheet' type='text/css' />
-        <link href="css/base.css" rel='stylesheet' type='text/css' />
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel='stylesheet' type='text/css' />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel='stylesheet' type='text/css' />
-        <link href="/static/favicon.ico" rel='shortcut icon' />
+        <?php include 'head.php';?>
     </head>
     <body>
-        <div id="header">
-           <?php include 'header.php';?>
-        </div>
-        
+		<?php include 'header.php';?>
+		
 		<div id="huge-header" style="background-image: url(images/backgrounds/memorial.jpg)">
 			<h1>Sample Page</h1>
 		</div>
@@ -53,24 +45,6 @@
 			</p>
         </div>
 
-        <div id="footer">
-            <?php include 'footer.php';?>
-        </div>
-        
-        <script type="text/javascript">
-            $(function() {
-                if ($(document).width() <=  1200)
-                    $(".header-nav").toggle();
-                $("#toggleButton").click(function() {
-                    $(".header-nav").slideToggle("slow");
-                });
-            });
-            $(window).resize(function() {
-                if (window.innerWidth >  1200)
-                    $(".header-nav").show();
-                else
-                    $(".header-nav").hide();
-            });
-        </script>
+        <?php include 'footer.php';?>
     </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
-echo <div class="footer-text">
+echo <div id="footer">
+			<div class="footer-text">
                 <div class="pure-g">
                     <div class="pure-u-1">
                         <div class="center">
@@ -34,5 +35,22 @@ echo <div class="footer-text">
                         <a href="TODO">Tournament Schedule</a> 
                     </div>
                 </div>
-            </div>;
-            ?>
+            </div>
+			        </div>
+
+        <script type="text/javascript">
+            $(function() {
+                if ($(document).width() <=  1200)
+                    $(".header-nav").toggle();
+                $("#toggleButton").click(function() {
+                    $(".header-nav").slideToggle("slow");
+                });
+            });
+            $(window).resize(function() {
+                if (window.innerWidth >  1200)
+                    $(".header-nav").show();
+                else
+                    $(".header-nav").hide();
+            });
+        </script>;
+?>
