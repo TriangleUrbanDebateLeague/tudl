@@ -1,0 +1,33 @@
+#select-tab > * h1{
+	text-align: center;
+	border-bottom: 2px solid black;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#select-tab > * h1:hover,
+#select-tab > * h1:focus,
+#select-tab > * h1.selected {
+	border-bottom-color: #c5392f;
+}
+
+.content-tab > * {
+    background-color: #fafafa;
+	color: #444;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: inset 0 5px 10px #dddddd;
+    border: solid 1px #dddddd;
+	overflow: hidden;
+}
+
+.content-tab > * img {
+	float: right;
+	margin-top: 5px;
+	margin-left: 10px;
+	width: 150px;
+    float: right;
+    margin-left: 10px;
+    width: 150px;
+}
