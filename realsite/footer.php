@@ -30,9 +30,9 @@ echo <div id="footer">
                     <div class="pure-u-lg-1-1 pure-u-1"></div>
                     
                     <div class="pure-u-1-1 footer-links">
-                        <a href="TODO">Mission</a> 
-                        <a href="TODO">Privacy&nbsp;Policy</a>
-                        <a href="TODO">Tournament Schedule</a> 
+                        <a href="mission.php">Mission</a> 
+                        <a href="privacy.php">Privacy&nbsp;Policy</a>
+                        <a href="schedule.php">Tournament Schedule</a> 
                     </div>
                 </div>
             </div>
