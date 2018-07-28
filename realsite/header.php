@@ -10,12 +10,13 @@ echo
 	</div>
 
 	<ul class="header-nav">
-		<li class="header-tab"><a href="TODO">Home</a></li>
-		<li class="header-tab"><a href="TODO">Mission</a></li>
-		<li class="header-tab"><a href="TODO">Volunteer</a></li>
-		<li class="header-tab"><a href="TODO">About Us</a></li>
-		<li class="header-tab"><a href="TODO">Tournament Schedule</a></li>
-		<li class="header-tab"><a href="TODO"><div class="contribute-button">Donate</div></a></li>
+		<li class="header-tab"><a href="index.php">Home</a></li>
+		<li class="header-tab"><a href="mission.php">Mission</a></li>
+		<li class="header-tab"><a href="about.php">About Us</a></li>
+		<li class="header-tab"><a href="programs.php">Programs</a></li>
+		<li class="header-tab"><a href="schedule.php">Tournament Schedule</a></li>
+        <li class="header-tab"><a href="volunteer.php">Volunteer</a></li>
+		<li class="header-tab"><a href="donate.php"><div class="contribute-button">Donate</div></a></li>
 	</ul>
 </div>;
 ?>
