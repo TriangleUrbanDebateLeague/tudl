@@ -1,8 +1,7 @@
 /*
  * colors:
- *  blue: #0a4883
- *  darker blue: #003973
- *  red: #c5392f
+ *  blue: #0680CD
+ *  darker blue: #001A57
  *  white: #fff
  */
 
@@ -36,7 +35,7 @@ a {
 }
 
 .button-primary {
-    background-color: #0a4883;
+    background-color: #0680CD#;
     border-radius: 4px;
     color: white;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -47,7 +46,7 @@ a {
 }
 
 .call-to-action {
-    background: #c5392f;
+    background: #001A57;
     color: white;
     padding: 20px 60px;
     margin-bottom: 20px;
@@ -350,13 +349,13 @@ label.inline-label {
 
 .message-error {
     color: white;
-    background-color: #c5392f;
+    background-color: #001A57;
     padding: 5px;
 }
 
 .message-success, .message-info {
     color: white;
-    background-color: #0a4883;
+    background-color: #0680CD;
     padding: 5px;
 }
 
@@ -365,7 +364,7 @@ a.whitelink:visited, a.whitelink {
 }
 
 #huge-header {
-    background-color: #0a4883;
+    background-color: #0680CD;
     text-align: center;
     background-position: center center;
     background-size: cover;
