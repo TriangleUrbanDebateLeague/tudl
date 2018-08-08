@@ -8,41 +8,39 @@
 		<?php include 'header.php';?>
 		
 		<div id="huge-header" style="background-image: url(images/backgrounds/memorial.jpg)">
-			<h1>Sample Page</h1>
+			<h1>Home</h1>
 		</div>
 		
         <div id="content">
-			<h1>The content div</h1>
-			<p>Here's a place to put all of your funky text.</p>
-			<h1>primary heading</h1>
-			<h2>secondary heading</h2>
-			<h3>tertiary heading</h3>
-			<p>Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h1>Coaching</h1>
 
-			<p>Another paragraph. <strong>Strong.</strong> <em>Emphatic.</em> <a href="TODO">Link.</a></p>
+			<p>For many communities, the financial burden of debate proves too great a challenge to overcome, and debate programs may be poor or nonexistent.  TUDL solves this problem by providing free high quality Congressional Debate Coaching to public high schools.</p>
+
+			<br>
+
+			<h1>Tournaments</h1>
+			<p>Often, Debate tournaments are located a considerable distance from public high schools.  Those without the resources to provide transportation for their students are unable to compete in tournaments.  TUDL provides several free local tournaments with transportation each year to participant schools.</p>
+
+			<br>
+
+			<h1>Impacts</h1>
+			<p>Participating in speech and debate throughout high school dramatically improves students’ life outcomes.  From being more likely to graduate high school, pursue higher education, and give back to communities, speech and debate fosters invaluable personal growth.</p>
+
+			<br>
+			<br>
+
+			<h1>Coaches | Students competed | Schools</h1> <!--change css-->
+		
 			
-			<p>Horizontal rule:</p>
-			<hr>
+			<form action = "emailist.txt">
 
-			<ol>
-			  <li>Ordered list.</li>
-			  <li>foo</li>
-			  <li>bar</li>
-			  <li>baz</li>
-			</ol>
+				<label>Sign up for the mailing list:</label> <br>
+				Please enter a valid email ID: <input type="text" name = "email"></input> <!--fix submission text-->
+				<button class="primary-button" type = "submit">Submit</button><br>
+				
+			</form>
 
-			<ul>
-			  <li>Unordered list.</li>
-			  <li>foo</li>
-			  <li>bar</li>
-			  <li>baz</li>
-			</ul>
-			
-			<p>
-				<label>Form elements</label> <br>
-				<button class="primary-button">Important Button</button> <button>Regular Button</button> <br>
-				<input type="text" value="Input field"></input>
-			</p>
+
         </div>
 
         <?php include 'footer.php';?>

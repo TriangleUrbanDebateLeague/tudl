@@ -13,10 +13,19 @@
 		</div>
 
         <div id="content">
-			<p>TUDL needs volunteers like you to make our mission possible.  The debate community has traditionally relied on the altruism of individual coaches and volunteer to provide students with life changing opportunities.  TUDL is no exception.  Without the time, dedication, and efforts of countless individuals, TUDL would not exist.  Please consider giving a little of your time to support our cause.</p>
+			<p>Without our volunteers, who selflessly devote their time and resources, TUDL would cease to exist.  We need dedicated volunteers like you to ensure that we can provide students with life-shaping opportunities that develop their critical thinking and communication skills.  Please consider giving a little of your time or resources to support and further our cause.</p>
             <br>
 			<h1>Volunteering as a Coach</h1>
-			<p>TUDL coaches commit to coaching for at least one semester at a single high school.  As a coach, you would also need to undergo our background check process and receive training for our coaching process.   TUDL also has a number of risk management practices in place regarding student-coach interaction that all coaches must abide to.<br>As a coach, you will likely be accompanied by at least one other coach.  Coaching sessions take place once a week at local high schools and last for around 90 minutes.  Durham County Public High Schools end around 4 PM, so expect coaching to run from around 4:00-5:30 PM.  The coaching session is on different days at different schools, and we will make every effort to match you with a school that works for your schedule.<br>We strongly encourage coaches to attend the tournaments that take place twice a semester, but it is not strictly required.  You must however, attend every weekly coaching session, barring extenuating circumstances.<br>TUDL draws most of its coaches from Duke University and the University of North Carolina Chapel Hill.  If you are a student at one of those universities and are interested in coaching, please contact xxxxx or yyyyy for more information.  TUDL evaluates prospective coaches and makes assignments on a semester basis.<br>If you are not at one of those universities, please contact <a href = "mailto:info@tudl.org">TUDL</a>.</p>
+			<p>TUDL coaches commit to coaching for at least one semester at a single high school.  As a coach, you would also need to undergo our background check process and receive training through our coaching curriculum.  TUDL also has a number of risk management practices in place regarding student-coach interaction that all coaches must abide to.
+
+            <br>
+            As a coach, you will likely be accompanied by at least one other coach.  Coaching sessions take place once a week at local high schools and last for around 90 minutes.  Durham County Public High Schools end around 4 PM, so expect coaching to run from around 4:00-5:30 PM.  The coaching session is on different days at different schools, and we will make every effort to match you with a school that works for your schedule.
+
+            <br>We strongly encourage coaches to attend the tournaments that take place twice a semester, but it is not strictly required.  You must however, attend every weekly coaching session, barring extenuating circumstances.
+
+            <br>TUDL draws most of its coaches from Duke University and the University of North Carolina Chapel Hill.  If you are a student at one of those universities and are interested in coaching, please contact xxxxx or yyyyy for more information.  TUDL evaluates prospective coaches and makes assignments on a semester basis.
+
+            <br>If you are not at one of those universities, please contact <a href = "mailto:info@tudl.org">TUDL</a>.</p>
 
             <br>
             <h1>Other Volunteers</h1>
@@ -37,7 +46,7 @@
             <p>TUDL greatly appreciates any in-kind donations you may be able to contribute. These include:
                 <ul>
                     <li>use of venue space, such as schools for tournaments</li>
-                    <li>computers, laptops, and other electronic devices for students research</li>
+                    <li>computers, laptops, ipads, and other electronic devices for students research</li>
                     <li>office supplies including printing supplies and paper</li>
                     <li>food donations for tournaments</li>
                     <li>trophies for awards</li>
@@ -52,7 +61,7 @@
             <h1>FAQs</h1>
             <br>
             <p> How much time do I have to commit?
-                <br>The only volunteer role with set time commitments is serving as a coach.  Coaches must attend the 90 minute meeting each week.  All other volunteer roles are flexible to your schedule.
+                <br>The only volunteer role with set time commitments is serving as a coach.  Coaches must attend the 90 minute meeting each week.  All other volunteer roles are flexible to your schedule. 
             </p>
             <br>
 

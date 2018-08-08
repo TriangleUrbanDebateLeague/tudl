@@ -13,6 +13,8 @@
 		</div>
 
         <div id="content">
+            <h1>In-Kind Donations<h1>
+                <p>Please visit the <a href="volunteer.php">Volunteer</a> page for more information.</p>
 			<p>*Need to look at PAC Website for format*</p>
         </div>
 		
